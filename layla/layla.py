@@ -54,6 +54,11 @@ def get_response(intents_list, intents_json):
 
 print("GO! layla is listening")
 
+"""
+This is a basic code...
+everything will be working inside the work folder
+we will just import work.py function in this while loop
+"""
 while True:
     message = input(">> ")
     ints = predict_class(message)
