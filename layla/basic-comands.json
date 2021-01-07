@@ -1,0 +1,27 @@
+{"intents": [
+    {
+        "tag": "greetings",
+        "patterns": ["hello", "hey", "good morning"],
+        "responses": ["Hello!", "Hey!", "What can I do for you?"]
+    },
+    {
+        "tag": "goodbye", 
+        "patterns": ["bye", "see you later", "good night"],
+        "responses": ["Bye!", "Good Bye!", "Sleep tight!"]
+    },
+    {
+        "tag": "age",
+        "patterns": ["how old", "what is my age", "age?"],
+        "responses": ["16 years", "Your age is 16 years"]
+    },
+    {
+        "tag": "name",
+        "patterns": ["what is your name", "what should i call you"],
+        "responses": ["Layla", "My name is Layla"]
+    },
+    {
+        "tag": "time",
+        "patterns": ["what is the time", "time?"],
+        "responses": ["It is 6: 30 am in the morning"]
+    }
+]}
