@@ -5,6 +5,7 @@ import numpy as np
 
 import nltk
 from nltk.stem import WordNetLemmatizer
+import tensorflow as tf
 from tensorflow.keras import models
 
 from tensorflow.keras.models import Sequential
@@ -14,13 +15,18 @@ from tensorflow.keras.optimizers import SGD
 # Add Working Of The Function
 lemmatizer = WordNetLemmatizer()
 
+# To Hide the logs on terminal
+tf.autograph.set_verbosity(1)
+
 # Import JSON file from the directory
-intents = json.loads(open('basic-comands.json').read())
+intents = json.loads(open('layla/basic-comands.json').read())
 
 words = []
 classes = []
 documents = []
 ignore_letters = ['?', '!', '.', ',']   # Ignore all these letters
+
+print('Starting...')
 
 for intent in intents['intents']:
     for pattern in intent['patterns']:
@@ -36,8 +42,8 @@ words = sorted(set(words))
 
 classes = sorted(set(classes))
 
-pickle.dump(words, open('words.pkl', 'wb'))
-pickle.dump(classes, open('classes.pkl', 'wb'))
+pickle.dump(words, open('layla/words.pkl', 'wb'))
+pickle.dump(classes, open('layla/classes.pkl', 'wb'))
 
 training = []
 output_empty = [0] * len(classes)
@@ -70,5 +76,5 @@ sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
 model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=["accuracy"])
 
 hist = model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)
-model.save('layla_model.h5', hist)
+model.save('layla/layla_model.h5', hist)
 print("Done")

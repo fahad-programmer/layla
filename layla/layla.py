@@ -2,12 +2,14 @@ import random
 import json
 import pickle
 import numpy as np
+import os
 
 import nltk
 from nltk.stem import WordNetLemmatizer
 
 from work.work import layla_com, wish_me, take_command, usrname
 
+import tensorflow as tf
 from tensorflow.keras.models import load_model
 
 lemmatizer = WordNetLemmatizer()
@@ -65,6 +67,9 @@ we will just import work.py function in this while loop
 """
 clear = lambda: os.system('cls')
 
+# To Hide the logs on terminal
+tf.autograph.set_verbosity(1)
+
 # This Function will clean any
 # command before execution of this python file
 
@@ -78,4 +83,4 @@ while True:
     if res == True:
         print(res)
     else:
-        work.layla_com(query)
+        layla_com(query)
