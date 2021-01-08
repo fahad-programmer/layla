@@ -10,6 +10,8 @@ from work.work import layla_com, wish_me, take_command, usrname
 
 from tensorflow.keras.models import load_model
 
+
+
 lemmatizer = WordNetLemmatizer()
 intents = json.loads(open('layla/basic-comands.json').read())
 
@@ -78,4 +80,4 @@ while True:
     if res == True:
         print(res)
     else:
-        work.layla_com(query)
+       layla_com(query)
