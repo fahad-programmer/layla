@@ -9,11 +9,11 @@ from nltk.stem import WordNetLemmatizer
 from tensorflow.keras.models import load_model
 
 lemmatizer = WordNetLemmatizer()
-intents = json.loads(open('basic-comands.json').read())
+intents = json.loads(open('layla/basic-comands.json').read())
 
-words = pickle.load(open('words.pkl', 'rb'))
-classes = pickle.load(open('classes.pkl', 'rb'))
-model = load_model('layla_model.h5')
+words = pickle.load(open('layla/words.pkl', 'rb'))
+classes = pickle.load(open('layla/classes.pkl', 'rb'))
+model = load_model('layla/layla_model.h5')
 
 print(classes)
 
