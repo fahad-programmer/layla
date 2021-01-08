@@ -27,7 +27,7 @@ from urllib.request import urlopen
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
-engine.setProperty('voice', voices[1].id)
+engine.setProperty('voice', voices[2].id)
 
 # Below all code is copy pasted so it is going to change
 
@@ -76,7 +76,7 @@ def takeCommand():
 
 	try:
 		print("Recognizing...") 
-		query = r.recognize_google(audio, language ='en-in')
+		query = r.recognize(audio)
 		print(f"User said: {query}\n")
 
 	except Exception as e:
