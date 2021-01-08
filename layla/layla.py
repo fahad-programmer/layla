@@ -81,5 +81,5 @@ while True:
     query = take_command().lower()
     ints = predict_class(query)
     res = get_response(ints, intents)
-    eval(res)
+    speak(eval(res))
     time.sleep(15)
