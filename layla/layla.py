@@ -7,12 +7,10 @@ import os
 import nltk
 from nltk.stem import WordNetLemmatizer
 
-from work.work import layla_com, wish_me, take_command, usrname
+
 
 import tensorflow as tf
 from tensorflow.keras.models import load_model
-
-
 
 lemmatizer = WordNetLemmatizer()
 intents = json.loads(open('layla/basic-comands.json').read())
@@ -75,14 +73,8 @@ tf.autograph.set_verbosity(1)
 # This Function will clean any
 # command before execution of this python file
 
-wish_me()
-usrname()
-
 while True:
     query = take_command().lower()
     ints = predict_class(query)
     res = get_response(ints, intents)
-    if res == True:
-        print(res)
-    else:
-        layla_com(query)
+    speak(eval(res))

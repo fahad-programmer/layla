@@ -5,7 +5,7 @@
         "responses": ["Hello!", "Hey!", "What can I do for you?"]
     },
     {
-        "tag": "goodbye", 
+        "tag": "goodbye",
         "patterns": ["bye", "see you later", "good night"],
         "responses": ["Bye!", "Good Bye!", "Sleep tight!"]
     },
