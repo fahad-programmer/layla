@@ -402,3 +402,6 @@ def layla_com(query):
 	# elif "" in query:
 		# Command go here
 		# For adding more commands
+
+def say_hello():
+	return "Hi How Are You"

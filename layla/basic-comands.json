@@ -2,7 +2,7 @@
     {
         "tag": "greetings",
         "patterns": ["hello", "hey", "good morning"],
-        "responses": ["Hello!", "Hey!", "What can I do for you?"]
+        "responses": ["say_hello()"]
     },
     {
         "tag": "goodbye", 

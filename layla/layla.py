@@ -6,7 +6,7 @@ import numpy as np
 import nltk
 from nltk.stem import WordNetLemmatizer
 
-from work.work import layla_com, wish_me, take_command, usrname
+from work.work import layla_com, wish_me, take_command, usrname, say_hello
 
 from tensorflow.keras.models import load_model
 
@@ -19,7 +19,7 @@ words = pickle.load(open('layla/words.pkl', 'rb'))
 classes = pickle.load(open('layla/classes.pkl', 'rb'))
 model = load_model('layla/layla_model.h5')
 
-print(classes)
+
 
 
 def clean_up_sentence(sentence):
@@ -77,7 +77,4 @@ while True:
     query = take_command().lower()
     ints = predict_class(query)
     res = get_response(ints, intents)
-    if res == True:
-        print(res)
-    else:
-       layla_com(query)
+    print(eval(res))
