@@ -3,11 +3,13 @@ import json
 import pickle
 import numpy as np
 import os
+import time
 
 import nltk
 from nltk.stem import WordNetLemmatizer
 
-
+from layla.engine_components import speak, take_command
+from work.work import kali, wishMe, wikipedia_search, google_map_search, change_volume
 
 import tensorflow as tf
 from tensorflow.keras.models import load_model
@@ -19,7 +21,7 @@ words = pickle.load(open('layla/words.pkl', 'rb'))
 classes = pickle.load(open('layla/classes.pkl', 'rb'))
 model = load_model('layla/layla_model.h5')
 
-print(classes)
+# print(classes)
 
 
 def clean_up_sentence(sentence):
@@ -73,8 +75,11 @@ tf.autograph.set_verbosity(1)
 # This Function will clean any
 # command before execution of this python file
 
+wishMe()
+
 while True:
     query = take_command().lower()
     ints = predict_class(query)
     res = get_response(ints, intents)
-    speak(eval(res))
+    eval(res)
+    time.sleep(15)

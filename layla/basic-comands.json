@@ -1,8 +1,8 @@
 {"intents": [
     {
         "tag": "greetings",
-        "patterns": ["hello", "hey", "good morning"],
-        "responses": ["Hello!", "Hey!", "What can I do for you?"]
+        "patterns": ["hello", "hey", "good morning", "Hey man", "wake up layla"],
+        "responses": ["kali()"]
     },
     {
         "tag": "goodbye",
@@ -23,5 +23,20 @@
         "tag": "time",
         "patterns": ["what is the time", "time?"],
         "responses": ["It is 6: 30 am in the morning"]
+    },
+    {
+        "tag": "wikipedia",
+        "patterns": ["wikipedia", "search wikipedia"],
+        "responses": ["wikipedia_search(query)"]
+    },
+    {
+        "tag": "google map",
+        "patterns": ["search google map from clipboard", "search google map"],
+        "responses": ["google_map_search(query)"]
+    },
+    {
+        "tag": "change volume",
+        "patterns": ["change volume to"],
+        "responses": ["change_colume(query)"]
     }
 ]}
