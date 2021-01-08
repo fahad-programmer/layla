@@ -27,7 +27,7 @@ from urllib.request import urlopen
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
-engine.setProperty('voice', voices[2].id)
+engine.setProperty('voice', voices[1].id)
 
 # Below all code is copy pasted so it is going to change
 
