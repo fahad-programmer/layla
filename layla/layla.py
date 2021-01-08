@@ -2,15 +2,10 @@ import random
 import json
 import pickle
 import numpy as np
-
 import nltk
 from nltk.stem import WordNetLemmatizer
-
-from work.work import layla_com, wish_me, take_command, usrname, say_hello
-
+from layla.engine_components import speak, take_command
 from tensorflow.keras.models import load_model
-
-
 
 lemmatizer = WordNetLemmatizer()
 intents = json.loads(open('layla/basic-comands.json').read())
@@ -18,8 +13,6 @@ intents = json.loads(open('layla/basic-comands.json').read())
 words = pickle.load(open('layla/words.pkl', 'rb'))
 classes = pickle.load(open('layla/classes.pkl', 'rb'))
 model = load_model('layla/layla_model.h5')
-
-
 
 
 def clean_up_sentence(sentence):
@@ -70,8 +63,6 @@ clear = lambda: os.system('cls')
 # This Function will clean any
 # command before execution of this python file
 
-wish_me()
-usrname()
 
 while True:
     query = take_command().lower()
