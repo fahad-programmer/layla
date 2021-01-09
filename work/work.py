@@ -8,7 +8,7 @@ def kali():
     return "Hello World"
 
 
-def wishMe():
+def wish_me():
     if 4 <= wishing.hour < 10:
         return wishing.morning_commands()
     elif 10 <= wishing.hour < 13:

@@ -66,6 +66,8 @@ clear = lambda: os.system('cls')
 # This Function will clean any
 # command before execution of this python file
 
+wish_me()
+
 while True:
     query = take_command().lower()
     ints = predict_class(query)
