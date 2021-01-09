@@ -1,24 +1,24 @@
 import re
-from work import wishing, sound, keyboard_controller
+from work import wishing, keyboard_controller, sound, locate_me
 import pyperclip, webbrowser, wikipedia
 from layla.engine_components import speak, take_command
 
 
 def kali():
-    return "Hello World"
+    speak("Hello World")
 
 
 def wish_me():
     if 4 <= wishing.hour < 10:
-        return wishing.morning_commands()
+        speak(wishing.morning_commands())
     elif 10 <= wishing.hour < 13:
-        return wishing.noon_commands()
+        speak(wishing.noon_commands())
     elif 13 <= wishing.hour < 17:
-        return wishing.afternoon_commands()
+        speak(wishing.afternoon_commands())
     elif 17 <= wishing.hour < 23:
-        return wishing.evening_commands()
+        speak(wishing.evening_commands())
     else:
-        return wishing.night_commands()
+        speak(wishing.night_commands())
 
 
 def wikipedia_search(query):
@@ -27,7 +27,7 @@ def wikipedia_search(query):
     results = wikipedia.summary(query, sentences=2)
     speak("According To wikipedia")
     print(results)
-    return results
+    speak(results)
 
 
 def google_map_search(query):
@@ -43,4 +43,15 @@ def google_map_search(query):
 def change_volume(query):
     sound_value = [int(s) for s in query.split() if s.isdigit()][0]
     sound.Sound.volume_set(int(sound_value))
-    return "Volume changed to " + query + "percent"
+    speak("Volume changed to " + query + "percent")
+
+def my_country_info(query):
+    loc = locate_me.location_of_me()
+    if "ip" in query:
+        speak(f"The ip of this PC is {loc['ip']}")
+    elif "city" in query:
+        speak(f"The city name is {loc['city']}")
+    elif "continent" in query:
+        speak(f"The name of continent is {loc['continent_name']}")
+        
+    

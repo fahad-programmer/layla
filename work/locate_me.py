@@ -14,8 +14,8 @@ def location_of_me():
     # city = geo_json['city']
     # return city
 
-cat = location_of_me()
-print(cat['ip'])
+# cat = location_of_me()
+# print(cat['ip'])
 
 """
 {

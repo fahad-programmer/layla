@@ -35,6 +35,11 @@
         "responses": ["google_map_search(query)"]
     },
     {
+        "tag": "location",
+        "patterns": ["city name", "what is the name of this city", "current city", "name of city", "ip address", "computer ip", "what is my computer ip", "continent name", "what is the name of this continent", "current continent", "name of continent"],
+        "responses": ["my_country_info(query)"]
+    },
+    {
         "tag": "change volume",
         "patterns": ["change volume to"],
         "responses": ["change_volume(query)"]
