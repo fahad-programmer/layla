@@ -45,7 +45,7 @@ def change_volume(query):
     sound.Sound.volume_set(int(sound_value))
     speak("Volume changed to " + query + "percent")
 
-def my_country_info(query):
+def country_info(query):
     loc = locate_me.location_of_me()
     if "ip" in query:
         speak(f"The ip of this PC is {loc['ip']}")
@@ -53,5 +53,24 @@ def my_country_info(query):
         speak(f"The city name is {loc['city']}")
     elif "continent" in query:
         speak(f"The name of continent is {loc['continent_name']}")
+    elif "zip" in query:
+        speak(f"The city zip code is {loc['zip']}")
+    # More Coming Soon
+
+def weather_info(query):
+    loc = locate_me.w_data
+    if "temperature" in query:
+        temp = ("{}°C".format(loc['main']['temp']))
+        speak(temp)
+    elif "wind" in query:
+        speed = result['wind']['speed']
+        speak(f"{speed} meter per second")
+    elif "weather" in query:
+        weather = result['weather'][0]['main']
+        speak(f"Sir it's {weather}")
+    # More Coming Soon
+    
+def open_website(query):
+    
         
     

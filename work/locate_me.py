@@ -15,7 +15,7 @@ def location_of_me():
     # return city
 
 # cat = location_of_me()
-# print(cat['ip'])
+# print(cat['location']['languages'][0]['native'])
 
 """
 {
@@ -78,3 +78,20 @@ def location_of_me():
   }
 }
 """
+
+# Weather Data
+
+def weather_data(query):
+    res = requests.get(
+        'http://api.openweathermap.org/data/2.5/weather?' + query + '&APPID=0142515b87702fb26174239fb8b60b09&units=metric')
+    # lat = "33.6007"
+    # lon = "73.0679"
+    # res = requests.get('http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=' + lat + '&lon=' + lon + '&appid=0142515b87702fb26174239fb8b60b09')
+    return res.json()
+
+cat = location_of_me()
+city = cat['city']
+query = 'q=' + city
+w_data = weather_data(query)
+
+# print(w_data)
