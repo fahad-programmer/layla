@@ -1,5 +1,6 @@
 from datetime import datetime
 import random
+import webbrowser
 
 time = datetime.now()
 # print(time) >  2020-08-09 21:19:07.071096 > %d/%m/%Y %H:%M:%S

@@ -45,6 +45,11 @@
         "responses": ["weather_info(query)"]
     },
     {
+        "tag": "website",
+        "patterns": ["open"],
+        "responses": ["open_website(query)"]
+    },
+    {
         "tag": "change volume",
         "patterns": ["change volume to"],
         "responses": ["change_volume(query)"]

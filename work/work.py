@@ -71,6 +71,9 @@ def weather_info(query):
     # More Coming Soon
     
 def open_website(query):
-    
-        
+    name = ' '.join(query.split()[1:])
+    wbsite = ''.join(query.split()[1:])
+    speak('opening ' + name + "dot com")
+    webbrowser.open('https://www.' + wbsite + '.com')
+    # More Conditions will be made as per the website name
     

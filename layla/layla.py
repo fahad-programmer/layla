@@ -5,7 +5,7 @@ import numpy as np
 import nltk
 import os
 from nltk.stem import WordNetLemmatizer
-from layla.engine_components import speak, take_command
+from layla.engine_components import take_command
 from tensorflow.keras.models import load_model
 
 from work.work import *
