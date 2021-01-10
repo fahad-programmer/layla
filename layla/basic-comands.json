@@ -2,7 +2,7 @@
     {
         "tag": "greetings",
         "patterns": ["hello", "hey", "good morning", "Hey man", "wake up layla"],
-        "responses": ["kali()"]
+        "responses": ["greet().decode('utf-8')"]
     },
     {
         "tag": "goodbye",
@@ -38,5 +38,10 @@
         "tag": "change volume",
         "patterns": ["change volume to"],
         "responses": ["change_volume(query)"]
+    },
+    {
+        "tag": "Date",
+        "patterns" : ["what is the date", "tell me the date", "what is the day", "what is the month"],
+        "responses": ["current_date().decode('utf-8')"] 
     }
 ]}

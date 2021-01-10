@@ -43,4 +43,4 @@ def google_map_search(query):
 def change_volume(query):
     sound_value = [int(s) for s in query.split() if s.isdigit()][0]
     sound.Sound.volume_set(int(sound_value))
-    return "Volume changed to " + query + "percent"
+    return "Volume changed to " + sound_value + "percent"
