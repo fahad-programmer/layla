@@ -5,7 +5,7 @@ import numpy as np
 import nltk
 import os
 from nltk.stem import WordNetLemmatizer
-from layla.engine_components import speak, take_command
+from layla.engine_components import take_command
 from tensorflow.keras.models import load_model
 
 from work.work import *
@@ -68,10 +68,10 @@ clear = lambda: os.system('cls')
 # This Function will clean any
 # command before execution of this python file
 
-speak(wishMe())
+wish_me()
+
 while True:
     query = take_command().lower()
     ints = predict_class(query)
     res = get_response(ints, intents)
     speak(eval(res))
-    
