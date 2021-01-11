@@ -63,10 +63,10 @@ def weather_info(query):
         temp = ("{}°C".format(loc['main']['temp']))
         speak(temp)
     elif "wind" in query:
-        speed = result['wind']['speed']
+        speed = loc['wind']['speed']
         speak(f"{speed} meter per second")
     elif "weather" in query:
-        weather = result['weather'][0]['main']
+        weather = loc['weather'][0]['main']
         speak(f"Sir it's {weather}")
     # More Coming Soon
     
@@ -86,3 +86,39 @@ def open_website(query):
         elif "no" in query:
             pass
     
+class website_control:
+    '''
+    Title = In this class all the websites related functions are being held.
+    
+    For Example, Opening Websites, Search On Websites, Doing Some Stuff, Taking Data from the websites...
+    
+    '''
+    def __init__(self):
+        return "Fuck You, You have no value nerd..."
+    
+    @staticmethod    
+    def google_search(query):
+        if "search" in query:
+            term = ' '.join(query.split()[1:])
+            speak('searching ' + term + "on google")
+            webbrowser.open("https://www.google.com/search?q=" + term)
+        elif "no" in query:
+            pass
+        
+    @staticmethod
+    def search_websites(query):
+        # search how to bake on google
+        web_name = ''.join(query.split()[-1:])
+        term = ' '.join(query.split()[1:-2])
+        webbrowser.open("https://www." + web_name +".com/search?q=" + term)
+        
+    @staticmethod
+    def main(query):
+        name = ' '.join(query.split()[1:])
+        wbsite = ''.join(query.split()[1:])
+        speak('opening ' + name + "dot com")
+        webbrowser.open('https://www.' + wbsite + '.com')
+        if query == "google":
+            speak("Do you want to search anything on google")
+            query = take_command().lower()
+            google_search(query)

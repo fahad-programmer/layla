@@ -83,7 +83,7 @@ model.compile(loss='categorical_crossentropy',
 
 hist = model.fit(np.array(train_x),
                  np.array(train_y),
-                 epochs=10000,
+                 epochs=5000,
                  batch_size=5,
                  verbose=1)
 model.save('layla/layla_model.h5', hist)

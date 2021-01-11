@@ -47,8 +47,14 @@
     {
         "tag": "website",
         "patterns": ["open"],
-        "responses": ["open_website(query)"]
+        "responses": ["website_control.main(query)"]
     },
+    {
+        "tag": "website search",
+        "patterns": ["search how to bake on google", "search youtube on google", "search yts movies on google"],
+        "responses": ["website_control.search_websites(query)"]
+    },
+
     {
         "tag": "change volume",
         "patterns": ["change volume to"],
