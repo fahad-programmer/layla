@@ -10,3 +10,6 @@ def current_date():
 	date = datetime.datetime.now()
 	main_date = f"{date.strftime('%d')},{date.strftime('%B')}{date.strftime('%Y')}"
 	return main_date
+
+def assistant_name():
+	return "My name is Layla, meaning night"

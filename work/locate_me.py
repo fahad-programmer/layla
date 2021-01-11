@@ -3,20 +3,21 @@ import json
 import socket
 from requests import get
 
+
 def location_of_me():
     ip = get('https://api.ipify.org').text
-    hostname = socket.gethostname() 
+    hostname = socket.gethostname()
     IPAddr = socket.gethostbyname(hostname)
-    send_url = "http://api.ipstack.com/"+ ip +"?access_key=7cd335b5d7a832f1c08b66e758797dc4"
+    send_url = "http://api.ipstack.com/" + ip + "?access_key=7cd335b5d7a832f1c08b66e758797dc4"
     geo_req = requests.get(send_url)
     geo_json = json.loads(geo_req.text)
     return geo_json
     # city = geo_json['city']
     # return city
 
+
 # cat = location_of_me()
 # print(cat['location']['languages'][0]['native'])
-
 """
 {
   "ip": "134.201.250.155",
@@ -81,17 +82,20 @@ def location_of_me():
 
 # Weather Data
 
+
 def weather_data(query):
-    res = requests.get(
-        'http://api.openweathermap.org/data/2.5/weather?' + query + '&APPID=0142515b87702fb26174239fb8b60b09&units=metric')
+    res = requests.get('http://api.openweathermap.org/data/2.5/weather?' +
+                       query +
+                       '&APPID=0142515b87702fb26174239fb8b60b09&units=metric')
     # lat = "33.6007"
     # lon = "73.0679"
     # res = requests.get('http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=' + lat + '&lon=' + lon + '&appid=0142515b87702fb26174239fb8b60b09')
     return res.json()
 
+
 cat = location_of_me()
 city = cat['city']
-query = 'q=' + city
+query = 'q=' + str(city)
 w_data = weather_data(query)
 
 # print(w_data)
