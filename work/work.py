@@ -76,4 +76,13 @@ def open_website(query):
     speak('opening ' + name + "dot com")
     webbrowser.open('https://www.' + wbsite + '.com')
     # More Conditions will be made as per the website name
+    if query == "google":
+        speak("Do you want to search anything on google")
+        query = take_command().lower()
+        if "search" in query:
+            term = ' '.join(query.split()[1:])
+            speak('searching ' + term + "on google")
+            webbrowser.open("https://www.google.com/search?q=" + term)
+        elif "no" in query:
+            pass
     
