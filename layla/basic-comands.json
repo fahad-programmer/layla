@@ -32,7 +32,7 @@
     {
         "tag": "google map",
         "patterns": ["search google map from clipboard", "search google map"],
-        "responses": ["google_map_search(query)"]
+        "responses": ["website_control.google_map_search(query)"]
     },
     {
         "tag": "location",
@@ -54,7 +54,6 @@
         "patterns": ["search how to bake on google", "search youtube on google", "search yts movies on google"],
         "responses": ["website_control.search_websites(query)"]
     },
-
     {
         "tag": "change volume",
         "patterns": ["change volume to"],
