@@ -2,27 +2,27 @@
     {
         "tag": "greetings",
         "patterns": ["hello", "hey", "good morning", "Hey man", "wake up layla"],
-        "responses": ["kali()"]
+        "responses": ["greet().decode('utf-8')"]
     },
     {
         "tag": "goodbye",
         "patterns": ["bye", "see you later", "good night"],
-        "responses": ["Bye!", "Good Bye!", "Sleep tight!"]
+        "responses": ["saying_bye().decode('utf-8')"]
     },
     {
         "tag": "age",
         "patterns": ["how old", "what is my age", "age?"],
-        "responses": ["16 years", "Your age is 16 years"]
+        "responses": ["age_question().decode('utf-8')"]
     },
     {
         "tag": "name",
         "patterns": ["what is your name", "what should i call you"],
-        "responses": ["Layla", "My name is Layla"]
+        "responses": ["assistant_name()"]
     },
     {
         "tag": "time",
         "patterns": ["what is the time", "time?"],
-        "responses": ["It is 6: 30 am in the morning"]
+        "responses": ["current_time().decode('utf-8')"]
     },
     {
         "tag": "wikipedia",
@@ -58,5 +58,10 @@
         "tag": "change volume",
         "patterns": ["change volume to"],
         "responses": ["change_volume(query)"]
+    },
+    {
+        "tag": "Date",
+        "patterns" : ["what is the date", "tell me the date", "what is the day", "what is the month"],
+        "responses": ["current_date().decode('utf-8')"] 
     }
 ]}

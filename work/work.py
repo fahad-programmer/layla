@@ -80,7 +80,8 @@ def wikipedia_search(query):
 def change_volume(query):
     sound_value = [int(s) for s in query.split() if s.isdigit()][0]
     sound.Sound.volume_set(int(sound_value))
-    speak("Volume changed to " + query + "percent")
+    speak("Volume changed to " + str(sound_value) + "percent")
+
 
 
 def country_info(query):

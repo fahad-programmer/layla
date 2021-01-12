@@ -10,6 +10,8 @@ from tensorflow.keras.models import load_model
 
 from work.work import *
 
+from _core_components.core_func import *
+
 lemmatizer = WordNetLemmatizer()
 intents = json.loads(open('layla/basic-comands.json').read())
 
@@ -72,4 +74,4 @@ while True:
     query = take_command().lower()
     ints = predict_class(query)
     res = get_response(ints, intents)
-    print(eval(res))
+    speak(eval(res))
