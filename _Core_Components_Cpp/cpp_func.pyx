@@ -13,10 +13,7 @@ cpdef greet_main():
 cpdef date_time():
     return current_date()
 
-cpdef char *current_date_now():
-    date = datetime.datetime.now()
-    main_date = f"{date.strftime('%d')},{date.strftime('%B')}{date.strftime('%Y')}"
-    return main_date.encode('utf-8')
+
 	
 	
 	

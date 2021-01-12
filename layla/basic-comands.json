@@ -2,7 +2,7 @@
     {
         "tag": "greetings",
         "patterns": ["hello", "hey", "good morning", "Hey man", "wake up layla"],
-        "responses": ["greet().decode('utf-8')"]
+        "responses": ["greet_main().decode('utf-8')"]
     },
     {
         "tag": "goodbye",
@@ -57,6 +57,6 @@
     {
         "tag": "Date",
         "patterns" : ["what is the date", "tell me the date", "what is the day", "what is the month"],
-        "responses": ["current_date().decode('utf-8')"] 
+        "responses": ["date_time().decode('utf-8')"] 
     }
 ]}
