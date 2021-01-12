@@ -5,7 +5,7 @@
     "distutils": {
         "depends": [
             "datetime.cpp",
-            "greet.cpp"
+            "funcs.cpp"
         ],
         "language": "c++",
         "name": "cpp_func",
@@ -636,7 +636,7 @@ static CYTHON_INLINE float __PYX_NAN() {
 #define __PYX_HAVE__cpp_func
 #define __PYX_HAVE_API__cpp_func
 /* Early includes */
-#include "greet.cpp"
+#include "funcs.cpp"
 #include "datetime.cpp"
 #ifdef _OPENMP
 #include <omp.h>
@@ -1049,7 +1049,9 @@ static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 /* Module declarations from 'cpp_func' */
 static PyObject *__pyx_f_8cpp_func_greet_main(int __pyx_skip_dispatch); /*proto*/
-static PyObject *__pyx_f_8cpp_func_date_time(int __pyx_skip_dispatch); /*proto*/
+static PyObject *__pyx_f_8cpp_func_current_date_main(int __pyx_skip_dispatch); /*proto*/
+static PyObject *__pyx_f_8cpp_func_saying_bye_main(int __pyx_skip_dispatch); /*proto*/
+static PyObject *__pyx_f_8cpp_func_age_question_main(int __pyx_skip_dispatch); /*proto*/
 #define __Pyx_MODULE_NAME "cpp_func"
 extern int __pyx_module_is_main_cpp_func;
 int __pyx_module_is_main_cpp_func = 0;
@@ -1068,10 +1070,12 @@ static PyObject *__pyx_n_s_main;
 static PyObject *__pyx_n_s_name;
 static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_pf_8cpp_func_greet_main(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
-static PyObject *__pyx_pf_8cpp_func_2date_time(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_pf_8cpp_func_2current_date_main(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_pf_8cpp_func_4saying_bye_main(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_pf_8cpp_func_6age_question_main(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
 /* Late includes */
 
-/* "cpp_func.pyx":10
+/* "cpp_func.pyx":12
  *     char *current_date()
  * 
  * cpdef greet_main():             # <<<<<<<<<<<<<<
@@ -1089,21 +1093,21 @@ static PyObject *__pyx_f_8cpp_func_greet_main(CYTHON_UNUSED int __pyx_skip_dispa
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("greet_main", 0);
 
-  /* "cpp_func.pyx":11
+  /* "cpp_func.pyx":13
  * 
  * cpdef greet_main():
  *     return greet()             # <<<<<<<<<<<<<<
  * 
- * cpdef date_time():
+ * cpdef current_date_main():
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBytes_FromString(greet()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 11, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBytes_FromString(greet()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 13, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "cpp_func.pyx":10
+  /* "cpp_func.pyx":12
  *     char *current_date()
  * 
  * cpdef greet_main():             # <<<<<<<<<<<<<<
@@ -1144,7 +1148,7 @@ static PyObject *__pyx_pf_8cpp_func_greet_main(CYTHON_UNUSED PyObject *__pyx_sel
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("greet_main", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_8cpp_func_greet_main(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_8cpp_func_greet_main(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 12, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -1161,42 +1165,42 @@ static PyObject *__pyx_pf_8cpp_func_greet_main(CYTHON_UNUSED PyObject *__pyx_sel
   return __pyx_r;
 }
 
-/* "cpp_func.pyx":13
+/* "cpp_func.pyx":15
  *     return greet()
  * 
- * cpdef date_time():             # <<<<<<<<<<<<<<
+ * cpdef current_date_main():             # <<<<<<<<<<<<<<
  *     return current_date()
  * 
  */
 
-static PyObject *__pyx_pw_8cpp_func_3date_time(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_f_8cpp_func_date_time(CYTHON_UNUSED int __pyx_skip_dispatch) {
+static PyObject *__pyx_pw_8cpp_func_3current_date_main(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_f_8cpp_func_current_date_main(CYTHON_UNUSED int __pyx_skip_dispatch) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("date_time", 0);
+  __Pyx_RefNannySetupContext("current_date_main", 0);
 
-  /* "cpp_func.pyx":14
+  /* "cpp_func.pyx":16
  * 
- * cpdef date_time():
+ * cpdef current_date_main():
  *     return current_date()             # <<<<<<<<<<<<<<
  * 
- * 
+ * cpdef saying_bye_main():
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBytes_FromString(current_date()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 14, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBytes_FromString(current_date()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "cpp_func.pyx":13
+  /* "cpp_func.pyx":15
  *     return greet()
  * 
- * cpdef date_time():             # <<<<<<<<<<<<<<
+ * cpdef current_date_main():             # <<<<<<<<<<<<<<
  *     return current_date()
  * 
  */
@@ -1204,7 +1208,7 @@ static PyObject *__pyx_f_8cpp_func_date_time(CYTHON_UNUSED int __pyx_skip_dispat
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("cpp_func.date_time", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cpp_func.current_date_main", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -1213,28 +1217,28 @@ static PyObject *__pyx_f_8cpp_func_date_time(CYTHON_UNUSED int __pyx_skip_dispat
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_8cpp_func_3date_time(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_8cpp_func_3date_time(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_8cpp_func_3current_date_main(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_8cpp_func_3current_date_main(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("date_time (wrapper)", 0);
-  __pyx_r = __pyx_pf_8cpp_func_2date_time(__pyx_self);
+  __Pyx_RefNannySetupContext("current_date_main (wrapper)", 0);
+  __pyx_r = __pyx_pf_8cpp_func_2current_date_main(__pyx_self);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_8cpp_func_2date_time(CYTHON_UNUSED PyObject *__pyx_self) {
+static PyObject *__pyx_pf_8cpp_func_2current_date_main(CYTHON_UNUSED PyObject *__pyx_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("date_time", 0);
+  __Pyx_RefNannySetupContext("current_date_main", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_8cpp_func_date_time(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 13, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_8cpp_func_current_date_main(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 15, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -1243,7 +1247,183 @@ static PyObject *__pyx_pf_8cpp_func_2date_time(CYTHON_UNUSED PyObject *__pyx_sel
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("cpp_func.date_time", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cpp_func.current_date_main", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "cpp_func.pyx":18
+ *     return current_date()
+ * 
+ * cpdef saying_bye_main():             # <<<<<<<<<<<<<<
+ *     return saying_bye()
+ * 
+ */
+
+static PyObject *__pyx_pw_8cpp_func_5saying_bye_main(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_f_8cpp_func_saying_bye_main(CYTHON_UNUSED int __pyx_skip_dispatch) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("saying_bye_main", 0);
+
+  /* "cpp_func.pyx":19
+ * 
+ * cpdef saying_bye_main():
+ *     return saying_bye()             # <<<<<<<<<<<<<<
+ * 
+ * cpdef age_question_main():
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_PyBytes_FromString(saying_bye()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 19, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "cpp_func.pyx":18
+ *     return current_date()
+ * 
+ * cpdef saying_bye_main():             # <<<<<<<<<<<<<<
+ *     return saying_bye()
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("cpp_func.saying_bye_main", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_8cpp_func_5saying_bye_main(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_8cpp_func_5saying_bye_main(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("saying_bye_main (wrapper)", 0);
+  __pyx_r = __pyx_pf_8cpp_func_4saying_bye_main(__pyx_self);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_8cpp_func_4saying_bye_main(CYTHON_UNUSED PyObject *__pyx_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("saying_bye_main", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __pyx_f_8cpp_func_saying_bye_main(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 18, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("cpp_func.saying_bye_main", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "cpp_func.pyx":21
+ *     return saying_bye()
+ * 
+ * cpdef age_question_main():             # <<<<<<<<<<<<<<
+ *     return age_question()
+ */
+
+static PyObject *__pyx_pw_8cpp_func_7age_question_main(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_f_8cpp_func_age_question_main(CYTHON_UNUSED int __pyx_skip_dispatch) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("age_question_main", 0);
+
+  /* "cpp_func.pyx":22
+ * 
+ * cpdef age_question_main():
+ *     return age_question()             # <<<<<<<<<<<<<<
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_PyBytes_FromString(age_question()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 22, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "cpp_func.pyx":21
+ *     return saying_bye()
+ * 
+ * cpdef age_question_main():             # <<<<<<<<<<<<<<
+ *     return age_question()
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("cpp_func.age_question_main", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_8cpp_func_7age_question_main(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_8cpp_func_7age_question_main(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("age_question_main (wrapper)", 0);
+  __pyx_r = __pyx_pf_8cpp_func_6age_question_main(__pyx_self);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_8cpp_func_6age_question_main(CYTHON_UNUSED PyObject *__pyx_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("age_question_main", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __pyx_f_8cpp_func_age_question_main(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 21, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("cpp_func.age_question_main", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -1253,7 +1433,9 @@ static PyObject *__pyx_pf_8cpp_func_2date_time(CYTHON_UNUSED PyObject *__pyx_sel
 
 static PyMethodDef __pyx_methods[] = {
   {"greet_main", (PyCFunction)__pyx_pw_8cpp_func_1greet_main, METH_NOARGS, 0},
-  {"date_time", (PyCFunction)__pyx_pw_8cpp_func_3date_time, METH_NOARGS, 0},
+  {"current_date_main", (PyCFunction)__pyx_pw_8cpp_func_3current_date_main, METH_NOARGS, 0},
+  {"saying_bye_main", (PyCFunction)__pyx_pw_8cpp_func_5saying_bye_main, METH_NOARGS, 0},
+  {"age_question_main", (PyCFunction)__pyx_pw_8cpp_func_7age_question_main, METH_NOARGS, 0},
   {0, 0, 0, 0}
 };
 
@@ -1601,12 +1783,11 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_datetime, __pyx_t_1) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cpp_func.pyx":13
- *     return greet()
+  /* "cpp_func.pyx":21
+ *     return saying_bye()
  * 
- * cpdef date_time():             # <<<<<<<<<<<<<<
- *     return current_date()
- * 
+ * cpdef age_question_main():             # <<<<<<<<<<<<<<
+ *     return age_question()
  */
   __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
