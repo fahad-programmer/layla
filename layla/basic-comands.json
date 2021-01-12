@@ -7,12 +7,12 @@
     {
         "tag": "goodbye",
         "patterns": ["bye", "see you later", "good night"],
-        "responses": ["saying_bye().decode('utf-8')"]
+        "responses": ["saying_bye_main().decode('utf-8')"]
     },
     {
         "tag": "age",
         "patterns": ["how old", "what is my age", "age?"],
-        "responses": ["age_question().decode('utf-8')"]
+        "responses": ["age_question_main().decode('utf-8')"]
     },
     {
         "tag": "name",
