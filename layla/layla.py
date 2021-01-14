@@ -10,7 +10,8 @@ from tensorflow.keras.models import load_model
 
 from work.work import *
 
-from _core_components.core_func import *
+from _Core_Components.core_func import *
+from _Core_Components_Cpp.cpp_func import *
 
 lemmatizer = WordNetLemmatizer()
 intents = json.loads(open('layla/basic-comands.json').read())
