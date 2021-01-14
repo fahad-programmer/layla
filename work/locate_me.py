@@ -115,7 +115,23 @@ def love_calculator():
 
   print(response.text)
   
-love_calculator()
+# love_calculator()
+
+def url_shortner():
+  url = "https://url-shortener-service.p.rapidapi.com/shorten"
+
+  payload = "url=https://www.amazon.com"
+  headers = {
+      'content-type': "application/x-www-form-urlencoded",
+      'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+      'x-rapidapi-host': "url-shortener-service.p.rapidapi.com"
+      }
+
+  response = requests.request("POST", url, data=payload, headers=headers)
+
+  print(response.text)
+  
+url_shortner()
 
 class SkyScanner:
   
@@ -234,9 +250,9 @@ class world_info:
 class yahoo_finance:
   
   def main():
-    url = "https://apidojo-yahoo-finance-v1.p.rapidapi.com/auto-complete"
+    url = "https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/get-detail"
 
-    querystring = {"q":"tesla","region":"US"}
+    querystring = {"symbol":"TSLA","region":"US"}
 
     headers = {
         'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
