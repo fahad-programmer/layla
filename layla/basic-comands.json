@@ -27,7 +27,7 @@
     {
         "tag": "wikipedia",
         "patterns": ["wikipedia", "search wikipedia"],
-        "responses": ["wikipedia_search(query)"]
+        "responses": ["website_control.wikipedia_search(query)"]
     },
     {
         "tag": "google map",

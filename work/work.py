@@ -66,15 +66,15 @@ class website_control:
             speak("Do you want to search anything on google")
             query = take_command().lower()
             google_search(query)
-
-
-def wikipedia_search(query):
-    speak("Searching Wikipedia...")
-    query = query.replace("wikipedia", "")
-    results = wikipedia.summary(query, sentences=2)
-    speak("According To wikipedia")
-    print(results)
-    speak(results)
+        
+    @staticmethod
+    def wikipedia_search(query):
+        speak("Searching Wikipedia...")
+        query = query.replace("wikipedia", "")
+        results = wikipedia.summary(query, sentences=2)
+        speak("According To wikipedia")
+        print(results)
+        speak(results)
 
 
 def change_volume(query):
