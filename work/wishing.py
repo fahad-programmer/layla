@@ -33,8 +33,7 @@ def noon_commands():
 
 
 def afternoon_commands():
-    comm = ["Good Afternoon Sir!", "How was your launch today", "what would you take in dinner Sir",
-            "sir do you want to know your next schedule"]
+    comm = ["Good Afternoon Sir!", "How was your launch today", "what would you take in dinner Sir", "sir do you want to know your next schedule", "Sir yours meeting time is coming close so get ready fast."]
     afternoon = random.choice(comm)
 
     return afternoon

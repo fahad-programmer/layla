@@ -3,6 +3,19 @@ from work import wishing, keyboard_controller, sound, locate_me
 import pyperclip, webbrowser, wikipedia
 from layla.engine_components import speak, take_command
 
+"""
+What things i am working on:
+1. Scraping websites data
+2. Training model to learn new commands as user speak
+3. Working with OpenCV to work on vidoes and photos
+4. Woriking with Database:
+    1. Add all the data we scrap in database and delete that data after a week.
+    2. Layla will take data from the database, and data will be updated everyweek.
+    3. Working with Videos (play, sound, subtitles etc)
+5. Find APIs as many as i can and use them.
+
+Working with ❤/>
+"""
 
 def kali():
     speak("Hello World")
@@ -27,6 +40,7 @@ class website_control:
     
     For Example, Opening Websites, Search On Websites, Doing Some Stuff, Taking Data from the websites...
     
+    This class also consist of all the data which is being scraped from the internet.
     '''
     def __init__(self):
         return "Fuck You, You have no value nerd..."
@@ -81,8 +95,6 @@ def change_volume(query):
     sound_value = [int(s) for s in query.split() if s.isdigit()][0]
     sound.Sound.volume_set(int(sound_value))
     speak("Volume changed to " + str(sound_value) + "percent")
-
-
 
 def country_info(query):
     loc = locate_me.location_of_me()
