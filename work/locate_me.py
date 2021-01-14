@@ -101,6 +101,22 @@ w_data = weather_data(query)
 
 # print(w_data)
 
+def love_calculator():
+  url = "https://love-calculator.p.rapidapi.com/getPercentage"
+
+  querystring = {"fname":"Fahad Malik","sname":"Gulalay"}
+
+  headers = {
+      'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+      'x-rapidapi-host': "love-calculator.p.rapidapi.com"
+      }
+
+  response = requests.request("GET", url, headers=headers, params=querystring)
+
+  print(response.text)
+  
+love_calculator()
+
 class SkyScanner:
   
   def __init__(self):
@@ -170,3 +186,65 @@ class cocktail:
     """
     
 # cocktail.main()
+
+class world_info:
+  
+  def main():
+    # To Gel information of all the countries
+    url = "https://restcountries-v1.p.rapidapi.com/all"
+
+    headers = {
+        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+        'x-rapidapi-host': "restcountries-v1.p.rapidapi.com"
+        }
+
+    response = requests.request("GET", url, headers=headers)
+
+    print(response.text)
+  
+  def apis():
+    """
+    Filter by Country name
+    https://restcountries-v1.p.rapidapi.com/name/pakistan
+    
+    Filter by Country Code
+    https://restcountries-v1.p.rapidapi.com/alpha/pk
+    
+    Filter by Calling Code
+    https://restcountries-v1.p.rapidapi.com/callingcode/57
+    
+    Filter by Capital City
+    https://restcountries-v1.p.rapidapi.com/capital/islamabad
+    
+    Filter by Currency
+    https://restcountries-v1.p.rapidapi.com/currency/PKR
+    
+    Filter by Language
+    https://restcountries-v1.p.rapidapi.com/lang/ur
+    
+    Filter by Region
+    https://restcountries-v1.p.rapidapi.com/region/asia
+    
+    Filter by Subregion
+    https://restcountries-v1.p.rapidapi.com/subregion/western%2520asia
+    """
+    
+# world_info.main()
+
+class yahoo_finance:
+  
+  def main():
+    url = "https://apidojo-yahoo-finance-v1.p.rapidapi.com/auto-complete"
+
+    querystring = {"q":"tesla","region":"US"}
+
+    headers = {
+        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+        'x-rapidapi-host': "apidojo-yahoo-finance-v1.p.rapidapi.com"
+        }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    print(response.text)
+    
+# yahoo_finance.main()
