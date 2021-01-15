@@ -1,7 +1,6 @@
 import pyttsx3
 import speech_recognition as sr
 import datetime
-from textblob import TextBlob
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -28,8 +27,7 @@ def take_command():
     try:
         print("Recognizing...")
         query = r.recognize(audio)
-        text = TextBlob(query)
-        print(f"User said: {query.correct()}\n")
+        print(f"User said: {query}\n")
 
     except Exception as e:
         print(e)
