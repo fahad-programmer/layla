@@ -133,41 +133,89 @@ def url_shortner():
   
 # url_shortner()
 
-def currency_converter():
-  """
-  0:"SGD"
-  1:"MYR"
-  2:"EUR"
-  3:"USD"
-  4:"AUD"
-  5:"JPY"
-  6:"CNH"
-  7:"HKD"
-  8:"CAD"
-  9:"INR"
-  10:"DKK"
-  11:"GBP"
-  12:"RUB"
-  13:"NZD"
-  14:"MXN"
-  15:"IDR"
-  16:"TWD"
-  17:"THB"
-  18:"VND"
-  """
-  url = "https://currency-exchange.p.rapidapi.com/exchange"
+def youtube_to_mp3():
+  url = "https://coolguruji-youtube-to-mp3-download-v1.p.rapidapi.com/"
 
-  querystring = {"from":"SGD","to":"MYR","q":"1.0"}
+  querystring = {"id":"lF-jPBnZ098"}
 
   headers = {
-    
       'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-      'x-rapidapi-host': "currency-exchange.p.rapidapi.com"
+      'x-rapidapi-host': "coolguruji-youtube-to-mp3-download-v1.p.rapidapi.com"
       }
 
   response = requests.request("GET", url, headers=headers, params=querystring)
 
   print(response.text)
+
+def jokes():
+  url = "https://joke3.p.rapidapi.com/v1/joke"
+
+  headers = {
+      'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+      'x-rapidapi-host': "joke3.p.rapidapi.com"
+      }
+
+  response = requests.request("GET", url, headers=headers)
+
+  print(response.text)
+  
+def food_nutiriest():
+  url = "https://edamam-edamam-nutrition-analysis.p.rapidapi.com/api/nutrition-data"
+
+  querystring = {"ingr":"1 large apple"}
+
+  headers = {
+      'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+      'x-rapidapi-host': "edamam-edamam-nutrition-analysis.p.rapidapi.com"
+      }
+
+  response = requests.request("GET", url, headers=headers, params=querystring)
+
+  print(response.text)
+
+class currency_converter:
+  
+  def avail_curr():
+    url = "https://currency-converter5.p.rapidapi.com/currency/historical/2020-01-20"
+
+    querystring = {"from":"EUR","amount":"1","format":"json","to":"GBP"}
+
+    headers = {
+        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+        'x-rapidapi-host': "currency-converter5.p.rapidapi.com"
+        }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    print(response.text)
+    
+  def convert():
+    url = "https://currency-converter5.p.rapidapi.com/currency/convert"
+
+    querystring = {"format":"json","from":"AUD","to":"CAD","amount":"1"}
+
+    headers = {
+        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+        'x-rapidapi-host': "currency-converter5.p.rapidapi.com"
+        }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    print(response.text)
+    
+  def historical():
+    url = "https://currency-converter5.p.rapidapi.com/currency/historical/2020-01-20"
+
+    querystring = {"from":"EUR","amount":"1","format":"json","to":"GBP"}
+
+    headers = {
+        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+        'x-rapidapi-host': "currency-converter5.p.rapidapi.com"
+        }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    print(response.text)
 
 class SkyScanner:
   
@@ -404,6 +452,94 @@ class movie_entertain:
     headers = {
         'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
         'x-rapidapi-host': "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com"
+        }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    print(response.text)
+    
+class web_search():
+  """
+  This Function can search any data on the internet.
+  
+  1. Autocomplete = to complete the word by all the suitable words
+  2. ImageSearch = To search all the image related to query
+  3. SpellCheck = to check weather the spelling is right or not
+  4. WebSearch = Search the Web and show the results
+  5. Google News = To show all the google news according to the condition
+  
+  
+  """
+  def auto_complete():
+    url = "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/spelling/AutoComplete"
+
+    querystring = {"text":"do"}
+
+    headers = {
+        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+        'x-rapidapi-host': "contextualwebsearch-websearch-v1.p.rapidapi.com"
+        }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    print(response.text)
+    
+  def image_search():
+    url = "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI"
+
+    querystring = {"q":"taylor swift","pageNumber":"1","pageSize":"10","autoCorrect":"true"}
+
+    headers = {
+        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+        'x-rapidapi-host': "contextualwebsearch-websearch-v1.p.rapidapi.com"
+        }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    print(response.text)
+    
+  def spell_check():
+    url = "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/spelling/SpellCheck"
+
+    querystring = {"text":"teylor swiift"}
+
+    headers = {
+        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+        'x-rapidapi-host': "contextualwebsearch-websearch-v1.p.rapidapi.com"
+        }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    print(response.text)
+    
+  def web_search():
+    url = "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/WebSearchAPI"
+
+    querystring = {"q":"taylor swift","pageNumber":"1","pageSize":"10","autoCorrect":"true"}
+
+    headers = {
+        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+        'x-rapidapi-host': "contextualwebsearch-websearch-v1.p.rapidapi.com"
+        }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    print(response.text)
+    
+  def google_news():
+    url = "https://google-news1.p.rapidapi.com/topic-headlines"
+    # url = "https://google-news1.p.rapidapi.com/geolocation"
+    # url = "https://google-news1.p.rapidapi.com/search"
+    # url = "https://google-news1.p.rapidapi.com/top-headlines"
+
+    querystring = {"topic":"WORLD","country":"US","lang":"en"}
+    # querystring = {"geo":"Alabama","country":"US","lang":"en"}
+    # querystring = {"q":"Covid","country":"US","lang":"en"}
+    # querystring = {"country":"US","lang":"en"}
+
+    headers = {
+        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+        'x-rapidapi-host': "google-news1.p.rapidapi.com"
         }
 
     response = requests.request("GET", url, headers=headers, params=querystring)
