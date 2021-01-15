@@ -131,7 +131,43 @@ def url_shortner():
 
   print(response.text)
   
-url_shortner()
+# url_shortner()
+
+def currency_converter():
+  """
+  0:"SGD"
+  1:"MYR"
+  2:"EUR"
+  3:"USD"
+  4:"AUD"
+  5:"JPY"
+  6:"CNH"
+  7:"HKD"
+  8:"CAD"
+  9:"INR"
+  10:"DKK"
+  11:"GBP"
+  12:"RUB"
+  13:"NZD"
+  14:"MXN"
+  15:"IDR"
+  16:"TWD"
+  17:"THB"
+  18:"VND"
+  """
+  url = "https://currency-exchange.p.rapidapi.com/exchange"
+
+  querystring = {"from":"SGD","to":"MYR","q":"1.0"}
+
+  headers = {
+    
+      'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+      'x-rapidapi-host': "currency-exchange.p.rapidapi.com"
+      }
+
+  response = requests.request("GET", url, headers=headers, params=querystring)
+
+  print(response.text)
 
 class SkyScanner:
   
@@ -264,3 +300,112 @@ class yahoo_finance:
     print(response.text)
     
 # yahoo_finance.main()
+
+class number_facts():
+  """
+  An API for interesting facts about numbers. Provides trivia, math, date, and year facts about numbers.
+
+  For example, "5 is the number of platonic solids", "42 is the number of little squares forming the left side trail of Microsoft's Windows 98 logo", "February 27th is the day in 1964 that the government of Italy asks for help to keep the Leaning Tower of Pisa from toppling over"
+
+  1. Get fact by a date
+  2. Get fact about math by giving an years
+  3. Get random fact from any type
+  4. Get a trivia
+  5. Get a fact by year
+  
+  """
+  def date_fact():
+    url = "https://numbersapi.p.rapidapi.com/6/21/date"
+
+    querystring = {"fragment":"true","json":"true"}
+
+    headers = {
+        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+        'x-rapidapi-host': "numbersapi.p.rapidapi.com"
+        }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    print(response.text)
+    
+  def math_fact():
+    url = "https://numbersapi.p.rapidapi.com/1729/math"
+
+    querystring = {"fragment":"true","json":"true"}
+
+    headers = {
+        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+        'x-rapidapi-host': "numbersapi.p.rapidapi.com"
+        }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    print(response.text)
+    
+  def random_number_fact():
+    url = "https://numbersapi.p.rapidapi.com/random/trivia"
+
+    querystring = {"max":"20","fragment":"true","min":"10","json":"true"}
+
+    headers = {
+        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+        'x-rapidapi-host': "numbersapi.p.rapidapi.com"
+        }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    print(response.text)
+    
+  def trivia_fact():
+    url = "https://numbersapi.p.rapidapi.com/42/trivia"
+
+    querystring = {"fragment":"true","notfound":"floor","json":"true"}
+
+    headers = {
+        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+        'x-rapidapi-host': "numbersapi.p.rapidapi.com"
+        }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    print(response.text)
+    
+  def year_fact():
+    url = "https://numbersapi.p.rapidapi.com/1492/year"
+
+    querystring = {"fragment":"true","json":"true"}
+
+    headers = {
+        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+        'x-rapidapi-host': "numbersapi.p.rapidapi.com"
+        }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    print(response.text)
+    
+class movie_entertain:
+  
+  def look_by_name():
+    url = "https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup"
+
+    querystring = {"term":"bojack","country":"uk"}
+
+    headers = {
+        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+        'x-rapidapi-host': "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com"
+        }
+    
+  def look_by_id():
+    url = "https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/idlookup"
+
+    querystring = {"source_id":"tt3398228","source":"imdb","country":"us"}
+
+    headers = {
+        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+        'x-rapidapi-host': "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com"
+        }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    print(response.text)
