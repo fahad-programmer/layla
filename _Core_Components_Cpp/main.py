@@ -18,9 +18,14 @@ def current_date():
     return main_date
 
 
-def addition(query):
+def current_time_main():
+    now = datetime.datetime.now()
+    main_time = f"Time Right Now is {now.strftime('%H:%M:%S')}"
+    return main_time
+
+
+def addition_main(query):
     string_numbers = [int(s) for s in query.split() if s.isdigit()]
     add_numbers = sum(string_numbers)
-    return_answer = f"The Result Of The Addition Is {add_numbers}".encode(
-        'UTF-8')
+    return_answer = f"The Result Of The Addition Is {add_numbers}"
     return return_answer
