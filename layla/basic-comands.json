@@ -62,6 +62,31 @@
     {
         "tag": "Date",
         "patterns" : ["what is the date", "tell me the date", "what is the day", "what is the month"],
-        "responses": ["date_time().decode('utf-8')"] 
+        "responses": ["current_date_main().decode('utf-8')"] 
+    },
+    {
+        "tag": "addition",
+        "patterns": ["please add following", "add these", "do addition", "addition", "what is the sum of", "find sum", "find sum of following"],
+        "responses": ["addition(query).decode('utf-8')"]
+    },
+    {
+        "tag": "subtraction",
+        "patterns": ["please subtract following", "subtract these", "do subtraction", "subtraction", "what is the subtract of", "minus these", "find minus of following"],
+        "responses": ["subtract(query).decode('utf-8')"]
+    },
+    {
+        "tag": "multiplication",
+        "patterns": ["please multiply following", "multiply these", "do multiplication", "miltiplication", "what is the multiply of", "multiply these", "find multiple of following"],
+        "responses": ["multiply(query).decode('utf-8')"]
+    },
+    {
+        "tag": "divide",
+        "patterns": ["please divide following", "divide these", "do divide", "divide", "what is the divide of", "divide these", "find divide of following"],
+        "responses": ["divide(query).decode('utf-8')"]
+    },
+    {
+        "tag": "system information",
+        "patterns": ["show the system information", "system information", "what are current system spec", "information about current spec"],
+        "responses": ["system_info()"]
     }
 ]}

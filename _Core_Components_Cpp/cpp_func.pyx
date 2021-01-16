@@ -10,6 +10,10 @@ cdef extern from "functions/funcs.cpp":
      char *age_question()
      char *saying_thanks()
 
+cdef extern from  "functions/system_function.cpp":
+    void open_programs(string query)
+    void system_information()
+
 
 cdef extern from "functions/datetime.cpp":
     char *current_date()
@@ -65,4 +69,12 @@ cpdef string current_time():
 cpdef string assistant_name():
     cdef string name = "My name is, Layla meaning night".encode('UTF-8')
     return name
+    
+cpdef system_info():
+    return system_information()
+
+cpdef open_system_programs(query):
+    query = query.replace("open ", "")
+    cdef string main_return = query.encode('UTF-8')
+    return open_programs(main_return)
     

@@ -3,6 +3,8 @@ import json
 import pickle
 import numpy as np
 
+from numba import jit
+
 import nltk
 from nltk.stem import WordNetLemmatizer
 import tensorflow as tf
@@ -83,10 +85,19 @@ model.compile(loss='categorical_crossentropy',
               optimizer=sgd,
               metrics=["accuracy"])
 
-hist = model.fit(np.array(train_x),
-                 np.array(train_y),
-                 epochs=20000,
-                 batch_size=5,
-                 verbose=1)
-model.save('layla_model.h5', hist)
-print("Done")
+
+@jit
+def train_data():
+    """
+    The Function That Will Train The Model.
+    """
+    model.save(
+        'layla_model.h5',
+        model.fit(np.array(train_x),
+                  np.array(train_y),
+                  epochs=5000,
+                  batch_size=5,
+                  verbose=1))
+
+
+train_data()
