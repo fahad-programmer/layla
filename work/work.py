@@ -2,7 +2,7 @@ import re
 from work import wishing, keyboard_controller, sound, locate_me
 import pyperclip, webbrowser, wikipedia
 from layla.engine_components import speak, take_command
-
+from functools import lru_cache
 """
 What things i am working on:
 1. Scraping websites data
@@ -16,6 +16,7 @@ What things i am working on:
 
 Working with ❤/>
 """
+
 
 def kali():
     speak("Hello World")
@@ -80,15 +81,14 @@ class website_control:
             speak("Do you want to search anything on google")
             query = take_command().lower()
             google_search(query)
-        
+
     @staticmethod
     def wikipedia_search(query):
         speak("Searching Wikipedia...")
         query = query.replace("wikipedia", "")
         results = wikipedia.summary(query, sentences=2)
         speak("According To wikipedia")
-        print(results)
-        speak(results)
+        return results
 
 
 def change_volume(query):
@@ -96,29 +96,31 @@ def change_volume(query):
     sound.Sound.volume_set(int(sound_value))
     speak("Volume changed to " + str(sound_value) + "percent")
 
+
+@lru_cache()
 def country_info(query):
     loc = locate_me.location_of_me()
     if "ip" in query:
-        speak(f"The ip of this PC is {loc['ip']}")
+        return f"The ip of this PC is {loc['ip']}"
     elif "city" in query:
-        speak(f"The city name is {loc['city']}")
+        return f"The city name is {loc['city']}"
     elif "continent" in query:
-        speak(f"The name of continent is {loc['continent_name']}")
+        return f"The name of continent is {loc['continent_name']}"
     elif "zip" in query:
-        speak(f"The city zip code is {loc['zip']}")
+        return f"The city zip code is {loc['zip']}"
     # More Coming Soon
 
 
+@lru_cache()
 def weather_info(query):
     loc = locate_me.w_data
     if "temperature" in query:
         temp = ("{}°C".format(loc['main']['temp']))
-        speak(temp)
+        return temp
     elif "wind" in query:
         speed = loc['wind']['speed']
-        speak(f"{speed} meter per second")
+        return f"{speed} meter per second"
     elif "weather" in query:
         weather = loc['weather'][0]['main']
-        speak(f"Sir it's {weather}")
+        return f"Sir it's {weather}"
     # More Coming Soon
-

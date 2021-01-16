@@ -17,7 +17,7 @@
     {
         "tag": "name",
         "patterns": ["what is your name", "what should i call you"],
-        "responses": ["assistant_name()"]
+        "responses": ["assistant_name().decode('utf-8')"]
     },
     {
         "tag": "time",
