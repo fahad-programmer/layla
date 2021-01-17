@@ -41,8 +41,9 @@ cpdef age_question_main():
     return age_question()
 
 cpdef string addition(query):
-    cdef list string_numbers = float(re.findall(r"[-+]?\d*\.\d|\d+", query))
-    cdef double add_numbers = sum(string_numbers)
+    cdef list string_numbers = re.findall(r"[-+]?\d*\.\d|\d+", query)
+    cdef list main_list = list(map(int, string_numbers))
+    cdef double add_numbers = sum(main_list)
     cdef string return_answer = f"The Result Of The Addition Is {add_numbers}".encode('UTF-8')
     return return_answer
 
@@ -51,8 +52,9 @@ cpdef saying_thanks_main():
     return saying_thanks()
 
 cpdef string subtract(query):
-    cdef list string_numbers = float(re.findall(r"[-+]?\d*\.\d|\d+", query))
-    cdef double subtract_numbers = reduce(operator.sub, string_numbers)
+    cdef list string_numbers = re.findall(r"[-+]?\d*\.\d|\d+", query)
+    cdef list main_list = list(map(int, string_numbers))
+    cdef double subtract_numbers = reduce(operator.sub, main_list)
     cdef string return_answer = f"The Result Of The Subtraction is {subtract_numbers}".encode('UTF-8')
     return return_answer 
 
@@ -64,8 +66,9 @@ cpdef string divide(query):
     return return_answer
 
 cpdef string multiply(query):
-    cdef list string_numbers = float(re.findall(r"[-+]?\d*\.\d|\d+", query))
-    cdef double multiply_numbers = reduce(operator.mul, string_numbers)
+    cdef list string_numbers = re.findall(r"[-+]?\d*\.\d|\d+", query)
+    cdef list main_list = list(map(int, string_numbers))
+    cdef double multiply_numbers = reduce(operator.mul, main_list)
     cdef string return_answer = f"The Result Of The Calculation Is {multiply_numbers}".encode('UTF-8')
     return return_answer
 

@@ -1,5 +1,5 @@
 import re
-from work import wishing, keyboard_controller, sound, locate_me
+from work import wishing, keyboard_controller, sound, locate_me, main_api
 import pyperclip, webbrowser, wikipedia
 from layla.engine_components import speak, take_command
 from functools import lru_cache
@@ -16,6 +16,9 @@ What things i am working on:
 
 Working with ❤/>
 """
+
+#App Id
+app_id = 'A6JUQ4-JEAGJ3A583'
 
 
 def kali():
@@ -124,3 +127,11 @@ def weather_info(query):
         weather = loc['weather'][0]['main']
         return f"Sir it's {weather}"
     # More Coming Soon
+
+
+def answer_engine(query):
+    main_query = query.replace(" ", "+")
+    api = main_api.waAPI(app_id)
+    spoken = api.spoken_results(i=main_query)
+    return spoken
+

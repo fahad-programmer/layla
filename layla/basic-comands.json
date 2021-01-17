@@ -88,5 +88,15 @@
         "tag": "system information",
         "patterns": ["show the system information", "system information", "what are current system spec", "information about current spec"],
         "responses": ["system_info()"]
+    },
+    {
+        "tag": "Simple Answer",
+        "patterns":["what is", "who is", "who are", "who is the", "how many", "how much", "what are", "when is"],
+        "responses":["answer_engine(query)"]
+    },
+    {
+        "tag":"mathematics",
+        "patterns":["find sin of", "find cos", "find square root of", "round off the following", "find tan of", "find log off", "find the", "sin", "cos", "tan", "square root", "round"],
+        "responses":["maths_func(query).decode('utf-8')"]
     }
 ]}
