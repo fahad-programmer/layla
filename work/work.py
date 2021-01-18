@@ -100,13 +100,20 @@ def country_info(query):
     loc = locate_me.location_of_me()
     if "ip" in query:
         speak(f"The ip of this PC is {loc['ip']}")
+    elif "continent code" in query:
+        speak(f"The Continent code is {loc['continent_code']}")
+    elif "country code" in query:
+        speak(f"The Country code is {loc['country_code']}")
+    elif "region code" in query:
+        speak(f"The Region code is {loc['region_code']}")
+    elif "region" in query:
+        speak(f"The region name is {loc['region_name']}")
     elif "city" in query:
         speak(f"The city name is {loc['city']}")
     elif "continent" in query:
         speak(f"The name of continent is {loc['continent_name']}")
-    elif "zip" in query:
-        speak(f"The city zip code is {loc['zip']}")
-    # More Coming Soon
+    elif "country" in query:
+        speak(f"The name of continent is {loc['continent_name']}")
 
 
 def weather_info(query):
@@ -114,11 +121,27 @@ def weather_info(query):
     if "temperature" in query:
         temp = ("{}°C".format(loc['main']['temp']))
         speak(temp)
+    if "minimum temperature" in query:
+        temp = ("{}°C".format(loc['main']['temp_min']))
+        speak(temp)
+    if "maximum temperature" in query:
+        temp = ("{}°C".format(loc['main']['temp_max']))
+        speak(temp)
+    if "pressure" in query:
+        pre = ("{} pascal".format(loc['main']['pressure']))
+        speak(pre)
+    if "humidity" in query:
+        pre = ("today humidity level is {}".format(loc['main']['humidity']))
+        speak(pre)
     elif "wind" in query:
         speed = loc['wind']['speed']
         speak(f"{speed} meter per second")
     elif "weather" in query:
         weather = loc['weather'][0]['main']
         speak(f"Sir it's {weather}")
+    elif "coordinates" in query:
+        latitude = loc['coord']['lat']
+        longitude = loc['coord'][['lon']]
+        speak(f"You are located on latitude {latitude} and longitude {longitude}")
     # More Coming Soon
 
