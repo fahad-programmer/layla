@@ -73,10 +73,10 @@ w_data = weather_data(query)
 
 # print(w_data)
 
-def love_calculator():
+def love_calculator(f_name, s_name):
   url = "https://love-calculator.p.rapidapi.com/getPercentage"
 
-  querystring = {"fname":"Fahad Malik","sname":"Gulalay"}
+  querystring = {"fname":f_name,"sname":s_name}
 
   headers = {
       'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
@@ -85,14 +85,14 @@ def love_calculator():
 
   response = requests.request("GET", url, headers=headers, params=querystring)
 
-  print(response.text)
-  
-# love_calculator()
+  return(response.text)
 
-def url_shortner():
+# print(love_calculator())
+
+def url_shortner(copy_url):
   url = "https://url-shortener-service.p.rapidapi.com/shorten"
 
-  payload = "url=https://www.amazon.com"
+  payload = "url=" + copy_url
   headers = {
       'content-type': "application/x-www-form-urlencoded",
       'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
@@ -101,9 +101,10 @@ def url_shortner():
 
   response = requests.request("POST", url, data=payload, headers=headers)
 
-  print(response.text)
+  yahoo = response.json()
+  return(yahoo.get("result_url", "Not Found!"))
   
-# url_shortner()
+print(url_shortner("https://youtube.com"))
 
 def youtube_to_mp3():
   url = "https://coolguruji-youtube-to-mp3-download-v1.p.rapidapi.com/"

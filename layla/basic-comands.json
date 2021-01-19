@@ -85,6 +85,11 @@
         "responses": ["divide(query).decode('utf-8')"]
     },
     {
+        "tag": "Url Shorten",
+        "patterns": ["Short the url from my clipboard", "short my url", "short this url"],
+        "responses": ["basic_functions.urlshorten(query)"]
+    },
+    {
         "tag": "system information",
         "patterns": ["show the system information", "system information", "what are current system spec", "information about current spec"],
         "responses": ["system_info()"]
