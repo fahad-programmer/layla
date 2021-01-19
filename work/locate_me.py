@@ -2,7 +2,7 @@ import requests
 import json
 import socket
 from requests import get
-
+import clipboard, urllib.request
 
 def location_of_me():
     """
@@ -104,21 +104,33 @@ def url_shortner(copy_url):
   yahoo = response.json()
   return(yahoo.get("result_url", "Not Found!"))
   
-print(url_shortner("https://youtube.com"))
+# print(url_shortner("https://youtube.com"))
 
-def youtube_to_mp3():
-  url = "https://coolguruji-youtube-to-mp3-download-v1.p.rapidapi.com/"
+def youtube_to_mp3(f_str):
+  url = "https://youtube-to-mp32.p.rapidapi.com/yt_to_mp3"
 
-  querystring = {"id":"lF-jPBnZ098"}
+  querystring = {"video_id":str(f_str)}
 
   headers = {
       'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-      'x-rapidapi-host': "coolguruji-youtube-to-mp3-download-v1.p.rapidapi.com"
+      'x-rapidapi-host': "youtube-to-mp32.p.rapidapi.com"
       }
 
   response = requests.request("GET", url, headers=headers, params=querystring)
 
-  print(response.text)
+  yahoo = response.json()
+  return(yahoo.get("Download_url", "Not Found!"))
+
+# print(youtube_to_mp3("aZla1ttZHaw"))
+
+def youtube_mp3(query):
+        # 50 per day
+        url = clipboard.paste()
+        print(url)
+        finale = url_shortner(url)
+        print("Downloading mp3 file of video")
+        urllib.request.urlopen(finale)
+youtube_mp3("downdload the mp3 video")
 
 def jokes():
   url = "https://joke3.p.rapidapi.com/v1/joke"

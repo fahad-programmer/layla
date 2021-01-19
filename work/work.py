@@ -1,7 +1,7 @@
 import re
 from work import wishing, keyboard_controller, sound, locate_me
 import pyperclip, webbrowser, wikipedia
-import clipboard
+import clipboard, urllib.request
 from layla.engine_components import speak, take_command
 
 """
@@ -161,4 +161,12 @@ class basic_functions:
         url = clipboard.paste()     # Note: Url Must start from https://
         finale = locate_me.url_shortner(url)
         clipboard.copy(finale)
-        speak(f"url successfully shorten, and copid to your clipboard")
+        speak(f"url successfully shorten, and copied to your clipboard")
+    
+    def youtube_mp3(query):
+        # 50 per day
+        url = clipboard.paste()
+        finale = locate_me.url_shortner(url)
+        speak("Downloading mp3 file of video")
+        urllib.request.urlopen(finale)
+        

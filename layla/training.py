@@ -23,7 +23,7 @@ lemmatizer = WordNetLemmatizer()
 tf.autograph.set_verbosity(1)
 
 # Import JSON file from the directory
-intents = json.loads(open('basic-comands.json').read())
+intents = json.loads(open('layla/basic-comands.json').read())
 
 words = []
 classes = []
@@ -48,8 +48,8 @@ words = sorted(set(words))
 
 classes = sorted(set(classes))
 
-pickle.dump(words, open('words.pkl', 'wb'))
-pickle.dump(classes, open('classes.pkl', 'wb'))
+pickle.dump(words, open('layla/words.pkl', 'wb'))
+pickle.dump(classes, open('layla/classes.pkl', 'wb'))
 
 training = []
 output_empty = [0] * len(classes)
@@ -92,7 +92,7 @@ def train_data():
     The Function That Will Train The Model.
     """
     model.save(
-        'layla_model.h5',
+        'layla/layla_model.h5',
         model.fit(np.array(train_x),
                   np.array(train_y),
                   epochs=5000,
