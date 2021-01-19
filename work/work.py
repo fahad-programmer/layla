@@ -1,6 +1,7 @@
 import re
 from work import wishing, keyboard_controller, sound, locate_me, main_api
 import pyperclip, webbrowser, wikipedia
+import clipboard, urllib.request
 from layla.engine_components import speak, take_command
 from functools import lru_cache
 """
@@ -104,14 +105,21 @@ def change_volume(query):
 def country_info(query):
     loc = locate_me.location_of_me()
     if "ip" in query:
-        return f"The ip of this PC is {loc['ip']}"
+        speak(f"The ip of this PC is {loc['ip']}")
+    elif "continent code" in query:
+        speak(f"The Continent code is {loc['continent_code']}")
+    elif "country code" in query:
+        speak(f"The Country code is {loc['country_code']}")
+    elif "region code" in query:
+        speak(f"The Region code is {loc['region_code']}")
+    elif "region" in query:
+        speak(f"The region name is {loc['region_name']}")
     elif "city" in query:
         return f"The city name is {loc['city']}"
     elif "continent" in query:
-        return f"The name of continent is {loc['continent_name']}"
-    elif "zip" in query:
-        return f"The city zip code is {loc['zip']}"
-    # More Coming Soon
+        speak(f"The name of continent is {loc['continent_name']}")
+    elif "country" in query:
+        speak(f"The name of continent is {loc['country_name']}")
 
 
 @lru_cache()
@@ -119,13 +127,54 @@ def weather_info(query):
     loc = locate_me.w_data
     if "temperature" in query:
         temp = ("{}°C".format(loc['main']['temp']))
-        return temp
+        speak(temp)
+    if "minimum temperature" in query:
+        temp = ("{}°C".format(loc['main']['temp_min']))
+        speak(temp)
+    if "maximum temperature" in query:
+        temp = ("{}°C".format(loc['main']['temp_max']))
+        speak(temp)
+    if "pressure" in query:
+        pre = ("{} pascal".format(loc['main']['pressure']))
+        speak(pre)
+    if "humidity" in query:
+        pre = ("today humidity level is {}".format(loc['main']['humidity']))
+        speak(pre)
     elif "wind" in query:
         speed = loc['wind']['speed']
-        return f"{speed} meter per second"
+        speak(f"{speed} meter per second")
     elif "weather" in query:
         weather = loc['weather'][0]['main']
-        return f"Sir it's {weather}"
+        speak(f"Sir it's {weather}")
+    elif "coordinates" in query:
+        latitude = loc['coord']['lat']
+        longitude = loc['coord'][['lon']]
+        speak(f"You are located on latitude {latitude} and longitude {longitude}")
+    
+class basic_functions:
+    
+    def lovecal(query):
+        # Calculate love percentage between Imran Akbar and Laiba Sadaf
+        f_split = query.split(' between ')
+        f_split.pop(0)
+        query = query.join(f_split)
+        s_split = query.split(' and ')
+        locate_me.love_calculator(s_split[0], s_split[1])
+        # API didn't work, developing a new scratch function
+        
+    def urlshorten(query):
+        # Short the url from my clipboard
+        url = clipboard.paste()     # Note: Url Must start from https://
+        finale = locate_me.url_shortner(url)
+        clipboard.copy(finale)
+        speak(f"url successfully shorten, and copied to your clipboard")
+    
+    def youtube_mp3(query):
+        # 50 per day
+        url = clipboard.paste()
+        finale = locate_me.url_shortner(url)
+        speak("Downloading mp3 file of video")
+        urllib.request.urlopen(finale)
     # More Coming Soon
 
 

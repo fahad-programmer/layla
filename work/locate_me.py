@@ -2,7 +2,7 @@ import requests
 import json
 import socket
 from requests import get
-
+import clipboard, urllib.request
 
 def location_of_me():
     """
@@ -35,34 +35,6 @@ def location_of_me():
         "country_flag_emoji_unicode": "U+1F1FA U+1F1F8",
         "calling_code": "1",
         "is_eu": false
-      },
-      "time_zone": {
-        "id": "America/Los_Angeles",
-        "current_time": "2018-03-29T07:35:08-07:00",
-        "gmt_offset": -25200,
-        "code": "PDT",
-        "is_daylight_saving": true
-      },
-      "currency": {
-        "code": "USD",
-        "name": "US Dollar",
-        "plural": "US dollars",
-        "symbol": "$",
-        "symbol_native": "$"
-      },
-      "connection": {
-        "asn": 25876,
-        "isp": "Los Angeles Department of Water & Power"
-      },
-      "security": {
-        "is_proxy": false,
-        "proxy_type": null,
-        "is_crawler": false,
-        "crawler_name": null,
-        "crawler_type": null,
-        "is_tor": false,
-        "threat_level": "low",
-        "threat_types": null
       }
     }
     """
@@ -78,7 +50,7 @@ def location_of_me():
 
 
 # cat = location_of_me()
-# print(cat['location']['languages'][0]['native'])
+# print(cat)
 
 
 # Weather Data
@@ -101,10 +73,10 @@ w_data = weather_data(query)
 
 # print(w_data)
 
-def love_calculator():
+def love_calculator(f_name, s_name):
   url = "https://love-calculator.p.rapidapi.com/getPercentage"
 
-  querystring = {"fname":"Fahad Malik","sname":"Gulalay"}
+  querystring = {"fname":f_name,"sname":s_name}
 
   headers = {
       'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
@@ -113,14 +85,14 @@ def love_calculator():
 
   response = requests.request("GET", url, headers=headers, params=querystring)
 
-  print(response.text)
-  
-# love_calculator()
+  return(response.text)
 
-def url_shortner():
+# print(love_calculator())
+
+def url_shortner(copy_url):
   url = "https://url-shortener-service.p.rapidapi.com/shorten"
 
-  payload = "url=https://www.amazon.com"
+  payload = "url=" + copy_url
   headers = {
       'content-type': "application/x-www-form-urlencoded",
       'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
@@ -129,23 +101,36 @@ def url_shortner():
 
   response = requests.request("POST", url, data=payload, headers=headers)
 
-  print(response.text)
+  yahoo = response.json()
+  return(yahoo.get("result_url", "Not Found!"))
   
-# url_shortner()
+# print(url_shortner("https://youtube.com"))
 
-def youtube_to_mp3():
-  url = "https://coolguruji-youtube-to-mp3-download-v1.p.rapidapi.com/"
+def youtube_to_mp3(f_str):
+  url = "https://youtube-to-mp32.p.rapidapi.com/yt_to_mp3"
 
-  querystring = {"id":"lF-jPBnZ098"}
+  querystring = {"video_id":str(f_str)}
 
   headers = {
       'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-      'x-rapidapi-host': "coolguruji-youtube-to-mp3-download-v1.p.rapidapi.com"
+      'x-rapidapi-host': "youtube-to-mp32.p.rapidapi.com"
       }
 
   response = requests.request("GET", url, headers=headers, params=querystring)
 
-  print(response.text)
+  yahoo = response.json()
+  return(yahoo.get("Download_url", "Not Found!"))
+
+# print(youtube_to_mp3("aZla1ttZHaw"))
+
+def youtube_mp3(query):
+        # 50 per day
+        url = clipboard.paste()
+        print(url)
+        finale = url_shortner(url)
+        print("Downloading mp3 file of video")
+        urllib.request.urlopen(finale)
+youtube_mp3("downdload the mp3 video")
 
 def jokes():
   url = "https://joke3.p.rapidapi.com/v1/joke"
@@ -167,6 +152,20 @@ def food_nutiriest():
   headers = {
       'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
       'x-rapidapi-host': "edamam-edamam-nutrition-analysis.p.rapidapi.com"
+      }
+
+  response = requests.request("GET", url, headers=headers, params=querystring)
+
+  print(response.text)
+  
+def dictionary():
+  url = "https://mashape-community-urban-dictionary.p.rapidapi.com/define"
+
+  querystring = {"term":"wat"}
+
+  headers = {
+      'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+      'x-rapidapi-host': "mashape-community-urban-dictionary.p.rapidapi.com"
       }
 
   response = requests.request("GET", url, headers=headers, params=querystring)
@@ -545,3 +544,144 @@ class web_search():
     response = requests.request("GET", url, headers=headers, params=querystring)
 
     print(response.text)
+
+
+class music_Cat:
+  """
+  This class consists of all the function which are associated with Music.
+  
+  It can be searching lyrics, billboard ranking, search for a song, or complete a song name.
+  """
+  def lyrics():
+    url = "https://sridurgayadav-chart-lyrics-v1.p.rapidapi.com/apiv1.asmx/SearchLyricDirect"
+
+    querystring = {"artist":"michael jackson","song":"bad"}
+
+    headers = {
+        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+        'x-rapidapi-host': "sridurgayadav-chart-lyrics-v1.p.rapidapi.com"
+        }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    print(response.text)
+    
+  def billboard():
+    url = "https://billboard-api2.p.rapidapi.com/hot-100"
+    # url = "https://billboard-api2.p.rapidapi.com/artist-100"
+    # url = "https://billboard-api2.p.rapidapi.com/billboard-200"
+
+    querystring = {"date":"2019-05-11","range":"1-10"}
+
+    headers = {
+        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+        'x-rapidapi-host': "billboard-api2.p.rapidapi.com"
+        }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    print(response.text)
+    
+  def complete_song():
+    url = "https://shazam.p.rapidapi.com/auto-complete"
+
+    querystring = {"term":"kiss the","locale":"en-US"}
+
+    headers = {
+        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+        'x-rapidapi-host': "shazam.p.rapidapi.com"
+        }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    print(response.text)
+    
+  def search():
+    url = "https://shazam.p.rapidapi.com/search"
+
+    querystring = {"term":"kiss the rain","locale":"en-US","offset":"0","limit":"5"}
+
+    headers = {
+        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+        'x-rapidapi-host': "shazam.p.rapidapi.com"
+        }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    print(response.text)
+    
+class goe_data:
+  """
+  
+  """
+  def cities():
+    """
+    Following are some of the functions which can be done in this function.
+    
+    1. Search Information about cith by wikidataid
+    url = "https://wft-geo-db.p.rapidapi.com/v1/geo/cities/Q60"
+    
+    2. Nearby cities
+    url = "https://wft-geo-db.p.rapidapi.com/v1/geo/cities/Q60/nearbyCities"
+    
+    3. City Time 
+    url = "https://wft-geo-db.p.rapidapi.com/v1/geo/cities/Q60/time"
+    
+    
+    """
+    url = "https://wft-geo-db.p.rapidapi.com/v1/geo/cities"
+    
+    querystring = {"limit":"10","countryIds":"PK"}
+
+    headers = {
+        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+        'x-rapidapi-host': "wft-geo-db.p.rapidapi.com"
+        }
+
+    response = requests.request("GET", url, headers=headers)
+
+    print(response.text)
+    
+  def countries():
+    """
+    Following are some of the functions which can be done in this function.
+    
+    1. Search Information about Country by Countrycode
+    url = "https://wft-geo-db.p.rapidapi.com/v1/geo/countries/US"
+    
+    2. Search Country region
+    url = "https://wft-geo-db.p.rapidapi.com/v1/geo/countries/US/regions"
+    
+    3. And region Detail
+    url = "https://wft-geo-db.p.rapidapi.com/v1/geo/countries/US/regions/CA"
+    
+    4. And Region Cities
+    url = "https://wft-geo-db.p.rapidapi.com/v1/geo/countries/US/regions/CA/cities"
+    """
+    url = "https://wft-geo-db.p.rapidapi.com/v1/geo/countries"
+
+    querystring = {"currencyCode":"PKR"}
+
+    headers = {
+        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+        'x-rapidapi-host': "wft-geo-db.p.rapidapi.com"
+        }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    print(response.text)
+    
+  def city_distance():
+    url = "https://wft-geo-db.p.rapidapi.com/v1/geo/cities/Q1362/distance"
+
+    querystring = {"fromCityId":"Q1362","distanceUnit":"KM","toCityId":"Q8660"}
+
+    headers = {
+        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+        'x-rapidapi-host': "wft-geo-db.p.rapidapi.com"
+        }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    print(response.text) 
+

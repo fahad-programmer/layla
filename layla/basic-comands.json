@@ -41,7 +41,7 @@
     },
     {
         "tag": "weather",
-        "patterns": ["weather", "how is the weather", "what is hte temperature", "temperature", "city temperature", "wind speed", "speed of wind"],
+        "patterns": ["weather", "how is the weather", "what is the temperature", "temperature", "city temperature", "wind speed", "speed of wind", "what is the min temperature", "what is the max temperature", "what is the atmospheric pressure", "pressure of atmosphere", "what is the humidity level", "what are my coordinates", "my coordinates"],
         "responses": ["weather_info(query)"]
     },
     {
@@ -83,6 +83,11 @@
         "tag": "divide",
         "patterns": ["please divide following", "divide these", "do divide", "divide", "what is the divide of", "divide these", "find divide of following"],
         "responses": ["divide(query).decode('utf-8')"]
+    },
+    {
+        "tag": "Url Shorten",
+        "patterns": ["Short the url from my clipboard", "short my url", "short this url"],
+        "responses": ["basic_functions.urlshorten(query)"]
     },
     {
         "tag": "system information",
