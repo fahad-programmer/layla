@@ -1,9 +1,9 @@
-from cpp_func import system_info, addition, open_system_programs
+def query_splitting(query):
+    main_query = query.split("and")[0]
+    second_query = query.split("and")[1]
+    print(main_query)
+    print(second_query)
+    return main_query, second_query
 
-main = 'Please Add 5, 9, 8'
 
-print(addition(main))
-
-system_info()
-
-open_system_programs('open vlc')
+print(query_splitting("Open Youtube and Search Atif"))

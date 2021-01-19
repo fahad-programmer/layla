@@ -1,9 +1,9 @@
 import re
-from work import wishing, keyboard_controller, sound, locate_me
+from work import wishing, keyboard_controller, sound, locate_me, main_api
 import pyperclip, webbrowser, wikipedia
 import clipboard, urllib.request
 from layla.engine_components import speak, take_command
-
+from functools import lru_cache
 """
 What things i am working on:
 1. Scraping websites data
@@ -17,6 +17,10 @@ What things i am working on:
 
 Working with ❤/>
 """
+
+#App Id
+app_id = 'A6JUQ4-JEAGJ3A583'
+
 
 def kali():
     speak("Hello World")
@@ -81,15 +85,14 @@ class website_control:
             speak("Do you want to search anything on google")
             query = take_command().lower()
             google_search(query)
-        
+
     @staticmethod
     def wikipedia_search(query):
         speak("Searching Wikipedia...")
         query = query.replace("wikipedia", "")
         results = wikipedia.summary(query, sentences=2)
         speak("According To wikipedia")
-        print(results)
-        speak(results)
+        return results
 
 
 def change_volume(query):
@@ -97,6 +100,8 @@ def change_volume(query):
     sound.Sound.volume_set(int(sound_value))
     speak("Volume changed to " + str(sound_value) + "percent")
 
+
+@lru_cache()
 def country_info(query):
     loc = locate_me.location_of_me()
     if "ip" in query:
@@ -110,13 +115,14 @@ def country_info(query):
     elif "region" in query:
         speak(f"The region name is {loc['region_name']}")
     elif "city" in query:
-        speak(f"The city name is {loc['city']}")
+        return f"The city name is {loc['city']}"
     elif "continent" in query:
         speak(f"The name of continent is {loc['continent_name']}")
     elif "country" in query:
-        speak(f"The name of continent is {loc['continent_name']}")
+        speak(f"The name of continent is {loc['country_name']}")
 
 
+@lru_cache()
 def weather_info(query):
     loc = locate_me.w_data
     if "temperature" in query:
@@ -169,4 +175,12 @@ class basic_functions:
         finale = locate_me.url_shortner(url)
         speak("Downloading mp3 file of video")
         urllib.request.urlopen(finale)
-        
+    # More Coming Soon
+
+
+def answer_engine(query):
+    main_query = query.replace(" ", "+")
+    api = main_api.waAPI(app_id)
+    spoken = api.spoken_results(i=main_query)
+    return spoken
+

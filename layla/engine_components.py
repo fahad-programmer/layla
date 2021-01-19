@@ -32,6 +32,6 @@ def take_command():
     except Exception as e:
         print(e)
         print("Unable to Recognize your voice.")
-        return "None"
+        return ""
 
     return query

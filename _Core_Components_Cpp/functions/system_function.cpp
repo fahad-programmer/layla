@@ -22,6 +22,21 @@ void open_programs(string query)
     {
         system("start vlc");
     }
+    // For Opening Control Panel
+    else if (query == "control panel" || query == "controlpanel")
+    {
+        system("control panel");
+    }
+    // For Opening Windows Store
+    else if (query == "microsoft store" || query == "store" || query == "store microsoft")
+    {
+        system("ms-windows-store:");
+    }
+    //For opening File Explorer
+    else if (query == "file explorer" || query == "file manager" || query == "file")
+    {
+        system("explorer");
+    }
 }
 
 //To Show The System Information
