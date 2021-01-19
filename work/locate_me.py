@@ -89,17 +89,17 @@ def love_calculator(f_name, s_name):
 
 # print(love_calculator())
 
-def url_shortner(copy_url):
-  url = "https://url-shortener-service.p.rapidapi.com/shorten"
+# def url_shortner(copy_url):
+#   url = "https://url-shortener-service.p.rapidapi.com/shorten"
 
-  payload = "url=" + copy_url
-  headers = {
-      'content-type': "application/x-www-form-urlencoded",
-      'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-      'x-rapidapi-host': "url-shortener-service.p.rapidapi.com"
-      }
+#   payload = "url=" + copy_url
+#   headers = {
+#       'content-type': "application/x-www-form-urlencoded",
+#       'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+#       'x-rapidapi-host': "url-shortener-service.p.rapidapi.com"
+#       }
 
-  response = requests.request("POST", url, data=payload, headers=headers)
+#   response = requests.request("POST", url, data=payload, headers=headers)
 
   yahoo = response.json()
   return(yahoo.get("result_url", "Not Found!"))
@@ -123,14 +123,14 @@ def youtube_to_mp3(f_str):
 
 # print(youtube_to_mp3("aZla1ttZHaw"))
 
-def youtube_mp3(query):
-        # 50 per day
-        url = clipboard.paste()
-        print(url)
-        finale = url_shortner(url)
-        print("Downloading mp3 file of video")
-        urllib.request.urlopen(finale)
-youtube_mp3("downdload the mp3 video")
+# def youtube_mp3(query):
+#         # 50 per day
+#         url = clipboard.paste()
+#         print(url)
+#         finale = url_shortner(url)
+#         print("Downloading mp3 file of video")
+#         urllib.request.urlopen(finale)
+# youtube_mp3("downdload the mp3 video")
 
 def jokes():
   url = "https://joke3.p.rapidapi.com/v1/joke"

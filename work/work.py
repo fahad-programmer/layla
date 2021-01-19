@@ -4,6 +4,7 @@ import pyperclip, webbrowser, wikipedia
 import clipboard, urllib.request
 from layla.engine_components import speak, take_command
 from functools import lru_cache
+from work.background_changer import background_change
 """
 What things i am working on:
 1. Scraping websites data
@@ -149,32 +150,11 @@ def weather_info(query):
     elif "coordinates" in query:
         latitude = loc['coord']['lat']
         longitude = loc['coord'][['lon']]
-        speak(f"You are located on latitude {latitude} and longitude {longitude}")
-    
-class basic_functions:
-    
-    def lovecal(query):
-        # Calculate love percentage between Imran Akbar and Laiba Sadaf
-        f_split = query.split(' between ')
-        f_split.pop(0)
-        query = query.join(f_split)
-        s_split = query.split(' and ')
-        locate_me.love_calculator(s_split[0], s_split[1])
-        # API didn't work, developing a new scratch function
-        
-    def urlshorten(query):
-        # Short the url from my clipboard
-        url = clipboard.paste()     # Note: Url Must start from https://
-        finale = locate_me.url_shortner(url)
-        clipboard.copy(finale)
-        speak(f"url successfully shorten, and copied to your clipboard")
-    
-    def youtube_mp3(query):
-        # 50 per day
-        url = clipboard.paste()
-        finale = locate_me.url_shortner(url)
-        speak("Downloading mp3 file of video")
-        urllib.request.urlopen(finale)
+        speak(
+            f"You are located on latitude {latitude} and longitude {longitude}"
+        )
+
+
     # More Coming Soon
 
 
@@ -184,3 +164,8 @@ def answer_engine(query):
     spoken = api.spoken_results(i=main_query)
     return spoken
 
+def background_chn():
+    return background_change()
+
+def unable_recognize():
+    return "Sorry I Wasn't Able To Recoginze The Command"
