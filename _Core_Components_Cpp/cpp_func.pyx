@@ -122,3 +122,4 @@ cpdef maths_func(query):
         return main_return
     else:
         return "Some Internal Error Occured".encode('UTF-8')
+

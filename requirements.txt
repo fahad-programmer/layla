@@ -48,9 +48,10 @@ Pillow==8.1.0
 pipwin==0.5.0
 protobuf==3.14.0
 psycopg2==2.8.6
+py-wallpaper==0.0.1
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
-PyAudio @ file:///C:/Users/Anonymous/Downloads/PyAudio-0.2.11-cp37-cp37m-win_amd64.whl
+PyAudio==0.2.11
 pyjokes==0.6.0
 pyjsparser==2.7.1
 PyJWT==2.0.0
