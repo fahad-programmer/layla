@@ -155,6 +155,7 @@ class basic_functions:
     
     def lovecal(query):
         # Calculate love percentage between Imran Akbar and Laiba Sadaf
+        print("done")
         f_split = query.split(' between ')
         f_split.pop(0)
         query = query.join(f_split)

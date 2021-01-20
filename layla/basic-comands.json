@@ -95,6 +95,21 @@
         "responses": ["system_info()"]
     },
     {
+        "tag": "Love Calculator",
+        "patterns": ["Calculate love percentage between Imran Akbar and Laiba Sadaf", "Calculate love between ali and ahmed", "how much love is between ali and aqash"],
+        "responses": ["basic_functions.lovecal(query)"]
+    },
+    {
+        "tag": "Joke",
+        "patterns": ["tell me a joke", "give me a joke", "i want to hear a joke"],
+        "responses": ["basic_functions.jokes(query)"]
+    },
+    {
+        "tag": "Definition",
+        "patterns": ["What is meant by Cobra ", "meaning of Cobra", "What is a radio"],
+        "responses": ["basic_functions.word_def(query)"]
+    },
+    {
         "tag": "Simple Answer",
         "patterns":["what is", "who is", "who are", "who is the", "how many", "how much", "what are", "when is"],
         "responses":["answer_engine(query)"]
