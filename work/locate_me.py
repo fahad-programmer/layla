@@ -85,9 +85,8 @@ def love_calculator(f_name, s_name):
 
   response = requests.request("GET", url, headers=headers, params=querystring)
 
-  return(response.text)
-
-# print(love_calculator())
+  yahoo = response.json()
+  return(yahoo)
 
 def url_shortner(copy_url):
   url = "https://url-shortener-service.p.rapidapi.com/shorten"
@@ -103,36 +102,8 @@ def url_shortner(copy_url):
 
   yahoo = response.json()
   return(yahoo.get("result_url", "Not Found!"))
-  
-# print(url_shortner("https://youtube.com"))
 
-def youtube_to_mp3(f_str):
-  url = "https://youtube-to-mp32.p.rapidapi.com/yt_to_mp3"
-
-  querystring = {"video_id":str(f_str)}
-
-  headers = {
-      'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-      'x-rapidapi-host': "youtube-to-mp32.p.rapidapi.com"
-      }
-
-  response = requests.request("GET", url, headers=headers, params=querystring)
-
-  yahoo = response.json()
-  return(yahoo.get("Download_url", "Not Found!"))
-
-# print(youtube_to_mp3("aZla1ttZHaw"))
-
-def youtube_mp3(query):
-        # 50 per day
-        url = clipboard.paste()
-        print(url)
-        finale = url_shortner(url)
-        print("Downloading mp3 file of video")
-        urllib.request.urlopen(finale)
-youtube_mp3("downdload the mp3 video")
-
-def jokes():
+def jokes_v():
   url = "https://joke3.p.rapidapi.com/v1/joke"
 
   headers = {
@@ -142,35 +113,20 @@ def jokes():
 
   response = requests.request("GET", url, headers=headers)
 
-  print(response.text)
+  yahoo = response.json()
+  return(yahoo.get("content"))
   
-def food_nutiriest():
-  url = "https://edamam-edamam-nutrition-analysis.p.rapidapi.com/api/nutrition-data"
+def dictionary(word):
+  url = "https://api.dictionaryapi.dev/api/v2/entries/en/" + word
 
-  querystring = {"ingr":"1 large apple"}
+  response = requests.request("GET", url)
 
-  headers = {
-      'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-      'x-rapidapi-host': "edamam-edamam-nutrition-analysis.p.rapidapi.com"
-      }
+  yahoo = response.json()
+  return(yahoo[0]["meanings"][0]["definitions"][0]["definition"])
 
-  response = requests.request("GET", url, headers=headers, params=querystring)
-
-  print(response.text)
-  
-def dictionary():
-  url = "https://mashape-community-urban-dictionary.p.rapidapi.com/define"
-
-  querystring = {"term":"wat"}
-
-  headers = {
-      'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-      'x-rapidapi-host': "mashape-community-urban-dictionary.p.rapidapi.com"
-      }
-
-  response = requests.request("GET", url, headers=headers, params=querystring)
-
-  print(response.text)
+    
+# word_def("what is a crab")
+            
 
 class currency_converter:
   

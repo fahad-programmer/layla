@@ -1,7 +1,7 @@
 import re
 from work import wishing, keyboard_controller, sound, locate_me, main_api
 import pyperclip, webbrowser, wikipedia
-import clipboard, urllib.request
+import clipboard, urllib.request, json
 from layla.engine_components import speak, take_command
 from functools import lru_cache
 """
@@ -159,22 +159,45 @@ class basic_functions:
         f_split.pop(0)
         query = query.join(f_split)
         s_split = query.split(' and ')
-        locate_me.love_calculator(s_split[0], s_split[1])
-        # API didn't work, developing a new scratch function
+        cat = locate_me.love_calculator(s_split[0], s_split[1])
+        speak(cat.get("result") + " the love percentage between " + cat.get("fname") +  " and " + cat.get("sname") + " is " + cat.get("percentage") + " percent")
         
     def urlshorten(query):
         # Short the url from my clipboard
         url = clipboard.paste()     # Note: Url Must start from https://
         finale = locate_me.url_shortner(url)
-        clipboard.copy(finale)
-        speak(f"url successfully shorten, and copied to your clipboard")
+        if finale == "Not Found!":
+          speak("Url Error")
+        else:
+          clipboard.copy(finale)
+          speak(f"url successfully shorten, and copied to your clipboard")
     
-    def youtube_mp3(query):
-        # 50 per day
-        url = clipboard.paste()
-        finale = locate_me.url_shortner(url)
-        speak("Downloading mp3 file of video")
-        urllib.request.urlopen(finale)
+    def jokes(query):
+        finale = locate_me.jokes_v()
+        speak(finale)
+        
+    
+    def word_def(query):
+        # What is meant by Cobra
+        # meaning of Cobra
+        # What is a radio
+        if "by" in query:
+            f_split = query.split(' by ')
+            f_split.pop(0)
+            query = query.join(f_split)
+            finale = locate_me.dictionary(query)
+        elif "of" in query:
+            f_split = query.split(' of ')
+            f_split.pop(0)
+            query = query.join(f_split)
+            finale = locate_me.dictionary(query)
+        elif "is a" in query:
+            f_split = query.split(' a ')
+            f_split.pop(0)
+            query = query.join(f_split)
+            finale = locate_me.dictionary(query)
+        speak(finale)
+            
     # More Coming Soon
 
 
