@@ -71,7 +71,7 @@ class Sound:
         :return: void
         """
         Sound.__track()
-        Sound.__set_current_volume(Sound.current_volume() + 2)
+        Sound.__set_current_volume(Sound.current_volume() + 5)
         Keyboard.key(keyCode=Keyboard.VK_VOLUME_UP)
 
     @staticmethod
@@ -82,7 +82,7 @@ class Sound:
         :return: void
         """
         Sound.__track()
-        Sound.__set_current_volume(Sound.current_volume() - 2)
+        Sound.__set_current_volume(Sound.current_volume() - 5 )
         Keyboard.key(keyCode=Keyboard.VK_VOLUME_DOWN)
 
     @staticmethod

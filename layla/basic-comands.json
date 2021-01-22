@@ -57,7 +57,7 @@
     {
         "tag": "change volume",
         "patterns": ["change volume to"],
-        "responses": ["change_volume(query)"]
+        "responses": ["video_controls.change_volume(query)"]
     },
     {
         "tag": "Date",

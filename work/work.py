@@ -94,11 +94,24 @@ class website_control:
         speak("According To wikipedia")
         return results
 
+class video_controls:
 
-def change_volume(query):
-    sound_value = [int(s) for s in query.split() if s.isdigit()][0]
-    sound.Sound.volume_set(int(sound_value))
-    speak("Volume changed to " + str(sound_value) + "percent")
+    def change_volume(query):
+        sound_value = [int(s) for s in query.split() if s.isdigit()][0]
+        sound.Sound.volume_set(int(sound_value))
+        speak("Volume changed to " + str(sound_value) + "percent")
+        
+    def mute(query):
+        sound.Sound.volume_set(0)
+        
+    def max_sound(query):
+        sound.Sound.volume_set(100)
+        
+    def increase_vol():
+        sound.Sound.volume_up()
+    
+    def decrease_vol():
+        sound.Sound.volume_down()
 
 
 @lru_cache()
