@@ -88,17 +88,17 @@ def love_calculator(f_name, s_name):
   yahoo = response.json()
   return(yahoo)
 
-def url_shortner(copy_url):
-  url = "https://url-shortener-service.p.rapidapi.com/shorten"
+# def url_shortner(copy_url):
+#   url = "https://url-shortener-service.p.rapidapi.com/shorten"
 
-  payload = "url=" + copy_url
-  headers = {
-      'content-type': "application/x-www-form-urlencoded",
-      'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-      'x-rapidapi-host': "url-shortener-service.p.rapidapi.com"
-      }
+#   payload = "url=" + copy_url
+#   headers = {
+#       'content-type': "application/x-www-form-urlencoded",
+#       'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+#       'x-rapidapi-host': "url-shortener-service.p.rapidapi.com"
+#       }
 
-  response = requests.request("POST", url, data=payload, headers=headers)
+#   response = requests.request("POST", url, data=payload, headers=headers)
 
   yahoo = response.json()
   return(yahoo.get("result_url", "Not Found!"))

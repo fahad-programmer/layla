@@ -1,9 +1,7 @@
-def query_splitting(query):
-    main_query = query.split("and")[0]
-    second_query = query.split("and")[1]
-    print(main_query)
-    print(second_query)
-    return main_query, second_query
+import pyttsx3
+engine = pyttsx3.init()
+voices = engine.getProperty('voices')
 
+for voice in voices:
+	print(voice.name)
 
-print(query_splitting("Open Youtube and Search Atif"))

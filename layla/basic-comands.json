@@ -9,6 +9,13 @@
         "patterns": ["bye", "see you later", "good night"],
         "responses": ["saying_bye_main().decode('utf-8')"]
     },
+    
+    {
+        "tag": "thanks",
+        "patterns": ["thank you very much", "it is so nice of you", "you made my day", "thanks", "thanks for helping out", "you are the best", "you are genius"],
+        "responses": ["saying_thanks_main().decode('utf-8')"]
+    },
+
     {
         "tag": "age",
         "patterns": ["how old", "what is my age", "age?"],
@@ -118,5 +125,55 @@
         "tag":"mathematics",
         "patterns":["find sin of", "find cos", "find square root of", "round off the following", "find tan of", "find log off", "find the", "sin", "cos", "tan", "square root", "round"],
         "responses":["maths_func(query).decode('utf-8')"]
+    },
+    {
+        "tag":"None",
+        "patterns":["None", ""],
+        "responses":["unable_recognize()"]
+    }, 
+    {
+        "tag":"Change Background",
+        "patterns":["Change The Background", "can you please change the background", "make the background look pretty", "change the background pic"],
+        "responses":["background_chn()"]
+    },
+    {
+        "tag": "childhood",
+        "patterns": ["how was your childhood", "how was it when you were kid", "how you spend your childhood"],
+        "responses":["Being in beta is sort of like being a kid. I learned a lot before I was ready for release."]
+    },
+    {
+        "tag": "smart you",
+        "patterns": ["how smart are you", "are you smart", "smart are you"],
+        "responses":["It might seem like I'm smart, but I'm just good at searching."]
+    },
+    {
+        "tag": "smart me",
+        "patterns":["how smart am I", "am i smart", "am i intelligent", "really am i smart"],
+        "responses":["You might be even cleverer than Grace Hopper - she invented the first ever computer."]
+    }, 
+    {
+        "tag":"get cold",
+        "patterns":["Do you get cold", "do you get cold", "do you become sick"],
+        "responses":["I catch a bug now and then."]
+    },
+    {
+        "tag":"personality",
+        "patterns":["describe your personality.", "what type of person you are", "who you are"],
+        "responses":["I like the sound of a go-getter, it's kind of what I do when I search."]
+    },
+    {
+        "tag": "wearning",
+        "patterns":["what are you wearing", "what do you wear"],
+        "responses":["Just some bits and bobs I picked up in engineering."]
+    },
+    {
+        "tag": "love",
+        "patterns":["what is love", "what is your definition of love"],
+        "responses":["Love is that feeling you get in your stomach when you just can't stop thinking about someone. Unless you've got indigestion."]
+    },
+    {
+        "tag": "love believe",
+        "patterns":["do you believe in love", "what is your believe in love"],
+        "responses":["I'd love to find love, but I don't know what to search for."]
     }
 ]}

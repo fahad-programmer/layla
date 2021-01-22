@@ -1,6 +1,7 @@
 #include <random>
 #include <time.h>
 #include <windows.h>
+#include <string
 using namespace std;
 
 char *greet(void)
@@ -29,7 +30,7 @@ char *saying_bye(void)
 char *age_question(void)
 {
 	srand((unsigned int)time(NULL));
-	char *responses[5] = {"my age is unknown", "i don't remember it", "i don't know", "Same As Yours", "Same as of earth"};
+	char *responses[6] = {"my age is unknown", "i don't remember it", "i don't know", "Same As Yours", "Same as of earth", "Old enough to know not to judge a book by its cover, but young enough to find the poo emoji funny."};
 	int RandIndex = rand() % 5;
 	char *response = responses[RandIndex];
 	return response;
@@ -43,3 +44,4 @@ char *saying_thanks()
 	char *response = responses[RandIndex];
 	return response;
 }
+

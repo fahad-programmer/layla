@@ -3,5 +3,6 @@
     "files.associations": {
         "*.html": "html",
         "iostream": "cpp"
-    }
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
 }

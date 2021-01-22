@@ -2,7 +2,6 @@ import datetime
 from libcpp.string cimport string
 from functools import reduce
 import operator
-import datetime
 import re
 
 
@@ -122,3 +121,4 @@ cpdef maths_func(query):
         return main_return
     else:
         return "Some Internal Error Occured".encode('UTF-8')
+

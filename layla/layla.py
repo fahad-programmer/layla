@@ -74,4 +74,7 @@ while True:
     query = take_command().lower()
     ints = predict_class(query)
     res = get_response(ints, intents)
-    speak(eval(res))
+    try:
+        speak(eval(res))
+    except Exception as e:
+        speak(res)
