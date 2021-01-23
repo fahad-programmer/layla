@@ -88,7 +88,7 @@ class Horoscope:
             return "Some Internal Error Occured Try Later"
         return tag_find
 
-    def daily_love(self):
+    def daily_love(self) -> str:
         url = f"https://www.horoscope.com/us/horoscopes/love/horoscope-love-daily-today.aspx?sign={self.sign_number}"
         try:
             req = requests.get(url, headers)
@@ -99,7 +99,7 @@ class Horoscope:
             return "Some Internal Error Occured Try Later"
         return tag_find
 
-    def tomorrow_love(self):
+    def tomorrow_love(self) -> str:
         url = f"https://www.horoscope.com/us/horoscopes/love/horoscope-love-daily-tomorrow.aspx?sign={self.sign_number}"
         try:
             req = requests.get(url, headers)
@@ -110,7 +110,7 @@ class Horoscope:
             return "Some Internal Error Occured Try Later"
         return tag_find
 
-    def love_weekly(self):
+    def love_weekly(self) -> str:
         url = f"https://www.horoscope.com/us/horoscopes/love/horoscope-love-weekly-single.aspx?sign={self.sign_number}"
         try:
             req = requests.get(url, headers)
@@ -120,7 +120,3 @@ class Horoscope:
         except Exception as e:
             return "Some Internal Error Occured Try Later"
         return tag_find
-
-
-a = Horoscope("scorpio")
-print(a.daily_horoscope())
