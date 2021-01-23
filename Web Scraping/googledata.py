@@ -7,7 +7,7 @@ def scrap_capital(query):
 
     # Perform the request
     request = urllib.request.Request(url)
-
+ 
     # Set a normal User Agent header, otherwise Google will block the request.
     request.add_header('User-Agent', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36')
     raw_response = urllib.request.urlopen(request).read()
@@ -28,13 +28,15 @@ def scrap_capital(query):
     # divs = soup.select("div.dAassd")      # Founders
     # divs = soup.select("div.LwV4sf")      # Founder's 2
     # divs = soup.select("div.HwtpBd")      # Answer in one word and below is explainantion
-    # divs = soup.select("div.di3YZe")        # List data, div to get the heading, li to get the list
+    # divs = soup.select("div.di3YZe")        # List data > div to get the heading, li to get the list
+    # divs = soup.select("div.lMmzdb")      # Distance between two places > div
+    # divs = soup.select("div.vk_c")      # Distance between two countries or two cities in diffrent countries > div
     for div in divs:
         # Search for a h3 tag
         # results = div.select("a")
         # results = div.select("span")
         # results = div.select("li")
-        # results = div.select("div")
+        results = div.select("div")
 
         # Check if we have found a result
         if (len(results) >= 1):
@@ -44,4 +46,4 @@ def scrap_capital(query):
             print(h3.get_text())
             
 # scrap_capital("what is the capital of russia")
-scrap_capital("how many organizations are founded by elon musk")
+scrap_capital("what is distance between new york and moscow in km")
