@@ -179,8 +179,9 @@ class cocktail:
 class world_info:
   
   def main():
-    # To Gel information of all the countries
-    url = "https://restcountries-v1.p.rapidapi.com/all"
+    # To Get information of all the countries
+    # url = "https://restcountries-v1.p.rapidapi.com/all"
+    url = "https://restcountries-v1.p.rapidapi.com/name/pakistan"
 
     headers = {
         'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
@@ -218,7 +219,7 @@ class world_info:
     https://restcountries-v1.p.rapidapi.com/subregion/western%2520asia
     """
     
-# world_info.main()
+world_info.main()
 
 class yahoo_finance:
   
