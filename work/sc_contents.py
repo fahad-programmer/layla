@@ -2,10 +2,14 @@
 import requests
 from bs4 import BeautifulSoup
 
-url = "https://stackoverflow.com/questions/58015534/how-to-select-all-text-in-a-web-page-using-python"
-req = requests.get(url)
-soup_object = BeautifulSoup(req.text, "html.parser")
-for question_content in soup_object.find_all("div", "post-text"):
-    print(question_content.text)
-for comment_content in soup_object.find_all("span", "comment-copy"):
-    print(comment_content.text)
+def scrap_answers(query):
+    query = query.replace(" ", "%20")
+    url = "https://www.google.com/search?q=" + query
+    print(url)
+    res  = requests.get(url)
+    res.raise_for_status()
+    soup = BeautifulSoup(res.content, "html.parser")
+    data = soup.find('span', class_="hgKElc")
+    print(data.text.strip())
+    
+scrap_answers("At what age do most people in your country get married?")
