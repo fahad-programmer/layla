@@ -1,6 +1,5 @@
 from bs4 import BeautifulSoup
 import requests
-from functools import lru_cache
 
 #Showing that we are legit and avoiding being blocked from the site
 headers = {
@@ -15,12 +14,6 @@ headers = {
     'User-Agent':
     'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0'
 }
-
-# url = "https://www.horoscope.com/us/horoscopes/general/horoscope-general-daily-tomorrow.aspx?sign=4"
-# req = requests.get(url, headers)
-# soup = BeautifulSoup(req.content, "lxml")
-# a = soup.find('p').get_text()
-# print(a)
 
 
 class Horoscope:
