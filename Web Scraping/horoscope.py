@@ -122,5 +122,5 @@ class Horoscope:
         return tag_find
 
 
-a = Horoscope("cancer")
+a = Horoscope("scorpio")
 print(a.daily_horoscope())

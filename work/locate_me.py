@@ -85,9 +85,8 @@ def love_calculator(f_name, s_name):
 
   response = requests.request("GET", url, headers=headers, params=querystring)
 
-  return(response.text)
-
-# print(love_calculator())
+  yahoo = response.json()
+  return(yahoo)
 
 # def url_shortner(copy_url):
 #   url = "https://url-shortener-service.p.rapidapi.com/shorten"
@@ -103,36 +102,8 @@ def love_calculator(f_name, s_name):
 
   yahoo = response.json()
   return(yahoo.get("result_url", "Not Found!"))
-  
-# print(url_shortner("https://youtube.com"))
 
-def youtube_to_mp3(f_str):
-  url = "https://youtube-to-mp32.p.rapidapi.com/yt_to_mp3"
-
-  querystring = {"video_id":str(f_str)}
-
-  headers = {
-      'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-      'x-rapidapi-host': "youtube-to-mp32.p.rapidapi.com"
-      }
-
-  response = requests.request("GET", url, headers=headers, params=querystring)
-
-  yahoo = response.json()
-  return(yahoo.get("Download_url", "Not Found!"))
-
-# print(youtube_to_mp3("aZla1ttZHaw"))
-
-# def youtube_mp3(query):
-#         # 50 per day
-#         url = clipboard.paste()
-#         print(url)
-#         finale = url_shortner(url)
-#         print("Downloading mp3 file of video")
-#         urllib.request.urlopen(finale)
-# youtube_mp3("downdload the mp3 video")
-
-def jokes():
+def jokes_v():
   url = "https://joke3.p.rapidapi.com/v1/joke"
 
   headers = {
@@ -142,100 +113,19 @@ def jokes():
 
   response = requests.request("GET", url, headers=headers)
 
-  print(response.text)
+  yahoo = response.json()
+  return(yahoo.get("content"))
   
-def food_nutiriest():
-  url = "https://edamam-edamam-nutrition-analysis.p.rapidapi.com/api/nutrition-data"
+def dictionary(word):
+  url = "https://api.dictionaryapi.dev/api/v2/entries/en/" + word
 
-  querystring = {"ingr":"1 large apple"}
+  response = requests.request("GET", url)
 
-  headers = {
-      'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-      'x-rapidapi-host': "edamam-edamam-nutrition-analysis.p.rapidapi.com"
-      }
+  yahoo = response.json()
+  return(yahoo[0]["meanings"][0]["definitions"][0]["definition"])
 
-  response = requests.request("GET", url, headers=headers, params=querystring)
-
-  print(response.text)
-  
-def dictionary():
-  url = "https://mashape-community-urban-dictionary.p.rapidapi.com/define"
-
-  querystring = {"term":"wat"}
-
-  headers = {
-      'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-      'x-rapidapi-host': "mashape-community-urban-dictionary.p.rapidapi.com"
-      }
-
-  response = requests.request("GET", url, headers=headers, params=querystring)
-
-  print(response.text)
-
-class currency_converter:
-  
-  def avail_curr():
-    url = "https://currency-converter5.p.rapidapi.com/currency/historical/2020-01-20"
-
-    querystring = {"from":"EUR","amount":"1","format":"json","to":"GBP"}
-
-    headers = {
-        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-        'x-rapidapi-host': "currency-converter5.p.rapidapi.com"
-        }
-
-    response = requests.request("GET", url, headers=headers, params=querystring)
-
-    print(response.text)
     
-  def convert():
-    url = "https://currency-converter5.p.rapidapi.com/currency/convert"
-
-    querystring = {"format":"json","from":"AUD","to":"CAD","amount":"1"}
-
-    headers = {
-        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-        'x-rapidapi-host': "currency-converter5.p.rapidapi.com"
-        }
-
-    response = requests.request("GET", url, headers=headers, params=querystring)
-
-    print(response.text)
-    
-  def historical():
-    url = "https://currency-converter5.p.rapidapi.com/currency/historical/2020-01-20"
-
-    querystring = {"from":"EUR","amount":"1","format":"json","to":"GBP"}
-
-    headers = {
-        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-        'x-rapidapi-host': "currency-converter5.p.rapidapi.com"
-        }
-
-    response = requests.request("GET", url, headers=headers, params=querystring)
-
-    print(response.text)
-
-class SkyScanner:
-  
-  def __init__(self):
-    return ("SkyScanner")
-  
-  def main():
-    url = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/referral/v1.0/America/dollar/Miami/Miami/Miami/2021-01/2021-02"
-
-    querystring = {"shortapikey":"ra66933236979928","apiKey":"{shortapikey}"}
-
-    headers = {
-        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-        'x-rapidapi-host': "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com"
-        }
-
-    response = requests.request("GET", url, headers=headers, params=querystring)
-
-    print(response.text)
-    
-    
+# word_def("what is a crab")
     
 class cocktail:
   
@@ -289,8 +179,9 @@ class cocktail:
 class world_info:
   
   def main():
-    # To Gel information of all the countries
-    url = "https://restcountries-v1.p.rapidapi.com/all"
+    # To Get information of all the countries
+    # url = "https://restcountries-v1.p.rapidapi.com/all"
+    url = "https://restcountries-v1.p.rapidapi.com/name/pakistan"
 
     headers = {
         'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
@@ -328,7 +219,7 @@ class world_info:
     https://restcountries-v1.p.rapidapi.com/subregion/western%2520asia
     """
     
-# world_info.main()
+world_info.main()
 
 class yahoo_finance:
   

@@ -1,7 +1,7 @@
 import re
 from work import wishing, keyboard_controller, sound, locate_me, main_api
 import pyperclip, webbrowser, wikipedia
-import clipboard, urllib.request
+import clipboard, urllib.request, json
 from layla.engine_components import speak, take_command
 from functools import lru_cache
 from work.background_changer import background_change
@@ -95,11 +95,24 @@ class website_control:
         speak("According To wikipedia")
         return results
 
+class video_controls:
 
-def change_volume(query):
-    sound_value = [int(s) for s in query.split() if s.isdigit()][0]
-    sound.Sound.volume_set(int(sound_value))
-    speak("Volume changed to " + str(sound_value) + "percent")
+    def change_volume(query):
+        sound_value = [int(s) for s in query.split() if s.isdigit()][0]
+        sound.Sound.volume_set(int(sound_value))
+        speak("Volume changed to " + str(sound_value) + "percent")
+        
+    def mute(query):
+        sound.Sound.volume_set(0)
+        
+    def max_sound(query):
+        sound.Sound.volume_set(100)
+        
+    def increase_vol():
+        sound.Sound.volume_up()
+    
+    def decrease_vol():
+        sound.Sound.volume_down()
 
 
 @lru_cache()
@@ -150,11 +163,56 @@ def weather_info(query):
     elif "coordinates" in query:
         latitude = loc['coord']['lat']
         longitude = loc['coord'][['lon']]
-        speak(
-            f"You are located on latitude {latitude} and longitude {longitude}"
-        )
-
-
+        speak(f"You are located on latitude {latitude} and longitude {longitude}")
+    
+class basic_functions:
+    
+    def lovecal(query):
+        # Calculate love percentage between Imran Akbar and Laiba Sadaf
+        print("done")
+        f_split = query.split(' between ')
+        f_split.pop(0)
+        query = query.join(f_split)
+        s_split = query.split(' and ')
+        cat = locate_me.love_calculator(s_split[0], s_split[1])
+        speak(cat.get("result") + " the love percentage between " + cat.get("fname") +  " and " + cat.get("sname") + " is " + cat.get("percentage") + " percent")
+        
+    def urlshorten(query):
+        # Short the url from my clipboard
+        url = clipboard.paste()     # Note: Url Must start from https://
+        finale = locate_me.url_shortner(url)
+        if finale == "Not Found!":
+          speak("Url Error")
+        else:
+          clipboard.copy(finale)
+          speak(f"url successfully shorten, and copied to your clipboard")
+    
+    def jokes(query):
+        finale = locate_me.jokes_v()
+        speak(finale)
+        
+    
+    def word_def(query):
+        # What is meant by Cobra
+        # meaning of Cobra
+        # What is a radio
+        if "by" in query:
+            f_split = query.split(' by ')
+            f_split.pop(0)
+            query = query.join(f_split)
+            finale = locate_me.dictionary(query)
+        elif "of" in query:
+            f_split = query.split(' of ')
+            f_split.pop(0)
+            query = query.join(f_split)
+            finale = locate_me.dictionary(query)
+        elif "is a" in query:
+            f_split = query.split(' a ')
+            f_split.pop(0)
+            query = query.join(f_split)
+            finale = locate_me.dictionary(query)
+        speak(finale)
+            
     # More Coming Soon
 
 
