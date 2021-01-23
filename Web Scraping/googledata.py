@@ -20,6 +20,7 @@ def scrap_capital(query):
     # The code to get the html contents here.
 
     soup = BeautifulSoup(request.content, 'lxml')
+    print(soup)
 
     # Find all the search result divs
     # divs = soup.select("div.Z0LcW")       # One Word Answer > a
