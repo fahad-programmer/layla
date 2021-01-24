@@ -1,10 +1,10 @@
+import re
 from bs4 import BeautifulSoup
-import requests, json
+import requests
 
 header = {
     "user-agent":
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36",
-    'referer': 'https://www.google.com/'
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393",
 }
 
 
@@ -33,9 +33,9 @@ def scrap_capital(query):
     # divs = soup.select("div.LwV4sf")      # Founder's 2
     # divs = soup.select("div.HwtpBd")      # Answer in one word and below is explainantion
     # divs = soup.select("div.di3YZe")        # List data > div to get the heading, li to get the list
-    # divs = soup.select("div.lMmzdb")      # Distance between two places > div
+    # divs = soup.select("div.lMmzdb")  # Distance between two places > div
     divs = soup.select(
-        "div.vk_c"
+        "div.vk_bk"
     )  # Distance between two countries or two cities in diffrent countries > div
     for div in divs:
         # Search for a h3 tag
