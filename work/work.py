@@ -1,5 +1,5 @@
 import re
-from work import wishing, keyboard_controller, sound, locate_me, main_api
+from work import wishing, keyboard_controller, sound, locate_me, main_api, tictactoe
 import pyperclip, webbrowser, wikipedia
 import clipboard, urllib.request, json
 from layla.engine_components import speak, take_command
@@ -258,5 +258,7 @@ def roll_a_dice():
             continue
         else:
             pass
-    
+
+def play_tactactoe():
+    tictactoe.start_game()
     

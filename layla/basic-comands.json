@@ -319,7 +319,7 @@
     {
         "tag": "layla winter coming",
         "patterns":["Winter is coming"],
-        "responses":["Aye, and so are the White Walkers"]
+        "responses":["Aye, and so are the White Walkers", "The brightest flame casts the darkest shadow"]
     },
     {
         "tag": "layla story",
@@ -402,8 +402,33 @@
         "responses":["It would be impossible to tire of our conversation.", "I don't exactly need to grab 40 winks, but I suppose this device does need to be plugged in occasionally"]
     },
     {
+        "tag": "layla spongebob",
+        "patterns":["who lives in a pineapple under the sea"],
+        "responses":["SpongeBob SquarePants"]
+    },
+    {
+        "tag": "layla fight club",
+        "patterns":["what’s the first rule of Fight Club"],
+        "responses":["Don’t talk about Fight Club"]
+    },
+    {
+        "tag": "layla truth",
+        "patterns":["I want the truth"],
+        "responses":["You can’t handle the truth"]
+    },
+    {
+        "tag": "layla testing",
+        "patterns":["testing"],
+        "responses":["Receiving, over"]
+    },
+    {
         "tag": "roll dice",
         "patterns":["roll a dice"],
+        "responses":["roll_a_dice()"]
+    },
+    {
+        "tag": "tiktaktoe",
+        "patterns":["play tic tac toe", "play game tic tac toe", "tictactoe", "tak tak toe"],
         "responses":["roll_a_dice()"]
     },
     {
