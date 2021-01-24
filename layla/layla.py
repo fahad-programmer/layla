@@ -13,7 +13,7 @@ from work.work import *
 from _Core_Components_Cpp.cpp_func import *
 
 lemmatizer = WordNetLemmatizer()
-intents = json.loads(open('layla/basic-comands.json').read())
+intents = json.loads(open('layla/basic-comands.json', encoding="utf8").read())
 
 words = pickle.load(open('layla/words.pkl', 'rb'))
 classes = pickle.load(open('layla/classes.pkl', 'rb'))

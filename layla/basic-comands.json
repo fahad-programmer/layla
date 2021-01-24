@@ -423,17 +423,17 @@
     },
     {
         "tag": "roll dice",
-        "patterns":["roll a dice"],
+        "patterns":["roll a dice", "role the dice"],
         "responses":["roll_a_dice()"]
     },
     {
         "tag": "tiktaktoe",
         "patterns":["play tic tac toe", "play game tic tac toe", "tictactoe", "tak tak toe"],
-        "responses":["roll_a_dice()"]
+        "responses":["play_tactactoe()"]
     },
     {
         "tag": "flip coin",
-        "patterns":["flip a coin"],
+        "patterns":["flip a coin", "flip the coin"],
         "responses":["flip_coin()"]
     }
 ]}
