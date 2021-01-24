@@ -17,10 +17,11 @@ def scrap_capital(query):
     # The code to get the html contents here.
 
     soup = BeautifulSoup(html, 'html.parser')
+    print(soup)
 
     # Find all the search result divs
     # divs = soup.select("div.Z0LcW")       # One Word Answer > a
-    divs = soup.select("div.kno-rdesc")     # Wikipedia answer
+    # divs = soup.select("div.kno-rdesc")     # Wikipedia answer
     # divs = soup.select("div.LGOjhe")        # Info Box Answer
     # divs = soup.select("div.c4bQHf")        # population
     # divs = soup.select("div.related-question-pair") # Related Queries
@@ -30,7 +31,7 @@ def scrap_capital(query):
     # divs = soup.select("div.HwtpBd")      # Answer in one word and below is explainantion
     # divs = soup.select("div.di3YZe")        # List data > div to get the heading, li to get the list
     # divs = soup.select("div.lMmzdb")      # Distance between two places > div
-    # divs = soup.select("div.vk_c")      # Distance between two countries or two cities in diffrent countries > div
+    divs = soup.select("div.vk_c")      # Distance between two countries or two cities in diffrent countries > div
     for div in divs:
         # Search for a h3 tag
         # results = div.select("a")
@@ -46,4 +47,4 @@ def scrap_capital(query):
             print(h3.get_text())
             
 # scrap_capital("what is the capital of russia")
-scrap_capital("who was barack obama")
+scrap_capital("what is distance between new york and moscow in km")

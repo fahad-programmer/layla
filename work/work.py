@@ -90,7 +90,10 @@ class website_control:
     @staticmethod
     def wikipedia_search(query):
         speak("Searching Wikipedia...")
-        query = query.replace("wikipedia", "")
+        if "wikipedia" in query:
+            query = query.replace("wikipedia", "")
+        elif "tell me about" in query:
+            query = query.replace("tell me about", "")
         results = wikipedia.summary(query, sentences=2)
         speak("According To wikipedia")
         return results
@@ -227,3 +230,33 @@ def background_chn():
 
 def unable_recognize():
     return "Sorry I Wasn't Able To Recoginze The Command"
+
+def flip_coin():
+    while True:
+        flip = random.randint(0, 1)
+        if (flip == 0):
+            print("Heads")
+            speak("heads")
+        else:
+            print("Tails")
+            speak("tails")
+        speak("Do you want to flip again")
+        opt = take_command().lower()
+        if opt == "yes":
+            continue
+        else:
+            pass
+
+def roll_a_dice():
+    while True:
+        flip = random.randint(1, 6)
+        print(flip)
+        speak(flip)
+        speak("Do you want to roll again")
+        opt = take_command().lower()
+        if opt == "yes":
+            continue
+        else:
+            pass
+    
+    
