@@ -120,3 +120,6 @@ class Horoscope:
         except Exception as e:
             return "Some Internal Error Occured Try Later"
         return tag_find
+
+main = Horoscope("cancer")
+print(main.love_weekly())

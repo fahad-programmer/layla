@@ -428,7 +428,7 @@
     },
     {
         "tag": "tiktaktoe",
-        "patterns":["play tic tac toe", "play game tic tac toe", "tictactoe", "tak tak toe"],
+        "patterns":["play tic tac toe", "play game tic tac toe", "tictactoe", "tak tak toe"], 
         "responses":["play_tactactoe()"]
     },
     {
