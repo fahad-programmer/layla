@@ -87,7 +87,7 @@ class google_results:
             divs = soup.select("div.di3YZe") # List data > divto get the heading, li to get the list
             ans = self.list_loop(divs)
             if len(ans) >=1:
-                print(ans)
+                print(ans.replace(".", ".\n"))
                 return
             else:
                 pass
@@ -128,10 +128,9 @@ class google_results:
             pass
         # 10
         try:
-            divs = soup.select("div.dAassd") # Founders
-            ans = self.for_loop(divs)
+            divs = soup.select("div.LwV4sf") # Founder's
+            ans = self.founder_loop(divs)
             if len(ans) >=1:
-                print(ans)
                 return
             else:
                 pass
@@ -139,27 +138,15 @@ class google_results:
             pass
         # 11
         try:
-            divs = soup.select("div.LwV4sf") # Founder's 2
-            ans = self.for_loop(divs)
+            divs = soup.select("div.WGwSK") # Movies List
+            ans = self.founder_loop(divs)
             if len(ans) >=1:
-                print(ans)
                 return
             else:
                 pass
         except:
             pass
         # 12
-        try:
-            divs = soup.select("div.dAassd") # Movies List
-            ans = self.for_loop(divs)
-            if len(ans) >=1:
-                print(ans)
-                return
-            else:
-                pass
-        except:
-            pass
-        # 13
         try:
             divs = soup.select("div.kno-rdesc") # Wikipedia answer
             ans = self.for_loop(divs)
@@ -168,6 +155,10 @@ class google_results:
                 return
             else:
                 pass
+        except:
+            pass
+        try:
+            print("Nothing Found!")
         except:
             pass
     
@@ -223,16 +214,30 @@ class google_results:
 
                 # Print the title
                 h3 = results[0]
-                print(h3.get_text())
-        i = 0
+                print(h3.get_text(), "\n")
         for div in divs:
-            results = div.select("ol")
-            # Check if we have found a result
-            if (len(results) >= 1):
+            try:
+                results = div.select("ol")
+                # Check if we have found a result
+                if (len(results) >= 1):
 
-                # Print the title
-                h3 = results[0]
-                return(h3.get_text())
+                    # Print the title
+                    h3 = results[0]
+                    return(h3.get_text())
+                else:
+                    pass
+            except:
+                pass
+            try:
+                results = div.select("ul")
+                # Check if we have found a result
+                if (len(results) >= 1):
+
+                    # Print the title
+                    h3 = results[0]
+                    return(h3.get_text())
+                else:pass
+            except:pass
     
     def related_queries(self, soup) -> str:
         divs = soup.select("div.related-question-pair")
@@ -245,9 +250,30 @@ class google_results:
                 # Print the title
                 h3 = results[0]
                 print(h3.get_text())
-            
+    
+    def founder_loop(self, divs):
+        for div in divs:
+            results = div.select("div")
+
+            # Check if we have found a result
+            if (len(results) >= 1):
+
+                # Print the title
+                h3 = results[0]
+                print(h3.get_text(separator=' '))
+        return(h3.get_text())
+    
+    
+    
+    
+    
+    
 # google_results("Does Russia have 2 capitals")
 # google_results("Who was Elsa Where did she live?")
 # google_results("american president")
 # google_results("how to delete instagram account")
-google_results("Einstien Quotes")
+# google_results("Einstien Quotes")
+# google_results("popular scientists")
+# google_results("apple founders")
+# google_results("marvel movies")
+google_results("how can i publish my book")

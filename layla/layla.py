@@ -9,6 +9,7 @@ from layla.engine_components import take_command
 from tensorflow.keras.models import load_model
 
 from work.work import *
+from WebScraping.googledata import google_results
 
 from _Core_Components_Cpp.cpp_func import *
 

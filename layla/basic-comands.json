@@ -119,7 +119,7 @@
     {
         "tag": "Simple Answer",
         "patterns":["what is", "who is", "who are", "who is the", "how many", "how much", "what are", "when is"],
-        "responses":["answer_engine(query)"]
+        "responses":["google_results(query)"]
     },
     {
         "tag":"mathematics",
