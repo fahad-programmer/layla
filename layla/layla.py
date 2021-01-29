@@ -76,6 +76,9 @@ while True:
     ints = predict_class(query)
     res = get_response(ints, intents)
     try:
-        speak(eval(res))
-    except Exception as e:
-        speak(res)
+        try:
+            speak(eval(res))
+        except Exception as e:
+            speak(res)
+    except IndexError:
+        speek("No Answer Found!")
