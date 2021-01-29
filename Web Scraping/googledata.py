@@ -83,23 +83,93 @@ class google_results:
         except:
             pass
         # 6
+        try:
+            divs = soup.select("div.di3YZe") # List data > divto get the heading, li to get the list
+            ans = self.list_loop(divs)
+            if len(ans) >=1:
+                print(ans)
+                return
+            else:
+                pass
+        except:
+            pass
         # 7
+        try:
+            divs = soup.select("div.lMmzdb") # Distance between two places > div
+            ans = self.for_loop(divs)
+            if len(ans) >=1:
+                print(ans)
+                return
+            else:
+                pass
+        except:
+            pass
         # 8
+        try:
+            divs = soup.select("div.vk_c") # Distance between two countries or two cities in diffrent countries > div
+            ans = self.for_loop(divs)
+            if len(ans) >=1:
+                print(ans)
+                return
+            else:
+                pass
+        except:
+            pass
         # 9
+        try:
+            divs = soup.select("div.YwqY0") # Quotes
+            ans = self.for_loop(divs)
+            if len(ans) >=1:
+                print(ans)
+                return
+            else:
+                pass
+        except:
+            pass
         # 10
+        try:
+            divs = soup.select("div.dAassd") # Founders
+            ans = self.for_loop(divs)
+            if len(ans) >=1:
+                print(ans)
+                return
+            else:
+                pass
+        except:
+            pass
         # 11
+        try:
+            divs = soup.select("div.LwV4sf") # Founder's 2
+            ans = self.for_loop(divs)
+            if len(ans) >=1:
+                print(ans)
+                return
+            else:
+                pass
+        except:
+            pass
         # 12
+        try:
+            divs = soup.select("div.dAassd") # Movies List
+            ans = self.for_loop(divs)
+            if len(ans) >=1:
+                print(ans)
+                return
+            else:
+                pass
+        except:
+            pass
         # 13
-        # 14
-        
-        # 9# divs = soup.select("div.kno-rdesc")     # Wikipedia answer
-        # 0# divs = soup.select("div.dAassd")      # Founders
-        # 11# divs = soup.select("div.LwV4sf")      # Founder's 2
-        # 6# divs = soup.select("div.di3YZe")        # List data > divto get the heading, li to get the list
-        # 13# divs = soup.select("div.OTnkWc")  # Quotes
-        # 7# divs = soup.select("div.lMmzdb")      # Distance between two places > div
-        # 8# divs = soup.select("div.vk_c")      # Distance between two countries or two cities in diffrent countries > div
-        # 12# divs = soup.select("div.dAassd")    # Movies List
+        try:
+            divs = soup.select("div.kno-rdesc") # Wikipedia answer
+            ans = self.for_loop(divs)
+            if len(ans) >=1:
+                print(ans)
+                return
+            else:
+                pass
+        except:
+            pass
     
     def for_loop(self, divs):
         for div in divs:
@@ -143,33 +213,26 @@ class google_results:
                     pass
             except:
                 pass
-            try:
-                results = div.select("li")
+    
+    def list_loop(self, divs):
+        for div in divs:
+            results = div.select("div")
 
-                # Check if we have found a result
-                if (len(results) >= 1):
+            # Check if we have found a result
+            if (len(results) >= 1):
 
-                    # Print the title
-                    h3 = results[0]
-                    return(h3.get_text())
-                else:
-                    pass
-            except:
-                pass
-            try:
-                results = div.select("i")
+                # Print the title
+                h3 = results[0]
+                print(h3.get_text())
+        i = 0
+        for div in divs:
+            results = div.select("ol")
+            # Check if we have found a result
+            if (len(results) >= 1):
 
-                # Check if we have found a result
-                if (len(results) >= 1):
-
-                    # Print the title
-                    h3 = results[0]
-                    return(h3.get_text())
-                else:
-                    pass
-            except:
-                pass
-            
+                # Print the title
+                h3 = results[0]
+                return(h3.get_text())
     
     def related_queries(self, soup) -> str:
         divs = soup.select("div.related-question-pair")
@@ -183,6 +246,8 @@ class google_results:
                 h3 = results[0]
                 print(h3.get_text())
             
-# scrap_capital("what is the capital of russia")
-google_results("Who was Elsa Where did she live?")
+# google_results("Does Russia have 2 capitals")
+# google_results("Who was Elsa Where did she live?")
 # google_results("american president")
+# google_results("how to delete instagram account")
+google_results("Einstien Quotes")
