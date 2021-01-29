@@ -27,6 +27,7 @@ class google_results:
     def scrap_capital(self, soup) -> str:
 
         # Find all the search result divs
+        # 1
         try:
             divs = soup.select("div.Z0LcW") # One Word Answer > a
             ans = self.for_loop(divs)
@@ -37,6 +38,7 @@ class google_results:
                 pass
         except:
             pass
+        # 2
         try:
             divs = soup.select("div.HwtpBd") # Answer in one word and below is explainantion > a
             ans = self.for_loop(divs)
@@ -47,6 +49,7 @@ class google_results:
                 pass
         except:
             pass
+        # 3
         try:
             divs = soup.select("div.LGOjhe") # Info Box Answer > span
             ans = self.for_loop(divs)
@@ -57,9 +60,39 @@ class google_results:
                 pass
         except:
             pass
+        # 4
+        try:
+            divs = soup.select("div.c4bQHf") # population
+            ans = self.for_loop(divs)
+            if len(ans) >=1:
+                print(ans)
+                return
+            else:
+                pass
+        except:
+            pass
+        # 5
+        try:
+            divs = soup.select("div.sL6Rbf") # Local Time
+            ans = self.for_loop(divs)
+            if len(ans) >=1:
+                print(ans)
+                return
+            else:
+                pass
+        except:
+            pass
+        # 6
+        # 7
+        # 8
+        # 9
+        # 10
+        # 11
+        # 12
+        # 13
+        # 14
+        
         # 9# divs = soup.select("div.kno-rdesc")     # Wikipedia answer
-        # 4# divs = soup.select("div.c4bQHf")        # population
-        # 5# divs = soup.select("div.sL6Rbf")      # Local Time
         # 0# divs = soup.select("div.dAassd")      # Founders
         # 11# divs = soup.select("div.LwV4sf")      # Founder's 2
         # 6# divs = soup.select("div.di3YZe")        # List data > divto get the heading, li to get the list
@@ -71,19 +104,72 @@ class google_results:
     def for_loop(self, divs):
         for div in divs:
             # Search for a h3 tag
-            results = div.select("a")
-            # results = div.select("span")
-            # results = div.select("li")
-            # results = div.select("i")
+            try:
+                results = div.select("div")
+
+                # Check if we have found a result
+                if (len(results) >= 1):
+
+                    # Print the title
+                    h3 = results[0]
+                    return(h3.get_text())
+                else:
+                    pass
+            except:
+                pass
+            try:
+                results = div.select("span")
+
+                # Check if we have found a result
+                if (len(results) >= 1):
+
+                    # Print the title
+                    h3 = results[0]
+                    return(h3.get_text())
+                else:
+                    pass
+            except:
+                pass
+            try:
+                results = div.select("a")
+
+                # Check if we have found a result
+                if (len(results) >= 1):
+
+                    # Print the title
+                    h3 = results[0]
+                    return(h3.get_text())
+                else:
+                    pass
+            except:
+                pass
+            try:
+                results = div.select("li")
+
+                # Check if we have found a result
+                if (len(results) >= 1):
+
+                    # Print the title
+                    h3 = results[0]
+                    return(h3.get_text())
+                else:
+                    pass
+            except:
+                pass
+            try:
+                results = div.select("i")
+
+                # Check if we have found a result
+                if (len(results) >= 1):
+
+                    # Print the title
+                    h3 = results[0]
+                    return(h3.get_text())
+                else:
+                    pass
+            except:
+                pass
             
-            results = div.select("div")
-
-            # Check if we have found a result
-            if (len(results) >= 1):
-
-                # Print the title
-                h3 = results[0]
-                return(h3.get_text())
     
     def related_queries(self, soup) -> str:
         divs = soup.select("div.related-question-pair")
@@ -98,5 +184,5 @@ class google_results:
                 print(h3.get_text())
             
 # scrap_capital("what is the capital of russia")
-google_results("who was elsa")
+google_results("Who was Elsa Where did she live?")
 # google_results("american president")
