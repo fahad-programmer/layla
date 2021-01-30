@@ -25,7 +25,7 @@ lemmatizer = WordNetLemmatizer()
 tf.autograph.set_verbosity(1)
 
 # Import JSON file from the directory
-intents = json.loads(open('basic-comands.json').read())
+intents = json.loads(open('basic-comands.json', encoding="utf8").read())
 
 words = []
 classes = []

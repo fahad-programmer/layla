@@ -219,7 +219,7 @@ class world_info:
     https://restcountries-v1.p.rapidapi.com/subregion/western%2520asia
     """
     
-world_info.main()
+# world_info.main()
 
 class yahoo_finance:
   

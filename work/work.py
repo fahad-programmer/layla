@@ -1,10 +1,13 @@
 import re
-from work import wishing, keyboard_controller, sound, locate_me, main_api
+from work import wishing, keyboard_controller, sound, locate_me, main_api, tictactoe
 import pyperclip, webbrowser, wikipedia
 import clipboard, urllib.request, json
 from layla.engine_components import speak, take_command
 from functools import lru_cache
 from work.background_changer import background_change
+from Web_Scraping.lyrics import LyricsFinder
+import random
+
 """
 What things i am working on:
 1. Scraping websites data
@@ -90,7 +93,10 @@ class website_control:
     @staticmethod
     def wikipedia_search(query):
         speak("Searching Wikipedia...")
-        query = query.replace("wikipedia", "")
+        if "wikipedia" in query:
+            query = query.replace("wikipedia", "")
+        elif "tell me about" in query:
+            query = query.replace("tell me about", "")
         results = wikipedia.summary(query, sentences=2)
         speak("According To wikipedia")
         return results
@@ -227,3 +233,39 @@ def background_chn():
 
 def unable_recognize():
     return "Sorry I Wasn't Able To Recoginze The Command"
+
+def flip_coin():
+    while True:
+        flip = random.randint(0, 1)
+        if (flip == 0):
+            print("Heads")
+            speak("heads")
+        else:
+            print("Tails")
+            speak("tails")
+        speak("Do you want to flip again")
+        opt = take_command().lower()
+        if opt == "yes":
+            continue
+        else:
+            pass
+
+def roll_a_dice():
+    while True:
+        flip = random.randint(1, 6)
+        print(flip)
+        speak(flip)
+        speak("Do you want to roll again")
+        opt = take_command().lower()
+        if opt == "yes":
+            continue
+        else:
+            pass
+
+def play_tactactoe():
+    tictactoe.start_game()
+
+@lru_cache()
+def song_lyrics_finder(query):
+    main_class = LyricsFinder(query)
+    return main_class.lyrics_finder() #One Problem And That Is That The Assistant Will Start Reading The Lyrics
