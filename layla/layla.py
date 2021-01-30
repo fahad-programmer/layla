@@ -9,6 +9,7 @@ from layla.engine_components import take_command
 from tensorflow.keras.models import load_model
 
 from work.work import *
+from WebScraping.googledata import google_results
 
 from _Core_Components_Cpp.cpp_func import *
 
@@ -75,6 +76,9 @@ while True:
     ints = predict_class(query)
     res = get_response(ints, intents)
     try:
-        speak(eval(res))
-    except Exception as e:
-        speak(res)
+        try:
+            speak(eval(res))
+        except Exception as e:
+            speak(res)
+    except IndexError:
+        speek("No Answer Found!")
