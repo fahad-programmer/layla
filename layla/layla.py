@@ -75,10 +75,19 @@ while True:
     query = take_command().lower()
     ints = predict_class(query)
     res = get_response(ints, intents)
+    answer = google_results(query)
     try:
         try:
             speak(eval(res))
         except Exception as e:
             speak(res)
-    except IndexError:
-        speek("No Answer Found!")
+    except IndexError as e:
+        try:
+            if len(answer) >= 1:
+                google_results(query)
+            else:
+                print("No Answer Found!")
+                speak("No Answer Found!")
+        except:
+            pass
+                

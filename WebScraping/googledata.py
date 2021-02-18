@@ -87,7 +87,7 @@ class google_results:
             divs = soup.select("div.di3YZe") # List data > divto get the heading, li to get the list
             ans = self.list_loop(divs)
             if len(ans) >=1:
-                print(ans.replace(".", ".\n"))
+                print(ans.replace(". ", ".\n"))
                 return
             else:
                 pass
@@ -276,4 +276,5 @@ class google_results:
 # google_results("popular scientists")
 # google_results("apple founders")
 # google_results("marvel movies")
-google_results("how can i publish my book")
+# google_results("how can i publish my book")
+# google_results("How old is Joe Biden")
