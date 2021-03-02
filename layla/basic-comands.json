@@ -122,6 +122,11 @@
         "responses":["google_results(query)"]
     },
     {
+        "tag": "System Keyboard",
+        "patterns":["open settings of window", "open settings", "open window settings"],
+        "responses":["_keyboard.sys_func(query)"]
+    },
+    {
         "tag":"mathematics",
         "patterns":["find sin of", "find cos", "find square root of", "round off the following", "find tan of", "find log off", "find the", "sin", "cos", "tan", "square root", "round"],
         "responses":["maths_func(query).decode('utf-8')"]

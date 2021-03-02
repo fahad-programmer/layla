@@ -1,5 +1,5 @@
 import re
-from work import wishing, keyboard_controller, sound, locate_me, main_api, tictactoe
+from work import wishing, keyboard_controller, sound, locate_me, main_api, tictactoe, keyboard
 import pyperclip, webbrowser, wikipedia
 import clipboard, urllib.request, json
 from layla.engine_components import speak, take_command
@@ -262,3 +262,46 @@ def roll_a_dice():
 def play_tactactoe():
     tictactoe.start_game()
     
+class _keyboard:
+    def sys_func(query):
+        # Shortcut Keys
+        if "lock the system" in query:
+            keyboard.press_and_release("win + l")
+        elif "open settings" in query:
+            keyboard.press_and_release("win + i")
+        elif "go to desktop" in query:
+            keyboard.press_and_release("win + d")
+        elif "minimize all" in query:
+            keyboard.press_and_release("win + m")
+        elif "start" in query:
+            keyboard.press_and_release("win")
+    
+    def doc_func(query):
+        elif "undo" in query:
+            keyboard.press_and_release('ctrl + z')
+        elif "redo" in query:
+            keyboard.press_and_release("ctrl + y")
+        elif "paste" in query:
+            keyboard.press_and_release("ctrl + v")
+        elif "copy" in query:
+            keyboard.press_and_release("ctrl + c")
+        elif "cut" in query:
+            keyboard.press_and_release("ctrl + x")
+        elif "save" in query:
+            keyboard.press_and_release("ctrl + s")
+        elif "select all" in query:
+            keyboard.press_and_release("ctrl + a")
+        elif "go to end" in query:
+            keyboard.press_and_release("ctrl + end")
+    
+    def desk_func(query):
+        elif "application" in query:
+            if "next" in query:
+                keyboard.press_and_release('alt + tab')
+            if "previous" in query:
+                keyboard.press_and_release('alt + shift + tab')
+        elif "desktop" in query:
+            if "next" in query:
+                keyboard.press_and_release('win + ctrl + right')
+            if "previous" in query:
+                keyboard.press_and_release('win + ctrl + left')
