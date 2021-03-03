@@ -5,6 +5,9 @@ import clipboard, urllib.request, json
 from layla.engine_components import speak, take_command
 from functools import lru_cache
 from work.background_changer import background_change
+from Web_Scraping.lyrics import LyricsFinder
+import random
+
 """
 What things i am working on:
 1. Scraping websites data
@@ -305,3 +308,8 @@ class f_keyboard:
                 keyboard.press_and_release('win + ctrl + right')
             elif "previous" in query:
                 keyboard.press_and_release('win + ctrl + left')
+
+@lru_cache()
+def song_lyrics_finder(query):
+    main_class = LyricsFinder(query)
+    return main_class.lyrics_finder() #One Problem And That Is That The Assistant Will Start Reading The Lyrics
