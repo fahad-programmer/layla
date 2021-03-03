@@ -75,12 +75,13 @@ while True:
     query = take_command().lower()
     ints = predict_class(query)
     res = get_response(ints, intents)
-    answer = google_results(query)
+    # answer = google_results(query)
     try:
-        if len(res) >= 1:
-            speak(eval(res))
-        else:
-            google_results(query)
+        speak(eval(res))
+        # if len(res) >= 1:
+        #     speak(eval(res))
+        # else:
+        #     google_results(query)
     except Exception as e:
         speak(res)
                 

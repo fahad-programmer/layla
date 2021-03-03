@@ -1,6 +1,6 @@
 import re
-from work import wishing, keyboard_controller, sound, locate_me, main_api, tictactoe, keyboard
-import pyperclip, webbrowser, wikipedia
+from work import wishing, keyboard_controller, sound, locate_me, main_api, tictactoe
+import pyperclip, webbrowser, wikipedia, keyboard
 import clipboard, urllib.request, json
 from layla.engine_components import speak, take_command
 from functools import lru_cache
@@ -262,22 +262,22 @@ def roll_a_dice():
 def play_tactactoe():
     tictactoe.start_game()
     
-class _keyboard:
+class f_keyboard:
     def sys_func(query):
         # Shortcut Keys
-        if "lock the system" in query:
+        if "lock" in query:
             keyboard.press_and_release("win + l")
-        elif "open settings" in query:
+        elif "setting" in query:
             keyboard.press_and_release("win + i")
-        elif "go to desktop" in query:
+        elif "desktop" in query:
             keyboard.press_and_release("win + d")
-        elif "minimize all" in query:
+        elif "minimize" in query:
             keyboard.press_and_release("win + m")
         elif "start" in query:
             keyboard.press_and_release("win")
-    
+     
     def doc_func(query):
-        elif "undo" in query:
+        if "undo" in query:
             keyboard.press_and_release('ctrl + z')
         elif "redo" in query:
             keyboard.press_and_release("ctrl + y")
@@ -295,13 +295,13 @@ class _keyboard:
             keyboard.press_and_release("ctrl + end")
     
     def desk_func(query):
-        elif "application" in query:
+        if "application" in query:
             if "next" in query:
                 keyboard.press_and_release('alt + tab')
-            if "previous" in query:
+            elif "previous" in query:
                 keyboard.press_and_release('alt + shift + tab')
         elif "desktop" in query:
             if "next" in query:
                 keyboard.press_and_release('win + ctrl + right')
-            if "previous" in query:
+            elif "previous" in query:
                 keyboard.press_and_release('win + ctrl + left')

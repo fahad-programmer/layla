@@ -124,7 +124,7 @@
     {
         "tag": "System Keyboard",
         "patterns":["open settings of window", "open settings", "open window settings"],
-        "responses":["_keyboard.sys_func(query)"]
+        "responses":["f_keyboard.sys_func(query)"]
     },
     {
         "tag":"mathematics",
