@@ -33,6 +33,7 @@ class google_results:
             ans = self.for_loop(divs)
             if len(ans) >=1:
                 print(ans)
+                print("1")
                 return
             else:
                 pass
@@ -44,6 +45,7 @@ class google_results:
             ans = self.for_loop(divs)
             if len(ans) >=1:
                 print(ans)
+                print("2")
                 return
             else:
                 pass
@@ -55,6 +57,7 @@ class google_results:
             ans = self.for_loop(divs)
             if len(ans) >=1:
                 print(ans)
+                print("3")
                 return
             else:
                 pass
@@ -66,6 +69,7 @@ class google_results:
             ans = self.for_loop(divs)
             if len(ans) >=1:
                 print(ans)
+                print("4")
                 return
             else:
                 pass
@@ -77,6 +81,7 @@ class google_results:
             ans = self.for_loop(divs)
             if len(ans) >=1:
                 print(ans)
+                print("5")
                 return
             else:
                 pass
@@ -88,6 +93,7 @@ class google_results:
             ans = self.list_loop(divs)
             if len(ans) >=1:
                 print(ans.replace(". ", ".\n"))
+                print("6")
                 return
             else:
                 pass
@@ -99,58 +105,7 @@ class google_results:
             ans = self.for_loop(divs)
             if len(ans) >=1:
                 print(ans)
-                return
-            else:
-                pass
-        except:
-            pass
-        # 8
-        try:
-            ans = soup.find('input', {'jsname': 'fPLMtf'}).get('value') # Give value after converstion like 1 year to weaks
-            if len(ans) >= 1:
-                print(ans)
-                return
-            else:
-                pass
-        except:
-            pass
-        # 9
-        try:
-            divs = soup.select("div.vk_c") # Distance between two countries or two cities in diffrent countries > div
-            ans = self.for_loop(divs)
-            if len(ans) >=1:
-                print(ans)
-                return
-            else:
-                pass
-        except:
-            pass
-        # 10
-        try:
-            divs = soup.select("div.YwqY0") # Quotes
-            ans = self.for_loop(divs)
-            if len(ans) >=1:
-                print(ans)
-                return
-            else:
-                pass
-        except:
-            pass
-        # 11
-        try:
-            divs = soup.select("div.LwV4sf") # Founder's
-            ans = self.founder_loop(divs)
-            if len(ans) >=1:
-                return
-            else:
-                pass
-        except:
-            pass
-        # 12
-        try:
-            divs = soup.select("div.WGwSK") # Movies List
-            ans = self.founder_loop(divs)
-            if len(ans) >=1:
+                print("7")
                 return
             else:
                 pass
@@ -158,10 +113,68 @@ class google_results:
             pass
         # 13
         try:
+            ans = soup.find('input', {'jsname': 'fPLMtf'}).get('value') # Give value after converstion like 1 year to weaks
+            if len(ans) >= 1:
+                print(ans)
+                print("13")
+                return
+            else:
+                pass
+        except:
+            pass
+        # 8
+        try:
+            divs = soup.select("div.vk_c") # Distance between two countries or two cities in diffrent countries > div
+            ans = self.for_loop(divs)
+            if len(ans) >=1:
+                print(ans)
+                print("8")
+                return
+            else:
+                pass
+        except:
+            pass
+        # 9
+        try:
+            divs = soup.select("div.YwqY0") # Quotes
+            ans = self.for_loop(divs)
+            if len(ans) >=1:
+                print(ans)
+                print('9')
+                return
+            else:
+                pass
+        except:
+            pass
+        # 10
+        try:
+            divs = soup.select("div.LwV4sf") # Founder's
+            ans = self.founder_loop(divs)
+            if len(ans) >=1:
+                print("10")
+                return
+            else:
+                pass
+        except:
+            pass
+        # 11
+        try:
+            divs = soup.select("div.WGwSK") # Movies List
+            ans = self.founder_loop(divs)
+            if len(ans) >=1:
+                print(11)
+                return
+            else:
+                pass
+        except:
+            pass
+        # 12
+        try:
             divs = soup.select("div.VL3Jfb") # IP answer
             ans = self.for_loop(divs)
             if len(ans) >=1:
                 print(ans)
+                print("12")
                 return
             else:
                 pass
@@ -173,6 +186,7 @@ class google_results:
             ans = self.for_loop(divs)
             if len(ans) >=1:
                 print(ans)
+                print("14")
                 return
             else:
                 pass
@@ -299,4 +313,4 @@ class google_results:
 # google_results("marvel movies")
 # google_results("how can i publish my book")
 # google_results("How old is Joe Biden")
-google_results("what is the temprature in moscow")
+google_results("how many feet in mile")
