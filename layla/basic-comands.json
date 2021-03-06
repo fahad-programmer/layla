@@ -433,7 +433,7 @@
     },
     {
         "tag": "System Keyboard",
-        "patterns":["open settings of window", "open settings", "open window settings", "lock the pc", "lock my pc", "layla lock the computer", "layla lock the system", "lock the system", "lock the computer", "layla open the settings", "layla open window settings", "minimize all apps", "go to desktop", "hide the windows", "go to the desktop", "open desktop", "take me to desktop", "show me the desktop", "minimize the window", "minimize", "show start menu", "launch start", "start menu", "display start"],
+        "patterns":["open settings of window", "open settings", "open window settings", "lock the pc", "lock my pc", "layla lock the computer", "layla lock the system", "lock the system", "lock the computer", "layla open the settings", "layla open window settings", "minimise all apps", "go to desktop", "hide the windows", "go to the desktop", "open desktop", "take me to desktop", "show me the desktop", "minimise the window", "minimise", "show start menu", "launch start", "start menu", "display start"],
         "responses":["f_keyboard.sys_func(query)"]
     },
     {

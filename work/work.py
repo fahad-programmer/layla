@@ -260,7 +260,7 @@ def roll_a_dice():
         if opt == "yes":
             continue
         else:
-            pass
+            break
 
 def play_tactactoe():
     tictactoe.start_game()
@@ -274,7 +274,7 @@ class f_keyboard:
             keyboard.press_and_release("win + i")
         elif "desktop" in query or "minimize all" in query:
             keyboard.press_and_release("win + d")
-        elif "minimize" in query:
+        elif "minimise" in query:
             keyboard.press_and_release("win + m")
         elif "start" in query:
             keyboard.press_and_release("win")
