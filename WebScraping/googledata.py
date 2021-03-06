@@ -169,6 +169,17 @@ class google_results:
             pass
         # 14
         try:
+            divs = soup.select("div.wGt0Bc") # Stock Price
+            ans = self.for_loop(divs)
+            if len(ans) >=1:
+                print(ans)
+                return
+            else:
+                pass
+        except:
+            pass
+        # 15
+        try:
             divs = soup.select("div.kno-rdesc") # Wikipedia answer
             ans = self.for_loop(divs)
             if len(ans) >=1:
@@ -299,4 +310,4 @@ class google_results:
 # google_results("marvel movies")
 # google_results("how can i publish my book")
 # google_results("How old is Joe Biden")
-google_results("what is the temprature in moscow")
+google_results("nasa gdp")

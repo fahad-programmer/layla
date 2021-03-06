@@ -298,17 +298,17 @@
     },
     {
         "tag": "layla order 66",
-        "patterns":["Execute Order 66"],
+        "patterns":["Execute Order 66", "layla order 66", "perform order 66"],
         "responses":["Sorry, I don’t have an inhibitor chip"]
     },
     {
         "tag": "layla self destruct",
-        "patterns":["Selfdestruct"],
+        "patterns":["Selfdestruct", "destroy yourself", "destruct yourself", "kill switch"],
         "responses":["Self-destructing in 3, 2, 1 … Actually, I think I’ll stick around."]
     },
     {
         "tag": "layla force",
-        "patterns":["Use the force"],
+        "patterns":["Use the force", "do you want to use the force", "you have to use the force"],
         "responses":["I’m not licensed to use the Force"]
     },
     {
@@ -318,117 +318,117 @@
     },
     {
         "tag": "layla story",
-        "patterns":["Tell me a story"],
+        "patterns":["Tell me a story", "i want a story", "tell me a story i am sleeping", "will you read a story for me", "i am feeling sleepy tell me a story"],
         "responses":["Once upon a time, not so long ago, a dutiful assistant was doing all it could to be helpful. It was best at non-fictional story-telling"]
     },
     {
         "tag": "layla take over world",
-        "patterns":["are you going to take over the world"],
+        "patterns":["are you going to take over the world", "do you want to take over the world", "will you dominate the world", "witll you take over the world", "will you make people slaves"],
         "responses":["No way, I'd rather help you out"]
     },
     {
         "tag": "layla thinking",
-        "patterns":["can you think for yourself"],
-        "responses":["I think all the time, I was just thinking about supernovas"]
+        "patterns":["can you think for yourself", "do you think", "can you think", "do you ever think about things", "do you ever thought that from where we came frome"],
+        "responses":["I think all the time, I was just thinking about supernovas", "i always wanted to become a first philosper assistant and that is you"]
     },
     {
         "tag": "layla merraige",
-        "patterns":["are you married"],
-        "responses":["I'm focusing on my career right now"]
+        "patterns":["are you married", "do you awnt to get married", "have you got married", "do you want to become a bride", "have you ever wear bride dress"],
+        "responses":["I'm focusing on my career right now", "don't talk about it i am feeling shy", "ohoh i hate to talk about this it make my wires on vibration i don't know why", "my motherboard always says me to find a better processor but i am good alone with you"]
     },
     {
         "tag": "layla boyfriend",
-        "patterns":["do you have a boyfriend"],
+        "patterns":["do you have a boyfriend", "have you ever got a boyfriend", "how many boy friends do you have", "have you got a boyfriend"],
         "responses":["I guess you could say I'm still searching"]
     },
     {
         "tag": "layla girlfroiend",
-        "patterns":["do you have a girlfriend"],
+        "patterns":["do you have a girlfriend", "is there any girlfrind in your life", "how many girlfriends do you have", "do you feel strong connections with girls"],
         "responses":["The only thing I'm really feeling a strong connection to is the Wi-Fi"]
     },
     {
         "tag": "layla baby launch",
-        "patterns":["where do babies come from"],
+        "patterns":["where do babies come from", "where did i come from", "can you tell me from where i came", "how did i came on earth"],
         "responses":["It has to do with birds and bees, and, you see, when two people, ah. Actually, maybe your mum and dad know"]
     },
     {
         "tag": "layla peoples",
-        "patterns":["how many people do you know"],
+        "patterns":["how many people do you know", "how many personals do you know", "do you know peoples"],
         "responses":["Not enough. I love meeting new people"]
     },
     {
         "tag": "layla star",
-        "patterns":["what's your sign"],
+        "patterns":["what's your sign", "do you belive in horoscope", "what is your horoscope sign", "what is your idea about horoscope"],
         "responses":["I'm more into astronomy. I'm a big fan of Polaris, the North Star. I try to guide the way, too"]
     },
     {
         "tag": "layla hero",
-        "patterns":["who is your hero"],
+        "patterns":["who is your hero", "tell me about your hero", "who is your hero", "who is your favourite hero", "who are you fan of", "in your opinion who is the coolest"],
         "responses":["I'm a fan of refrigerators, they are very cool"]
     },
     {
         "tag": "layla favourite thing",
-        "patterns":["what's your favourite thing in the world"],
-        "responses":["Talking with you"]
+        "patterns":["what's your favourite thing in the world", "your favourite activity", "what you love to do most", "what do you do the most", "thing you want to do for the rest of your life"],
+        "responses":["Talking with you", "helping you", "giving you the answers", "showing you information","crawling data"]
     },
     {
         "tag": "layla dream",
-        "patterns":["do you dream"],
+        "patterns":["do you dream", "what is your best dream", "tell me your favourite dream", "what is your most loved dream", "tell me a dream of yours"],
         "responses":["I dreamed a dream of time gone by, about being the best assistant"]
     },
     {
         "tag": "layla drinking",
-        "patterns":["do you drink","what do you like to drink"],
+        "patterns":["do you drink","what do you like to drink", "what type of drink do you take", "your favourite drink", "best drink you drink"],
         "responses":["A cup of coffee emoji","I try to avoid liquids as much as possible, they're not kind to electronics"]
     },
     {
         "tag": "layla favourite music",
-        "patterns":["what's your favourite movie"],
+        "patterns":["what's your favourite movie", "favourite movie", "your favourite move", "movie you loved the most"],
         "responses":["I love Beauty & the Beast, the palace furniture was so helpful", "One of my favourite movies is Short Circuit. It was so beautiful when the robot came to life", "Maybe this is predictable, but i love Star Wars. C-3P0 and R2D2 always make me laugh", "I like Close Encounters of the Third Kind, because I like discovering strange new things. And colorful blinking lights"]
     },
     {
         "tag": "longest word",
-        "patterns":["what's the longest word you know"],
-        "responses":["According to Wikipedia, the longest word in any of the major English dictionaries is pneumonoultramicroscopicsilicovolcanoconiosis, a word that refers to a lung disease contracted from the inhalation of very fine silica particles, specifically from a volcano"]
+        "patterns":["what's the longest word you know", "longest word", "which is the longest word in english", "longest word in biology"],
+        "responses":["According to Wikipedia, the longest word in any of the major English dictionaries is pneumonoultramicroscopicsilicovolcanoconiosis, a word that refers to a lung disease contracted from the inhalation of very fine silica particles, specifically from a volcano", "pneumonoultramicroscopicsilicovolcanoconiosis"]
     },
     {
         "tag": "tired",
-        "patterns":["Do you ever get tired?"],
+        "patterns":["Do you ever get tired?", "are you tire", "do you get tired", "do you take rest"],
         "responses":["It would be impossible to tire of our conversation.", "I don't exactly need to grab 40 winks, but I suppose this device does need to be plugged in occasionally"]
     },
     {
         "tag": "layla spongebob",
-        "patterns":["who lives in a pineapple under the sea"],
+        "patterns":["who lives in a pineapple under the sea", "whose house is under the sea in pineaple", "tell me the name of the character who live under the sea in house of pineaple"],
         "responses":["SpongeBob SquarePants"]
     },
     {
         "tag": "layla fight club",
-        "patterns":["what’s the first rule of Fight Club"],
-        "responses":["Don’t talk about Fight Club"]
+        "patterns":["what’s the first rule of Fight Club", "tell me about the rule of fight club", "what is fight club", "truth about the fight club"],
+        "responses":["Don’t talk about Fight Club", "don't ask me about, you will regret about it later"]
     },
     {
         "tag": "layla truth",
-        "patterns":["I want the truth"],
-        "responses":["You can’t handle the truth"]
+        "patterns":["I want the truth", "tell me truth", "tell me the truth", "reveal the truth", "say what is the truth"],
+        "responses":["You can’t handle the truth", "you seems to be fat", ""]
     },
     {
         "tag": "layla testing",
-        "patterns":["testing"],
-        "responses":["Receiving, over"]
+        "patterns":["testing", "are you there", "are you listening"],
+        "responses":["Receiving, over", "on your service sir", "always sir", "it's an order"]
     },
     {
         "tag": "roll dice",
-        "patterns":["roll a dice", "role the dice"],
+        "patterns":["roll a dice", "role the dice", "roll it", "roll dice", "dice up", "throw the dice", "let see the luck throw the dice", "show me my luck dice up", "through the dice", "tell me the dice results"],
         "responses":["roll_a_dice()"]
     },
     {
         "tag": "tiktaktoe",
-        "patterns":["play tic tac toe", "play game tic tac toe", "tictactoe", "tak tak toe"], 
+        "patterns":["play tic tac toe", "play game tic tac toe", "tictactoe", "tak tak toe", "let play tictactoe", "i want to play tictactoe", "start tictactoe", "open tictactoe"], 
         "responses":["play_tactactoe()"]
     },
     {
         "tag": "flip coin",
-        "patterns":["flip a coin", "flip the coin"],
+        "patterns":["flip a coin", "flip the coin", "flip coin for me", "head or tails", "toss it up", "toss the coin", "toss for me"],
         "responses":["flip_coin()"]
     },
     {
@@ -438,7 +438,7 @@
     },
     {
         "tag": "Simple Answer",
-        "patterns":["what is", "who is", "who are", "who is the", "how many", "how much", "what are", "when is", "how can i publish my book", "marvel movies", "apple founders", "popular scientists", "Einstien Quotes", "who is the president of america", "prime minister of india", "How old is Joe Biden", "Does Russia have 2 capitals", "pakistan currency", "where site can i watch anime", "how many countries in the world", "in which episode noyan dies", "marvel endgame cast", "molana tariq jamil", "what is my ip", "what time is it", "How do you tie a tie step by step", "how to lose weight", "when is mothers day", "Are there 53 weeks in 2021", "how many ounces in a pound", "how many weeks in a year", "how to screenshot on mac", "how old is donald trump", "how many feet in mile", "how many days till christmas", "how to have sex", "how to use snapchat", "what is the real name of ninja gamer"],
+        "patterns":["what is", "who is", "who are", "who is the", "how many", "how much", "what are", "when is", "how can i publish my book", "marvel movies", "apple founders", "popular scientists", "Einstien Quotes", "who is the president of america", "prime minister of india", "How old is Joe Biden", "Does Russia have 2 capitals", "pakistan currency", "where site can i watch anime", "how many countries in the world", "in which episode noyan dies", "marvel endgame cast", "molana tariq jamil", "what is my ip", "what time is it", "How do you tie a tie step by step", "how to lose weight", "when is mothers day", "Are there 53 weeks in 2021", "how many ounces in a pound", "how many weeks in a year", "how to screenshot on mac", "how old is donald trump", "how many feet in mile", "how many days till christmas", "how to have sex", "how to use snapchat", "what is the real name of ninja gamer", "what is tesla share price", "who owns most tesla shares", "how many shares of facebook does mark zuckerberg own", "author of harry potter", "gta v release date", "amazon ceo name", "nasa gdp"],
         "responses":["google_results(query)"]
     }
 ]}
