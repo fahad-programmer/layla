@@ -1253,7 +1253,6 @@ static std::string __pyx_f_8cpp_func_assistant_name(int __pyx_skip_dispatch); /*
 static PyObject *__pyx_f_8cpp_func_system_info(int __pyx_skip_dispatch); /*proto*/
 static PyObject *__pyx_f_8cpp_func_open_system_programs(PyObject *, int __pyx_skip_dispatch); /*proto*/
 static PyObject *__pyx_f_8cpp_func_maths_func(PyObject *, int __pyx_skip_dispatch); /*proto*/
-static std::string __pyx_f_8cpp_func_background_changer(int __pyx_skip_dispatch); /*proto*/
 static std::string __pyx_convert_string_from_py_std__in_string(PyObject *); /*proto*/
 static CYTHON_INLINE PyObject *__pyx_convert_PyObject_string_to_py_std__in_string(std::string const &); /*proto*/
 static CYTHON_INLINE PyObject *__pyx_convert_PyUnicode_string_to_py_std__in_string(std::string const &); /*proto*/
@@ -1269,7 +1268,6 @@ static PyObject *__pyx_builtin_map;
 static PyObject *__pyx_builtin_sum;
 static const char __pyx_k_[] = "";
 static const char __pyx_k_Is[] = " Is ";
-static const char __pyx_k_os[] = "os";
 static const char __pyx_k_re[] = "re";
 static const char __pyx_k_cos[] = "cos";
 static const char __pyx_k_log[] = "log";
@@ -1288,34 +1286,26 @@ static const char __pyx_k_H_M_S[] = "%H:%M:%S";
 static const char __pyx_k_UTF_8[] = "UTF-8";
 static const char __pyx_k_d_d_d[] = "[-+]?\\d*\\.\\d|\\d+";
 static const char __pyx_k_split[] = "split";
-static const char __pyx_k_choice[] = "choice";
 static const char __pyx_k_encode[] = "encode";
 static const char __pyx_k_import[] = "__import__";
-static const char __pyx_k_random[] = "random";
 static const char __pyx_k_reduce[] = "reduce";
 static const char __pyx_k_findall[] = "findall";
 static const char __pyx_k_isdigit[] = "isdigit";
-static const char __pyx_k_listdir[] = "listdir";
 static const char __pyx_k_replace[] = "replace";
 static const char __pyx_k_datetime[] = "datetime";
 static const char __pyx_k_operator[] = "operator";
 static const char __pyx_k_strftime[] = "strftime";
 static const char __pyx_k_functools[] = "functools";
 static const char __pyx_k_round_off[] = "round off";
-static const char __pyx_k_wallpaper[] = "wallpaper";
 static const char __pyx_k_The_Cos_Of[] = "The Cos Of ";
 static const char __pyx_k_The_Log_Of[] = "The Log Of ";
 static const char __pyx_k_The_Sin_Of[] = "The Sin Of ";
 static const char __pyx_k_The_Tan_of[] = "The Tan of ";
 static const char __pyx_k_square_root[] = "square root";
 static const char __pyx_k_The_Result_Is[] = " The Result Is ";
-static const char __pyx_k_get_wallpaper[] = "get_wallpaper";
-static const char __pyx_k_set_wallpaper[] = "set_wallpaper";
 static const char __pyx_k_Time_Right_Now_is[] = "Time Right Now is ";
-static const char __pyx_k_Wallpaper_Changed[] = "Wallpaper Changed";
 static const char __pyx_k_The_Square_Root_Of[] = "The Square Root Of ";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
-static const char __pyx_k_D_Personal_wallpaper[] = "D:\\Personal\\wallpaper\\";
 static const char __pyx_k_Some_Internal_Error_Occured[] = "Some Internal Error Occured";
 static const char __pyx_k_After_Rounding_Off_The_Number[] = "After Rounding Off The Number ";
 static const char __pyx_k_The_Result_Of_The_Addition_Is[] = "The Result Of The Addition Is ";
@@ -1325,7 +1315,6 @@ static const char __pyx_k_The_Result_Of_The_Subtraction_is[] = "The Result Of Th
 static PyObject *__pyx_kp_b_;
 static PyObject *__pyx_kp_s_;
 static PyObject *__pyx_kp_u_After_Rounding_Off_The_Number;
-static PyObject *__pyx_kp_b_D_Personal_wallpaper;
 static PyObject *__pyx_kp_s_H_M_S;
 static PyObject *__pyx_kp_u_Is;
 static PyObject *__pyx_kp_s_My_name_is_Layla_meaning_night;
@@ -1341,8 +1330,6 @@ static PyObject *__pyx_kp_u_The_Square_Root_Of;
 static PyObject *__pyx_kp_u_The_Tan_of;
 static PyObject *__pyx_kp_u_Time_Right_Now_is;
 static PyObject *__pyx_kp_s_UTF_8;
-static PyObject *__pyx_kp_s_Wallpaper_Changed;
-static PyObject *__pyx_n_s_choice;
 static PyObject *__pyx_n_s_cline_in_traceback;
 static PyObject *__pyx_n_s_cos;
 static PyObject *__pyx_kp_s_d_d_d;
@@ -1350,10 +1337,8 @@ static PyObject *__pyx_n_s_datetime;
 static PyObject *__pyx_n_s_encode;
 static PyObject *__pyx_n_s_findall;
 static PyObject *__pyx_n_s_functools;
-static PyObject *__pyx_n_s_get_wallpaper;
 static PyObject *__pyx_n_s_import;
 static PyObject *__pyx_n_s_isdigit;
-static PyObject *__pyx_n_s_listdir;
 static PyObject *__pyx_n_s_log;
 static PyObject *__pyx_n_s_main;
 static PyObject *__pyx_n_s_map;
@@ -1362,13 +1347,10 @@ static PyObject *__pyx_n_s_name;
 static PyObject *__pyx_n_s_now;
 static PyObject *__pyx_kp_s_open;
 static PyObject *__pyx_n_s_operator;
-static PyObject *__pyx_n_s_os;
-static PyObject *__pyx_n_s_random;
 static PyObject *__pyx_n_s_re;
 static PyObject *__pyx_n_s_reduce;
 static PyObject *__pyx_n_s_replace;
 static PyObject *__pyx_kp_s_round_off;
-static PyObject *__pyx_n_s_set_wallpaper;
 static PyObject *__pyx_n_s_sin;
 static PyObject *__pyx_n_s_split;
 static PyObject *__pyx_kp_s_square_root;
@@ -1377,7 +1359,6 @@ static PyObject *__pyx_n_s_sub;
 static PyObject *__pyx_n_s_sum;
 static PyObject *__pyx_n_s_tan;
 static PyObject *__pyx_n_s_test;
-static PyObject *__pyx_n_s_wallpaper;
 static PyObject *__pyx_pf_8cpp_func_greet_main(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
 static PyObject *__pyx_pf_8cpp_func_2current_date_main(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
 static PyObject *__pyx_pf_8cpp_func_4saying_bye_main(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
@@ -1392,11 +1373,10 @@ static PyObject *__pyx_pf_8cpp_func_20assistant_name(CYTHON_UNUSED PyObject *__p
 static PyObject *__pyx_pf_8cpp_func_22system_info(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
 static PyObject *__pyx_pf_8cpp_func_24open_system_programs(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_query); /* proto */
 static PyObject *__pyx_pf_8cpp_func_26maths_func(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_query); /* proto */
-static PyObject *__pyx_pf_8cpp_func_28background_changer(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
 static PyObject *__pyx_tuple__2;
 /* Late includes */
 
-/* "cpp_func.pyx":33
+/* "cpp_func.pyx":29
  *     char *current_date()
  * 
  * cpdef greet_main():             # <<<<<<<<<<<<<<
@@ -1414,7 +1394,7 @@ static PyObject *__pyx_f_8cpp_func_greet_main(CYTHON_UNUSED int __pyx_skip_dispa
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("greet_main", 0);
 
-  /* "cpp_func.pyx":34
+  /* "cpp_func.pyx":30
  * 
  * cpdef greet_main():
  *     return greet()             # <<<<<<<<<<<<<<
@@ -1422,13 +1402,13 @@ static PyObject *__pyx_f_8cpp_func_greet_main(CYTHON_UNUSED int __pyx_skip_dispa
  * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBytes_FromString(greet()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 34, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBytes_FromString(greet()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 30, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "cpp_func.pyx":33
+  /* "cpp_func.pyx":29
  *     char *current_date()
  * 
  * cpdef greet_main():             # <<<<<<<<<<<<<<
@@ -1469,7 +1449,7 @@ static PyObject *__pyx_pf_8cpp_func_greet_main(CYTHON_UNUSED PyObject *__pyx_sel
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("greet_main", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_8cpp_func_greet_main(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 33, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_8cpp_func_greet_main(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 29, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -1486,7 +1466,7 @@ static PyObject *__pyx_pf_8cpp_func_greet_main(CYTHON_UNUSED PyObject *__pyx_sel
   return __pyx_r;
 }
 
-/* "cpp_func.pyx":37
+/* "cpp_func.pyx":33
  * 
  * 
  * cpdef current_date_main():             # <<<<<<<<<<<<<<
@@ -1504,7 +1484,7 @@ static PyObject *__pyx_f_8cpp_func_current_date_main(CYTHON_UNUSED int __pyx_ski
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("current_date_main", 0);
 
-  /* "cpp_func.pyx":38
+  /* "cpp_func.pyx":34
  * 
  * cpdef current_date_main():
  *     return current_date()             # <<<<<<<<<<<<<<
@@ -1512,13 +1492,13 @@ static PyObject *__pyx_f_8cpp_func_current_date_main(CYTHON_UNUSED int __pyx_ski
  * cpdef saying_bye_main():
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBytes_FromString(current_date()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBytes_FromString(current_date()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 34, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "cpp_func.pyx":37
+  /* "cpp_func.pyx":33
  * 
  * 
  * cpdef current_date_main():             # <<<<<<<<<<<<<<
@@ -1559,7 +1539,7 @@ static PyObject *__pyx_pf_8cpp_func_2current_date_main(CYTHON_UNUSED PyObject *_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("current_date_main", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_8cpp_func_current_date_main(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 37, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_8cpp_func_current_date_main(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 33, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -1576,7 +1556,7 @@ static PyObject *__pyx_pf_8cpp_func_2current_date_main(CYTHON_UNUSED PyObject *_
   return __pyx_r;
 }
 
-/* "cpp_func.pyx":40
+/* "cpp_func.pyx":36
  *     return current_date()
  * 
  * cpdef saying_bye_main():             # <<<<<<<<<<<<<<
@@ -1594,7 +1574,7 @@ static PyObject *__pyx_f_8cpp_func_saying_bye_main(CYTHON_UNUSED int __pyx_skip_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("saying_bye_main", 0);
 
-  /* "cpp_func.pyx":41
+  /* "cpp_func.pyx":37
  * 
  * cpdef saying_bye_main():
  *     return saying_bye()             # <<<<<<<<<<<<<<
@@ -1602,13 +1582,13 @@ static PyObject *__pyx_f_8cpp_func_saying_bye_main(CYTHON_UNUSED int __pyx_skip_
  * cpdef age_question_main():
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBytes_FromString(saying_bye()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 41, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBytes_FromString(saying_bye()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 37, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "cpp_func.pyx":40
+  /* "cpp_func.pyx":36
  *     return current_date()
  * 
  * cpdef saying_bye_main():             # <<<<<<<<<<<<<<
@@ -1649,7 +1629,7 @@ static PyObject *__pyx_pf_8cpp_func_4saying_bye_main(CYTHON_UNUSED PyObject *__p
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("saying_bye_main", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_8cpp_func_saying_bye_main(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 40, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_8cpp_func_saying_bye_main(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 36, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -1666,7 +1646,7 @@ static PyObject *__pyx_pf_8cpp_func_4saying_bye_main(CYTHON_UNUSED PyObject *__p
   return __pyx_r;
 }
 
-/* "cpp_func.pyx":43
+/* "cpp_func.pyx":39
  *     return saying_bye()
  * 
  * cpdef age_question_main():             # <<<<<<<<<<<<<<
@@ -1684,7 +1664,7 @@ static PyObject *__pyx_f_8cpp_func_age_question_main(CYTHON_UNUSED int __pyx_ski
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("age_question_main", 0);
 
-  /* "cpp_func.pyx":44
+  /* "cpp_func.pyx":40
  * 
  * cpdef age_question_main():
  *     return age_question()             # <<<<<<<<<<<<<<
@@ -1692,13 +1672,13 @@ static PyObject *__pyx_f_8cpp_func_age_question_main(CYTHON_UNUSED int __pyx_ski
  * cpdef string addition(query):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBytes_FromString(age_question()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 44, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBytes_FromString(age_question()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 40, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "cpp_func.pyx":43
+  /* "cpp_func.pyx":39
  *     return saying_bye()
  * 
  * cpdef age_question_main():             # <<<<<<<<<<<<<<
@@ -1739,7 +1719,7 @@ static PyObject *__pyx_pf_8cpp_func_6age_question_main(CYTHON_UNUSED PyObject *_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("age_question_main", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_8cpp_func_age_question_main(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 43, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_8cpp_func_age_question_main(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 39, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -1756,7 +1736,7 @@ static PyObject *__pyx_pf_8cpp_func_6age_question_main(CYTHON_UNUSED PyObject *_
   return __pyx_r;
 }
 
-/* "cpp_func.pyx":46
+/* "cpp_func.pyx":42
  *     return age_question()
  * 
  * cpdef string addition(query):             # <<<<<<<<<<<<<<
@@ -1784,16 +1764,16 @@ static std::string __pyx_f_8cpp_func_addition(PyObject *__pyx_v_query, CYTHON_UN
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("addition", 0);
 
-  /* "cpp_func.pyx":47
+  /* "cpp_func.pyx":43
  * 
  * cpdef string addition(query):
  *     cdef list string_numbers = re.findall(r"[-+]?\d*\.\d|\d+", query)             # <<<<<<<<<<<<<<
  *     cdef list main_list = list(map(int, string_numbers))
  *     cdef double add_numbers = sum(main_list)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_re); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 47, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_re); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 43, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_findall); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 47, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_findall); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 43, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -1811,7 +1791,7 @@ static std::string __pyx_f_8cpp_func_addition(PyObject *__pyx_v_query, CYTHON_UN
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[3] = {__pyx_t_2, __pyx_kp_s_d_d_d, __pyx_v_query};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 47, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 43, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else
@@ -1819,13 +1799,13 @@ static std::string __pyx_f_8cpp_func_addition(PyObject *__pyx_v_query, CYTHON_UN
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[3] = {__pyx_t_2, __pyx_kp_s_d_d_d, __pyx_v_query};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 47, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 43, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else
   #endif
   {
-    __pyx_t_5 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 47, __pyx_L1_error)
+    __pyx_t_5 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 43, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     if (__pyx_t_2) {
       __Pyx_GIVEREF(__pyx_t_2); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_2); __pyx_t_2 = NULL;
@@ -1836,23 +1816,23 @@ static std::string __pyx_f_8cpp_func_addition(PyObject *__pyx_v_query, CYTHON_UN
     __Pyx_INCREF(__pyx_v_query);
     __Pyx_GIVEREF(__pyx_v_query);
     PyTuple_SET_ITEM(__pyx_t_5, 1+__pyx_t_4, __pyx_v_query);
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 47, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 43, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (!(likely(PyList_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "list", Py_TYPE(__pyx_t_1)->tp_name), 0))) __PYX_ERR(0, 47, __pyx_L1_error)
+  if (!(likely(PyList_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "list", Py_TYPE(__pyx_t_1)->tp_name), 0))) __PYX_ERR(0, 43, __pyx_L1_error)
   __pyx_v_string_numbers = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "cpp_func.pyx":48
+  /* "cpp_func.pyx":44
  * cpdef string addition(query):
  *     cdef list string_numbers = re.findall(r"[-+]?\d*\.\d|\d+", query)
  *     cdef list main_list = list(map(int, string_numbers))             # <<<<<<<<<<<<<<
  *     cdef double add_numbers = sum(main_list)
  *     cdef string return_answer = f"The Result Of The Addition Is {add_numbers}".encode('UTF-8')
  */
-  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 48, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 44, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(((PyObject *)(&PyInt_Type)));
   __Pyx_GIVEREF(((PyObject *)(&PyInt_Type)));
@@ -1860,51 +1840,51 @@ static std::string __pyx_f_8cpp_func_addition(PyObject *__pyx_v_query, CYTHON_UN
   __Pyx_INCREF(__pyx_v_string_numbers);
   __Pyx_GIVEREF(__pyx_v_string_numbers);
   PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_string_numbers);
-  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_map, __pyx_t_1, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 48, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_map, __pyx_t_1, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 44, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PySequence_List(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 48, __pyx_L1_error)
+  __pyx_t_1 = PySequence_List(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 44, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_main_list = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "cpp_func.pyx":49
+  /* "cpp_func.pyx":45
  *     cdef list string_numbers = re.findall(r"[-+]?\d*\.\d|\d+", query)
  *     cdef list main_list = list(map(int, string_numbers))
  *     cdef double add_numbers = sum(main_list)             # <<<<<<<<<<<<<<
  *     cdef string return_answer = f"The Result Of The Addition Is {add_numbers}".encode('UTF-8')
  *     return return_answer
  */
-  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_sum, __pyx_v_main_list); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 49, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_sum, __pyx_v_main_list); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_6 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_6 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 49, __pyx_L1_error)
+  __pyx_t_6 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_6 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_add_numbers = __pyx_t_6;
 
-  /* "cpp_func.pyx":50
+  /* "cpp_func.pyx":46
  *     cdef list main_list = list(map(int, string_numbers))
  *     cdef double add_numbers = sum(main_list)
  *     cdef string return_answer = f"The Result Of The Addition Is {add_numbers}".encode('UTF-8')             # <<<<<<<<<<<<<<
  *     return return_answer
  * 
  */
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_add_numbers); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 50, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_add_numbers); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 46, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_t_1, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 50, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_t_1, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 46, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyUnicode_Concat(__pyx_kp_u_The_Result_Of_The_Addition_Is, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 50, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyUnicode_Concat(__pyx_kp_u_The_Result_Of_The_Addition_Is, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 46, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = PyUnicode_AsUTF8String(((PyObject*)__pyx_t_1)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 50, __pyx_L1_error)
+  __pyx_t_3 = PyUnicode_AsUTF8String(((PyObject*)__pyx_t_1)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 46, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_7 = __pyx_convert_string_from_py_std__in_string(__pyx_t_3); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 50, __pyx_L1_error)
+  __pyx_t_7 = __pyx_convert_string_from_py_std__in_string(__pyx_t_3); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 46, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_return_answer = __pyx_t_7;
 
-  /* "cpp_func.pyx":51
+  /* "cpp_func.pyx":47
  *     cdef double add_numbers = sum(main_list)
  *     cdef string return_answer = f"The Result Of The Addition Is {add_numbers}".encode('UTF-8')
  *     return return_answer             # <<<<<<<<<<<<<<
@@ -1914,7 +1894,7 @@ static std::string __pyx_f_8cpp_func_addition(PyObject *__pyx_v_query, CYTHON_UN
   __pyx_r = __pyx_v_return_answer;
   goto __pyx_L0;
 
-  /* "cpp_func.pyx":46
+  /* "cpp_func.pyx":42
  *     return age_question()
  * 
  * cpdef string addition(query):             # <<<<<<<<<<<<<<
@@ -1959,7 +1939,7 @@ static PyObject *__pyx_pf_8cpp_func_8addition(CYTHON_UNUSED PyObject *__pyx_self
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("addition", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_convert_PyBytes_string_to_py_std__in_string(__pyx_f_8cpp_func_addition(__pyx_v_query, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 46, __pyx_L1_error)
+  __pyx_t_1 = __pyx_convert_PyBytes_string_to_py_std__in_string(__pyx_f_8cpp_func_addition(__pyx_v_query, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 42, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -1976,7 +1956,7 @@ static PyObject *__pyx_pf_8cpp_func_8addition(CYTHON_UNUSED PyObject *__pyx_self
   return __pyx_r;
 }
 
-/* "cpp_func.pyx":54
+/* "cpp_func.pyx":50
  * 
  * 
  * cpdef saying_thanks_main():             # <<<<<<<<<<<<<<
@@ -1994,7 +1974,7 @@ static PyObject *__pyx_f_8cpp_func_saying_thanks_main(CYTHON_UNUSED int __pyx_sk
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("saying_thanks_main", 0);
 
-  /* "cpp_func.pyx":55
+  /* "cpp_func.pyx":51
  * 
  * cpdef saying_thanks_main():
  *     return saying_thanks()             # <<<<<<<<<<<<<<
@@ -2002,13 +1982,13 @@ static PyObject *__pyx_f_8cpp_func_saying_thanks_main(CYTHON_UNUSED int __pyx_sk
  * cpdef string subtract(query):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBytes_FromString(saying_thanks()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 55, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBytes_FromString(saying_thanks()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "cpp_func.pyx":54
+  /* "cpp_func.pyx":50
  * 
  * 
  * cpdef saying_thanks_main():             # <<<<<<<<<<<<<<
@@ -2049,7 +2029,7 @@ static PyObject *__pyx_pf_8cpp_func_10saying_thanks_main(CYTHON_UNUSED PyObject 
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("saying_thanks_main", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_8cpp_func_saying_thanks_main(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 54, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_8cpp_func_saying_thanks_main(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 50, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -2066,7 +2046,7 @@ static PyObject *__pyx_pf_8cpp_func_10saying_thanks_main(CYTHON_UNUSED PyObject 
   return __pyx_r;
 }
 
-/* "cpp_func.pyx":57
+/* "cpp_func.pyx":53
  *     return saying_thanks()
  * 
  * cpdef string subtract(query):             # <<<<<<<<<<<<<<
@@ -2095,16 +2075,16 @@ static std::string __pyx_f_8cpp_func_subtract(PyObject *__pyx_v_query, CYTHON_UN
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("subtract", 0);
 
-  /* "cpp_func.pyx":58
+  /* "cpp_func.pyx":54
  * 
  * cpdef string subtract(query):
  *     cdef list string_numbers = re.findall(r"[-+]?\d*\.\d|\d+", query)             # <<<<<<<<<<<<<<
  *     cdef list main_list = list(map(int, string_numbers))
  *     cdef double subtract_numbers = reduce(operator.sub, main_list)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_re); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 58, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_re); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 54, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_findall); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 58, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_findall); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 54, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -2122,7 +2102,7 @@ static std::string __pyx_f_8cpp_func_subtract(PyObject *__pyx_v_query, CYTHON_UN
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[3] = {__pyx_t_2, __pyx_kp_s_d_d_d, __pyx_v_query};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 58, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 54, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else
@@ -2130,13 +2110,13 @@ static std::string __pyx_f_8cpp_func_subtract(PyObject *__pyx_v_query, CYTHON_UN
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[3] = {__pyx_t_2, __pyx_kp_s_d_d_d, __pyx_v_query};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 58, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 54, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else
   #endif
   {
-    __pyx_t_5 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 58, __pyx_L1_error)
+    __pyx_t_5 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 54, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     if (__pyx_t_2) {
       __Pyx_GIVEREF(__pyx_t_2); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_2); __pyx_t_2 = NULL;
@@ -2147,23 +2127,23 @@ static std::string __pyx_f_8cpp_func_subtract(PyObject *__pyx_v_query, CYTHON_UN
     __Pyx_INCREF(__pyx_v_query);
     __Pyx_GIVEREF(__pyx_v_query);
     PyTuple_SET_ITEM(__pyx_t_5, 1+__pyx_t_4, __pyx_v_query);
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 58, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 54, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (!(likely(PyList_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "list", Py_TYPE(__pyx_t_1)->tp_name), 0))) __PYX_ERR(0, 58, __pyx_L1_error)
+  if (!(likely(PyList_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "list", Py_TYPE(__pyx_t_1)->tp_name), 0))) __PYX_ERR(0, 54, __pyx_L1_error)
   __pyx_v_string_numbers = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "cpp_func.pyx":59
+  /* "cpp_func.pyx":55
  * cpdef string subtract(query):
  *     cdef list string_numbers = re.findall(r"[-+]?\d*\.\d|\d+", query)
  *     cdef list main_list = list(map(int, string_numbers))             # <<<<<<<<<<<<<<
  *     cdef double subtract_numbers = reduce(operator.sub, main_list)
  *     cdef string return_answer = f"The Result Of The Subtraction is {subtract_numbers}".encode('UTF-8')
  */
-  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 59, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 55, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(((PyObject *)(&PyInt_Type)));
   __Pyx_GIVEREF(((PyObject *)(&PyInt_Type)));
@@ -2171,27 +2151,27 @@ static std::string __pyx_f_8cpp_func_subtract(PyObject *__pyx_v_query, CYTHON_UN
   __Pyx_INCREF(__pyx_v_string_numbers);
   __Pyx_GIVEREF(__pyx_v_string_numbers);
   PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_string_numbers);
-  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_map, __pyx_t_1, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 59, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_map, __pyx_t_1, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 55, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PySequence_List(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 59, __pyx_L1_error)
+  __pyx_t_1 = PySequence_List(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 55, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_main_list = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "cpp_func.pyx":60
+  /* "cpp_func.pyx":56
  *     cdef list string_numbers = re.findall(r"[-+]?\d*\.\d|\d+", query)
  *     cdef list main_list = list(map(int, string_numbers))
  *     cdef double subtract_numbers = reduce(operator.sub, main_list)             # <<<<<<<<<<<<<<
  *     cdef string return_answer = f"The Result Of The Subtraction is {subtract_numbers}".encode('UTF-8')
  *     return return_answer
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_reduce); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 60, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_reduce); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_operator); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 60, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_operator); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_sub); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 60, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_sub); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_5 = NULL;
@@ -2209,7 +2189,7 @@ static std::string __pyx_f_8cpp_func_subtract(PyObject *__pyx_v_query, CYTHON_UN
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_t_2, __pyx_v_main_list};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 60, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 56, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -2218,14 +2198,14 @@ static std::string __pyx_f_8cpp_func_subtract(PyObject *__pyx_v_query, CYTHON_UN
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_t_2, __pyx_v_main_list};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 60, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 56, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   } else
   #endif
   {
-    __pyx_t_6 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 60, __pyx_L1_error)
+    __pyx_t_6 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 56, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     if (__pyx_t_5) {
       __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
@@ -2236,38 +2216,38 @@ static std::string __pyx_f_8cpp_func_subtract(PyObject *__pyx_v_query, CYTHON_UN
     __Pyx_GIVEREF(__pyx_v_main_list);
     PyTuple_SET_ITEM(__pyx_t_6, 1+__pyx_t_4, __pyx_v_main_list);
     __pyx_t_2 = 0;
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_6, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 60, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_6, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 56, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 60, __pyx_L1_error)
+  __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_subtract_numbers = __pyx_t_7;
 
-  /* "cpp_func.pyx":61
+  /* "cpp_func.pyx":57
  *     cdef list main_list = list(map(int, string_numbers))
  *     cdef double subtract_numbers = reduce(operator.sub, main_list)
  *     cdef string return_answer = f"The Result Of The Subtraction is {subtract_numbers}".encode('UTF-8')             # <<<<<<<<<<<<<<
  *     return return_answer
  * 
  */
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_subtract_numbers); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 61, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_subtract_numbers); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 57, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_t_1, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 61, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_t_1, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 57, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyUnicode_Concat(__pyx_kp_u_The_Result_Of_The_Subtraction_is, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 61, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyUnicode_Concat(__pyx_kp_u_The_Result_Of_The_Subtraction_is, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 57, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = PyUnicode_AsUTF8String(((PyObject*)__pyx_t_1)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 61, __pyx_L1_error)
+  __pyx_t_3 = PyUnicode_AsUTF8String(((PyObject*)__pyx_t_1)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 57, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_8 = __pyx_convert_string_from_py_std__in_string(__pyx_t_3); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 61, __pyx_L1_error)
+  __pyx_t_8 = __pyx_convert_string_from_py_std__in_string(__pyx_t_3); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 57, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_return_answer = __pyx_t_8;
 
-  /* "cpp_func.pyx":62
+  /* "cpp_func.pyx":58
  *     cdef double subtract_numbers = reduce(operator.sub, main_list)
  *     cdef string return_answer = f"The Result Of The Subtraction is {subtract_numbers}".encode('UTF-8')
  *     return return_answer             # <<<<<<<<<<<<<<
@@ -2277,7 +2257,7 @@ static std::string __pyx_f_8cpp_func_subtract(PyObject *__pyx_v_query, CYTHON_UN
   __pyx_r = __pyx_v_return_answer;
   goto __pyx_L0;
 
-  /* "cpp_func.pyx":57
+  /* "cpp_func.pyx":53
  *     return saying_thanks()
  * 
  * cpdef string subtract(query):             # <<<<<<<<<<<<<<
@@ -2323,7 +2303,7 @@ static PyObject *__pyx_pf_8cpp_func_12subtract(CYTHON_UNUSED PyObject *__pyx_sel
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("subtract", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_convert_PyBytes_string_to_py_std__in_string(__pyx_f_8cpp_func_subtract(__pyx_v_query, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 57, __pyx_L1_error)
+  __pyx_t_1 = __pyx_convert_PyBytes_string_to_py_std__in_string(__pyx_f_8cpp_func_subtract(__pyx_v_query, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 53, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -2340,7 +2320,7 @@ static PyObject *__pyx_pf_8cpp_func_12subtract(CYTHON_UNUSED PyObject *__pyx_sel
   return __pyx_r;
 }
 
-/* "cpp_func.pyx":64
+/* "cpp_func.pyx":60
  *     return return_answer
  * 
  * cpdef string divide(query):             # <<<<<<<<<<<<<<
@@ -2372,16 +2352,16 @@ static std::string __pyx_f_8cpp_func_divide(PyObject *__pyx_v_query, CYTHON_UNUS
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("divide", 0);
 
-  /* "cpp_func.pyx":65
+  /* "cpp_func.pyx":61
  * 
  * cpdef string divide(query):
  *     cdef double string_numbers_1 = [int(s) for s in query.split() if s.isdigit()][0]             # <<<<<<<<<<<<<<
  *     cdef double string_numbers_2 = [int(s) for s in query.split() if s.isdigit()][1]
  *     cdef double divide_numbers = string_numbers_1 / string_numbers_2
  */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 65, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 61, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_query, __pyx_n_s_split); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 65, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_query, __pyx_n_s_split); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 61, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_3))) {
@@ -2395,16 +2375,16 @@ static std::string __pyx_f_8cpp_func_divide(PyObject *__pyx_v_query, CYTHON_UNUS
   }
   __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 65, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 61, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   if (likely(PyList_CheckExact(__pyx_t_2)) || PyTuple_CheckExact(__pyx_t_2)) {
     __pyx_t_3 = __pyx_t_2; __Pyx_INCREF(__pyx_t_3); __pyx_t_5 = 0;
     __pyx_t_6 = NULL;
   } else {
-    __pyx_t_5 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 65, __pyx_L1_error)
+    __pyx_t_5 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 61, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_6 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 65, __pyx_L1_error)
+    __pyx_t_6 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 61, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   for (;;) {
@@ -2412,17 +2392,17 @@ static std::string __pyx_f_8cpp_func_divide(PyObject *__pyx_v_query, CYTHON_UNUS
       if (likely(PyList_CheckExact(__pyx_t_3))) {
         if (__pyx_t_5 >= PyList_GET_SIZE(__pyx_t_3)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_2 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_5); __Pyx_INCREF(__pyx_t_2); __pyx_t_5++; if (unlikely(0 < 0)) __PYX_ERR(0, 65, __pyx_L1_error)
+        __pyx_t_2 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_5); __Pyx_INCREF(__pyx_t_2); __pyx_t_5++; if (unlikely(0 < 0)) __PYX_ERR(0, 61, __pyx_L1_error)
         #else
-        __pyx_t_2 = PySequence_ITEM(__pyx_t_3, __pyx_t_5); __pyx_t_5++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 65, __pyx_L1_error)
+        __pyx_t_2 = PySequence_ITEM(__pyx_t_3, __pyx_t_5); __pyx_t_5++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 61, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         #endif
       } else {
         if (__pyx_t_5 >= PyTuple_GET_SIZE(__pyx_t_3)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_5); __Pyx_INCREF(__pyx_t_2); __pyx_t_5++; if (unlikely(0 < 0)) __PYX_ERR(0, 65, __pyx_L1_error)
+        __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_5); __Pyx_INCREF(__pyx_t_2); __pyx_t_5++; if (unlikely(0 < 0)) __PYX_ERR(0, 61, __pyx_L1_error)
         #else
-        __pyx_t_2 = PySequence_ITEM(__pyx_t_3, __pyx_t_5); __pyx_t_5++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 65, __pyx_L1_error)
+        __pyx_t_2 = PySequence_ITEM(__pyx_t_3, __pyx_t_5); __pyx_t_5++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 61, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         #endif
       }
@@ -2432,7 +2412,7 @@ static std::string __pyx_f_8cpp_func_divide(PyObject *__pyx_v_query, CYTHON_UNUS
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 65, __pyx_L1_error)
+          else __PYX_ERR(0, 61, __pyx_L1_error)
         }
         break;
       }
@@ -2440,7 +2420,7 @@ static std::string __pyx_f_8cpp_func_divide(PyObject *__pyx_v_query, CYTHON_UNUS
     }
     __Pyx_XDECREF_SET(__pyx_v_s, __pyx_t_2);
     __pyx_t_2 = 0;
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_s, __pyx_n_s_isdigit); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 65, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_s, __pyx_n_s_isdigit); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 61, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_7 = NULL;
     if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_4))) {
@@ -2454,36 +2434,36 @@ static std::string __pyx_f_8cpp_func_divide(PyObject *__pyx_v_query, CYTHON_UNUS
     }
     __pyx_t_2 = (__pyx_t_7) ? __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_7) : __Pyx_PyObject_CallNoArg(__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 65, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 61, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 65, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 61, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     if (__pyx_t_8) {
-      __pyx_t_2 = __Pyx_PyNumber_Int(__pyx_v_s); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 65, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyNumber_Int(__pyx_v_s); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 61, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_2))) __PYX_ERR(0, 65, __pyx_L1_error)
+      if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_2))) __PYX_ERR(0, 61, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     }
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_GetItemInt_List(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 1, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 65, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_GetItemInt_List(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 1, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 61, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_9 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_9 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 65, __pyx_L1_error)
+  __pyx_t_9 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_9 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 61, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_string_numbers_1 = __pyx_t_9;
 
-  /* "cpp_func.pyx":66
+  /* "cpp_func.pyx":62
  * cpdef string divide(query):
  *     cdef double string_numbers_1 = [int(s) for s in query.split() if s.isdigit()][0]
  *     cdef double string_numbers_2 = [int(s) for s in query.split() if s.isdigit()][1]             # <<<<<<<<<<<<<<
  *     cdef double divide_numbers = string_numbers_1 / string_numbers_2
  *     cdef string return_answer = f"The Result Of The Calculation Is {divide_numbers}".encode('UTF-8')
  */
-  __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 66, __pyx_L1_error)
+  __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 62, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_query, __pyx_n_s_split); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 66, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_query, __pyx_n_s_split); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 62, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -2497,16 +2477,16 @@ static std::string __pyx_f_8cpp_func_divide(PyObject *__pyx_v_query, CYTHON_UNUS
   }
   __pyx_t_1 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 66, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 62, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
     __pyx_t_2 = __pyx_t_1; __Pyx_INCREF(__pyx_t_2); __pyx_t_5 = 0;
     __pyx_t_6 = NULL;
   } else {
-    __pyx_t_5 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 66, __pyx_L1_error)
+    __pyx_t_5 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 62, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_6 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 66, __pyx_L1_error)
+    __pyx_t_6 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 62, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   for (;;) {
@@ -2514,17 +2494,17 @@ static std::string __pyx_f_8cpp_func_divide(PyObject *__pyx_v_query, CYTHON_UNUS
       if (likely(PyList_CheckExact(__pyx_t_2))) {
         if (__pyx_t_5 >= PyList_GET_SIZE(__pyx_t_2)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_5); __Pyx_INCREF(__pyx_t_1); __pyx_t_5++; if (unlikely(0 < 0)) __PYX_ERR(0, 66, __pyx_L1_error)
+        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_5); __Pyx_INCREF(__pyx_t_1); __pyx_t_5++; if (unlikely(0 < 0)) __PYX_ERR(0, 62, __pyx_L1_error)
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_5); __pyx_t_5++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 66, __pyx_L1_error)
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_5); __pyx_t_5++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 62, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         #endif
       } else {
         if (__pyx_t_5 >= PyTuple_GET_SIZE(__pyx_t_2)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_5); __Pyx_INCREF(__pyx_t_1); __pyx_t_5++; if (unlikely(0 < 0)) __PYX_ERR(0, 66, __pyx_L1_error)
+        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_5); __Pyx_INCREF(__pyx_t_1); __pyx_t_5++; if (unlikely(0 < 0)) __PYX_ERR(0, 62, __pyx_L1_error)
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_5); __pyx_t_5++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 66, __pyx_L1_error)
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_5); __pyx_t_5++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 62, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         #endif
       }
@@ -2534,7 +2514,7 @@ static std::string __pyx_f_8cpp_func_divide(PyObject *__pyx_v_query, CYTHON_UNUS
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 66, __pyx_L1_error)
+          else __PYX_ERR(0, 62, __pyx_L1_error)
         }
         break;
       }
@@ -2542,7 +2522,7 @@ static std::string __pyx_f_8cpp_func_divide(PyObject *__pyx_v_query, CYTHON_UNUS
     }
     __Pyx_XDECREF_SET(__pyx_v_s, __pyx_t_1);
     __pyx_t_1 = 0;
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_s, __pyx_n_s_isdigit); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 66, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_s, __pyx_n_s_isdigit); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 62, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_7 = NULL;
     if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_4))) {
@@ -2556,27 +2536,27 @@ static std::string __pyx_f_8cpp_func_divide(PyObject *__pyx_v_query, CYTHON_UNUS
     }
     __pyx_t_1 = (__pyx_t_7) ? __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_7) : __Pyx_PyObject_CallNoArg(__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 66, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 62, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 66, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 62, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     if (__pyx_t_8) {
-      __pyx_t_1 = __Pyx_PyNumber_Int(__pyx_v_s); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 66, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyNumber_Int(__pyx_v_s); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 62, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (unlikely(__Pyx_ListComp_Append(__pyx_t_3, (PyObject*)__pyx_t_1))) __PYX_ERR(0, 66, __pyx_L1_error)
+      if (unlikely(__Pyx_ListComp_Append(__pyx_t_3, (PyObject*)__pyx_t_1))) __PYX_ERR(0, 62, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     }
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_GetItemInt_List(__pyx_t_3, 1, long, 1, __Pyx_PyInt_From_long, 1, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 66, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetItemInt_List(__pyx_t_3, 1, long, 1, __Pyx_PyInt_From_long, 1, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 62, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_9 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_9 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 66, __pyx_L1_error)
+  __pyx_t_9 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_9 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 62, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_string_numbers_2 = __pyx_t_9;
 
-  /* "cpp_func.pyx":67
+  /* "cpp_func.pyx":63
  *     cdef double string_numbers_1 = [int(s) for s in query.split() if s.isdigit()][0]
  *     cdef double string_numbers_2 = [int(s) for s in query.split() if s.isdigit()][1]
  *     cdef double divide_numbers = string_numbers_1 / string_numbers_2             # <<<<<<<<<<<<<<
@@ -2585,33 +2565,33 @@ static std::string __pyx_f_8cpp_func_divide(PyObject *__pyx_v_query, CYTHON_UNUS
  */
   if (unlikely(__pyx_v_string_numbers_2 == 0)) {
     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-    __PYX_ERR(0, 67, __pyx_L1_error)
+    __PYX_ERR(0, 63, __pyx_L1_error)
   }
   __pyx_v_divide_numbers = (__pyx_v_string_numbers_1 / __pyx_v_string_numbers_2);
 
-  /* "cpp_func.pyx":68
+  /* "cpp_func.pyx":64
  *     cdef double string_numbers_2 = [int(s) for s in query.split() if s.isdigit()][1]
  *     cdef double divide_numbers = string_numbers_1 / string_numbers_2
  *     cdef string return_answer = f"The Result Of The Calculation Is {divide_numbers}".encode('UTF-8')             # <<<<<<<<<<<<<<
  *     return return_answer
  * 
  */
-  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_divide_numbers); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 68, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_divide_numbers); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 64, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_t_2, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 68, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_t_2, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 64, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyUnicode_Concat(__pyx_kp_u_The_Result_Of_The_Calculation_Is, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 68, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyUnicode_Concat(__pyx_kp_u_The_Result_Of_The_Calculation_Is, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 64, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = PyUnicode_AsUTF8String(((PyObject*)__pyx_t_2)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 68, __pyx_L1_error)
+  __pyx_t_3 = PyUnicode_AsUTF8String(((PyObject*)__pyx_t_2)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 64, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_10 = __pyx_convert_string_from_py_std__in_string(__pyx_t_3); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 68, __pyx_L1_error)
+  __pyx_t_10 = __pyx_convert_string_from_py_std__in_string(__pyx_t_3); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 64, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_return_answer = __pyx_t_10;
 
-  /* "cpp_func.pyx":69
+  /* "cpp_func.pyx":65
  *     cdef double divide_numbers = string_numbers_1 / string_numbers_2
  *     cdef string return_answer = f"The Result Of The Calculation Is {divide_numbers}".encode('UTF-8')
  *     return return_answer             # <<<<<<<<<<<<<<
@@ -2621,7 +2601,7 @@ static std::string __pyx_f_8cpp_func_divide(PyObject *__pyx_v_query, CYTHON_UNUS
   __pyx_r = __pyx_v_return_answer;
   goto __pyx_L0;
 
-  /* "cpp_func.pyx":64
+  /* "cpp_func.pyx":60
  *     return return_answer
  * 
  * cpdef string divide(query):             # <<<<<<<<<<<<<<
@@ -2666,7 +2646,7 @@ static PyObject *__pyx_pf_8cpp_func_14divide(CYTHON_UNUSED PyObject *__pyx_self,
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("divide", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_convert_PyBytes_string_to_py_std__in_string(__pyx_f_8cpp_func_divide(__pyx_v_query, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 64, __pyx_L1_error)
+  __pyx_t_1 = __pyx_convert_PyBytes_string_to_py_std__in_string(__pyx_f_8cpp_func_divide(__pyx_v_query, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 60, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -2683,7 +2663,7 @@ static PyObject *__pyx_pf_8cpp_func_14divide(CYTHON_UNUSED PyObject *__pyx_self,
   return __pyx_r;
 }
 
-/* "cpp_func.pyx":71
+/* "cpp_func.pyx":67
  *     return return_answer
  * 
  * cpdef string multiply(query):             # <<<<<<<<<<<<<<
@@ -2712,16 +2692,16 @@ static std::string __pyx_f_8cpp_func_multiply(PyObject *__pyx_v_query, CYTHON_UN
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("multiply", 0);
 
-  /* "cpp_func.pyx":72
+  /* "cpp_func.pyx":68
  * 
  * cpdef string multiply(query):
  *     cdef list string_numbers = re.findall(r"[-+]?\d*\.\d|\d+", query)             # <<<<<<<<<<<<<<
  *     cdef list main_list = list(map(int, string_numbers))
  *     cdef double multiply_numbers = reduce(operator.mul, main_list)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_re); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 72, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_re); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 68, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_findall); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 72, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_findall); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 68, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -2739,7 +2719,7 @@ static std::string __pyx_f_8cpp_func_multiply(PyObject *__pyx_v_query, CYTHON_UN
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[3] = {__pyx_t_2, __pyx_kp_s_d_d_d, __pyx_v_query};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 72, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 68, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else
@@ -2747,13 +2727,13 @@ static std::string __pyx_f_8cpp_func_multiply(PyObject *__pyx_v_query, CYTHON_UN
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[3] = {__pyx_t_2, __pyx_kp_s_d_d_d, __pyx_v_query};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 72, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 68, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else
   #endif
   {
-    __pyx_t_5 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 72, __pyx_L1_error)
+    __pyx_t_5 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 68, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     if (__pyx_t_2) {
       __Pyx_GIVEREF(__pyx_t_2); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_2); __pyx_t_2 = NULL;
@@ -2764,23 +2744,23 @@ static std::string __pyx_f_8cpp_func_multiply(PyObject *__pyx_v_query, CYTHON_UN
     __Pyx_INCREF(__pyx_v_query);
     __Pyx_GIVEREF(__pyx_v_query);
     PyTuple_SET_ITEM(__pyx_t_5, 1+__pyx_t_4, __pyx_v_query);
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 72, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 68, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (!(likely(PyList_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "list", Py_TYPE(__pyx_t_1)->tp_name), 0))) __PYX_ERR(0, 72, __pyx_L1_error)
+  if (!(likely(PyList_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "list", Py_TYPE(__pyx_t_1)->tp_name), 0))) __PYX_ERR(0, 68, __pyx_L1_error)
   __pyx_v_string_numbers = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "cpp_func.pyx":73
+  /* "cpp_func.pyx":69
  * cpdef string multiply(query):
  *     cdef list string_numbers = re.findall(r"[-+]?\d*\.\d|\d+", query)
  *     cdef list main_list = list(map(int, string_numbers))             # <<<<<<<<<<<<<<
  *     cdef double multiply_numbers = reduce(operator.mul, main_list)
  *     cdef string return_answer = f"The Result Of The Calculation Is {multiply_numbers}".encode('UTF-8')
  */
-  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 73, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 69, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(((PyObject *)(&PyInt_Type)));
   __Pyx_GIVEREF(((PyObject *)(&PyInt_Type)));
@@ -2788,27 +2768,27 @@ static std::string __pyx_f_8cpp_func_multiply(PyObject *__pyx_v_query, CYTHON_UN
   __Pyx_INCREF(__pyx_v_string_numbers);
   __Pyx_GIVEREF(__pyx_v_string_numbers);
   PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_string_numbers);
-  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_map, __pyx_t_1, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 73, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_map, __pyx_t_1, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 69, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PySequence_List(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 73, __pyx_L1_error)
+  __pyx_t_1 = PySequence_List(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 69, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_main_list = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "cpp_func.pyx":74
+  /* "cpp_func.pyx":70
  *     cdef list string_numbers = re.findall(r"[-+]?\d*\.\d|\d+", query)
  *     cdef list main_list = list(map(int, string_numbers))
  *     cdef double multiply_numbers = reduce(operator.mul, main_list)             # <<<<<<<<<<<<<<
  *     cdef string return_answer = f"The Result Of The Calculation Is {multiply_numbers}".encode('UTF-8')
  *     return return_answer
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_reduce); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 74, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_reduce); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 70, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_operator); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 74, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_operator); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 70, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_mul); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 74, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_mul); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 70, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_5 = NULL;
@@ -2826,7 +2806,7 @@ static std::string __pyx_f_8cpp_func_multiply(PyObject *__pyx_v_query, CYTHON_UN
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_t_2, __pyx_v_main_list};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 74, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 70, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -2835,14 +2815,14 @@ static std::string __pyx_f_8cpp_func_multiply(PyObject *__pyx_v_query, CYTHON_UN
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_t_2, __pyx_v_main_list};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 74, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 70, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   } else
   #endif
   {
-    __pyx_t_6 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 74, __pyx_L1_error)
+    __pyx_t_6 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 70, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     if (__pyx_t_5) {
       __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
@@ -2853,38 +2833,38 @@ static std::string __pyx_f_8cpp_func_multiply(PyObject *__pyx_v_query, CYTHON_UN
     __Pyx_GIVEREF(__pyx_v_main_list);
     PyTuple_SET_ITEM(__pyx_t_6, 1+__pyx_t_4, __pyx_v_main_list);
     __pyx_t_2 = 0;
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_6, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 74, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_6, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 70, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 74, __pyx_L1_error)
+  __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 70, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_multiply_numbers = __pyx_t_7;
 
-  /* "cpp_func.pyx":75
+  /* "cpp_func.pyx":71
  *     cdef list main_list = list(map(int, string_numbers))
  *     cdef double multiply_numbers = reduce(operator.mul, main_list)
  *     cdef string return_answer = f"The Result Of The Calculation Is {multiply_numbers}".encode('UTF-8')             # <<<<<<<<<<<<<<
  *     return return_answer
  * 
  */
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_multiply_numbers); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 75, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_multiply_numbers); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 71, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_t_1, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 75, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_t_1, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 71, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyUnicode_Concat(__pyx_kp_u_The_Result_Of_The_Calculation_Is, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 75, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyUnicode_Concat(__pyx_kp_u_The_Result_Of_The_Calculation_Is, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 71, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = PyUnicode_AsUTF8String(((PyObject*)__pyx_t_1)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 75, __pyx_L1_error)
+  __pyx_t_3 = PyUnicode_AsUTF8String(((PyObject*)__pyx_t_1)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 71, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_8 = __pyx_convert_string_from_py_std__in_string(__pyx_t_3); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 75, __pyx_L1_error)
+  __pyx_t_8 = __pyx_convert_string_from_py_std__in_string(__pyx_t_3); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 71, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_return_answer = __pyx_t_8;
 
-  /* "cpp_func.pyx":76
+  /* "cpp_func.pyx":72
  *     cdef double multiply_numbers = reduce(operator.mul, main_list)
  *     cdef string return_answer = f"The Result Of The Calculation Is {multiply_numbers}".encode('UTF-8')
  *     return return_answer             # <<<<<<<<<<<<<<
@@ -2894,7 +2874,7 @@ static std::string __pyx_f_8cpp_func_multiply(PyObject *__pyx_v_query, CYTHON_UN
   __pyx_r = __pyx_v_return_answer;
   goto __pyx_L0;
 
-  /* "cpp_func.pyx":71
+  /* "cpp_func.pyx":67
  *     return return_answer
  * 
  * cpdef string multiply(query):             # <<<<<<<<<<<<<<
@@ -2940,7 +2920,7 @@ static PyObject *__pyx_pf_8cpp_func_16multiply(CYTHON_UNUSED PyObject *__pyx_sel
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("multiply", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_convert_PyBytes_string_to_py_std__in_string(__pyx_f_8cpp_func_multiply(__pyx_v_query, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 71, __pyx_L1_error)
+  __pyx_t_1 = __pyx_convert_PyBytes_string_to_py_std__in_string(__pyx_f_8cpp_func_multiply(__pyx_v_query, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -2957,7 +2937,7 @@ static PyObject *__pyx_pf_8cpp_func_16multiply(CYTHON_UNUSED PyObject *__pyx_sel
   return __pyx_r;
 }
 
-/* "cpp_func.pyx":79
+/* "cpp_func.pyx":75
  * 
  * 
  * cpdef string current_time():             # <<<<<<<<<<<<<<
@@ -2980,19 +2960,19 @@ static std::string __pyx_f_8cpp_func_current_time(CYTHON_UNUSED int __pyx_skip_d
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("current_time", 0);
 
-  /* "cpp_func.pyx":80
+  /* "cpp_func.pyx":76
  * 
  * cpdef string current_time():
  *     now = datetime.datetime.now()             # <<<<<<<<<<<<<<
  *     cdef string current_time_main = f"Time Right Now is {now.strftime('%H:%M:%S')}".encode('UTf-8')
  *     return current_time_main
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_datetime); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 80, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_datetime); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 76, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_datetime); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 80, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_datetime); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 76, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_now); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 80, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_now); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 76, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -3007,20 +2987,20 @@ static std::string __pyx_f_8cpp_func_current_time(CYTHON_UNUSED int __pyx_skip_d
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 80, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 76, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_now = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "cpp_func.pyx":81
+  /* "cpp_func.pyx":77
  * cpdef string current_time():
  *     now = datetime.datetime.now()
  *     cdef string current_time_main = f"Time Right Now is {now.strftime('%H:%M:%S')}".encode('UTf-8')             # <<<<<<<<<<<<<<
  *     return current_time_main
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_now, __pyx_n_s_strftime); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 81, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_now, __pyx_n_s_strftime); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 77, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -3034,23 +3014,23 @@ static std::string __pyx_f_8cpp_func_current_time(CYTHON_UNUSED int __pyx_skip_d
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, __pyx_kp_s_H_M_S) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_kp_s_H_M_S);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 81, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 77, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_FormatSimple(__pyx_t_1, __pyx_empty_unicode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 81, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_FormatSimple(__pyx_t_1, __pyx_empty_unicode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 77, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyUnicode_Concat(__pyx_kp_u_Time_Right_Now_is, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 81, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyUnicode_Concat(__pyx_kp_u_Time_Right_Now_is, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 77, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyUnicode_AsUTF8String(((PyObject*)__pyx_t_1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 81, __pyx_L1_error)
+  __pyx_t_2 = PyUnicode_AsUTF8String(((PyObject*)__pyx_t_1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 77, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_4 = __pyx_convert_string_from_py_std__in_string(__pyx_t_2); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 81, __pyx_L1_error)
+  __pyx_t_4 = __pyx_convert_string_from_py_std__in_string(__pyx_t_2); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 77, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_current_time_main = __pyx_t_4;
 
-  /* "cpp_func.pyx":82
+  /* "cpp_func.pyx":78
  *     now = datetime.datetime.now()
  *     cdef string current_time_main = f"Time Right Now is {now.strftime('%H:%M:%S')}".encode('UTf-8')
  *     return current_time_main             # <<<<<<<<<<<<<<
@@ -3060,7 +3040,7 @@ static std::string __pyx_f_8cpp_func_current_time(CYTHON_UNUSED int __pyx_skip_d
   __pyx_r = __pyx_v_current_time_main;
   goto __pyx_L0;
 
-  /* "cpp_func.pyx":79
+  /* "cpp_func.pyx":75
  * 
  * 
  * cpdef string current_time():             # <<<<<<<<<<<<<<
@@ -3103,7 +3083,7 @@ static PyObject *__pyx_pf_8cpp_func_18current_time(CYTHON_UNUSED PyObject *__pyx
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("current_time", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_convert_PyBytes_string_to_py_std__in_string(__pyx_f_8cpp_func_current_time(0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 79, __pyx_L1_error)
+  __pyx_t_1 = __pyx_convert_PyBytes_string_to_py_std__in_string(__pyx_f_8cpp_func_current_time(0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 75, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -3120,7 +3100,7 @@ static PyObject *__pyx_pf_8cpp_func_18current_time(CYTHON_UNUSED PyObject *__pyx
   return __pyx_r;
 }
 
-/* "cpp_func.pyx":85
+/* "cpp_func.pyx":81
  * 
  * 
  * cpdef string assistant_name():             # <<<<<<<<<<<<<<
@@ -3142,14 +3122,14 @@ static std::string __pyx_f_8cpp_func_assistant_name(CYTHON_UNUSED int __pyx_skip
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("assistant_name", 0);
 
-  /* "cpp_func.pyx":86
+  /* "cpp_func.pyx":82
  * 
  * cpdef string assistant_name():
  *     cdef string name = "My name is, Layla meaning night".encode('UTF-8')             # <<<<<<<<<<<<<<
  *     return name
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_My_name_is_Layla_meaning_night, __pyx_n_s_encode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 86, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_My_name_is_Layla_meaning_night, __pyx_n_s_encode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 82, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -3163,14 +3143,14 @@ static std::string __pyx_f_8cpp_func_assistant_name(CYTHON_UNUSED int __pyx_skip
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, __pyx_kp_s_UTF_8) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_kp_s_UTF_8);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 86, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 82, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_4 = __pyx_convert_string_from_py_std__in_string(__pyx_t_1); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 86, __pyx_L1_error)
+  __pyx_t_4 = __pyx_convert_string_from_py_std__in_string(__pyx_t_1); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 82, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_name = __pyx_t_4;
 
-  /* "cpp_func.pyx":87
+  /* "cpp_func.pyx":83
  * cpdef string assistant_name():
  *     cdef string name = "My name is, Layla meaning night".encode('UTF-8')
  *     return name             # <<<<<<<<<<<<<<
@@ -3180,7 +3160,7 @@ static std::string __pyx_f_8cpp_func_assistant_name(CYTHON_UNUSED int __pyx_skip
   __pyx_r = __pyx_v_name;
   goto __pyx_L0;
 
-  /* "cpp_func.pyx":85
+  /* "cpp_func.pyx":81
  * 
  * 
  * cpdef string assistant_name():             # <<<<<<<<<<<<<<
@@ -3222,7 +3202,7 @@ static PyObject *__pyx_pf_8cpp_func_20assistant_name(CYTHON_UNUSED PyObject *__p
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("assistant_name", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_convert_PyBytes_string_to_py_std__in_string(__pyx_f_8cpp_func_assistant_name(0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 85, __pyx_L1_error)
+  __pyx_t_1 = __pyx_convert_PyBytes_string_to_py_std__in_string(__pyx_f_8cpp_func_assistant_name(0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 81, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -3239,7 +3219,7 @@ static PyObject *__pyx_pf_8cpp_func_20assistant_name(CYTHON_UNUSED PyObject *__p
   return __pyx_r;
 }
 
-/* "cpp_func.pyx":89
+/* "cpp_func.pyx":85
  *     return name
  * 
  * cpdef system_info():             # <<<<<<<<<<<<<<
@@ -3257,7 +3237,7 @@ static PyObject *__pyx_f_8cpp_func_system_info(CYTHON_UNUSED int __pyx_skip_disp
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("system_info", 0);
 
-  /* "cpp_func.pyx":90
+  /* "cpp_func.pyx":86
  * 
  * cpdef system_info():
  *     return system_information()             # <<<<<<<<<<<<<<
@@ -3265,13 +3245,13 @@ static PyObject *__pyx_f_8cpp_func_system_info(CYTHON_UNUSED int __pyx_skip_disp
  * cpdef open_system_programs(query):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_void_to_None(system_information()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 90, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_void_to_None(system_information()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 86, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "cpp_func.pyx":89
+  /* "cpp_func.pyx":85
  *     return name
  * 
  * cpdef system_info():             # <<<<<<<<<<<<<<
@@ -3312,7 +3292,7 @@ static PyObject *__pyx_pf_8cpp_func_22system_info(CYTHON_UNUSED PyObject *__pyx_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("system_info", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_8cpp_func_system_info(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 89, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_8cpp_func_system_info(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 85, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -3329,7 +3309,7 @@ static PyObject *__pyx_pf_8cpp_func_22system_info(CYTHON_UNUSED PyObject *__pyx_
   return __pyx_r;
 }
 
-/* "cpp_func.pyx":92
+/* "cpp_func.pyx":88
  *     return system_information()
  * 
  * cpdef open_system_programs(query):             # <<<<<<<<<<<<<<
@@ -3352,29 +3332,29 @@ static PyObject *__pyx_f_8cpp_func_open_system_programs(PyObject *__pyx_v_query,
   __Pyx_RefNannySetupContext("open_system_programs", 0);
   __Pyx_INCREF(__pyx_v_query);
 
-  /* "cpp_func.pyx":93
+  /* "cpp_func.pyx":89
  * 
  * cpdef open_system_programs(query):
  *     query = query.replace("open ", "")             # <<<<<<<<<<<<<<
  *     cdef string main_return = query.encode('UTF-8')
  *     return open_programs(main_return)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_query, __pyx_n_s_replace); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 93, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_query, __pyx_n_s_replace); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 89, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__2, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 93, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__2, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 89, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF_SET(__pyx_v_query, __pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "cpp_func.pyx":94
+  /* "cpp_func.pyx":90
  * cpdef open_system_programs(query):
  *     query = query.replace("open ", "")
  *     cdef string main_return = query.encode('UTF-8')             # <<<<<<<<<<<<<<
  *     return open_programs(main_return)
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_query, __pyx_n_s_encode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 94, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_query, __pyx_n_s_encode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 90, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -3388,14 +3368,14 @@ static PyObject *__pyx_f_8cpp_func_open_system_programs(PyObject *__pyx_v_query,
   }
   __pyx_t_2 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_3, __pyx_kp_s_UTF_8) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_kp_s_UTF_8);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 94, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 90, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_4 = __pyx_convert_string_from_py_std__in_string(__pyx_t_2); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 94, __pyx_L1_error)
+  __pyx_t_4 = __pyx_convert_string_from_py_std__in_string(__pyx_t_2); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 90, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_main_return = __pyx_t_4;
 
-  /* "cpp_func.pyx":95
+  /* "cpp_func.pyx":91
  *     query = query.replace("open ", "")
  *     cdef string main_return = query.encode('UTF-8')
  *     return open_programs(main_return)             # <<<<<<<<<<<<<<
@@ -3403,13 +3383,13 @@ static PyObject *__pyx_f_8cpp_func_open_system_programs(PyObject *__pyx_v_query,
  * cpdef maths_func(query):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = __Pyx_void_to_None(open_programs(__pyx_v_main_return)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 95, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_void_to_None(open_programs(__pyx_v_main_return)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 91, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "cpp_func.pyx":92
+  /* "cpp_func.pyx":88
  *     return system_information()
  * 
  * cpdef open_system_programs(query):             # <<<<<<<<<<<<<<
@@ -3453,7 +3433,7 @@ static PyObject *__pyx_pf_8cpp_func_24open_system_programs(CYTHON_UNUSED PyObjec
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("open_system_programs", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_8cpp_func_open_system_programs(__pyx_v_query, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 92, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_8cpp_func_open_system_programs(__pyx_v_query, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 88, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -3470,7 +3450,7 @@ static PyObject *__pyx_pf_8cpp_func_24open_system_programs(CYTHON_UNUSED PyObjec
   return __pyx_r;
 }
 
-/* "cpp_func.pyx":97
+/* "cpp_func.pyx":93
  *     return open_programs(main_return)
  * 
  * cpdef maths_func(query):             # <<<<<<<<<<<<<<
@@ -3502,16 +3482,16 @@ static PyObject *__pyx_f_8cpp_func_maths_func(PyObject *__pyx_v_query, CYTHON_UN
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("maths_func", 0);
 
-  /* "cpp_func.pyx":98
+  /* "cpp_func.pyx":94
  * 
  * cpdef maths_func(query):
  *     cdef double main_num = float(re.findall(r"[-+]?\d*\.\d|\d+", query)[0])             # <<<<<<<<<<<<<<
  *     cdef string main_return = ""
  *     cdef int main_int = 0
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_re); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 98, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_re); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 94, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_findall); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 98, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_findall); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 94, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -3529,7 +3509,7 @@ static PyObject *__pyx_f_8cpp_func_maths_func(PyObject *__pyx_v_query, CYTHON_UN
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[3] = {__pyx_t_2, __pyx_kp_s_d_d_d, __pyx_v_query};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 98, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 94, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else
@@ -3537,13 +3517,13 @@ static PyObject *__pyx_f_8cpp_func_maths_func(PyObject *__pyx_v_query, CYTHON_UN
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[3] = {__pyx_t_2, __pyx_kp_s_d_d_d, __pyx_v_query};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 98, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 94, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else
   #endif
   {
-    __pyx_t_5 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 98, __pyx_L1_error)
+    __pyx_t_5 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 94, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     if (__pyx_t_2) {
       __Pyx_GIVEREF(__pyx_t_2); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_2); __pyx_t_2 = NULL;
@@ -3554,29 +3534,29 @@ static PyObject *__pyx_f_8cpp_func_maths_func(PyObject *__pyx_v_query, CYTHON_UN
     __Pyx_INCREF(__pyx_v_query);
     __Pyx_GIVEREF(__pyx_v_query);
     PyTuple_SET_ITEM(__pyx_t_5, 1+__pyx_t_4, __pyx_v_query);
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 98, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 94, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 98, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 94, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_6 = __Pyx_PyObject_AsDouble(__pyx_t_3); if (unlikely(__pyx_t_6 == ((double)((double)-1)) && PyErr_Occurred())) __PYX_ERR(0, 98, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_AsDouble(__pyx_t_3); if (unlikely(__pyx_t_6 == ((double)((double)-1)) && PyErr_Occurred())) __PYX_ERR(0, 94, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_main_num = __pyx_t_6;
 
-  /* "cpp_func.pyx":99
+  /* "cpp_func.pyx":95
  * cpdef maths_func(query):
  *     cdef double main_num = float(re.findall(r"[-+]?\d*\.\d|\d+", query)[0])
  *     cdef string main_return = ""             # <<<<<<<<<<<<<<
  *     cdef int main_int = 0
  *     cdef double int_main = 0.0
  */
-  __pyx_t_7 = __pyx_convert_string_from_py_std__in_string(__pyx_kp_b_); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 99, __pyx_L1_error)
+  __pyx_t_7 = __pyx_convert_string_from_py_std__in_string(__pyx_kp_b_); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 95, __pyx_L1_error)
   __pyx_v_main_return = __pyx_t_7;
 
-  /* "cpp_func.pyx":100
+  /* "cpp_func.pyx":96
  *     cdef double main_num = float(re.findall(r"[-+]?\d*\.\d|\d+", query)[0])
  *     cdef string main_return = ""
  *     cdef int main_int = 0             # <<<<<<<<<<<<<<
@@ -3585,7 +3565,7 @@ static PyObject *__pyx_f_8cpp_func_maths_func(PyObject *__pyx_v_query, CYTHON_UN
  */
   __pyx_v_main_int = 0;
 
-  /* "cpp_func.pyx":101
+  /* "cpp_func.pyx":97
  *     cdef string main_return = ""
  *     cdef int main_int = 0
  *     cdef double int_main = 0.0             # <<<<<<<<<<<<<<
@@ -3594,18 +3574,18 @@ static PyObject *__pyx_f_8cpp_func_maths_func(PyObject *__pyx_v_query, CYTHON_UN
  */
   __pyx_v_int_main = 0.0;
 
-  /* "cpp_func.pyx":102
+  /* "cpp_func.pyx":98
  *     cdef int main_int = 0
  *     cdef double int_main = 0.0
  *     if "log" in query:             # <<<<<<<<<<<<<<
  *         int_main = log_number(main_num)
  *         main_return = f"The Log Of {main_num} Is {int_main}".encode('UTF-8')
  */
-  __pyx_t_8 = (__Pyx_PySequence_ContainsTF(__pyx_n_s_log, __pyx_v_query, Py_EQ)); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 102, __pyx_L1_error)
+  __pyx_t_8 = (__Pyx_PySequence_ContainsTF(__pyx_n_s_log, __pyx_v_query, Py_EQ)); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 98, __pyx_L1_error)
   __pyx_t_9 = (__pyx_t_8 != 0);
   if (__pyx_t_9) {
 
-    /* "cpp_func.pyx":103
+    /* "cpp_func.pyx":99
  *     cdef double int_main = 0.0
  *     if "log" in query:
  *         int_main = log_number(main_num)             # <<<<<<<<<<<<<<
@@ -3614,14 +3594,14 @@ static PyObject *__pyx_f_8cpp_func_maths_func(PyObject *__pyx_v_query, CYTHON_UN
  */
     __pyx_v_int_main = log_number(__pyx_v_main_num);
 
-    /* "cpp_func.pyx":104
+    /* "cpp_func.pyx":100
  *     if "log" in query:
  *         int_main = log_number(main_num)
  *         main_return = f"The Log Of {main_num} Is {int_main}".encode('UTF-8')             # <<<<<<<<<<<<<<
  *         return main_return
  *     elif "sin" in query:
  */
-    __pyx_t_3 = PyTuple_New(4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 104, __pyx_L1_error)
+    __pyx_t_3 = PyTuple_New(4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 100, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_10 = 0;
     __pyx_t_11 = 127;
@@ -3629,6 +3609,98 @@ static PyObject *__pyx_f_8cpp_func_maths_func(PyObject *__pyx_v_query, CYTHON_UN
     __pyx_t_10 += 11;
     __Pyx_GIVEREF(__pyx_kp_u_The_Log_Of);
     PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_kp_u_The_Log_Of);
+    __pyx_t_1 = PyFloat_FromDouble(__pyx_v_main_num); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 100, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_5 = __Pyx_PyObject_FormatSimple(__pyx_t_1, __pyx_empty_unicode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 100, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_t_11 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_5) > __pyx_t_11) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_5) : __pyx_t_11;
+    __pyx_t_10 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_5);
+    __Pyx_GIVEREF(__pyx_t_5);
+    PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_5);
+    __pyx_t_5 = 0;
+    __Pyx_INCREF(__pyx_kp_u_Is);
+    __pyx_t_10 += 4;
+    __Pyx_GIVEREF(__pyx_kp_u_Is);
+    PyTuple_SET_ITEM(__pyx_t_3, 2, __pyx_kp_u_Is);
+    __pyx_t_5 = PyFloat_FromDouble(__pyx_v_int_main); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 100, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __pyx_t_1 = __Pyx_PyObject_FormatSimple(__pyx_t_5, __pyx_empty_unicode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 100, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __pyx_t_11 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_1) > __pyx_t_11) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_1) : __pyx_t_11;
+    __pyx_t_10 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_1);
+    __Pyx_GIVEREF(__pyx_t_1);
+    PyTuple_SET_ITEM(__pyx_t_3, 3, __pyx_t_1);
+    __pyx_t_1 = 0;
+    __pyx_t_1 = __Pyx_PyUnicode_Join(__pyx_t_3, 4, __pyx_t_10, __pyx_t_11); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 100, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __pyx_t_3 = PyUnicode_AsUTF8String(((PyObject*)__pyx_t_1)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 100, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_t_7 = __pyx_convert_string_from_py_std__in_string(__pyx_t_3); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 100, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __pyx_v_main_return = __pyx_t_7;
+
+    /* "cpp_func.pyx":101
+ *         int_main = log_number(main_num)
+ *         main_return = f"The Log Of {main_num} Is {int_main}".encode('UTF-8')
+ *         return main_return             # <<<<<<<<<<<<<<
+ *     elif "sin" in query:
+ *         int_main = sin_number(main_num)
+ */
+    __Pyx_XDECREF(__pyx_r);
+    __pyx_t_3 = __pyx_convert_PyBytes_string_to_py_std__in_string(__pyx_v_main_return); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 101, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __pyx_r = __pyx_t_3;
+    __pyx_t_3 = 0;
+    goto __pyx_L0;
+
+    /* "cpp_func.pyx":98
+ *     cdef int main_int = 0
+ *     cdef double int_main = 0.0
+ *     if "log" in query:             # <<<<<<<<<<<<<<
+ *         int_main = log_number(main_num)
+ *         main_return = f"The Log Of {main_num} Is {int_main}".encode('UTF-8')
+ */
+  }
+
+  /* "cpp_func.pyx":102
+ *         main_return = f"The Log Of {main_num} Is {int_main}".encode('UTF-8')
+ *         return main_return
+ *     elif "sin" in query:             # <<<<<<<<<<<<<<
+ *         int_main = sin_number(main_num)
+ *         main_return = f"The Sin Of {main_num} Is {int_main}".encode('UTF-8')
+ */
+  __pyx_t_9 = (__Pyx_PySequence_ContainsTF(__pyx_n_s_sin, __pyx_v_query, Py_EQ)); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 102, __pyx_L1_error)
+  __pyx_t_8 = (__pyx_t_9 != 0);
+  if (__pyx_t_8) {
+
+    /* "cpp_func.pyx":103
+ *         return main_return
+ *     elif "sin" in query:
+ *         int_main = sin_number(main_num)             # <<<<<<<<<<<<<<
+ *         main_return = f"The Sin Of {main_num} Is {int_main}".encode('UTF-8')
+ *         return main_return
+ */
+    __pyx_v_int_main = sin_number(__pyx_v_main_num);
+
+    /* "cpp_func.pyx":104
+ *     elif "sin" in query:
+ *         int_main = sin_number(main_num)
+ *         main_return = f"The Sin Of {main_num} Is {int_main}".encode('UTF-8')             # <<<<<<<<<<<<<<
+ *         return main_return
+ *     elif "cos" in query:
+ */
+    __pyx_t_3 = PyTuple_New(4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 104, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __pyx_t_10 = 0;
+    __pyx_t_11 = 127;
+    __Pyx_INCREF(__pyx_kp_u_The_Sin_Of);
+    __pyx_t_10 += 11;
+    __Pyx_GIVEREF(__pyx_kp_u_The_Sin_Of);
+    PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_kp_u_The_Sin_Of);
     __pyx_t_1 = PyFloat_FromDouble(__pyx_v_main_num); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 104, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_5 = __Pyx_PyObject_FormatSimple(__pyx_t_1, __pyx_empty_unicode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 104, __pyx_L1_error)
@@ -3664,11 +3736,11 @@ static PyObject *__pyx_f_8cpp_func_maths_func(PyObject *__pyx_v_query, CYTHON_UN
     __pyx_v_main_return = __pyx_t_7;
 
     /* "cpp_func.pyx":105
- *         int_main = log_number(main_num)
- *         main_return = f"The Log Of {main_num} Is {int_main}".encode('UTF-8')
- *         return main_return             # <<<<<<<<<<<<<<
- *     elif "sin" in query:
  *         int_main = sin_number(main_num)
+ *         main_return = f"The Sin Of {main_num} Is {int_main}".encode('UTF-8')
+ *         return main_return             # <<<<<<<<<<<<<<
+ *     elif "cos" in query:
+ *         int_main = cos_number(main_num)
  */
     __Pyx_XDECREF(__pyx_r);
     __pyx_t_3 = __pyx_convert_PyBytes_string_to_py_std__in_string(__pyx_v_main_return); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 105, __pyx_L1_error)
@@ -3678,49 +3750,49 @@ static PyObject *__pyx_f_8cpp_func_maths_func(PyObject *__pyx_v_query, CYTHON_UN
     goto __pyx_L0;
 
     /* "cpp_func.pyx":102
- *     cdef int main_int = 0
- *     cdef double int_main = 0.0
- *     if "log" in query:             # <<<<<<<<<<<<<<
- *         int_main = log_number(main_num)
- *         main_return = f"The Log Of {main_num} Is {int_main}".encode('UTF-8')
- */
-  }
-
-  /* "cpp_func.pyx":106
  *         main_return = f"The Log Of {main_num} Is {int_main}".encode('UTF-8')
  *         return main_return
  *     elif "sin" in query:             # <<<<<<<<<<<<<<
  *         int_main = sin_number(main_num)
  *         main_return = f"The Sin Of {main_num} Is {int_main}".encode('UTF-8')
  */
-  __pyx_t_9 = (__Pyx_PySequence_ContainsTF(__pyx_n_s_sin, __pyx_v_query, Py_EQ)); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 106, __pyx_L1_error)
-  __pyx_t_8 = (__pyx_t_9 != 0);
-  if (__pyx_t_8) {
+  }
+
+  /* "cpp_func.pyx":106
+ *         main_return = f"The Sin Of {main_num} Is {int_main}".encode('UTF-8')
+ *         return main_return
+ *     elif "cos" in query:             # <<<<<<<<<<<<<<
+ *         int_main = cos_number(main_num)
+ *         main_return = f"The Cos Of {main_num} Is {int_main}".encode('UTF-8')
+ */
+  __pyx_t_8 = (__Pyx_PySequence_ContainsTF(__pyx_n_s_cos, __pyx_v_query, Py_EQ)); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 106, __pyx_L1_error)
+  __pyx_t_9 = (__pyx_t_8 != 0);
+  if (__pyx_t_9) {
 
     /* "cpp_func.pyx":107
  *         return main_return
- *     elif "sin" in query:
- *         int_main = sin_number(main_num)             # <<<<<<<<<<<<<<
- *         main_return = f"The Sin Of {main_num} Is {int_main}".encode('UTF-8')
+ *     elif "cos" in query:
+ *         int_main = cos_number(main_num)             # <<<<<<<<<<<<<<
+ *         main_return = f"The Cos Of {main_num} Is {int_main}".encode('UTF-8')
  *         return main_return
  */
-    __pyx_v_int_main = sin_number(__pyx_v_main_num);
+    __pyx_v_int_main = cos_number(__pyx_v_main_num);
 
     /* "cpp_func.pyx":108
- *     elif "sin" in query:
- *         int_main = sin_number(main_num)
- *         main_return = f"The Sin Of {main_num} Is {int_main}".encode('UTF-8')             # <<<<<<<<<<<<<<
- *         return main_return
  *     elif "cos" in query:
+ *         int_main = cos_number(main_num)
+ *         main_return = f"The Cos Of {main_num} Is {int_main}".encode('UTF-8')             # <<<<<<<<<<<<<<
+ *         return main_return
+ *     elif "tan" in query:
  */
     __pyx_t_3 = PyTuple_New(4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 108, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_10 = 0;
     __pyx_t_11 = 127;
-    __Pyx_INCREF(__pyx_kp_u_The_Sin_Of);
+    __Pyx_INCREF(__pyx_kp_u_The_Cos_Of);
     __pyx_t_10 += 11;
-    __Pyx_GIVEREF(__pyx_kp_u_The_Sin_Of);
-    PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_kp_u_The_Sin_Of);
+    __Pyx_GIVEREF(__pyx_kp_u_The_Cos_Of);
+    PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_kp_u_The_Cos_Of);
     __pyx_t_1 = PyFloat_FromDouble(__pyx_v_main_num); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 108, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_5 = __Pyx_PyObject_FormatSimple(__pyx_t_1, __pyx_empty_unicode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 108, __pyx_L1_error)
@@ -3756,11 +3828,11 @@ static PyObject *__pyx_f_8cpp_func_maths_func(PyObject *__pyx_v_query, CYTHON_UN
     __pyx_v_main_return = __pyx_t_7;
 
     /* "cpp_func.pyx":109
- *         int_main = sin_number(main_num)
- *         main_return = f"The Sin Of {main_num} Is {int_main}".encode('UTF-8')
- *         return main_return             # <<<<<<<<<<<<<<
- *     elif "cos" in query:
  *         int_main = cos_number(main_num)
+ *         main_return = f"The Cos Of {main_num} Is {int_main}".encode('UTF-8')
+ *         return main_return             # <<<<<<<<<<<<<<
+ *     elif "tan" in query:
+ *         int_main = tan_number(main_num)
  */
     __Pyx_XDECREF(__pyx_r);
     __pyx_t_3 = __pyx_convert_PyBytes_string_to_py_std__in_string(__pyx_v_main_return); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 109, __pyx_L1_error)
@@ -3770,49 +3842,49 @@ static PyObject *__pyx_f_8cpp_func_maths_func(PyObject *__pyx_v_query, CYTHON_UN
     goto __pyx_L0;
 
     /* "cpp_func.pyx":106
- *         main_return = f"The Log Of {main_num} Is {int_main}".encode('UTF-8')
- *         return main_return
- *     elif "sin" in query:             # <<<<<<<<<<<<<<
- *         int_main = sin_number(main_num)
- *         main_return = f"The Sin Of {main_num} Is {int_main}".encode('UTF-8')
- */
-  }
-
-  /* "cpp_func.pyx":110
  *         main_return = f"The Sin Of {main_num} Is {int_main}".encode('UTF-8')
  *         return main_return
  *     elif "cos" in query:             # <<<<<<<<<<<<<<
  *         int_main = cos_number(main_num)
  *         main_return = f"The Cos Of {main_num} Is {int_main}".encode('UTF-8')
  */
-  __pyx_t_8 = (__Pyx_PySequence_ContainsTF(__pyx_n_s_cos, __pyx_v_query, Py_EQ)); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 110, __pyx_L1_error)
-  __pyx_t_9 = (__pyx_t_8 != 0);
-  if (__pyx_t_9) {
+  }
+
+  /* "cpp_func.pyx":110
+ *         main_return = f"The Cos Of {main_num} Is {int_main}".encode('UTF-8')
+ *         return main_return
+ *     elif "tan" in query:             # <<<<<<<<<<<<<<
+ *         int_main = tan_number(main_num)
+ *         main_return = f"The Tan of {main_num} Is {int_main}".encode('UTF-8')
+ */
+  __pyx_t_9 = (__Pyx_PySequence_ContainsTF(__pyx_n_s_tan, __pyx_v_query, Py_EQ)); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 110, __pyx_L1_error)
+  __pyx_t_8 = (__pyx_t_9 != 0);
+  if (__pyx_t_8) {
 
     /* "cpp_func.pyx":111
  *         return main_return
- *     elif "cos" in query:
- *         int_main = cos_number(main_num)             # <<<<<<<<<<<<<<
- *         main_return = f"The Cos Of {main_num} Is {int_main}".encode('UTF-8')
+ *     elif "tan" in query:
+ *         int_main = tan_number(main_num)             # <<<<<<<<<<<<<<
+ *         main_return = f"The Tan of {main_num} Is {int_main}".encode('UTF-8')
  *         return main_return
  */
-    __pyx_v_int_main = cos_number(__pyx_v_main_num);
+    __pyx_v_int_main = tan_number(__pyx_v_main_num);
 
     /* "cpp_func.pyx":112
- *     elif "cos" in query:
- *         int_main = cos_number(main_num)
- *         main_return = f"The Cos Of {main_num} Is {int_main}".encode('UTF-8')             # <<<<<<<<<<<<<<
- *         return main_return
  *     elif "tan" in query:
+ *         int_main = tan_number(main_num)
+ *         main_return = f"The Tan of {main_num} Is {int_main}".encode('UTF-8')             # <<<<<<<<<<<<<<
+ *         return main_return
+ *     elif "square root" in query:
  */
     __pyx_t_3 = PyTuple_New(4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 112, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_10 = 0;
     __pyx_t_11 = 127;
-    __Pyx_INCREF(__pyx_kp_u_The_Cos_Of);
+    __Pyx_INCREF(__pyx_kp_u_The_Tan_of);
     __pyx_t_10 += 11;
-    __Pyx_GIVEREF(__pyx_kp_u_The_Cos_Of);
-    PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_kp_u_The_Cos_Of);
+    __Pyx_GIVEREF(__pyx_kp_u_The_Tan_of);
+    PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_kp_u_The_Tan_of);
     __pyx_t_1 = PyFloat_FromDouble(__pyx_v_main_num); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 112, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_5 = __Pyx_PyObject_FormatSimple(__pyx_t_1, __pyx_empty_unicode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 112, __pyx_L1_error)
@@ -3848,11 +3920,11 @@ static PyObject *__pyx_f_8cpp_func_maths_func(PyObject *__pyx_v_query, CYTHON_UN
     __pyx_v_main_return = __pyx_t_7;
 
     /* "cpp_func.pyx":113
- *         int_main = cos_number(main_num)
- *         main_return = f"The Cos Of {main_num} Is {int_main}".encode('UTF-8')
- *         return main_return             # <<<<<<<<<<<<<<
- *     elif "tan" in query:
  *         int_main = tan_number(main_num)
+ *         main_return = f"The Tan of {main_num} Is {int_main}".encode('UTF-8')
+ *         return main_return             # <<<<<<<<<<<<<<
+ *     elif "square root" in query:
+ *         int_main = sqrt_number(int(main_num))
  */
     __Pyx_XDECREF(__pyx_r);
     __pyx_t_3 = __pyx_convert_PyBytes_string_to_py_std__in_string(__pyx_v_main_return); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 113, __pyx_L1_error)
@@ -3862,49 +3934,49 @@ static PyObject *__pyx_f_8cpp_func_maths_func(PyObject *__pyx_v_query, CYTHON_UN
     goto __pyx_L0;
 
     /* "cpp_func.pyx":110
- *         main_return = f"The Sin Of {main_num} Is {int_main}".encode('UTF-8')
- *         return main_return
- *     elif "cos" in query:             # <<<<<<<<<<<<<<
- *         int_main = cos_number(main_num)
- *         main_return = f"The Cos Of {main_num} Is {int_main}".encode('UTF-8')
- */
-  }
-
-  /* "cpp_func.pyx":114
  *         main_return = f"The Cos Of {main_num} Is {int_main}".encode('UTF-8')
  *         return main_return
  *     elif "tan" in query:             # <<<<<<<<<<<<<<
  *         int_main = tan_number(main_num)
  *         main_return = f"The Tan of {main_num} Is {int_main}".encode('UTF-8')
  */
-  __pyx_t_9 = (__Pyx_PySequence_ContainsTF(__pyx_n_s_tan, __pyx_v_query, Py_EQ)); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 114, __pyx_L1_error)
-  __pyx_t_8 = (__pyx_t_9 != 0);
-  if (__pyx_t_8) {
+  }
+
+  /* "cpp_func.pyx":114
+ *         main_return = f"The Tan of {main_num} Is {int_main}".encode('UTF-8')
+ *         return main_return
+ *     elif "square root" in query:             # <<<<<<<<<<<<<<
+ *         int_main = sqrt_number(int(main_num))
+ *         main_return = f"The Square Root Of {main_num} Is {int_main}".encode('UTF-8')
+ */
+  __pyx_t_8 = (__Pyx_PySequence_ContainsTF(__pyx_kp_s_square_root, __pyx_v_query, Py_EQ)); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 114, __pyx_L1_error)
+  __pyx_t_9 = (__pyx_t_8 != 0);
+  if (__pyx_t_9) {
 
     /* "cpp_func.pyx":115
  *         return main_return
- *     elif "tan" in query:
- *         int_main = tan_number(main_num)             # <<<<<<<<<<<<<<
- *         main_return = f"The Tan of {main_num} Is {int_main}".encode('UTF-8')
+ *     elif "square root" in query:
+ *         int_main = sqrt_number(int(main_num))             # <<<<<<<<<<<<<<
+ *         main_return = f"The Square Root Of {main_num} Is {int_main}".encode('UTF-8')
  *         return main_return
  */
-    __pyx_v_int_main = tan_number(__pyx_v_main_num);
+    __pyx_v_int_main = sqrt_number(((int)__pyx_v_main_num));
 
     /* "cpp_func.pyx":116
- *     elif "tan" in query:
- *         int_main = tan_number(main_num)
- *         main_return = f"The Tan of {main_num} Is {int_main}".encode('UTF-8')             # <<<<<<<<<<<<<<
- *         return main_return
  *     elif "square root" in query:
+ *         int_main = sqrt_number(int(main_num))
+ *         main_return = f"The Square Root Of {main_num} Is {int_main}".encode('UTF-8')             # <<<<<<<<<<<<<<
+ *         return main_return
+ *     elif "round off" in query:
  */
     __pyx_t_3 = PyTuple_New(4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 116, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_10 = 0;
     __pyx_t_11 = 127;
-    __Pyx_INCREF(__pyx_kp_u_The_Tan_of);
-    __pyx_t_10 += 11;
-    __Pyx_GIVEREF(__pyx_kp_u_The_Tan_of);
-    PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_kp_u_The_Tan_of);
+    __Pyx_INCREF(__pyx_kp_u_The_Square_Root_Of);
+    __pyx_t_10 += 19;
+    __Pyx_GIVEREF(__pyx_kp_u_The_Square_Root_Of);
+    PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_kp_u_The_Square_Root_Of);
     __pyx_t_1 = PyFloat_FromDouble(__pyx_v_main_num); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 116, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_5 = __Pyx_PyObject_FormatSimple(__pyx_t_1, __pyx_empty_unicode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 116, __pyx_L1_error)
@@ -3940,11 +4012,11 @@ static PyObject *__pyx_f_8cpp_func_maths_func(PyObject *__pyx_v_query, CYTHON_UN
     __pyx_v_main_return = __pyx_t_7;
 
     /* "cpp_func.pyx":117
- *         int_main = tan_number(main_num)
- *         main_return = f"The Tan of {main_num} Is {int_main}".encode('UTF-8')
- *         return main_return             # <<<<<<<<<<<<<<
- *     elif "square root" in query:
  *         int_main = sqrt_number(int(main_num))
+ *         main_return = f"The Square Root Of {main_num} Is {int_main}".encode('UTF-8')
+ *         return main_return             # <<<<<<<<<<<<<<
+ *     elif "round off" in query:
+ *         main_int = round_number(main_num)
  */
     __Pyx_XDECREF(__pyx_r);
     __pyx_t_3 = __pyx_convert_PyBytes_string_to_py_std__in_string(__pyx_v_main_return); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
@@ -3954,118 +4026,26 @@ static PyObject *__pyx_f_8cpp_func_maths_func(PyObject *__pyx_v_query, CYTHON_UN
     goto __pyx_L0;
 
     /* "cpp_func.pyx":114
- *         main_return = f"The Cos Of {main_num} Is {int_main}".encode('UTF-8')
- *         return main_return
- *     elif "tan" in query:             # <<<<<<<<<<<<<<
- *         int_main = tan_number(main_num)
  *         main_return = f"The Tan of {main_num} Is {int_main}".encode('UTF-8')
+ *         return main_return
+ *     elif "square root" in query:             # <<<<<<<<<<<<<<
+ *         int_main = sqrt_number(int(main_num))
+ *         main_return = f"The Square Root Of {main_num} Is {int_main}".encode('UTF-8')
  */
   }
 
   /* "cpp_func.pyx":118
- *         main_return = f"The Tan of {main_num} Is {int_main}".encode('UTF-8')
- *         return main_return
- *     elif "square root" in query:             # <<<<<<<<<<<<<<
- *         int_main = sqrt_number(int(main_num))
- *         main_return = f"The Square Root Of {main_num} Is {int_main}".encode('UTF-8')
- */
-  __pyx_t_8 = (__Pyx_PySequence_ContainsTF(__pyx_kp_s_square_root, __pyx_v_query, Py_EQ)); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 118, __pyx_L1_error)
-  __pyx_t_9 = (__pyx_t_8 != 0);
-  if (__pyx_t_9) {
-
-    /* "cpp_func.pyx":119
- *         return main_return
- *     elif "square root" in query:
- *         int_main = sqrt_number(int(main_num))             # <<<<<<<<<<<<<<
- *         main_return = f"The Square Root Of {main_num} Is {int_main}".encode('UTF-8')
- *         return main_return
- */
-    __pyx_v_int_main = sqrt_number(((int)__pyx_v_main_num));
-
-    /* "cpp_func.pyx":120
- *     elif "square root" in query:
- *         int_main = sqrt_number(int(main_num))
- *         main_return = f"The Square Root Of {main_num} Is {int_main}".encode('UTF-8')             # <<<<<<<<<<<<<<
- *         return main_return
- *     elif "round off" in query:
- */
-    __pyx_t_3 = PyTuple_New(4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 120, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_10 = 0;
-    __pyx_t_11 = 127;
-    __Pyx_INCREF(__pyx_kp_u_The_Square_Root_Of);
-    __pyx_t_10 += 19;
-    __Pyx_GIVEREF(__pyx_kp_u_The_Square_Root_Of);
-    PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_kp_u_The_Square_Root_Of);
-    __pyx_t_1 = PyFloat_FromDouble(__pyx_v_main_num); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 120, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_5 = __Pyx_PyObject_FormatSimple(__pyx_t_1, __pyx_empty_unicode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 120, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_5);
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_11 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_5) > __pyx_t_11) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_5) : __pyx_t_11;
-    __pyx_t_10 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_5);
-    __Pyx_GIVEREF(__pyx_t_5);
-    PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_5);
-    __pyx_t_5 = 0;
-    __Pyx_INCREF(__pyx_kp_u_Is);
-    __pyx_t_10 += 4;
-    __Pyx_GIVEREF(__pyx_kp_u_Is);
-    PyTuple_SET_ITEM(__pyx_t_3, 2, __pyx_kp_u_Is);
-    __pyx_t_5 = PyFloat_FromDouble(__pyx_v_int_main); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 120, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_1 = __Pyx_PyObject_FormatSimple(__pyx_t_5, __pyx_empty_unicode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 120, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_11 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_1) > __pyx_t_11) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_1) : __pyx_t_11;
-    __pyx_t_10 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_1);
-    __Pyx_GIVEREF(__pyx_t_1);
-    PyTuple_SET_ITEM(__pyx_t_3, 3, __pyx_t_1);
-    __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyUnicode_Join(__pyx_t_3, 4, __pyx_t_10, __pyx_t_11); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 120, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = PyUnicode_AsUTF8String(((PyObject*)__pyx_t_1)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 120, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_7 = __pyx_convert_string_from_py_std__in_string(__pyx_t_3); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 120, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_v_main_return = __pyx_t_7;
-
-    /* "cpp_func.pyx":121
- *         int_main = sqrt_number(int(main_num))
- *         main_return = f"The Square Root Of {main_num} Is {int_main}".encode('UTF-8')
- *         return main_return             # <<<<<<<<<<<<<<
- *     elif "round off" in query:
- *         main_int = round_number(main_num)
- */
-    __Pyx_XDECREF(__pyx_r);
-    __pyx_t_3 = __pyx_convert_PyBytes_string_to_py_std__in_string(__pyx_v_main_return); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 121, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __pyx_r = __pyx_t_3;
-    __pyx_t_3 = 0;
-    goto __pyx_L0;
-
-    /* "cpp_func.pyx":118
- *         main_return = f"The Tan of {main_num} Is {int_main}".encode('UTF-8')
- *         return main_return
- *     elif "square root" in query:             # <<<<<<<<<<<<<<
- *         int_main = sqrt_number(int(main_num))
- *         main_return = f"The Square Root Of {main_num} Is {int_main}".encode('UTF-8')
- */
-  }
-
-  /* "cpp_func.pyx":122
  *         main_return = f"The Square Root Of {main_num} Is {int_main}".encode('UTF-8')
  *         return main_return
  *     elif "round off" in query:             # <<<<<<<<<<<<<<
  *         main_int = round_number(main_num)
  *         main_return = f"After Rounding Off The Number {main_num} The Result Is {main_int}".encode('UTF-8')
  */
-  __pyx_t_9 = (__Pyx_PySequence_ContainsTF(__pyx_kp_s_round_off, __pyx_v_query, Py_EQ)); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 122, __pyx_L1_error)
+  __pyx_t_9 = (__Pyx_PySequence_ContainsTF(__pyx_kp_s_round_off, __pyx_v_query, Py_EQ)); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 118, __pyx_L1_error)
   __pyx_t_8 = (__pyx_t_9 != 0);
   if (__pyx_t_8) {
 
-    /* "cpp_func.pyx":123
+    /* "cpp_func.pyx":119
  *         return main_return
  *     elif "round off" in query:
  *         main_int = round_number(main_num)             # <<<<<<<<<<<<<<
@@ -4074,14 +4054,14 @@ static PyObject *__pyx_f_8cpp_func_maths_func(PyObject *__pyx_v_query, CYTHON_UN
  */
     __pyx_v_main_int = round_number(__pyx_v_main_num);
 
-    /* "cpp_func.pyx":124
+    /* "cpp_func.pyx":120
  *     elif "round off" in query:
  *         main_int = round_number(main_num)
  *         main_return = f"After Rounding Off The Number {main_num} The Result Is {main_int}".encode('UTF-8')             # <<<<<<<<<<<<<<
  *         return main_return
  *     else:
  */
-    __pyx_t_3 = PyTuple_New(4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 124, __pyx_L1_error)
+    __pyx_t_3 = PyTuple_New(4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 120, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_10 = 0;
     __pyx_t_11 = 127;
@@ -4089,9 +4069,9 @@ static PyObject *__pyx_f_8cpp_func_maths_func(PyObject *__pyx_v_query, CYTHON_UN
     __pyx_t_10 += 30;
     __Pyx_GIVEREF(__pyx_kp_u_After_Rounding_Off_The_Number);
     PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_kp_u_After_Rounding_Off_The_Number);
-    __pyx_t_1 = PyFloat_FromDouble(__pyx_v_main_num); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 124, __pyx_L1_error)
+    __pyx_t_1 = PyFloat_FromDouble(__pyx_v_main_num); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 120, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_5 = __Pyx_PyObject_FormatSimple(__pyx_t_1, __pyx_empty_unicode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 124, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_FormatSimple(__pyx_t_1, __pyx_empty_unicode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 120, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_t_11 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_5) > __pyx_t_11) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_5) : __pyx_t_11;
@@ -4103,23 +4083,23 @@ static PyObject *__pyx_f_8cpp_func_maths_func(PyObject *__pyx_v_query, CYTHON_UN
     __pyx_t_10 += 15;
     __Pyx_GIVEREF(__pyx_kp_u_The_Result_Is);
     PyTuple_SET_ITEM(__pyx_t_3, 2, __pyx_kp_u_The_Result_Is);
-    __pyx_t_5 = __Pyx_PyUnicode_From_int(__pyx_v_main_int, 0, ' ', 'd'); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 124, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyUnicode_From_int(__pyx_v_main_int, 0, ' ', 'd'); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 120, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __pyx_t_10 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_5);
     __Pyx_GIVEREF(__pyx_t_5);
     PyTuple_SET_ITEM(__pyx_t_3, 3, __pyx_t_5);
     __pyx_t_5 = 0;
-    __pyx_t_5 = __Pyx_PyUnicode_Join(__pyx_t_3, 4, __pyx_t_10, __pyx_t_11); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 124, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyUnicode_Join(__pyx_t_3, 4, __pyx_t_10, __pyx_t_11); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 120, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = PyUnicode_AsUTF8String(((PyObject*)__pyx_t_5)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 124, __pyx_L1_error)
+    __pyx_t_3 = PyUnicode_AsUTF8String(((PyObject*)__pyx_t_5)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 120, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_7 = __pyx_convert_string_from_py_std__in_string(__pyx_t_3); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 124, __pyx_L1_error)
+    __pyx_t_7 = __pyx_convert_string_from_py_std__in_string(__pyx_t_3); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 120, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_v_main_return = __pyx_t_7;
 
-    /* "cpp_func.pyx":125
+    /* "cpp_func.pyx":121
  *         main_int = round_number(main_num)
  *         main_return = f"After Rounding Off The Number {main_num} The Result Is {main_int}".encode('UTF-8')
  *         return main_return             # <<<<<<<<<<<<<<
@@ -4127,13 +4107,13 @@ static PyObject *__pyx_f_8cpp_func_maths_func(PyObject *__pyx_v_query, CYTHON_UN
  *         return "Some Internal Error Occured".encode('UTF-8')
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_3 = __pyx_convert_PyBytes_string_to_py_std__in_string(__pyx_v_main_return); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 125, __pyx_L1_error)
+    __pyx_t_3 = __pyx_convert_PyBytes_string_to_py_std__in_string(__pyx_v_main_return); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 121, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_r = __pyx_t_3;
     __pyx_t_3 = 0;
     goto __pyx_L0;
 
-    /* "cpp_func.pyx":122
+    /* "cpp_func.pyx":118
  *         main_return = f"The Square Root Of {main_num} Is {int_main}".encode('UTF-8')
  *         return main_return
  *     elif "round off" in query:             # <<<<<<<<<<<<<<
@@ -4142,16 +4122,15 @@ static PyObject *__pyx_f_8cpp_func_maths_func(PyObject *__pyx_v_query, CYTHON_UN
  */
   }
 
-  /* "cpp_func.pyx":127
+  /* "cpp_func.pyx":123
  *         return main_return
  *     else:
  *         return "Some Internal Error Occured".encode('UTF-8')             # <<<<<<<<<<<<<<
  * 
- * 
  */
   /*else*/ {
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_Some_Internal_Error_Occured, __pyx_n_s_encode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 127, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_Some_Internal_Error_Occured, __pyx_n_s_encode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 123, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __pyx_t_1 = NULL;
     if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_5))) {
@@ -4165,7 +4144,7 @@ static PyObject *__pyx_f_8cpp_func_maths_func(PyObject *__pyx_v_query, CYTHON_UN
     }
     __pyx_t_3 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_1, __pyx_kp_s_UTF_8) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_kp_s_UTF_8);
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 127, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 123, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_r = __pyx_t_3;
@@ -4173,7 +4152,7 @@ static PyObject *__pyx_f_8cpp_func_maths_func(PyObject *__pyx_v_query, CYTHON_UN
     goto __pyx_L0;
   }
 
-  /* "cpp_func.pyx":97
+  /* "cpp_func.pyx":93
  *     return open_programs(main_return)
  * 
  * cpdef maths_func(query):             # <<<<<<<<<<<<<<
@@ -4217,7 +4196,7 @@ static PyObject *__pyx_pf_8cpp_func_26maths_func(CYTHON_UNUSED PyObject *__pyx_s
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("maths_func", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_8cpp_func_maths_func(__pyx_v_query, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 97, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_8cpp_func_maths_func(__pyx_v_query, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 93, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -4227,248 +4206,6 @@ static PyObject *__pyx_pf_8cpp_func_26maths_func(CYTHON_UNUSED PyObject *__pyx_s
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_AddTraceback("cpp_func.maths_func", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = NULL;
-  __pyx_L0:;
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "cpp_func.pyx":130
- * 
- * 
- * cpdef string background_changer():             # <<<<<<<<<<<<<<
- *     cdef string path = "D:\Personal\wallpaper\\"#This is temporary Until We Find More Optimistic Way
- *     cdef list files = os.listdir(path)
- */
-
-static PyObject *__pyx_pw_8cpp_func_29background_changer(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static std::string __pyx_f_8cpp_func_background_changer(CYTHON_UNUSED int __pyx_skip_dispatch) {
-  std::string __pyx_v_path;
-  PyObject *__pyx_v_files = 0;
-  std::string __pyx_v_random_gen_image;
-  std::string __pyx_v_main_image_all;
-  std::string __pyx_r;
-  __Pyx_RefNannyDeclarations
-  std::string __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  PyObject *__pyx_t_3 = NULL;
-  PyObject *__pyx_t_4 = NULL;
-  PyObject *__pyx_t_5 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("background_changer", 0);
-
-  /* "cpp_func.pyx":131
- * 
- * cpdef string background_changer():
- *     cdef string path = "D:\Personal\wallpaper\\"#This is temporary Until We Find More Optimistic Way             # <<<<<<<<<<<<<<
- *     cdef list files = os.listdir(path)
- *     cdef string random_gen_image = random.choice(files)
- */
-  __pyx_t_1 = __pyx_convert_string_from_py_std__in_string(__pyx_kp_b_D_Personal_wallpaper); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 131, __pyx_L1_error)
-  __pyx_v_path = __pyx_t_1;
-
-  /* "cpp_func.pyx":132
- * cpdef string background_changer():
- *     cdef string path = "D:\Personal\wallpaper\\"#This is temporary Until We Find More Optimistic Way
- *     cdef list files = os.listdir(path)             # <<<<<<<<<<<<<<
- *     cdef string random_gen_image = random.choice(files)
- *     cdef string main_image_all = f"{path}{random_gen_image}"
- */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_os); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 132, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_listdir); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 132, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __pyx_convert_PyBytes_string_to_py_std__in_string(__pyx_v_path); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 132, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = NULL;
-  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_4))) {
-    __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
-    if (likely(__pyx_t_5)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
-      __Pyx_INCREF(__pyx_t_5);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_4, function);
-    }
-  }
-  __pyx_t_2 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_5, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 132, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (!(likely(PyList_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "list", Py_TYPE(__pyx_t_2)->tp_name), 0))) __PYX_ERR(0, 132, __pyx_L1_error)
-  __pyx_v_files = ((PyObject*)__pyx_t_2);
-  __pyx_t_2 = 0;
-
-  /* "cpp_func.pyx":133
- *     cdef string path = "D:\Personal\wallpaper\\"#This is temporary Until We Find More Optimistic Way
- *     cdef list files = os.listdir(path)
- *     cdef string random_gen_image = random.choice(files)             # <<<<<<<<<<<<<<
- *     cdef string main_image_all = f"{path}{random_gen_image}"
- *     set_wallpaper(main_image_all)
- */
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_random); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 133, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_choice); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 133, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = NULL;
-  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
-    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
-    if (likely(__pyx_t_4)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-      __Pyx_INCREF(__pyx_t_4);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_3, function);
-    }
-  }
-  __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, __pyx_v_files) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_files);
-  __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 133, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_1 = __pyx_convert_string_from_py_std__in_string(__pyx_t_2); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 133, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_v_random_gen_image = __pyx_t_1;
-
-  /* "cpp_func.pyx":134
- *     cdef list files = os.listdir(path)
- *     cdef string random_gen_image = random.choice(files)
- *     cdef string main_image_all = f"{path}{random_gen_image}"             # <<<<<<<<<<<<<<
- *     set_wallpaper(main_image_all)
- *     return "Wallpaper Changed".encode('UTF-8')
- */
-  __pyx_t_2 = __pyx_convert_PyBytes_string_to_py_std__in_string(__pyx_v_path); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 134, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_t_2, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 134, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __pyx_convert_PyBytes_string_to_py_std__in_string(__pyx_v_random_gen_image); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 134, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_t_2, __pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 134, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyUnicode_Concat(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 134, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_1 = __pyx_convert_string_from_py_std__in_string(__pyx_t_2); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 134, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_v_main_image_all = __pyx_t_1;
-
-  /* "cpp_func.pyx":135
- *     cdef string random_gen_image = random.choice(files)
- *     cdef string main_image_all = f"{path}{random_gen_image}"
- *     set_wallpaper(main_image_all)             # <<<<<<<<<<<<<<
- *     return "Wallpaper Changed".encode('UTF-8')
- */
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_set_wallpaper); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 135, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_3 = __pyx_convert_PyBytes_string_to_py_std__in_string(__pyx_v_main_image_all); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 135, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = NULL;
-  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_4))) {
-    __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
-    if (likely(__pyx_t_5)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
-      __Pyx_INCREF(__pyx_t_5);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_4, function);
-    }
-  }
-  __pyx_t_2 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_5, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 135, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-  /* "cpp_func.pyx":136
- *     cdef string main_image_all = f"{path}{random_gen_image}"
- *     set_wallpaper(main_image_all)
- *     return "Wallpaper Changed".encode('UTF-8')             # <<<<<<<<<<<<<<
- */
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_Wallpaper_Changed, __pyx_n_s_encode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 136, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_3 = NULL;
-  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_4))) {
-    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_4);
-    if (likely(__pyx_t_3)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
-      __Pyx_INCREF(__pyx_t_3);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_4, function);
-    }
-  }
-  __pyx_t_2 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_3, __pyx_kp_s_UTF_8) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_kp_s_UTF_8);
-  __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 136, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_1 = __pyx_convert_string_from_py_std__in_string(__pyx_t_2); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 136, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_r = __pyx_t_1;
-  goto __pyx_L0;
-
-  /* "cpp_func.pyx":130
- * 
- * 
- * cpdef string background_changer():             # <<<<<<<<<<<<<<
- *     cdef string path = "D:\Personal\wallpaper\\"#This is temporary Until We Find More Optimistic Way
- *     cdef list files = os.listdir(path)
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_WriteUnraisable("cpp_func.background_changer", __pyx_clineno, __pyx_lineno, __pyx_filename, 1, 0);
-  __Pyx_pretend_to_initialize(&__pyx_r);
-  __pyx_L0:;
-  __Pyx_XDECREF(__pyx_v_files);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* Python wrapper */
-static PyObject *__pyx_pw_8cpp_func_29background_changer(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_8cpp_func_29background_changer(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("background_changer (wrapper)", 0);
-  __pyx_r = __pyx_pf_8cpp_func_28background_changer(__pyx_self);
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_pf_8cpp_func_28background_changer(CYTHON_UNUSED PyObject *__pyx_self) {
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("background_changer", 0);
-  __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_convert_PyBytes_string_to_py_std__in_string(__pyx_f_8cpp_func_background_changer(0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 130, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_r = __pyx_t_1;
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("cpp_func.background_changer", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -4805,7 +4542,6 @@ static PyMethodDef __pyx_methods[] = {
   {"system_info", (PyCFunction)__pyx_pw_8cpp_func_23system_info, METH_NOARGS, 0},
   {"open_system_programs", (PyCFunction)__pyx_pw_8cpp_func_25open_system_programs, METH_O, 0},
   {"maths_func", (PyCFunction)__pyx_pw_8cpp_func_27maths_func, METH_O, 0},
-  {"background_changer", (PyCFunction)__pyx_pw_8cpp_func_29background_changer, METH_NOARGS, 0},
   {0, 0, 0, 0}
 };
 
@@ -4854,7 +4590,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_b_, __pyx_k_, sizeof(__pyx_k_), 0, 0, 0, 0},
   {&__pyx_kp_s_, __pyx_k_, sizeof(__pyx_k_), 0, 0, 1, 0},
   {&__pyx_kp_u_After_Rounding_Off_The_Number, __pyx_k_After_Rounding_Off_The_Number, sizeof(__pyx_k_After_Rounding_Off_The_Number), 0, 1, 0, 0},
-  {&__pyx_kp_b_D_Personal_wallpaper, __pyx_k_D_Personal_wallpaper, sizeof(__pyx_k_D_Personal_wallpaper), 0, 0, 0, 0},
   {&__pyx_kp_s_H_M_S, __pyx_k_H_M_S, sizeof(__pyx_k_H_M_S), 0, 0, 1, 0},
   {&__pyx_kp_u_Is, __pyx_k_Is, sizeof(__pyx_k_Is), 0, 1, 0, 0},
   {&__pyx_kp_s_My_name_is_Layla_meaning_night, __pyx_k_My_name_is_Layla_meaning_night, sizeof(__pyx_k_My_name_is_Layla_meaning_night), 0, 0, 1, 0},
@@ -4870,8 +4605,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_u_The_Tan_of, __pyx_k_The_Tan_of, sizeof(__pyx_k_The_Tan_of), 0, 1, 0, 0},
   {&__pyx_kp_u_Time_Right_Now_is, __pyx_k_Time_Right_Now_is, sizeof(__pyx_k_Time_Right_Now_is), 0, 1, 0, 0},
   {&__pyx_kp_s_UTF_8, __pyx_k_UTF_8, sizeof(__pyx_k_UTF_8), 0, 0, 1, 0},
-  {&__pyx_kp_s_Wallpaper_Changed, __pyx_k_Wallpaper_Changed, sizeof(__pyx_k_Wallpaper_Changed), 0, 0, 1, 0},
-  {&__pyx_n_s_choice, __pyx_k_choice, sizeof(__pyx_k_choice), 0, 0, 1, 1},
   {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
   {&__pyx_n_s_cos, __pyx_k_cos, sizeof(__pyx_k_cos), 0, 0, 1, 1},
   {&__pyx_kp_s_d_d_d, __pyx_k_d_d_d, sizeof(__pyx_k_d_d_d), 0, 0, 1, 0},
@@ -4879,10 +4612,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_encode, __pyx_k_encode, sizeof(__pyx_k_encode), 0, 0, 1, 1},
   {&__pyx_n_s_findall, __pyx_k_findall, sizeof(__pyx_k_findall), 0, 0, 1, 1},
   {&__pyx_n_s_functools, __pyx_k_functools, sizeof(__pyx_k_functools), 0, 0, 1, 1},
-  {&__pyx_n_s_get_wallpaper, __pyx_k_get_wallpaper, sizeof(__pyx_k_get_wallpaper), 0, 0, 1, 1},
   {&__pyx_n_s_import, __pyx_k_import, sizeof(__pyx_k_import), 0, 0, 1, 1},
   {&__pyx_n_s_isdigit, __pyx_k_isdigit, sizeof(__pyx_k_isdigit), 0, 0, 1, 1},
-  {&__pyx_n_s_listdir, __pyx_k_listdir, sizeof(__pyx_k_listdir), 0, 0, 1, 1},
   {&__pyx_n_s_log, __pyx_k_log, sizeof(__pyx_k_log), 0, 0, 1, 1},
   {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
   {&__pyx_n_s_map, __pyx_k_map, sizeof(__pyx_k_map), 0, 0, 1, 1},
@@ -4891,13 +4622,10 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_now, __pyx_k_now, sizeof(__pyx_k_now), 0, 0, 1, 1},
   {&__pyx_kp_s_open, __pyx_k_open, sizeof(__pyx_k_open), 0, 0, 1, 0},
   {&__pyx_n_s_operator, __pyx_k_operator, sizeof(__pyx_k_operator), 0, 0, 1, 1},
-  {&__pyx_n_s_os, __pyx_k_os, sizeof(__pyx_k_os), 0, 0, 1, 1},
-  {&__pyx_n_s_random, __pyx_k_random, sizeof(__pyx_k_random), 0, 0, 1, 1},
   {&__pyx_n_s_re, __pyx_k_re, sizeof(__pyx_k_re), 0, 0, 1, 1},
   {&__pyx_n_s_reduce, __pyx_k_reduce, sizeof(__pyx_k_reduce), 0, 0, 1, 1},
   {&__pyx_n_s_replace, __pyx_k_replace, sizeof(__pyx_k_replace), 0, 0, 1, 1},
   {&__pyx_kp_s_round_off, __pyx_k_round_off, sizeof(__pyx_k_round_off), 0, 0, 1, 0},
-  {&__pyx_n_s_set_wallpaper, __pyx_k_set_wallpaper, sizeof(__pyx_k_set_wallpaper), 0, 0, 1, 1},
   {&__pyx_n_s_sin, __pyx_k_sin, sizeof(__pyx_k_sin), 0, 0, 1, 1},
   {&__pyx_n_s_split, __pyx_k_split, sizeof(__pyx_k_split), 0, 0, 1, 1},
   {&__pyx_kp_s_square_root, __pyx_k_square_root, sizeof(__pyx_k_square_root), 0, 0, 1, 0},
@@ -4906,12 +4634,11 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_sum, __pyx_k_sum, sizeof(__pyx_k_sum), 0, 0, 1, 1},
   {&__pyx_n_s_tan, __pyx_k_tan, sizeof(__pyx_k_tan), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
-  {&__pyx_n_s_wallpaper, __pyx_k_wallpaper, sizeof(__pyx_k_wallpaper), 0, 0, 1, 1},
   {0, 0, 0, 0, 0, 0, 0}
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_map = __Pyx_GetBuiltinName(__pyx_n_s_map); if (!__pyx_builtin_map) __PYX_ERR(0, 48, __pyx_L1_error)
-  __pyx_builtin_sum = __Pyx_GetBuiltinName(__pyx_n_s_sum); if (!__pyx_builtin_sum) __PYX_ERR(0, 49, __pyx_L1_error)
+  __pyx_builtin_map = __Pyx_GetBuiltinName(__pyx_n_s_map); if (!__pyx_builtin_map) __PYX_ERR(0, 44, __pyx_L1_error)
+  __pyx_builtin_sum = __Pyx_GetBuiltinName(__pyx_n_s_sum); if (!__pyx_builtin_sum) __PYX_ERR(0, 45, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -4921,14 +4648,14 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "cpp_func.pyx":93
+  /* "cpp_func.pyx":89
  * 
  * cpdef open_system_programs(query):
  *     query = query.replace("open ", "")             # <<<<<<<<<<<<<<
  *     cdef string main_return = query.encode('UTF-8')
  *     return open_programs(main_return)
  */
-  __pyx_tuple__2 = PyTuple_Pack(2, __pyx_kp_s_open, __pyx_kp_s_); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 93, __pyx_L1_error)
+  __pyx_tuple__2 = PyTuple_Pack(2, __pyx_kp_s_open, __pyx_kp_s_); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 89, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__2);
   __Pyx_GIVEREF(__pyx_tuple__2);
   __Pyx_RefNannyFinishContext();
@@ -5227,7 +4954,7 @@ if (!__Pyx_RefNanny) {
  * from libcpp.string cimport string
  * from functools import reduce             # <<<<<<<<<<<<<<
  * import operator
- * import datetime
+ * import re
  */
   __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 3, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -5247,8 +4974,8 @@ if (!__Pyx_RefNanny) {
  * from libcpp.string cimport string
  * from functools import reduce
  * import operator             # <<<<<<<<<<<<<<
- * import datetime
  * import re
+ * 
  */
   __pyx_t_2 = __Pyx_Import(__pyx_n_s_operator, 0, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -5258,88 +4985,24 @@ if (!__Pyx_RefNanny) {
   /* "cpp_func.pyx":5
  * from functools import reduce
  * import operator
- * import datetime             # <<<<<<<<<<<<<<
- * import re
- * import os
- */
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_datetime, 0, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 5, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_datetime, __pyx_t_2) < 0) __PYX_ERR(0, 5, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-  /* "cpp_func.pyx":6
- * import operator
- * import datetime
  * import re             # <<<<<<<<<<<<<<
- * import os
- * import random
- */
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_re, 0, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 6, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_re, __pyx_t_2) < 0) __PYX_ERR(0, 6, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-  /* "cpp_func.pyx":7
- * import datetime
- * import re
- * import os             # <<<<<<<<<<<<<<
- * import random
- * from wallpaper import set_wallpaper, get_wallpaper
- */
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_os, 0, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 7, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_os, __pyx_t_2) < 0) __PYX_ERR(0, 7, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-  /* "cpp_func.pyx":8
- * import re
- * import os
- * import random             # <<<<<<<<<<<<<<
- * from wallpaper import set_wallpaper, get_wallpaper
- * 
- */
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_random, 0, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 8, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_random, __pyx_t_2) < 0) __PYX_ERR(0, 8, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-  /* "cpp_func.pyx":9
- * import os
- * import random
- * from wallpaper import set_wallpaper, get_wallpaper             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_2 = PyList_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 9, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_re, 0, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 5, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_INCREF(__pyx_n_s_set_wallpaper);
-  __Pyx_GIVEREF(__pyx_n_s_set_wallpaper);
-  PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s_set_wallpaper);
-  __Pyx_INCREF(__pyx_n_s_get_wallpaper);
-  __Pyx_GIVEREF(__pyx_n_s_get_wallpaper);
-  PyList_SET_ITEM(__pyx_t_2, 1, __pyx_n_s_get_wallpaper);
-  __pyx_t_1 = __Pyx_Import(__pyx_n_s_wallpaper, __pyx_t_2, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 9, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_re, __pyx_t_2) < 0) __PYX_ERR(0, 5, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_1, __pyx_n_s_set_wallpaper); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 9, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_wallpaper, __pyx_t_2) < 0) __PYX_ERR(0, 9, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_1, __pyx_n_s_get_wallpaper); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 9, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_wallpaper, __pyx_t_2) < 0) __PYX_ERR(0, 9, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "cpp_func.pyx":1
  * import datetime             # <<<<<<<<<<<<<<
  * from libcpp.string cimport string
  * from functools import reduce
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_test, __pyx_t_1) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_test, __pyx_t_2) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "string.to_py":55
  * 

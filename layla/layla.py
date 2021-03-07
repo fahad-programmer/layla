@@ -77,6 +77,14 @@ while True:
     res = get_response(ints, intents)
     # answer = google_results(query)
     try:
+<<<<<<< HEAD
+        try:
+            speak(eval(res))
+        except Exception as e:
+            speak(res)
+    except IndexError:
+        speak("No Answer Found!")
+=======
         speak(eval(res))
         # if len(res) >= 1:
         #     speak(eval(res))
@@ -85,3 +93,4 @@ while True:
     except Exception as e:
         speak(res)
                 
+>>>>>>> 31ad709800ec0a17f018ab3db8862f6840da04c3
