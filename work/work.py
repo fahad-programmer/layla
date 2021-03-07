@@ -272,12 +272,29 @@ class f_keyboard:
             keyboard.press_and_release("win + l")
         elif "setting" in query:
             keyboard.press_and_release("win + i")
-        elif "desktop" in query or "minimize all" in query:
+        elif "desktop" in query or "minimise all" in query:
             keyboard.press_and_release("win + d")
         elif "minimise" in query:
             keyboard.press_and_release("win + m")
         elif "start" in query:
             keyboard.press_and_release("win")
+        elif "rename" in query:
+            keyboard.press_and_release("f2")
+        elif "search" in query:
+            keyboard.press_and_release("f3")
+        elif "display menu" in query:
+            keyboard.press_and_release("f4")
+        elif "refresh" in query:
+            keyboard.press_and_release("f5")
+        elif "display propertise" in query:
+            keyboard.press_and_release("alt + enter")
+        elif "display open apps" in query:
+            keyboard.press_and_release("ctrl + alt + tab")
+        elif "open task manager" in query:
+            keyboard.press_and_release("ctrl + shift + esc")
+        elif "open file explorer" in query:
+            keyboard.press_and_release("win + e")
+        
     
     def doc_func(query):
         if "undo" in query:
@@ -308,6 +325,24 @@ class f_keyboard:
                 keyboard.press_and_release('win + ctrl + right')
             elif "previous" in query:
                 keyboard.press_and_release('win + ctrl + left')
+                
+    def chrome_func(query):
+        if "new tab" in query:
+            keyboard.press_and_release('ctrl + t')
+        elif  "reopen tab" in query:
+            keyboard.press_and_release('ctrl + shift + t')
+        elif  "go back" in query:
+            keyboard.press_and_release('alt + left')
+        elif  "go forward" in query:
+            keyboard.press_and_release('alt + right')
+        elif "take screenshot" in query:
+            keyboard.press_and_release('win + shift + s')
+        elif "show clipboard" in query:
+            keyboard.press_and_release('win + v')
+        elif "show emoji panel" in query:
+            keyboard.press_and_release('win + .')
+        elif "new folder" in query:
+            keyboard.press_and_release('ctrl + shift + n')
 
 @lru_cache()
 def song_lyrics_finder(query):
