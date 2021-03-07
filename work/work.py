@@ -4,8 +4,7 @@ import pyperclip, webbrowser, wikipedia
 import clipboard, urllib.request, json
 from layla.engine_components import speak, take_command
 from functools import lru_cache
-from work.background_changer import background_change
-from Web_Scraping.lyrics import LyricsFinder
+from WebScraping.lyrics import LyricsFinder
 import random
 
 """
@@ -228,8 +227,6 @@ def answer_engine(query):
     spoken = api.spoken_results(i=main_query)
     return spoken
 
-def background_chn():
-    return background_change()
 
 def unable_recognize():
     return "Sorry I Wasn't Able To Recoginze The Command"

@@ -26,9 +26,9 @@ double tan_number(double main_num)
     return result;
 }
 
-int round_number(double main_num)
+double round_number(double main_num)
 {
-    int result = round(main_num);
+    double result = round(main_num);
     return result;
 }
 

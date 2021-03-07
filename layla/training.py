@@ -3,7 +3,7 @@ import json
 import pickle
 import numpy as np
 
-from numba import jit
+
 
 import nltk
 from nltk.stem import WordNetLemmatizer
@@ -88,7 +88,7 @@ model.compile(loss='categorical_crossentropy',
               metrics=["accuracy"])
 
 
-@jit
+
 def train_data():
     """
     The Function That Will Train The Model.

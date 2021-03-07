@@ -1,7 +1,7 @@
 #include <random>
 #include <time.h>
 #include <windows.h>
-#include <string
+#include <string>
 using namespace std;
 
 char *greet(void)

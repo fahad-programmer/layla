@@ -15,7 +15,7 @@ headers = {
 }
 
 
-def lyrics_finder(artist_name, track_name) -> str:
+def LyricsFinder(artist_name, track_name) -> str:
     """[This Function Is Used To Generate Lyrics Of Songs Using The Lyrics Finder Site And Beautiful Soap]
 
     Args:
@@ -32,4 +32,3 @@ def lyrics_finder(artist_name, track_name) -> str:
     return tag_find
 
 
-print(lyrics_finder("ed-sheeran", "lego-house"))

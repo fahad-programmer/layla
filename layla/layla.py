@@ -81,4 +81,4 @@ while True:
         except Exception as e:
             speak(res)
     except IndexError:
-        speek("No Answer Found!")
+        speak("No Answer Found!")

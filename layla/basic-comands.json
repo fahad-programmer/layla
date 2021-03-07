@@ -131,11 +131,7 @@
         "patterns":["None", ""],
         "responses":["unable_recognize()"]
     }, 
-    {
-        "tag":"Change Background",
-        "patterns":["Change The Background", "can you please change the background", "make the background look pretty", "change the background pic"],
-        "responses":["background_chn()"]
-    },
+   
     {
         "tag": "childhood",
         "patterns": ["how was your childhood", "how was it when you were kid", "how you spend your childhood"],
