@@ -278,36 +278,36 @@ class f_keyboard:
             keyboard.press_and_release("win + m")
         elif "start" in query:
             keyboard.press_and_release("win")
-     
-    # def doc_func(query):
-    #     if "undo" in query:
-    #         keyboard.press_and_release('ctrl + z')
-    #     elif "redo" in query:
-    #         keyboard.press_and_release("ctrl + y")
-    #     elif "paste" in query:
-    #         keyboard.press_and_release("ctrl + v")
-    #     elif "copy" in query:
-    #         keyboard.press_and_release("ctrl + c")
-    #     elif "cut" in query:
-    #         keyboard.press_and_release("ctrl + x")
-    #     elif "save" in query:
-    #         keyboard.press_and_release("ctrl + s")
-    #     elif "select all" in query:
-    #         keyboard.press_and_release("ctrl + a")
-    #     elif "go to end" in query:
-    #         keyboard.press_and_release("ctrl + end")
     
-    # def desk_func(query):
-    #     if "application" in query:
-    #         if "next" in query:
-    #             keyboard.press_and_release('alt + tab')
-    #         elif "previous" in query:
-    #             keyboard.press_and_release('alt + shift + tab')
-    #     elif "desktop" in query:
-    #         if "next" in query:
-    #             keyboard.press_and_release('win + ctrl + right')
-    #         elif "previous" in query:
-    #             keyboard.press_and_release('win + ctrl + left')
+    def doc_func(query):
+        if "undo" in query:
+            keyboard.press_and_release('ctrl + z')
+        elif "redo" in query:
+            keyboard.press_and_release("ctrl + y")
+        elif "paste" in query:
+            keyboard.press_and_release("ctrl + v")
+        elif "copy" in query:
+            keyboard.press_and_release("ctrl + c")
+        elif "cut" in query:
+            keyboard.press_and_release("ctrl + x")
+        elif "save" in query:
+            keyboard.press_and_release("ctrl + s")
+        elif "select all" in query:
+            keyboard.press_and_release("ctrl + a")
+        elif "go to end" in query:
+            keyboard.press_and_release("ctrl + end")
+            
+    def desk_func(query):
+        if "application" in query:
+            if "next" in query:
+                keyboard.press_and_release('alt + tab')
+            elif "previous" in query:
+                keyboard.press_and_release('alt + shift + tab')
+        elif "desktop" in query:
+            if "next" in query:
+                keyboard.press_and_release('win + ctrl + right')
+            elif "previous" in query:
+                keyboard.press_and_release('win + ctrl + left')
 
 @lru_cache()
 def song_lyrics_finder(query):
