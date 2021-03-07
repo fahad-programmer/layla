@@ -437,6 +437,16 @@
         "responses":["f_keyboard.sys_func(query)"]
     },
     {
+        "tag": "Computer Keyboard",
+        "patterns":["rename", "search", "search in this file", "refresh", "display propertise", "show properties", "display open apps", "open task manager", "open file explorer"],
+        "responses":["f_keyboard.sys_func(query)"]
+    },
+    {
+        "tag": "Chrome Keyboard",
+        "patterns":["new tab", "open the previous closed tab", "open closed tab", "reopen previous tab", "reopen tab", "go back", "go forward", "take screenshot", "show clopboard", "show clipboard menu", "show emoji panel", "new folder", "create new folder"],
+        "responses":["f_keyboard.chrome_func(query)"]
+    },
+    {
         "tag": "Document Keyboard",
         "patterns":["undo", "redo", "paste", "copy", "cut", "save", "save document", "select all", "go to end", "go to end of the document", "copy the selected content", "copy content", "paste here"],
         "responses":["f_keyboard.doc_func(query)"]

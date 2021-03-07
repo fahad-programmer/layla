@@ -282,17 +282,15 @@ class f_keyboard:
             keyboard.press_and_release("f2")
         elif "search" in query:
             keyboard.press_and_release("f3")
-        elif "display menu" in query:
-            keyboard.press_and_release("f4")
         elif "refresh" in query:
             keyboard.press_and_release("f5")
-        elif "display propertise" in query:
+        elif "properties" in query:
             keyboard.press_and_release("alt + enter")
         elif "display open apps" in query:
             keyboard.press_and_release("ctrl + alt + tab")
-        elif "open task manager" in query:
+        elif "task manager" in query:
             keyboard.press_and_release("ctrl + shift + esc")
-        elif "open file explorer" in query:
+        elif "file explorer" in query:
             keyboard.press_and_release("win + e")
         
     

@@ -97,7 +97,7 @@ def train_data():
         'layla_model.h5',
         model.fit(np.array(train_x),
                   np.array(train_y),
-                  epochs=5000,
+                  epochs=10000,
                   batch_size=5,
                   verbose=1))
 
