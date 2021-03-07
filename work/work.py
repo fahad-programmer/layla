@@ -1,12 +1,12 @@
 import re
 from work import wishing, keyboard_controller, sound, locate_me, main_api, tictactoe
-import pyperclip, webbrowser, wikipedia
+import pyperclip, webbrowser, wikipedia, keyboard
 import clipboard, urllib.request, json
 from layla.engine_components import speak, take_command
 from functools import lru_cache
+from work.background_changer import background_change
 from WebScraping.lyrics import LyricsFinder
 import random
-
 """
 What things i am working on:
 1. Scraping websites data
@@ -100,22 +100,22 @@ class website_control:
         speak("According To wikipedia")
         return results
 
-class video_controls:
 
+class video_controls:
     def change_volume(query):
         sound_value = [int(s) for s in query.split() if s.isdigit()][0]
         sound.Sound.volume_set(int(sound_value))
         speak("Volume changed to " + str(sound_value) + "percent")
-        
+
     def mute(query):
         sound.Sound.volume_set(0)
-        
+
     def max_sound(query):
         sound.Sound.volume_set(100)
-        
+
     def increase_vol():
         sound.Sound.volume_up()
-    
+
     def decrease_vol():
         sound.Sound.volume_down()
 
@@ -168,10 +168,12 @@ def weather_info(query):
     elif "coordinates" in query:
         latitude = loc['coord']['lat']
         longitude = loc['coord'][['lon']]
-        speak(f"You are located on latitude {latitude} and longitude {longitude}")
-    
+        speak(
+            f"You are located on latitude {latitude} and longitude {longitude}"
+        )
+
+
 class basic_functions:
-    
     def lovecal(query):
         # Calculate love percentage between Imran Akbar and Laiba Sadaf
         print("done")
@@ -180,23 +182,25 @@ class basic_functions:
         query = query.join(f_split)
         s_split = query.split(' and ')
         cat = locate_me.love_calculator(s_split[0], s_split[1])
-        speak(cat.get("result") + " the love percentage between " + cat.get("fname") +  " and " + cat.get("sname") + " is " + cat.get("percentage") + " percent")
-        
+        speak(
+            cat.get("result") + " the love percentage between " +
+            cat.get("fname") + " and " + cat.get("sname") + " is " +
+            cat.get("percentage") + " percent")
+
     def urlshorten(query):
         # Short the url from my clipboard
-        url = clipboard.paste()     # Note: Url Must start from https://
+        url = clipboard.paste()  # Note: Url Must start from https://
         finale = locate_me.url_shortner(url)
         if finale == "Not Found!":
-          speak("Url Error")
+            speak("Url Error")
         else:
-          clipboard.copy(finale)
-          speak(f"url successfully shorten, and copied to your clipboard")
-    
+            clipboard.copy(finale)
+            speak(f"url successfully shorten, and copied to your clipboard")
+
     def jokes(query):
         finale = locate_me.jokes_v()
         speak(finale)
-        
-    
+
     def word_def(query):
         # What is meant by Cobra
         # meaning of Cobra
@@ -217,7 +221,7 @@ class basic_functions:
             query = query.join(f_split)
             finale = locate_me.dictionary(query)
         speak(finale)
-            
+
     # More Coming Soon
 
 
@@ -230,6 +234,7 @@ def answer_engine(query):
 
 def unable_recognize():
     return "Sorry I Wasn't Able To Recoginze The Command"
+
 
 def flip_coin():
     while True:
@@ -247,6 +252,7 @@ def flip_coin():
         else:
             pass
 
+
 def roll_a_dice():
     while True:
         flip = random.randint(1, 6)
@@ -257,12 +263,59 @@ def roll_a_dice():
         if opt == "yes":
             continue
         else:
-            pass
+            break
+
 
 def play_tactactoe():
     tictactoe.start_game()
 
+
+class f_keyboard:
+    def sys_func(query):
+        # Shortcut Keys
+        if "lock" in query:
+            keyboard.press_and_release("win + l")
+        elif "setting" in query:
+            keyboard.press_and_release("win + i")
+        elif "desktop" in query or "minimize all" in query:
+            keyboard.press_and_release("win + d")
+        elif "minimise" in query:
+            keyboard.press_and_release("win + m")
+        elif "start" in query:
+            keyboard.press_and_release("win")
+
+    # def doc_func(query):
+    #     if "undo" in query:
+    #         keyboard.press_and_release('ctrl + z')
+    #     elif "redo" in query:
+    #         keyboard.press_and_release("ctrl + y")
+    #     elif "paste" in query:
+    #         keyboard.press_and_release("ctrl + v")
+    #     elif "copy" in query:
+    #         keyboard.press_and_release("ctrl + c")
+    #     elif "cut" in query:
+    #         keyboard.press_and_release("ctrl + x")
+    #     elif "save" in query:
+    #         keyboard.press_and_release("ctrl + s")
+    #     elif "select all" in query:
+    #         keyboard.press_and_release("ctrl + a")
+    #     elif "go to end" in query:
+    #         keyboard.press_and_release("ctrl + end")
+
+    # def desk_func(query):
+    #     if "application" in query:
+    #         if "next" in query:
+    #             keyboard.press_and_release('alt + tab')
+    #         elif "previous" in query:
+    #             keyboard.press_and_release('alt + shift + tab')
+    #     elif "desktop" in query:
+    #         if "next" in query:
+    #             keyboard.press_and_release('win + ctrl + right')
+    #         elif "previous" in query:
+    #             keyboard.press_and_release('win + ctrl + left')
+
+
 @lru_cache()
 def song_lyrics_finder(query):
     main_class = LyricsFinder(query)
-    return main_class.lyrics_finder() #One Problem And That Is That The Assistant Will Start Reading The Lyrics
+    print(main_class.lyrics_finder())  #Solved
