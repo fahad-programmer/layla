@@ -15,11 +15,7 @@ headers = {
 }
 
 
-<<<<<<< HEAD
-def LyricsFinder(artist_name, track_name) -> str:
-=======
 class LyricsFinder:
->>>>>>> 31ad709800ec0a17f018ab3db8862f6840da04c3
     """[This Function Is Used To Generate Lyrics Of Songs Using The Lyrics Finder Site And Beautiful Soap]
 
             Args:
@@ -56,10 +52,5 @@ class LyricsFinder:
         return tag_find
 
 
-
-
-
 # a = LyricsFinder("Find Lyrics Of Earth by Lil Dicky")
 # print(a.lyrics_finder())
-
-
