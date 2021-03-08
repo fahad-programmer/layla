@@ -1,5 +1,5 @@
 import re
-from work import wishing, keyboard_controller, sound, locate_me, main_api, tictactoe
+from work import wishing, keyboard_controller, sound, locate_me, main_api, tictactoe, rps_game
 from work.dice import dice_roller
 import pyperclip, webbrowser, wikipedia, keyboard
 import clipboard, urllib.request, json
@@ -261,6 +261,8 @@ def roll_dice():
 def play_tactactoe():
     tictactoe.start_game()
 
+def play_rps():
+    rps_game.rps_window()
 
 class f_keyboard:
     def sys_func(query):
