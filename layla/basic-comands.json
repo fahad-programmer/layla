@@ -415,7 +415,7 @@
     {
         "tag": "roll dice",
         "patterns":["roll a dice", "role the dice", "roll it", "roll dice", "dice up", "throw the dice", "let see the luck throw the dice", "show me my luck dice up", "through the dice", "tell me the dice results"],
-        "responses":["roll_a_dice()"]
+        "responses":["roll_dice()"]
     },
     {
         "tag": "tiktaktoe",
