@@ -323,8 +323,4 @@ class google_results:
 # google_results("marvel movies")
 # google_results("how can i publish my book")
 # google_results("How old is Joe Biden")
-<<<<<<< HEAD
-google_results("who is shahid afridi")
-=======
-# google_results("who is shahid afridi")
->>>>>>> f3e0474e91e90c32f2f1af38da10d7e4062e19b8
+# google_results("release date of black widow")

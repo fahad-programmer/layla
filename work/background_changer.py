@@ -7,7 +7,8 @@
 # path = "D:\\Personal\\wallpaper\\"  #This is just temporary
 
 
-# def background_change():
+def background_change():
+    pass
 
 #     files = os.listdir(path)
 #     d = random.choice(files)

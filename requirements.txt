@@ -45,6 +45,7 @@ joblib==1.0.0
 Js2Py==0.70
 Keras==2.4.3
 Keras-Preprocessing==1.1.2
+keyboard==0.13.5
 lazy-object-proxy==1.4.3
 llvmlite==0.35.0
 lxml==4.6.2
@@ -69,6 +70,7 @@ psycopg2==2.8.6
 py-wallpaper==0.0.1
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
+PyAudio @ file:///C:/Users/Anonymous/Downloads/PyAudio-0.2.11-cp37-cp37m-win_amd64.whl
 pycparser==2.20
 PyDispatcher==2.0.5
 PyHamcrest==2.0.2

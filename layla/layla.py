@@ -64,33 +64,22 @@ This is a basic code...
 everything will be working inside the work folder
 we will just import work.py function in this while loop
 """
-clear = lambda: os.system('cls')
 
-# This Function will clean any
-# command before execution of this python file
+def layla_run():
+    lambda: os.system('cls')
 
-wish_me()
-
-while True:
-    query = take_command().lower()
-    ints = predict_class(query)
-    res = get_response(ints, intents)
-    # answer = google_results(query)
-    try:
-<<<<<<< HEAD
+    # This Function will clean any
+    # command before execution of this python file
+    print("Started")
+    wish_me()
+    print("Started")
+    while True:        # For Test
+        # query = take_command().lower()
+        query = input("Enter >> ").lower()  # For Test
+        ints = predict_class(query)
+        res = get_response(ints, intents)
+        # answer = google_results(query)
         try:
-            speak(eval(res))
+            eval(res)
         except Exception as e:
             speak(res)
-    except IndexError:
-        speak("No Answer Found!")
-=======
-        speak(eval(res))
-        # if len(res) >= 1:
-        #     speak(eval(res))
-        # else:
-        #     google_results(query)
-    except Exception as e:
-        speak(res)
-                
->>>>>>> 31ad709800ec0a17f018ab3db8862f6840da04c3

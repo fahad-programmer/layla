@@ -1,5 +1,6 @@
 import re
-from work import wishing, keyboard_controller, sound, locate_me, main_api, tictactoe
+from work import wishing, keyboard_controller, sound, locate_me, main_api, tictactoe, rps_game
+from work.dice import dice_roller
 import pyperclip, webbrowser, wikipedia, keyboard
 import clipboard, urllib.request, json
 from layla.engine_components import speak, take_command
@@ -250,25 +251,18 @@ def flip_coin():
         if opt == "yes":
             continue
         else:
-            pass
-
-
-def roll_a_dice():
-    while True:
-        flip = random.randint(1, 6)
-        print(flip)
-        speak(flip)
-        speak("Do you want to roll again")
-        opt = take_command().lower()
-        if opt == "yes":
-            continue
-        else:
             break
+
+
+def roll_dice():
+    dice_roller.window()
 
 
 def play_tactactoe():
     tictactoe.start_game()
 
+def play_rps():
+    rps_game.rps_window()
 
 class f_keyboard:
     def sys_func(query):
@@ -283,7 +277,6 @@ class f_keyboard:
             keyboard.press_and_release("win + m")
         elif "start" in query:
             keyboard.press_and_release("win")
-<<<<<<< HEAD
         elif "rename" in query:
             keyboard.press_and_release("f2")
         elif "search" in query:
@@ -347,38 +340,6 @@ class f_keyboard:
             keyboard.press_and_release('win + .')
         elif "new folder" in query:
             keyboard.press_and_release('ctrl + shift + n')
-=======
-
-    # def doc_func(query):
-    #     if "undo" in query:
-    #         keyboard.press_and_release('ctrl + z')
-    #     elif "redo" in query:
-    #         keyboard.press_and_release("ctrl + y")
-    #     elif "paste" in query:
-    #         keyboard.press_and_release("ctrl + v")
-    #     elif "copy" in query:
-    #         keyboard.press_and_release("ctrl + c")
-    #     elif "cut" in query:
-    #         keyboard.press_and_release("ctrl + x")
-    #     elif "save" in query:
-    #         keyboard.press_and_release("ctrl + s")
-    #     elif "select all" in query:
-    #         keyboard.press_and_release("ctrl + a")
-    #     elif "go to end" in query:
-    #         keyboard.press_and_release("ctrl + end")
-
-    # def desk_func(query):
-    #     if "application" in query:
-    #         if "next" in query:
-    #             keyboard.press_and_release('alt + tab')
-    #         elif "previous" in query:
-    #             keyboard.press_and_release('alt + shift + tab')
-    #     elif "desktop" in query:
-    #         if "next" in query:
-    #             keyboard.press_and_release('win + ctrl + right')
-    #         elif "previous" in query:
-    #             keyboard.press_and_release('win + ctrl + left')
->>>>>>> afd969a53518e208b641fb4831b1a313dc1ad225
 
 
 @lru_cache()

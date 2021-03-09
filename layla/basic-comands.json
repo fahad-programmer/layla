@@ -415,7 +415,7 @@
     {
         "tag": "roll dice",
         "patterns":["roll a dice", "role the dice", "roll it", "roll dice", "dice up", "throw the dice", "let see the luck throw the dice", "show me my luck dice up", "through the dice", "tell me the dice results"],
-        "responses":["roll_a_dice()"]
+        "responses":["roll_dice()"]
     },
     {
         "tag": "tiktaktoe",
@@ -426,6 +426,11 @@
         "tag": "flip coin",
         "patterns":["flip a coin", "flip the coin", "flip coin for me", "head or tails", "toss it up", "toss the coin", "toss for me"],
         "responses":["flip_coin()"]
+    },
+    {
+        "tag": "flip coin",
+        "patterns":["rock paper", "rock paper scissor", "play rock paper", "play rock paper scissor"],
+        "responses":["play_rps()"]
     },
     {
         "tag": "System Keyboard",
