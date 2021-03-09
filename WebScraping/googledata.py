@@ -11,6 +11,8 @@ class google_results:
         # Perform the request
         request = urllib.request.Request(url)
 
+        print(url)
+
         # Set a normal User Agent header, otherwise Google will block the request.
         request.add_header(
             'User-Agent',
