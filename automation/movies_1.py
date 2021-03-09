@@ -29,9 +29,9 @@ def download_movies(movie_name) -> None:
 
 
 	def opening_the_file():
-		list_of_files = glob.glob('C:\\Users\\Dell\\Downloads\\*.torrent')
+		list_of_files = glob.glob(r'C:\\Users\\Dell\\Downloads\\*.torrent')
 		latest_file = max(list_of_files, key=os.path.getctime)
-		subprocess.run(['open', latest_file], check=True)
+		os.startfile(r'' + latest_file)
 
 	try:
 		search_box = driver.find_element_by_id('quick-search-input')
@@ -53,9 +53,8 @@ def download_movies(movie_name) -> None:
 
 	
 
-	opening_the_file()
+
 
 	return None
 
-
-download_movies("wrong turn 3")
+download_movies("iron man")
