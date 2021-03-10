@@ -70,9 +70,7 @@ def layla_run():
 
     # This Function will clean any
     # command before execution of this python file
-    print("Started")
     wish_me()
-    print("Started")
     while True:        # For Test
         # query = take_command().lower()
         query = input("Enter >> ").lower()  # For Test
