@@ -99,7 +99,7 @@
     {
         "tag": "system information",
         "patterns": ["show the system information", "system information", "what are current system spec", "information about current spec"],
-        "responses": ["system_info()"]
+        "responses": ["system_info()", "syst_info()"]
     },
     {
         "tag": "Love Calculator",
@@ -299,7 +299,7 @@
     },
     {
         "tag": "layla self destruct",
-        "patterns":["Selfdestruct", "destroy yourself", "destruct yourself", "kill switch"],
+        "patterns":["Selfdestruct"],
         "responses":["Self-destructing in 3, 2, 1 … Actually, I think I’ll stick around."]
     },
     {
@@ -466,5 +466,11 @@
         "tag": "Simple Answer",
         "patterns":["what is", "who is", "who are", "who is the", "how many", "how much", "what are", "when is", "how can i publish my book", "marvel movies", "apple founders", "popular scientists", "Einstien Quotes", "who is the president of america", "prime minister of india", "How old is Joe Biden", "Does Russia have 2 capitals", "pakistan currency", "where site can i watch anime", "how many countries in the world", "in which episode noyan dies", "marvel endgame cast", "molana tariq jamil", "what is my ip", "what time is it", "How do you tie a tie step by step", "how to lose weight", "when is mothers day", "Are there 53 weeks in 2021", "how many ounces in a pound", "how many weeks in a year", "how to screenshot on mac", "how old is donald trump", "how many feet in mile", "how many days till christmas", "how to have sex", "how to use snapchat", "what is the real name of ninja gamer", "what is tesla share price", "who owns most tesla shares", "how many shares of facebook does mark zuckerberg own", "author of harry potter", "gta v release date", "amazon ceo name", "nasa gdp"],
         "responses":["google_results(query)"]
+    },
+    {
+        "tag": "System Information",
+        "patterns":[""],
+        "responses":["google_results(query)"]
     }
+
 ]}

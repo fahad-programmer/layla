@@ -1,5 +1,5 @@
 import re
-from work import wishing, keyboard_controller, sound, locate_me, main_api, tictactoe, rps_game
+from work import wishing, keyboard_controller, sound, locate_me, main_api, tictactoe, rps_game, sys_info
 from work.dice import dice_roller
 import pyperclip, webbrowser, wikipedia, keyboard
 import clipboard, urllib.request, json
@@ -346,3 +346,8 @@ class f_keyboard:
 def song_lyrics_finder(query):
     main_class = LyricsFinder(query)
     print(main_class.lyrics_finder())  #Solved
+    
+@lru_cache()
+def syst_info():
+    sys_info.syst()
+    

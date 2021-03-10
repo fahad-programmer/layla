@@ -66,7 +66,7 @@ we will just import work.py function in this while loop
 """
 
 def layla_run():
-    lambda: os.system('cls')
+    os.system('cls')
 
     # This Function will clean any
     # command before execution of this python file
