@@ -4,16 +4,15 @@ import glob
 import time
 import os
 
+driver = webdriver.Edge("msedgedriver.exe")
+
+driver.get("https://yts.mx")
 
 
 
 cpdef str get_trending_movies():
 	
 	"""This function takes no parameter and just simply return 4 movies that are trending on the yts"""
-
-	driver = webdriver.Edge("msedgedriver.exe")
-
-	driver.get("https://yts.mx")
 
 	cdef list divs = driver.find_elements_by_class_name('browse-movie-title')[:4]
 
@@ -23,12 +22,6 @@ cpdef str get_trending_movies():
 
 cpdef void download_movies(movie_name):
 	"""This function takes in a movie name in as a parameter"""
-
-	cdef opening_the_file():
-		cdef list list_of_files = glob.glob('C:\\Users\\Dell\\Downloads\\*.torrent')
-		cdef str latest_file = max(list_of_files, key=os.path.getctime)
-		os.startfile(r'' + latest_file)
-
 	search_box = driver.find_element_by_id('quick-search-input')
 	search_box.send_keys(movie_name)
 	driver.implicitly_wait(5)
@@ -40,5 +33,7 @@ cpdef void download_movies(movie_name):
 	download_button.click()
 	main_download = driver.find_element_by_class_name('download-torrent')
 	main_download.click()
-	time.sleep(6)
-	opening_the_file()
+	time.sleep(6)	
+	cdef list list_of_files = glob.glob('C:\\Users\\Dell\\Downloads\\*.torrent')
+	cdef str latest_file = max(list_of_files, key=os.path.getctime)
+	os.startfile(r'' + latest_file)
