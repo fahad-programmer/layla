@@ -5,7 +5,7 @@
     "distutils": {
         "name": "movies",
         "sources": [
-            "movies.pyx"
+            "build/movies.pyx"
         ]
     },
     "module_name": "movies"
@@ -825,7 +825,7 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "movies.pyx",
+  "build\\movies.pyx",
 };
 
 /*--- Type declarations ---*/
@@ -1056,23 +1056,6 @@ static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Fast(PyObject *o, Py_ssize_t i,
 static PyObject* __Pyx_PyUnicode_Join(PyObject* value_tuple, Py_ssize_t value_count, Py_ssize_t result_ulength,
                                       Py_UCS4 max_char);
 
-/* UnpackUnboundCMethod.proto */
-typedef struct {
-    PyObject *type;
-    PyObject **method_name;
-    PyCFunction func;
-    PyObject *method;
-    int flag;
-} __Pyx_CachedCFunction;
-
-/* CallUnboundCMethod1.proto */
-static PyObject* __Pyx__CallUnboundCMethod1(__Pyx_CachedCFunction* cfunc, PyObject* self, PyObject* arg);
-#if CYTHON_COMPILING_IN_CPYTHON
-static CYTHON_INLINE PyObject* __Pyx_CallUnboundCMethod1(__Pyx_CachedCFunction* cfunc, PyObject* self, PyObject* arg);
-#else
-#define __Pyx_CallUnboundCMethod1(cfunc, self, arg)  __Pyx__CallUnboundCMethod1(cfunc, self, arg)
-#endif
-
 /* PyObjectCallNoArg.proto */
 #if CYTHON_COMPILING_IN_CPYTHON
 static CYTHON_INLINE PyObject* __Pyx_PyObject_CallNoArg(PyObject *func);
@@ -1213,9 +1196,8 @@ static const char __pyx_k_test[] = "__test__";
 static const char __pyx_k_text[] = "text";
 static const char __pyx_k_time[] = "time";
 static const char __pyx_k_click[] = "click";
+static const char __pyx_k_close[] = "close";
 static const char __pyx_k_sleep[] = "sleep";
-static const char __pyx_k_utf_8[] = "utf-8";
-static const char __pyx_k_decode[] = "decode";
 static const char __pyx_k_driver[] = "driver";
 static const char __pyx_k_import[] = "__import__";
 static const char __pyx_k_getctime[] = "getctime";
@@ -1250,7 +1232,7 @@ static PyObject *__pyx_kp_u_and;
 static PyObject *__pyx_kp_s_browse_movie_title;
 static PyObject *__pyx_n_s_click;
 static PyObject *__pyx_n_s_cline_in_traceback;
-static PyObject *__pyx_n_s_decode;
+static PyObject *__pyx_n_s_close;
 static PyObject *__pyx_kp_s_download_torrent;
 static PyObject *__pyx_n_s_driver;
 static PyObject *__pyx_n_s_find_element_by_class_name;
@@ -1280,11 +1262,9 @@ static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_text;
 static PyObject *__pyx_n_s_time;
 static PyObject *__pyx_kp_s_torrent_modal_download;
-static PyObject *__pyx_kp_s_utf_8;
 static PyObject *__pyx_n_s_webdriver;
 static PyObject *__pyx_pf_6movies_get_trending_movies(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
 static PyObject *__pyx_pf_6movies_2download_movies(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_movie_name); /* proto */
-static __Pyx_CachedCFunction __pyx_umethod_PyString_Type_decode = {0, &__pyx_n_s_decode, 0, 0, 0};
 static PyObject *__pyx_int_4;
 static PyObject *__pyx_int_5;
 static PyObject *__pyx_int_6;
@@ -1297,7 +1277,7 @@ static PyObject *__pyx_tuple__4;
 /* "movies.pyx":13
  * 
  * 
- * cpdef str get_trending_movies():             # <<<<<<<<<<<<<<
+ * cpdef unicode get_trending_movies():             # <<<<<<<<<<<<<<
  * 
  * 	"""This function takes no parameter and just simply return 4 movies that are trending on the yts"""
  */
@@ -1323,7 +1303,7 @@ static PyObject *__pyx_f_6movies_get_trending_movies(CYTHON_UNUSED int __pyx_ski
  * 
  * 	cdef list divs = driver.find_elements_by_class_name('browse-movie-title')[:4]             # <<<<<<<<<<<<<<
  * 
- * 	cdef str main_ret = f"Following Are The Movies That Are Trending Right Now {divs[0].text} and {divs[1].text} and {divs[2].text} and {divs[3].text}".encode('utf-8')
+ * 	cdef unicode main_ret = f"Following Are The Movies That Are Trending Right Now {divs[0].text} and {divs[1].text} and {divs[2].text} and {divs[3].text}"
  */
   __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_driver); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 17, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -1355,9 +1335,9 @@ static PyObject *__pyx_f_6movies_get_trending_movies(CYTHON_UNUSED int __pyx_ski
   /* "movies.pyx":19
  * 	cdef list divs = driver.find_elements_by_class_name('browse-movie-title')[:4]
  * 
- * 	cdef str main_ret = f"Following Are The Movies That Are Trending Right Now {divs[0].text} and {divs[1].text} and {divs[2].text} and {divs[3].text}".encode('utf-8')             # <<<<<<<<<<<<<<
+ * 	cdef unicode main_ret = f"Following Are The Movies That Are Trending Right Now {divs[0].text} and {divs[1].text} and {divs[2].text} and {divs[3].text}"             # <<<<<<<<<<<<<<
  * 
- * 	return main_ret.decode('utf-8')
+ * 	driver.close()
  */
   __pyx_t_3 = PyTuple_New(8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 19, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -1450,32 +1430,54 @@ static PyObject *__pyx_f_6movies_get_trending_movies(CYTHON_UNUSED int __pyx_ski
   __pyx_t_1 = __Pyx_PyUnicode_Join(__pyx_t_3, 8, __pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 19, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = PyUnicode_AsUTF8String(((PyObject*)__pyx_t_1)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 19, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (!(likely(PyString_CheckExact(__pyx_t_3))||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "str", Py_TYPE(__pyx_t_3)->tp_name), 0))) __PYX_ERR(0, 19, __pyx_L1_error)
-  __pyx_v_main_ret = ((PyObject*)__pyx_t_3);
-  __pyx_t_3 = 0;
+  __pyx_v_main_ret = ((PyObject*)__pyx_t_1);
+  __pyx_t_1 = 0;
 
   /* "movies.pyx":21
- * 	cdef str main_ret = f"Following Are The Movies That Are Trending Right Now {divs[0].text} and {divs[1].text} and {divs[2].text} and {divs[3].text}".encode('utf-8')
+ * 	cdef unicode main_ret = f"Following Are The Movies That Are Trending Right Now {divs[0].text} and {divs[1].text} and {divs[2].text} and {divs[3].text}"
  * 
- * 	return main_ret.decode('utf-8')             # <<<<<<<<<<<<<<
+ * 	driver.close()             # <<<<<<<<<<<<<<
+ * 
+ * 	return main_ret
+ */
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_driver); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 21, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_close); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 21, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = NULL;
+  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
+    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
+    if (likely(__pyx_t_3)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+      __Pyx_INCREF(__pyx_t_3);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_2, function);
+    }
+  }
+  __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 21, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "movies.pyx":23
+ * 	driver.close()
+ * 
+ * 	return main_ret             # <<<<<<<<<<<<<<
  * 
  * cpdef void download_movies(movie_name):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_3 = __Pyx_CallUnboundCMethod1(&__pyx_umethod_PyString_Type_decode, __pyx_v_main_ret, __pyx_kp_s_utf_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 21, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  if (!(likely(PyString_CheckExact(__pyx_t_3))||((__pyx_t_3) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "str", Py_TYPE(__pyx_t_3)->tp_name), 0))) __PYX_ERR(0, 21, __pyx_L1_error)
-  __pyx_r = ((PyObject*)__pyx_t_3);
-  __pyx_t_3 = 0;
+  __Pyx_INCREF(__pyx_v_main_ret);
+  __pyx_r = __pyx_v_main_ret;
   goto __pyx_L0;
 
   /* "movies.pyx":13
  * 
  * 
- * cpdef str get_trending_movies():             # <<<<<<<<<<<<<<
+ * cpdef unicode get_trending_movies():             # <<<<<<<<<<<<<<
  * 
  * 	"""This function takes no parameter and just simply return 4 movies that are trending on the yts"""
  */
@@ -1535,8 +1537,8 @@ static PyObject *__pyx_pf_6movies_get_trending_movies(CYTHON_UNUSED PyObject *__
   return __pyx_r;
 }
 
-/* "movies.pyx":23
- * 	return main_ret.decode('utf-8')
+/* "movies.pyx":25
+ * 	return main_ret
  * 
  * cpdef void download_movies(movie_name):             # <<<<<<<<<<<<<<
  * 	"""This function takes in a movie name in as a parameter"""
@@ -1562,16 +1564,16 @@ static void __pyx_f_6movies_download_movies(PyObject *__pyx_v_movie_name, CYTHON
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("download_movies", 0);
 
-  /* "movies.pyx":25
+  /* "movies.pyx":27
  * cpdef void download_movies(movie_name):
  * 	"""This function takes in a movie name in as a parameter"""
  * 	search_box = driver.find_element_by_id('quick-search-input')             # <<<<<<<<<<<<<<
  * 	search_box.send_keys(movie_name)
  * 	driver.implicitly_wait(5)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_driver); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_driver); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 27, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_find_element_by_id); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_find_element_by_id); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 27, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -1586,20 +1588,20 @@ static void __pyx_f_6movies_download_movies(PyObject *__pyx_v_movie_name, CYTHON
   }
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_2, __pyx_kp_s_quick_search_input) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_kp_s_quick_search_input);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 25, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 27, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_search_box = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "movies.pyx":26
+  /* "movies.pyx":28
  * 	"""This function takes in a movie name in as a parameter"""
  * 	search_box = driver.find_element_by_id('quick-search-input')
  * 	search_box.send_keys(movie_name)             # <<<<<<<<<<<<<<
  * 	driver.implicitly_wait(5)
  * 	item_selected = driver.find_element_by_class_name('ac-item-selected')
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_search_box, __pyx_n_s_send_keys); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 26, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_search_box, __pyx_n_s_send_keys); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 28, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_2 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_3))) {
@@ -1613,21 +1615,21 @@ static void __pyx_f_6movies_download_movies(PyObject *__pyx_v_movie_name, CYTHON
   }
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_2, __pyx_v_movie_name) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_movie_name);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 26, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 28, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "movies.pyx":27
+  /* "movies.pyx":29
  * 	search_box = driver.find_element_by_id('quick-search-input')
  * 	search_box.send_keys(movie_name)
  * 	driver.implicitly_wait(5)             # <<<<<<<<<<<<<<
  * 	item_selected = driver.find_element_by_class_name('ac-item-selected')
  * 	link = item_selected.find_element_by_tag_name('a')
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_driver); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 27, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_driver); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 29, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_implicitly_wait); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 27, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_implicitly_wait); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 29, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -1642,21 +1644,21 @@ static void __pyx_f_6movies_download_movies(PyObject *__pyx_v_movie_name, CYTHON
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, __pyx_int_5) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_int_5);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 27, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 29, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "movies.pyx":28
+  /* "movies.pyx":30
  * 	search_box.send_keys(movie_name)
  * 	driver.implicitly_wait(5)
  * 	item_selected = driver.find_element_by_class_name('ac-item-selected')             # <<<<<<<<<<<<<<
  * 	link = item_selected.find_element_by_tag_name('a')
  * 	link.click()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_driver); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_driver); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 30, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_find_element_by_class_name); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_find_element_by_class_name); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 30, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -1671,20 +1673,20 @@ static void __pyx_f_6movies_download_movies(PyObject *__pyx_v_movie_name, CYTHON
   }
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_2, __pyx_kp_s_ac_item_selected) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_kp_s_ac_item_selected);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 28, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 30, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_item_selected = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "movies.pyx":29
+  /* "movies.pyx":31
  * 	driver.implicitly_wait(5)
  * 	item_selected = driver.find_element_by_class_name('ac-item-selected')
  * 	link = item_selected.find_element_by_tag_name('a')             # <<<<<<<<<<<<<<
  * 	link.click()
  * 	driver.implicitly_wait(10)
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_item_selected, __pyx_n_s_find_element_by_tag_name); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 29, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_item_selected, __pyx_n_s_find_element_by_tag_name); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_2 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_3))) {
@@ -1698,20 +1700,20 @@ static void __pyx_f_6movies_download_movies(PyObject *__pyx_v_movie_name, CYTHON
   }
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_2, __pyx_n_s_a) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_n_s_a);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 29, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_link = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "movies.pyx":30
+  /* "movies.pyx":32
  * 	item_selected = driver.find_element_by_class_name('ac-item-selected')
  * 	link = item_selected.find_element_by_tag_name('a')
  * 	link.click()             # <<<<<<<<<<<<<<
  * 	driver.implicitly_wait(10)
  * 	download_button = driver.find_element_by_class_name('torrent-modal-download')
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_link, __pyx_n_s_click); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 30, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_link, __pyx_n_s_click); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 32, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_2 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_3))) {
@@ -1725,21 +1727,21 @@ static void __pyx_f_6movies_download_movies(PyObject *__pyx_v_movie_name, CYTHON
   }
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 30, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 32, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "movies.pyx":31
+  /* "movies.pyx":33
  * 	link = item_selected.find_element_by_tag_name('a')
  * 	link.click()
  * 	driver.implicitly_wait(10)             # <<<<<<<<<<<<<<
  * 	download_button = driver.find_element_by_class_name('torrent-modal-download')
  * 	download_button.click()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_driver); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 31, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_driver); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 33, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_implicitly_wait); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 31, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_implicitly_wait); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 33, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -1754,21 +1756,21 @@ static void __pyx_f_6movies_download_movies(PyObject *__pyx_v_movie_name, CYTHON
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, __pyx_int_10) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_int_10);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 31, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 33, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "movies.pyx":32
+  /* "movies.pyx":34
  * 	link.click()
  * 	driver.implicitly_wait(10)
  * 	download_button = driver.find_element_by_class_name('torrent-modal-download')             # <<<<<<<<<<<<<<
  * 	download_button.click()
  * 	main_download = driver.find_element_by_class_name('download-torrent')
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_driver); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 32, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_driver); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 34, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_find_element_by_class_name); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 32, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_find_element_by_class_name); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 34, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -1783,20 +1785,20 @@ static void __pyx_f_6movies_download_movies(PyObject *__pyx_v_movie_name, CYTHON
   }
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_2, __pyx_kp_s_torrent_modal_download) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_kp_s_torrent_modal_download);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 32, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 34, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_download_button = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "movies.pyx":33
+  /* "movies.pyx":35
  * 	driver.implicitly_wait(10)
  * 	download_button = driver.find_element_by_class_name('torrent-modal-download')
  * 	download_button.click()             # <<<<<<<<<<<<<<
  * 	main_download = driver.find_element_by_class_name('download-torrent')
  * 	main_download.click()
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_download_button, __pyx_n_s_click); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 33, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_download_button, __pyx_n_s_click); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 35, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_2 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_3))) {
@@ -1810,21 +1812,21 @@ static void __pyx_f_6movies_download_movies(PyObject *__pyx_v_movie_name, CYTHON
   }
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 33, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 35, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "movies.pyx":34
+  /* "movies.pyx":36
  * 	download_button = driver.find_element_by_class_name('torrent-modal-download')
  * 	download_button.click()
  * 	main_download = driver.find_element_by_class_name('download-torrent')             # <<<<<<<<<<<<<<
  * 	main_download.click()
- * 	time.sleep(6)
+ * 	driver.close()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_driver); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 34, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_driver); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 36, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_find_element_by_class_name); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 34, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_find_element_by_class_name); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 36, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -1839,20 +1841,20 @@ static void __pyx_f_6movies_download_movies(PyObject *__pyx_v_movie_name, CYTHON
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, __pyx_kp_s_download_torrent) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_kp_s_download_torrent);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 34, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 36, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_main_download = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "movies.pyx":35
+  /* "movies.pyx":37
  * 	download_button.click()
  * 	main_download = driver.find_element_by_class_name('download-torrent')
  * 	main_download.click()             # <<<<<<<<<<<<<<
+ * 	driver.close()
  * 	time.sleep(6)
- * 	cdef list list_of_files = glob.glob('C:\\Users\\Dell\\Downloads\\*.torrent')
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_main_download, __pyx_n_s_click); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 35, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_main_download, __pyx_n_s_click); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 37, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -1866,21 +1868,21 @@ static void __pyx_f_6movies_download_movies(PyObject *__pyx_v_movie_name, CYTHON
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 35, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 37, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "movies.pyx":36
+  /* "movies.pyx":38
  * 	main_download = driver.find_element_by_class_name('download-torrent')
  * 	main_download.click()
- * 	time.sleep(6)             # <<<<<<<<<<<<<<
+ * 	driver.close()             # <<<<<<<<<<<<<<
+ * 	time.sleep(6)
  * 	cdef list list_of_files = glob.glob('C:\\Users\\Dell\\Downloads\\*.torrent')
- * 	cdef str latest_file = max(list_of_files, key=os.path.getctime)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_time); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 36, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_driver); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 38, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_sleep); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 36, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_close); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 38, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -1893,23 +1895,23 @@ static void __pyx_f_6movies_download_movies(PyObject *__pyx_v_movie_name, CYTHON
       __Pyx_DECREF_SET(__pyx_t_3, function);
     }
   }
-  __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_2, __pyx_int_6) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_int_6);
+  __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 36, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 38, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "movies.pyx":37
+  /* "movies.pyx":39
  * 	main_download.click()
- * 	time.sleep(6)
- * 	cdef list list_of_files = glob.glob('C:\\Users\\Dell\\Downloads\\*.torrent')             # <<<<<<<<<<<<<<
+ * 	driver.close()
+ * 	time.sleep(6)             # <<<<<<<<<<<<<<
+ * 	cdef list list_of_files = glob.glob('C:\\Users\\Dell\\Downloads\\*.torrent')
  * 	cdef str latest_file = max(list_of_files, key=os.path.getctime)
- * 	os.startfile(r'' + latest_file)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_glob); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 37, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_time); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 39, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_glob); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 37, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_sleep); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 39, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -1922,58 +1924,87 @@ static void __pyx_f_6movies_download_movies(PyObject *__pyx_v_movie_name, CYTHON
       __Pyx_DECREF_SET(__pyx_t_2, function);
     }
   }
-  __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, __pyx_kp_s_C_Users_Dell_Downloads_torrent) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_kp_s_C_Users_Dell_Downloads_torrent);
+  __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, __pyx_int_6) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_int_6);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 37, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 39, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (!(likely(PyList_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "list", Py_TYPE(__pyx_t_1)->tp_name), 0))) __PYX_ERR(0, 37, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "movies.pyx":40
+ * 	driver.close()
+ * 	time.sleep(6)
+ * 	cdef list list_of_files = glob.glob('C:\\Users\\Dell\\Downloads\\*.torrent')             # <<<<<<<<<<<<<<
+ * 	cdef str latest_file = max(list_of_files, key=os.path.getctime)
+ * 	os.startfile(r'' + latest_file)
+ */
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_glob); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 40, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_glob); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 40, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = NULL;
+  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_2)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_2);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
+    }
+  }
+  __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_2, __pyx_kp_s_C_Users_Dell_Downloads_torrent) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_kp_s_C_Users_Dell_Downloads_torrent);
+  __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 40, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (!(likely(PyList_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "list", Py_TYPE(__pyx_t_1)->tp_name), 0))) __PYX_ERR(0, 40, __pyx_L1_error)
   __pyx_v_list_of_files = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "movies.pyx":38
+  /* "movies.pyx":41
  * 	time.sleep(6)
  * 	cdef list list_of_files = glob.glob('C:\\Users\\Dell\\Downloads\\*.torrent')
  * 	cdef str latest_file = max(list_of_files, key=os.path.getctime)             # <<<<<<<<<<<<<<
  * 	os.startfile(r'' + latest_file)
  */
-  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 41, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_v_list_of_files);
   __Pyx_GIVEREF(__pyx_v_list_of_files);
   PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_list_of_files);
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 41, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_os); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 41, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_os); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 38, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_path); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_path); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 41, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_getctime); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 38, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_key, __pyx_t_3) < 0) __PYX_ERR(0, 38, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_max, __pyx_t_1, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 38, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (!(likely(PyString_CheckExact(__pyx_t_3))||((__pyx_t_3) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "str", Py_TYPE(__pyx_t_3)->tp_name), 0))) __PYX_ERR(0, 38, __pyx_L1_error)
-  __pyx_v_latest_file = ((PyObject*)__pyx_t_3);
-  __pyx_t_3 = 0;
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_getctime); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 41, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_key, __pyx_t_2) < 0) __PYX_ERR(0, 41, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_max, __pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 41, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (!(likely(PyString_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "str", Py_TYPE(__pyx_t_2)->tp_name), 0))) __PYX_ERR(0, 41, __pyx_L1_error)
+  __pyx_v_latest_file = ((PyObject*)__pyx_t_2);
+  __pyx_t_2 = 0;
 
-  /* "movies.pyx":39
+  /* "movies.pyx":42
  * 	cdef list list_of_files = glob.glob('C:\\Users\\Dell\\Downloads\\*.torrent')
  * 	cdef str latest_file = max(list_of_files, key=os.path.getctime)
  * 	os.startfile(r'' + latest_file)             # <<<<<<<<<<<<<<
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_os); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 39, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_startfile); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 39, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_os); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 42, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_startfile); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 42, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyNumber_Add(__pyx_kp_s__2, __pyx_v_latest_file); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 39, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = PyNumber_Add(__pyx_kp_s__2, __pyx_v_latest_file); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 42, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_1))) {
     __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_1);
@@ -1984,16 +2015,16 @@ static void __pyx_f_6movies_download_movies(PyObject *__pyx_v_movie_name, CYTHON
       __Pyx_DECREF_SET(__pyx_t_1, function);
     }
   }
-  __pyx_t_3 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_4, __pyx_t_2) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_2);
+  __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 39, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 42, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "movies.pyx":23
- * 	return main_ret.decode('utf-8')
+  /* "movies.pyx":25
+ * 	return main_ret
  * 
  * cpdef void download_movies(movie_name):             # <<<<<<<<<<<<<<
  * 	"""This function takes in a movie name in as a parameter"""
@@ -2042,7 +2073,7 @@ static PyObject *__pyx_pf_6movies_2download_movies(CYTHON_UNUSED PyObject *__pyx
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("download_movies", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_void_to_None(__pyx_f_6movies_download_movies(__pyx_v_movie_name, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 23, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_void_to_None(__pyx_f_6movies_download_movies(__pyx_v_movie_name, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 25, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -2118,7 +2149,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_s_browse_movie_title, __pyx_k_browse_movie_title, sizeof(__pyx_k_browse_movie_title), 0, 0, 1, 0},
   {&__pyx_n_s_click, __pyx_k_click, sizeof(__pyx_k_click), 0, 0, 1, 1},
   {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
-  {&__pyx_n_s_decode, __pyx_k_decode, sizeof(__pyx_k_decode), 0, 0, 1, 1},
+  {&__pyx_n_s_close, __pyx_k_close, sizeof(__pyx_k_close), 0, 0, 1, 1},
   {&__pyx_kp_s_download_torrent, __pyx_k_download_torrent, sizeof(__pyx_k_download_torrent), 0, 0, 1, 0},
   {&__pyx_n_s_driver, __pyx_k_driver, sizeof(__pyx_k_driver), 0, 0, 1, 1},
   {&__pyx_n_s_find_element_by_class_name, __pyx_k_find_element_by_class_name, sizeof(__pyx_k_find_element_by_class_name), 0, 0, 1, 1},
@@ -2148,12 +2179,11 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_text, __pyx_k_text, sizeof(__pyx_k_text), 0, 0, 1, 1},
   {&__pyx_n_s_time, __pyx_k_time, sizeof(__pyx_k_time), 0, 0, 1, 1},
   {&__pyx_kp_s_torrent_modal_download, __pyx_k_torrent_modal_download, sizeof(__pyx_k_torrent_modal_download), 0, 0, 1, 0},
-  {&__pyx_kp_s_utf_8, __pyx_k_utf_8, sizeof(__pyx_k_utf_8), 0, 0, 1, 0},
   {&__pyx_n_s_webdriver, __pyx_k_webdriver, sizeof(__pyx_k_webdriver), 0, 0, 1, 1},
   {0, 0, 0, 0, 0, 0, 0}
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_max = __Pyx_GetBuiltinName(__pyx_n_s_max); if (!__pyx_builtin_max) __PYX_ERR(0, 38, __pyx_L1_error)
+  __pyx_builtin_max = __Pyx_GetBuiltinName(__pyx_n_s_max); if (!__pyx_builtin_max) __PYX_ERR(0, 41, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -2168,7 +2198,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * 	cdef list divs = driver.find_elements_by_class_name('browse-movie-title')[:4]             # <<<<<<<<<<<<<<
  * 
- * 	cdef str main_ret = f"Following Are The Movies That Are Trending Right Now {divs[0].text} and {divs[1].text} and {divs[2].text} and {divs[3].text}".encode('utf-8')
+ * 	cdef unicode main_ret = f"Following Are The Movies That Are Trending Right Now {divs[0].text} and {divs[1].text} and {divs[2].text} and {divs[3].text}"
  */
   __pyx_slice_ = PySlice_New(Py_None, __pyx_int_4, Py_None); if (unlikely(!__pyx_slice_)) __PYX_ERR(0, 17, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_slice_);
@@ -2203,7 +2233,6 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 }
 
 static CYTHON_SMALL_CODE int __Pyx_InitGlobals(void) {
-  __pyx_umethod_PyString_Type_decode.type = (PyObject*)&PyString_Type;
   if (__Pyx_InitStrings(__pyx_string_tab) < 0) __PYX_ERR(0, 1, __pyx_L1_error);
   __pyx_int_4 = PyInt_FromLong(4); if (unlikely(!__pyx_int_4)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_5 = PyInt_FromLong(5); if (unlikely(!__pyx_int_5)) __PYX_ERR(0, 1, __pyx_L1_error)
@@ -3228,78 +3257,6 @@ bad:
     value_count++;
     return PyUnicode_Join(__pyx_empty_unicode, value_tuple);
 #endif
-}
-
-/* UnpackUnboundCMethod */
-static int __Pyx_TryUnpackUnboundCMethod(__Pyx_CachedCFunction* target) {
-    PyObject *method;
-    method = __Pyx_PyObject_GetAttrStr(target->type, *target->method_name);
-    if (unlikely(!method))
-        return -1;
-    target->method = method;
-#if CYTHON_COMPILING_IN_CPYTHON
-    #if PY_MAJOR_VERSION >= 3
-    if (likely(__Pyx_TypeCheck(method, &PyMethodDescr_Type)))
-    #endif
-    {
-        PyMethodDescrObject *descr = (PyMethodDescrObject*) method;
-        target->func = descr->d_method->ml_meth;
-        target->flag = descr->d_method->ml_flags & ~(METH_CLASS | METH_STATIC | METH_COEXIST | METH_STACKLESS);
-    }
-#endif
-    return 0;
-}
-
-/* CallUnboundCMethod1 */
-#if CYTHON_COMPILING_IN_CPYTHON
-static CYTHON_INLINE PyObject* __Pyx_CallUnboundCMethod1(__Pyx_CachedCFunction* cfunc, PyObject* self, PyObject* arg) {
-    if (likely(cfunc->func)) {
-        int flag = cfunc->flag;
-        if (flag == METH_O) {
-            return (*(cfunc->func))(self, arg);
-        } else if (PY_VERSION_HEX >= 0x030600B1 && flag == METH_FASTCALL) {
-            if (PY_VERSION_HEX >= 0x030700A0) {
-                return (*(__Pyx_PyCFunctionFast)(void*)(PyCFunction)cfunc->func)(self, &arg, 1);
-            } else {
-                return (*(__Pyx_PyCFunctionFastWithKeywords)(void*)(PyCFunction)cfunc->func)(self, &arg, 1, NULL);
-            }
-        } else if (PY_VERSION_HEX >= 0x030700A0 && flag == (METH_FASTCALL | METH_KEYWORDS)) {
-            return (*(__Pyx_PyCFunctionFastWithKeywords)(void*)(PyCFunction)cfunc->func)(self, &arg, 1, NULL);
-        }
-    }
-    return __Pyx__CallUnboundCMethod1(cfunc, self, arg);
-}
-#endif
-static PyObject* __Pyx__CallUnboundCMethod1(__Pyx_CachedCFunction* cfunc, PyObject* self, PyObject* arg){
-    PyObject *args, *result = NULL;
-    if (unlikely(!cfunc->func && !cfunc->method) && unlikely(__Pyx_TryUnpackUnboundCMethod(cfunc) < 0)) return NULL;
-#if CYTHON_COMPILING_IN_CPYTHON
-    if (cfunc->func && (cfunc->flag & METH_VARARGS)) {
-        args = PyTuple_New(1);
-        if (unlikely(!args)) goto bad;
-        Py_INCREF(arg);
-        PyTuple_SET_ITEM(args, 0, arg);
-        if (cfunc->flag & METH_KEYWORDS)
-            result = (*(PyCFunctionWithKeywords)(void*)(PyCFunction)cfunc->func)(self, args, NULL);
-        else
-            result = (*cfunc->func)(self, args);
-    } else {
-        args = PyTuple_New(2);
-        if (unlikely(!args)) goto bad;
-        Py_INCREF(self);
-        PyTuple_SET_ITEM(args, 0, self);
-        Py_INCREF(arg);
-        PyTuple_SET_ITEM(args, 1, arg);
-        result = __Pyx_PyObject_Call(cfunc->method, args, NULL);
-    }
-#else
-    args = PyTuple_Pack(2, self, arg);
-    if (unlikely(!args)) goto bad;
-    result = __Pyx_PyObject_Call(cfunc->method, args, NULL);
-#endif
-bad:
-    Py_XDECREF(args);
-    return result;
 }
 
 /* PyObjectCallNoArg */

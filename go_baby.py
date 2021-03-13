@@ -1,15 +1,15 @@
-from admin import admin
+# from admin import admin
 
-if not admin.isUserAdmin():
-        admin.runAsAdmin()
+# if not admin.isUserAdmin():
+#         admin.runAsAdmin()
 
-from layla import layla
-from work import web_blocker
-from threading import Thread
+from layla import core_func
+# from work import web_blocker
+# from threading import Thread
 
 
-if __name__ == '__main__':
-        layla.layla_run()
+# if __name__ == '__main__':
+core_func.layla_run()
         
         # Trying to run both statements at the same time
         # >> python go_baby.py runlayla

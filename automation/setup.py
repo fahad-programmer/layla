@@ -3,5 +3,5 @@ from Cython.Build import cythonize
 
 setup(
     name='functions',
-    ext_modules=cythonize("movies.pyx"),
+    ext_modules=cythonize("build/movies.pyx"),
 )
