@@ -8,8 +8,8 @@ import sys
 sys.path.append('../admin')
 from admin import admin
 
-if not admin.isUserAdmin():
-        admin.runAsAdmin()     
+# if not admin.isUserAdmin():
+#         admin.runAsAdmin()     
 
 def webblocker_run():
     hosts_path = r"C:/Windows/System32/drivers/etc/hosts"   # r is for raw string
@@ -39,5 +39,3 @@ def webblocker_run():
                     # do nothing otherwise
                 file.truncate() # this line is used to delete the trailing lines (that contain DNS)
         time.sleep(5)
-        
-webblocker_run()

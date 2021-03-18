@@ -3,6 +3,7 @@ from psycopg2 import Error
 
 try:
     # Connect to an existing database
+    # Password = MIANchaNNu123 -> Imran
     connection = psycopg2.connect(user="postgres",
                                   password="MIANchaNNu123",
                                   host="127.0.0.1",
