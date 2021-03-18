@@ -1,3 +1,3 @@
-from movies import download_movies
+from movies import get_trending_movies
 
-download_movies('Rio')
+print(get_trending_movies())
