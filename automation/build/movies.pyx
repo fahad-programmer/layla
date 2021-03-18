@@ -4,7 +4,7 @@ import glob
 import time
 import os
 
-driver = webdriver.Edge("msedgedriver.exe")
+driver = webdriver.Chrome()
 
 driver.get("https://yts.mx")
 

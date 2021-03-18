@@ -6,7 +6,7 @@ import os
 import subprocess
 
 
-driver = webdriver.Edge("msedgedriver.exe")
+driver = webdriver.Chrome()
 driver.get("https://yts.mx")
 
 

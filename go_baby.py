@@ -1,20 +1,14 @@
-from admin import admin
-
-if not admin.isUserAdmin():
-        admin.runAsAdmin()
-
+# Importing Files to run
 from layla import layla
 from work import web_blocker
+# Include the modules
 from threading import Thread
+import os
 
-
-if __name__ == '__main__':
-        layla.layla_run()
-        
-        # Trying to run both statements at the same time
-        # >> python go_baby.py runlayla
-        
-        
-        # def runlayla():
-                # Thread(target = layla.layla_run).start()
-                # Thread(target = web_blocker.webblocker_run).start()
+# Main Program
+# Opeing a new CMD and run a new file
+web_blocker_cmd = os.system("start cmd /K python work\\web_blocker.py")
+# Declairing Threads
+print("Stating threads...")       # Test
+# Thread(target = web_blocker_cmd).start() -> Still not working
+Thread(target = layla.layla_run()).start()
