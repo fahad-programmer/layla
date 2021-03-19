@@ -60,7 +60,8 @@ cpdef str get_response(list intents_list, intents_json):
 cpdef void layla_run():
 	os.system('cls')
 	while True:
-		query = take_command().lower()
+		query = input("Enter >> ").lower()
+		
 
 		ints = predict_class(query)
 		res = get_response(ints, intents)
