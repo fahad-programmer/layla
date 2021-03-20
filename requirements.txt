@@ -123,7 +123,7 @@ Twisted==20.3.0
 typed-ast==1.4.2
 typing-extensions==3.7.4.3
 tzlocal==2.1
-urllib3==1.26.2
+urllib3==1.26.3
 w3lib==1.22.0
 wallpaper==0.2.2
 Werkzeug==1.0.1
