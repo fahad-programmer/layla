@@ -1,5 +1,5 @@
 # Importing Files to run
-from _Core_Components import core_func
+from _core_components import core_func
 from work import web_blocker
 # Include the modules
 from threading import Thread
