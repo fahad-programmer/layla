@@ -4,7 +4,7 @@ import datetime
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
-engine.setProperty('voice', voices[2].id)  # 2 for @imran-prog > 7 for #fahad
+engine.setProperty('voice', voices[7].id)  # 2 for @imran-prog > 7 for #fahad
 
 # Below all code is copy pasted so it is going to change
 

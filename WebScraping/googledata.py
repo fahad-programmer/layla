@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-import urllib.request
+import requests
 
 
 class google_results:
@@ -9,7 +9,7 @@ class google_results:
         url = f'https://google.com/search?q={link}'
 
         # Perform the request
-        request = urllib.request.Request(url)
+        request = requests.get(url)
 
         print(url)
 
@@ -323,4 +323,4 @@ class google_results:
 # google_results("marvel movies")
 # google_results("how can i publish my book")
 # google_results("How old is Joe Biden")
-# google_results("release date of black widow")
+google_results("release date of black widow")

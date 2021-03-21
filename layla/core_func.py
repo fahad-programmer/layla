@@ -65,14 +65,17 @@ everything will be working inside the work folder
 we will just import work.py function in this while loop
 """
 
+
 def layla_run():
     # os.system('cls')
-
+    WAKE = 'hey layla'
     # This Function will clean any
     # command before execution of this python file
     wish_me()
-    while True:        # For Test
+    print("...")
+    while True:  # For Test
         # query = take_command().lower()
+
         query = input("Enter >> ").lower()  # For Test
         ints = predict_class(query)
         res = get_response(ints, intents)
@@ -81,3 +84,19 @@ def layla_run():
             eval(res)
         except Exception as e:
             speak(res)
+
+        query = input("Enter >> ").lower()
+
+        if query == WAKE:
+            query = input("Enter >> ").lower()
+
+            ints = predict_class(query)
+            res = get_response(ints, intents)
+            # answer = google_results(query)
+            try:
+                eval(res)
+            except Exception as e:
+                speak(res)
+
+        else:
+            pass

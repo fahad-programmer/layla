@@ -1,20 +1,16 @@
-# from admin import admin
+# Importing Files to run
+from _Core_Components import core_func
+from work import web_blocker
+# Include the modules
+from threading import Thread
+import os
 
-# if not admin.isUserAdmin():
-#         admin.runAsAdmin()
+# Change Voice number in engine component file*
 
-from layla import core_func
-# from work import web_blocker
-# from threading import Thread
-
-
-# if __name__ == '__main__':
-core_func.layla_run()
-        
-        # Trying to run both statements at the same time
-        # >> python go_baby.py runlayla
-        
-        
-        # def runlayla():
-                # Thread(target = layla.layla_run).start()
-                # Thread(target = web_blocker.webblocker_run).start()
+# Main Program
+# Opeing a new CMD and run a new file
+web_blocker_cmd = "start cmd /K python work\\web_blocker.py"
+# Declairing Threads
+print("Starting threads...")  # Test
+# Thread(target = os.system(web_blocker_cmd)).start() -> Still not working
+Thread(target=core_func.layla_run()).start()

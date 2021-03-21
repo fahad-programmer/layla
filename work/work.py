@@ -8,6 +8,8 @@ from functools import lru_cache
 from work.background_changer import background_change
 from WebScraping.lyrics import LyricsFinder
 import random
+import pyaudio
+import wave
 """
 What things i am working on:
 1. Scraping websites data
@@ -261,8 +263,10 @@ def roll_dice():
 def play_tactactoe():
     tictactoe.start_game()
 
+
 def play_rps():
     rps_game.rps_window()
+
 
 class f_keyboard:
     def sys_func(query):
@@ -291,8 +295,7 @@ class f_keyboard:
             keyboard.press_and_release("ctrl + shift + esc")
         elif "file explorer" in query:
             keyboard.press_and_release("win + e")
-        
-    
+
     def doc_func(query):
         if "undo" in query:
             keyboard.press_and_release('ctrl + z')
@@ -310,7 +313,7 @@ class f_keyboard:
             keyboard.press_and_release("ctrl + a")
         elif "go to end" in query:
             keyboard.press_and_release("ctrl + end")
-            
+
     def desk_func(query):
         if "application" in query:
             if "next" in query:
@@ -322,15 +325,15 @@ class f_keyboard:
                 keyboard.press_and_release('win + ctrl + right')
             elif "previous" in query:
                 keyboard.press_and_release('win + ctrl + left')
-                
+
     def chrome_func(query):
         if "new tab" in query:
             keyboard.press_and_release('ctrl + t')
-        elif  "reopen tab" in query:
+        elif "reopen tab" in query:
             keyboard.press_and_release('ctrl + shift + t')
-        elif  "go back" in query:
+        elif "go back" in query:
             keyboard.press_and_release('alt + left')
-        elif  "go forward" in query:
+        elif "go forward" in query:
             keyboard.press_and_release('alt + right')
         elif "take screenshot" in query:
             keyboard.press_and_release('win + shift + s')
@@ -346,8 +349,61 @@ class f_keyboard:
 def song_lyrics_finder(query):
     main_class = LyricsFinder(query)
     print(main_class.lyrics_finder())  #Solved
-    
+
+
 @lru_cache()
 def syst_info():
     sys_info.syst()
-    
+
+
+@lru_cache()
+def audio_recorder():
+    current_date_and_time = datetime.datetime.now()
+    current_date_and_time_string = str(current_date_and_time)
+    extension = ".wav"
+    # the file name output you want to record into
+    filename = "recorded" + current_date_and_time_string + extension
+    # set the chunk size of 1024 samples
+    chunk = 1024
+    # sample format
+    FORMAT = pyaudio.paInt16
+    # mono, change to 2 if you want stereo
+    channels = 1
+    # 44100 samples per second
+    sample_rate = 44100
+    record_seconds = 5
+    # initialize PyAudio object
+    p = pyaudio.PyAudio()
+    # open stream object as input & output
+    stream = p.open(format=FORMAT,
+                    channels=channels,
+                    rate=sample_rate,
+                    input=True,
+                    output=True,
+                    frames_per_buffer=chunk)
+    frames = []
+    print("Recording...")
+    for i in range(int(44100 / chunk * record_seconds)):
+        data = stream.read(chunk)
+        # if you want to hear your voice while recording
+        # stream.write(data)
+        frames.append(data)
+    print("Finished recording.")
+    # stop and close stream
+    stream.stop_stream()
+    stream.close()
+    # terminate pyaudio object
+    p.terminate()
+    # save audio file
+    # open the file in 'write bytes' mode
+    wf = wave.open(filename, "wb")
+    # set the channels
+    wf.setnchannels(channels)
+    # set the sample format
+    wf.setsampwidth(p.get_sample_size(FORMAT))
+    # set the sample rate
+    wf.setframerate(sample_rate)
+    # write the frames as bytes
+    wf.writeframes(b"".join(frames))
+    # close the file
+    wf.close()
