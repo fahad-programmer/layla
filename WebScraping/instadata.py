@@ -3,14 +3,13 @@ import urllib.request
 
 
 class insta_results:
-    
     def __init__(self, query):
-        self.query = query
-        link = self.query.replace(" ", "+")
-        url = f'https://instagram.com/'
+        url = 'https://www.instagram.com/direct/inbox/'
 
         # Perform the request
         request = urllib.request.Request(url)
+
+        print(url)
 
         # Set a normal User Agent header, otherwise Google will block the request.
         request.add_header(
@@ -24,24 +23,22 @@ class insta_results:
         # The code to get the html contents here.
 
         soup = BeautifulSoup(html, 'lxml')
-        print(soup)
-        # self.scrap_capital(soup)
-        
+        self.scrap_capital(soup)
     def scrap_capital(self, soup) -> str:
 
         # Find all the search result divs
         # 1
         try:
-            divs = soup.select("div.o64aR")  # One Word Answer > a
+            divs = soup.select("div.KdEwV")
             ans = self.for_loop(divs)
             if len(ans) >= 1:
                 print(ans)
                 return
             else:
-                pass
+                print("No")
         except:
             pass
-    
+
     def for_loop(self, divs):
         for div in divs:
             # Search for a h3 tag
@@ -84,5 +81,6 @@ class insta_results:
                     pass
             except:
                 pass
-            
-insta_results("do i have any messages")
+
+
+insta_results("Insta stats")

@@ -4,6 +4,7 @@ import socket
 from requests import get
 import clipboard, urllib.request
 
+
 def location_of_me():
     """
     {
@@ -39,8 +40,8 @@ def location_of_me():
     }
     """
     ip = get('https://api.ipify.org').text
-    hostname = socket.gethostname()
-    IPAddr = socket.gethostbyname(hostname)
+    # hostname = socket.gethostname()
+    # ipaddress = socket.gethostbyname(hostname)
     send_url = "http://api.ipstack.com/" + ip + "?access_key=7cd335b5d7a832f1c08b66e758797dc4"
     geo_req = requests.get(send_url)
     geo_json = json.loads(geo_req.text)
@@ -48,14 +49,7 @@ def location_of_me():
     # city = geo_json['city']
     # return city
 
-
-# cat = location_of_me()
-# print(cat)
-
-
 # Weather Data
-
-
 def weather_data(query):
     res = requests.get('http://api.openweathermap.org/data/2.5/weather?' +
                        query +
@@ -66,78 +60,88 @@ def weather_data(query):
     return res.json()
 
 
-cat = location_of_me()
-city = cat['city']
-query = 'q=' + str(city)
-w_data = weather_data(query)
+# cat = location_of_me()
+# city = cat['city']
+# query = 'q=' + str(city)
+# w_data = weather_data(query)
 
 # print(w_data)
 
+
 def love_calculator(f_name, s_name):
-  url = "https://love-calculator.p.rapidapi.com/getPercentage"
+    url = "https://love-calculator.p.rapidapi.com/getPercentage"
 
-  querystring = {"fname":f_name,"sname":s_name}
+    querystring = {"fname": f_name, "sname": s_name}
 
-  headers = {
-      'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-      'x-rapidapi-host': "love-calculator.p.rapidapi.com"
-      }
+    headers = {
+        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+        'x-rapidapi-host': "love-calculator.p.rapidapi.com"
+    }
 
-  response = requests.request("GET", url, headers=headers, params=querystring)
+    response = requests.request("GET",
+                                url,
+                                headers=headers,
+                                params=querystring)
 
-  yahoo = response.json()
-  return(yahoo)
+    yahoo = response.json()
+    return (yahoo)
 
-# def url_shortner(copy_url):
-#   url = "https://url-shortener-service.p.rapidapi.com/shorten"
 
-#   payload = "url=" + copy_url
-#   headers = {
-#       'content-type': "application/x-www-form-urlencoded",
-#       'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-#       'x-rapidapi-host': "url-shortener-service.p.rapidapi.com"
-#       }
+def url_shortner(copy_url):
+    url = "https://url-shortener-service.p.rapidapi.com/shorten"
 
-#   response = requests.request("POST", url, data=payload, headers=headers)
+    payload = "url=" + copy_url
+    headers = {
+        'content-type': "application/x-www-form-urlencoded",
+        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+        'x-rapidapi-host': "url-shortener-service.p.rapidapi.com"
+    }
 
-  yahoo = response.json()
-  return(yahoo.get("result_url", "Not Found!"))
+    response = requests.request("POST", url, data=payload, headers=headers)
+
+    yahoo = response.json()
+    return (yahoo.get("result_url", "Not Found!"))
+
 
 def jokes_v():
-  url = "https://joke3.p.rapidapi.com/v1/joke"
+    url = "https://joke3.p.rapidapi.com/v1/joke"
 
-  headers = {
-      'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-      'x-rapidapi-host': "joke3.p.rapidapi.com"
-      }
+    headers = {
+        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+        'x-rapidapi-host': "joke3.p.rapidapi.com"
+    }
 
-  response = requests.request("GET", url, headers=headers)
+    response = requests.request("GET", url, headers=headers)
 
-  yahoo = response.json()
-  return(yahoo.get("content"))
-  
+    yahoo = response.json()
+    return (yahoo.get("content"))
+
+
 def dictionary(word):
-  url = "https://api.dictionaryapi.dev/api/v2/entries/en/" + word
+    url = "https://api.dictionaryapi.dev/api/v2/entries/en/" + word
 
-  response = requests.request("GET", url)
-
-  yahoo = response.json()
-  return(yahoo[0]["meanings"][0]["definitions"][0]["definition"])
-
-    
-# word_def("what is a crab")
-    
-class cocktail:
-  
-  def main():
-    url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita"
-    
     response = requests.request("GET", url)
-    
-    print(response.text)
-    
-  def apis():
-    """
+
+    yahoo = response.json()
+    return (yahoo[0]["meanings"][0]["definitions"][0]["definition"])
+
+
+# word_def("what is a crab")
+
+
+class cocktail:
+
+    @staticmethod
+    def main():
+        url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita"
+
+        response = requests.request("GET", url)
+
+        print(response.text)
+
+    @staticmethod
+    def apis():
+        """
     Search cocktail by name
     https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita
 
@@ -173,406 +177,552 @@ class cocktail:
     https://www.thecocktaildb.com/api/json/v1/1/filter.php?g=Champagne_flute
     
     """
-    
+
+
 # cocktail.main()
 
-class world_info:
-  
-  def main():
-    # To Get information of all the countries
-    # url = "https://restcountries-v1.p.rapidapi.com/all"
-    url = "https://restcountries-v1.p.rapidapi.com/name/pakistan"
 
-    headers = {
-        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-        'x-rapidapi-host': "restcountries-v1.p.rapidapi.com"
+class world_info:
+
+    @staticmethod
+    def main():
+        # To Get information of all the countries
+        # url = "https://restcountries-v1.p.rapidapi.com/all"
+        url = "https://restcountries-v1.p.rapidapi.com/name/pakistan"
+
+        headers = {
+            'x-rapidapi-key':
+            "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+            'x-rapidapi-host': "restcountries-v1.p.rapidapi.com"
         }
 
-    response = requests.request("GET", url, headers=headers)
+        response = requests.request("GET", url, headers=headers)
 
-    print(response.text)
-  
-  def apis():
-    """
-    Filter by Country name
-    https://restcountries-v1.p.rapidapi.com/name/pakistan
-    
-    Filter by Country Code
-    https://restcountries-v1.p.rapidapi.com/alpha/pk
-    
-    Filter by Calling Code
-    https://restcountries-v1.p.rapidapi.com/callingcode/57
-    
-    Filter by Capital City
-    https://restcountries-v1.p.rapidapi.com/capital/islamabad
-    
-    Filter by Currency
-    https://restcountries-v1.p.rapidapi.com/currency/PKR
-    
-    Filter by Language
-    https://restcountries-v1.p.rapidapi.com/lang/ur
-    
-    Filter by Region
-    https://restcountries-v1.p.rapidapi.com/region/asia
-    
-    Filter by Subregion
-    https://restcountries-v1.p.rapidapi.com/subregion/western%2520asia
-    """
-    
+        print(response.text)
+
+    @staticmethod
+    def apis():
+        """
+        Filter by Country name
+        https://restcountries-v1.p.rapidapi.com/name/pakistan
+        
+        Filter by Country Code
+        https://restcountries-v1.p.rapidapi.com/alpha/pk
+        
+        Filter by Calling Code
+        https://restcountries-v1.p.rapidapi.com/callingcode/57
+        
+        Filter by Capital City
+        https://restcountries-v1.p.rapidapi.com/capital/islamabad
+        
+        Filter by Currency
+        https://restcountries-v1.p.rapidapi.com/currency/PKR
+        
+        Filter by Language
+        https://restcountries-v1.p.rapidapi.com/lang/ur
+        
+        Filter by Region
+        https://restcountries-v1.p.rapidapi.com/region/asia
+        
+        Filter by Subregion
+        https://restcountries-v1.p.rapidapi.com/subregion/western%2520asia
+        """
+
+
 # world_info.main()
 
+
 class yahoo_finance:
-  
-  def main():
-    url = "https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/get-detail"
 
-    querystring = {"symbol":"TSLA","region":"US"}
+    @staticmethod
+    def main():
+        url = "https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/get-detail"
 
-    headers = {
-        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-        'x-rapidapi-host': "apidojo-yahoo-finance-v1.p.rapidapi.com"
+        querystring = {"symbol": "TSLA", "region": "US"}
+
+        headers = {
+            'x-rapidapi-key':
+            "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+            'x-rapidapi-host': "apidojo-yahoo-finance-v1.p.rapidapi.com"
         }
 
-    response = requests.request("GET", url, headers=headers, params=querystring)
+        response = requests.request("GET",
+                                    url,
+                                    headers=headers,
+                                    params=querystring)
 
-    print(response.text)
-    
+        print(response.text)
+
+
 # yahoo_finance.main()
 
+
 class number_facts():
-  """
-  An API for interesting facts about numbers. Provides trivia, math, date, and year facts about numbers.
+    """
+    An API for interesting facts about numbers. Provides trivia, math, date, and year facts about numbers.
 
-  For example, "5 is the number of platonic solids", "42 is the number of little squares forming the left side trail of Microsoft's Windows 98 logo", "February 27th is the day in 1964 that the government of Italy asks for help to keep the Leaning Tower of Pisa from toppling over"
+    For example, "5 is the number of platonic solids", "42 is the number of little squares forming the left side trail of Microsoft's Windows 98 logo", "February 27th is the day in 1964 that the government of Italy asks for help to keep the Leaning Tower of Pisa from toppling over"
 
-  1. Get fact by a date
-  2. Get fact about math by giving an years
-  3. Get random fact from any type
-  4. Get a trivia
-  5. Get a fact by year
-  
-  """
-  def date_fact():
-    url = "https://numbersapi.p.rapidapi.com/6/21/date"
+    1. Get fact by a date
+    2. Get fact about math by giving an years
+    3. Get random fact from any type
+    4. Get a trivia
+    5. Get a fact by year
+    
+    """
+    @staticmethod
+    def date_fact():
+        url = "https://numbersapi.p.rapidapi.com/6/21/date"
 
-    querystring = {"fragment":"true","json":"true"}
+        querystring = {"fragment": "true", "json": "true"}
 
-    headers = {
-        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-        'x-rapidapi-host': "numbersapi.p.rapidapi.com"
+        headers = {
+            'x-rapidapi-key':
+            "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+            'x-rapidapi-host': "numbersapi.p.rapidapi.com"
         }
 
-    response = requests.request("GET", url, headers=headers, params=querystring)
+        response = requests.request("GET",
+                                    url,
+                                    headers=headers,
+                                    params=querystring)
 
-    print(response.text)
-    
-  def math_fact():
-    url = "https://numbersapi.p.rapidapi.com/1729/math"
+        print(response.text)
 
-    querystring = {"fragment":"true","json":"true"}
+    @staticmethod
+    def math_fact():
+        url = "https://numbersapi.p.rapidapi.com/1729/math"
 
-    headers = {
-        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-        'x-rapidapi-host': "numbersapi.p.rapidapi.com"
+        querystring = {"fragment": "true", "json": "true"}
+
+        headers = {
+            'x-rapidapi-key':
+            "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+            'x-rapidapi-host': "numbersapi.p.rapidapi.com"
         }
 
-    response = requests.request("GET", url, headers=headers, params=querystring)
+        response = requests.request("GET",
+                                    url,
+                                    headers=headers,
+                                    params=querystring)
 
-    print(response.text)
-    
-  def random_number_fact():
-    url = "https://numbersapi.p.rapidapi.com/random/trivia"
+        print(response.text)
 
-    querystring = {"max":"20","fragment":"true","min":"10","json":"true"}
+    @staticmethod
+    def random_number_fact():
+        url = "https://numbersapi.p.rapidapi.com/random/trivia"
 
-    headers = {
-        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-        'x-rapidapi-host': "numbersapi.p.rapidapi.com"
+        querystring = {
+            "max": "20",
+            "fragment": "true",
+            "min": "10",
+            "json": "true"
         }
 
-    response = requests.request("GET", url, headers=headers, params=querystring)
-
-    print(response.text)
-    
-  def trivia_fact():
-    url = "https://numbersapi.p.rapidapi.com/42/trivia"
-
-    querystring = {"fragment":"true","notfound":"floor","json":"true"}
-
-    headers = {
-        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-        'x-rapidapi-host': "numbersapi.p.rapidapi.com"
+        headers = {
+            'x-rapidapi-key':
+            "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+            'x-rapidapi-host': "numbersapi.p.rapidapi.com"
         }
 
-    response = requests.request("GET", url, headers=headers, params=querystring)
+        response = requests.request("GET",
+                                    url,
+                                    headers=headers,
+                                    params=querystring)
 
-    print(response.text)
-    
-  def year_fact():
-    url = "https://numbersapi.p.rapidapi.com/1492/year"
+        print(response.text)
 
-    querystring = {"fragment":"true","json":"true"}
+    @staticmethod
+    def trivia_fact():
+        url = "https://numbersapi.p.rapidapi.com/42/trivia"
 
-    headers = {
-        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-        'x-rapidapi-host': "numbersapi.p.rapidapi.com"
+        querystring = {"fragment": "true", "notfound": "floor", "json": "true"}
+
+        headers = {
+            'x-rapidapi-key':
+            "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+            'x-rapidapi-host': "numbersapi.p.rapidapi.com"
         }
 
-    response = requests.request("GET", url, headers=headers, params=querystring)
+        response = requests.request("GET",
+                                    url,
+                                    headers=headers,
+                                    params=querystring)
 
-    print(response.text)
-    
+        print(response.text)
+
+    @staticmethod
+    def year_fact():
+        url = "https://numbersapi.p.rapidapi.com/1492/year"
+
+        querystring = {"fragment": "true", "json": "true"}
+
+        headers = {
+            'x-rapidapi-key':
+            "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+            'x-rapidapi-host': "numbersapi.p.rapidapi.com"
+        }
+
+        response = requests.request("GET",
+                                    url,
+                                    headers=headers,
+                                    params=querystring)
+
+        print(response.text)
+
+
 class movie_entertain:
   
-  def look_by_name():
-    url = "https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup"
+    @staticmethod
+    def look_by_name():
+        url = "https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup"
 
-    querystring = {"term":"bojack","country":"uk"}
+        querystring = {"term": "bojack", "country": "uk"}
 
-    headers = {
-        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-        'x-rapidapi-host': "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com"
+        headers = {
+            'x-rapidapi-key':
+            "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+            'x-rapidapi-host':
+            "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com"
         }
-    
-  def look_by_id():
-    url = "https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/idlookup"
+        
+        response = requests.request("GET",
+                                    url,
+                                    headers=headers,
+                                    params=querystring)
 
-    querystring = {"source_id":"tt3398228","source":"imdb","country":"us"}
+        print(response.text)
 
-    headers = {
-        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-        'x-rapidapi-host': "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com"
+    @staticmethod
+    def look_by_id():
+        url = "https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/idlookup"
+
+        querystring = {
+            "source_id": "tt3398228",
+            "source": "imdb",
+            "country": "us"
         }
 
-    response = requests.request("GET", url, headers=headers, params=querystring)
+        headers = {
+            'x-rapidapi-key':
+            "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+            'x-rapidapi-host':
+            "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com"
+        }
 
-    print(response.text)
-    
+        response = requests.request("GET",
+                                    url,
+                                    headers=headers,
+                                    params=querystring)
+
+        print(response.text)
+
+
 class web_search():
-  """
-  This Function can search any data on the internet.
-  
-  1. Autocomplete = to complete the word by all the suitable words
-  2. ImageSearch = To search all the image related to query
-  3. SpellCheck = to check weather the spelling is right or not
-  4. WebSearch = Search the Web and show the results
-  5. Google News = To show all the google news according to the condition
-  
-  
-  """
-  def auto_complete():
-    url = "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/spelling/AutoComplete"
-
-    querystring = {"text":"do"}
-
-    headers = {
-        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-        'x-rapidapi-host': "contextualwebsearch-websearch-v1.p.rapidapi.com"
-        }
-
-    response = requests.request("GET", url, headers=headers, params=querystring)
-
-    print(response.text)
+    """
+    This Function can search any data on the internet.
     
-  def image_search():
-    url = "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI"
-
-    querystring = {"q":"taylor swift","pageNumber":"1","pageSize":"10","autoCorrect":"true"}
-
-    headers = {
-        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-        'x-rapidapi-host': "contextualwebsearch-websearch-v1.p.rapidapi.com"
-        }
-
-    response = requests.request("GET", url, headers=headers, params=querystring)
-
-    print(response.text)
+    1. Autocomplete = to complete the word by all the suitable words
+    2. ImageSearch = To search all the image related to query
+    3. SpellCheck = to check weather the spelling is right or not
+    4. WebSearch = Search the Web and show the results
+    5. Google News = To show all the google news according to the condition
     
-  def spell_check():
-    url = "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/spelling/SpellCheck"
-
-    querystring = {"text":"teylor swiift"}
-
-    headers = {
-        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-        'x-rapidapi-host': "contextualwebsearch-websearch-v1.p.rapidapi.com"
-        }
-
-    response = requests.request("GET", url, headers=headers, params=querystring)
-
-    print(response.text)
     
-  def web_search():
-    url = "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/WebSearchAPI"
+    """
+    @staticmethod
+    def auto_complete():
+        url = "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/spelling/AutoComplete"
 
-    querystring = {"q":"taylor swift","pageNumber":"1","pageSize":"10","autoCorrect":"true"}
+        querystring = {"text": "do"}
 
-    headers = {
-        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-        'x-rapidapi-host': "contextualwebsearch-websearch-v1.p.rapidapi.com"
+        headers = {
+            'x-rapidapi-key':
+            "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+            'x-rapidapi-host':
+            "contextualwebsearch-websearch-v1.p.rapidapi.com"
         }
 
-    response = requests.request("GET", url, headers=headers, params=querystring)
+        response = requests.request("GET",
+                                    url,
+                                    headers=headers,
+                                    params=querystring)
 
-    print(response.text)
+        print(response.text)
     
-  def google_news():
-    url = "https://google-news1.p.rapidapi.com/topic-headlines"
-    # url = "https://google-news1.p.rapidapi.com/geolocation"
-    # url = "https://google-news1.p.rapidapi.com/search"
-    # url = "https://google-news1.p.rapidapi.com/top-headlines"
+    @staticmethod
+    def image_search():
+        url = "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI"
 
-    querystring = {"topic":"WORLD","country":"US","lang":"en"}
-    # querystring = {"geo":"Alabama","country":"US","lang":"en"}
-    # querystring = {"q":"Covid","country":"US","lang":"en"}
-    # querystring = {"country":"US","lang":"en"}
-
-    headers = {
-        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-        'x-rapidapi-host': "google-news1.p.rapidapi.com"
+        querystring = {
+            "q": "taylor swift",
+            "pageNumber": "1",
+            "pageSize": "10",
+            "autoCorrect": "true"
         }
 
-    response = requests.request("GET", url, headers=headers, params=querystring)
+        headers = {
+            'x-rapidapi-key':
+            "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+            'x-rapidapi-host':
+            "contextualwebsearch-websearch-v1.p.rapidapi.com"
+        }
 
-    print(response.text)
+        response = requests.request("GET",
+                                    url,
+                                    headers=headers,
+                                    params=querystring)
+
+        print(response.text)
+
+    @staticmethod
+    def spell_check():
+        url = "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/spelling/SpellCheck"
+
+        querystring = {"text": "teylor swiift"}
+
+        headers = {
+            'x-rapidapi-key':
+            "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+            'x-rapidapi-host':
+            "contextualwebsearch-websearch-v1.p.rapidapi.com"
+        }
+
+        response = requests.request("GET",
+                                    url,
+                                    headers=headers,
+                                    params=querystring)
+
+        print(response.text)
+
+    @staticmethod
+    def web_search():
+        url = "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/WebSearchAPI"
+
+        querystring = {
+            "q": "taylor swift",
+            "pageNumber": "1",
+            "pageSize": "10",
+            "autoCorrect": "true"
+        }
+
+        headers = {
+            'x-rapidapi-key':
+            "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+            'x-rapidapi-host':
+            "contextualwebsearch-websearch-v1.p.rapidapi.com"
+        }
+
+        response = requests.request("GET",
+                                    url,
+                                    headers=headers,
+                                    params=querystring)
+
+        print(response.text)
+
+    @staticmethod
+    def google_news():
+        url = "https://google-news1.p.rapidapi.com/topic-headlines"
+        # url = "https://google-news1.p.rapidapi.com/geolocation"
+        # url = "https://google-news1.p.rapidapi.com/search"
+        # url = "https://google-news1.p.rapidapi.com/top-headlines"
+
+        querystring = {"topic": "WORLD", "country": "US", "lang": "en"}
+        # querystring = {"geo":"Alabama","country":"US","lang":"en"}
+        # querystring = {"q":"Covid","country":"US","lang":"en"}
+        # querystring = {"country":"US","lang":"en"}
+
+        headers = {
+            'x-rapidapi-key':
+            "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+            'x-rapidapi-host': "google-news1.p.rapidapi.com"
+        }
+
+        response = requests.request("GET",
+                                    url,
+                                    headers=headers,
+                                    params=querystring)
+
+        print(response.text)
 
 
 class music_Cat:
-  """
-  This class consists of all the function which are associated with Music.
-  
-  It can be searching lyrics, billboard ranking, search for a song, or complete a song name.
-  """
-  def lyrics():
-    url = "https://sridurgayadav-chart-lyrics-v1.p.rapidapi.com/apiv1.asmx/SearchLyricDirect"
+    """
+    This class consists of all the function which are associated with Music.
+    
+    It can be searching lyrics, billboard ranking, search for a song, or complete a song name.
+    """
+    @staticmethod
+    def lyrics():
+        url = "https://sridurgayadav-chart-lyrics-v1.p.rapidapi.com/apiv1.asmx/SearchLyricDirect"
 
-    querystring = {"artist":"michael jackson","song":"bad"}
+        querystring = {"artist": "michael jackson", "song": "bad"}
 
-    headers = {
-        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-        'x-rapidapi-host': "sridurgayadav-chart-lyrics-v1.p.rapidapi.com"
+        headers = {
+            'x-rapidapi-key':
+            "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+            'x-rapidapi-host': "sridurgayadav-chart-lyrics-v1.p.rapidapi.com"
         }
 
-    response = requests.request("GET", url, headers=headers, params=querystring)
+        response = requests.request("GET",
+                                    url,
+                                    headers=headers,
+                                    params=querystring)
 
-    print(response.text)
-    
-  def billboard():
-    url = "https://billboard-api2.p.rapidapi.com/hot-100"
-    # url = "https://billboard-api2.p.rapidapi.com/artist-100"
-    # url = "https://billboard-api2.p.rapidapi.com/billboard-200"
+        print(response.text)
 
-    querystring = {"date":"2019-05-11","range":"1-10"}
+    @staticmethod
+    def billboard():
+        url = "https://billboard-api2.p.rapidapi.com/hot-100"
+        # url = "https://billboard-api2.p.rapidapi.com/artist-100"
+        # url = "https://billboard-api2.p.rapidapi.com/billboard-200"
 
-    headers = {
-        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-        'x-rapidapi-host': "billboard-api2.p.rapidapi.com"
+        querystring = {"date": "2019-05-11", "range": "1-10"}
+
+        headers = {
+            'x-rapidapi-key':
+            "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+            'x-rapidapi-host': "billboard-api2.p.rapidapi.com"
         }
 
-    response = requests.request("GET", url, headers=headers, params=querystring)
+        response = requests.request("GET",
+                                    url,
+                                    headers=headers,
+                                    params=querystring)
 
-    print(response.text)
-    
-  def complete_song():
-    url = "https://shazam.p.rapidapi.com/auto-complete"
+        print(response.text)
 
-    querystring = {"term":"kiss the","locale":"en-US"}
+    @staticmethod
+    def complete_song():
+        url = "https://shazam.p.rapidapi.com/auto-complete"
 
-    headers = {
-        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-        'x-rapidapi-host': "shazam.p.rapidapi.com"
+        querystring = {"term": "kiss the", "locale": "en-US"}
+
+        headers = {
+            'x-rapidapi-key':
+            "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+            'x-rapidapi-host': "shazam.p.rapidapi.com"
         }
 
-    response = requests.request("GET", url, headers=headers, params=querystring)
+        response = requests.request("GET",
+                                    url,
+                                    headers=headers,
+                                    params=querystring)
 
-    print(response.text)
-    
-  def search():
-    url = "https://shazam.p.rapidapi.com/search"
+        print(response.text)
 
-    querystring = {"term":"kiss the rain","locale":"en-US","offset":"0","limit":"5"}
+    @staticmethod
+    def search():
+        url = "https://shazam.p.rapidapi.com/search"
 
-    headers = {
-        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-        'x-rapidapi-host': "shazam.p.rapidapi.com"
+        querystring = {
+            "term": "kiss the rain",
+            "locale": "en-US",
+            "offset": "0",
+            "limit": "5"
         }
 
-    response = requests.request("GET", url, headers=headers, params=querystring)
+        headers = {
+            'x-rapidapi-key':
+            "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+            'x-rapidapi-host': "shazam.p.rapidapi.com"
+        }
 
-    print(response.text)
-    
+        response = requests.request("GET",
+                                    url,
+                                    headers=headers,
+                                    params=querystring)
+
+        print(response.text)
+
+
 class goe_data:
-  """
-  
-  """
-  def cities():
     """
-    Following are some of the functions which can be done in this function.
-    
-    1. Search Information about cith by wikidataid
-    url = "https://wft-geo-db.p.rapidapi.com/v1/geo/cities/Q60"
-    
-    2. Nearby cities
-    url = "https://wft-geo-db.p.rapidapi.com/v1/geo/cities/Q60/nearbyCities"
-    
-    3. City Time 
-    url = "https://wft-geo-db.p.rapidapi.com/v1/geo/cities/Q60/time"
-    
-    
+    This Class Gets the information related to Geo or Earth based.
     """
-    url = "https://wft-geo-db.p.rapidapi.com/v1/geo/cities"
-    
-    querystring = {"limit":"10","countryIds":"PK"}
+    @staticmethod
+    def cities():
+        """
+        Following are some of the functions which can be done in this function.
+        
+        1. Search Information about cith by wikidataid
+        url = "https://wft-geo-db.p.rapidapi.com/v1/geo/cities/Q60"
+        
+        2. Nearby cities
+        url = "https://wft-geo-db.p.rapidapi.com/v1/geo/cities/Q60/nearbyCities"
+        
+        3. City Time 
+        url = "https://wft-geo-db.p.rapidapi.com/v1/geo/cities/Q60/time"
+        
+        
+        """
+        url = "https://wft-geo-db.p.rapidapi.com/v1/geo/cities"
 
-    headers = {
-        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-        'x-rapidapi-host': "wft-geo-db.p.rapidapi.com"
+        querystring = {"limit": "10", "countryIds": "PK"}
+
+        headers = {
+            'x-rapidapi-key':
+            "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+            'x-rapidapi-host': "wft-geo-db.p.rapidapi.com"
         }
 
-    response = requests.request("GET", url, headers=headers)
+        response = requests.request("GET", url, headers=headers, params=querystring)
 
-    print(response.text)
-    
-  def countries():
-    """
-    Following are some of the functions which can be done in this function.
-    
-    1. Search Information about Country by Countrycode
-    url = "https://wft-geo-db.p.rapidapi.com/v1/geo/countries/US"
-    
-    2. Search Country region
-    url = "https://wft-geo-db.p.rapidapi.com/v1/geo/countries/US/regions"
-    
-    3. And region Detail
-    url = "https://wft-geo-db.p.rapidapi.com/v1/geo/countries/US/regions/CA"
-    
-    4. And Region Cities
-    url = "https://wft-geo-db.p.rapidapi.com/v1/geo/countries/US/regions/CA/cities"
-    """
-    url = "https://wft-geo-db.p.rapidapi.com/v1/geo/countries"
+        print(response.text)
 
-    querystring = {"currencyCode":"PKR"}
+    @staticmethod
+    def countries():
+        """
+        Following are some of the functions which can be done in this function.
+        
+        1. Search Information about Country by Countrycode
+        url = "https://wft-geo-db.p.rapidapi.com/v1/geo/countries/US"
+        
+        2. Search Country region
+        url = "https://wft-geo-db.p.rapidapi.com/v1/geo/countries/US/regions"
+        
+        3. And region Detail
+        url = "https://wft-geo-db.p.rapidapi.com/v1/geo/countries/US/regions/CA"
+        
+        4. And Region Cities
+        url = "https://wft-geo-db.p.rapidapi.com/v1/geo/countries/US/regions/CA/cities"
+        """
+        url = "https://wft-geo-db.p.rapidapi.com/v1/geo/countries"
 
-    headers = {
-        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-        'x-rapidapi-host': "wft-geo-db.p.rapidapi.com"
+        querystring = {"currencyCode": "PKR"}
+
+        headers = {
+            'x-rapidapi-key':
+            "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+            'x-rapidapi-host': "wft-geo-db.p.rapidapi.com"
         }
 
-    response = requests.request("GET", url, headers=headers, params=querystring)
+        response = requests.request("GET",
+                                    url,
+                                    headers=headers,
+                                    params=querystring)
 
-    print(response.text)
-    
-  def city_distance():
-    url = "https://wft-geo-db.p.rapidapi.com/v1/geo/cities/Q1362/distance"
+        print(response.text)
 
-    querystring = {"fromCityId":"Q1362","distanceUnit":"KM","toCityId":"Q8660"}
+    @staticmethod
+    def city_distance():
+        url = "https://wft-geo-db.p.rapidapi.com/v1/geo/cities/Q1362/distance"
 
-    headers = {
-        'x-rapidapi-key': "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
-        'x-rapidapi-host': "wft-geo-db.p.rapidapi.com"
+        querystring = {
+            "fromCityId": "Q1362",
+            "distanceUnit": "KM",
+            "toCityId": "Q8660"
         }
 
-    response = requests.request("GET", url, headers=headers, params=querystring)
+        headers = {
+            'x-rapidapi-key':
+            "1378d3ada6mshc004440669521cfp1cc4b4jsnd7f48a863565",
+            'x-rapidapi-host': "wft-geo-db.p.rapidapi.com"
+        }
 
-    print(response.text) 
+        response = requests.request("GET",
+                                    url,
+                                    headers=headers,
+                                    params=querystring)
 
+        print(response.text)

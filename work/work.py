@@ -7,7 +7,7 @@ from layla.engine_components import speak, take_command
 from functools import lru_cache
 from work.background_changer import background_change
 from WebScraping.lyrics import LyricsFinder
-import random
+import random, datetime
 import pyaudio
 import wave
 """
@@ -54,18 +54,17 @@ class website_control:
     This class also consist of all the data which is being scraped from the internet.
     '''
     def __init__(self):
-        return "Fuck You, You have no value nerd..."
+        self.message = "Fuck You, You have no value nerd..."
 
-    @staticmethod
-    def google_search(query):
+    def google_search(self, query):
         if "search" in query:
             term = ' '.join(query.split()[1:])
             speak('searching ' + term + "on google")
             webbrowser.open("https://www.google.com/search?q=" + term)
         elif "no" in query:
             pass
-
-    def google_map_search(query):
+    
+    def google_map_search(self, query):
         if "search google map from clipboard" == query:
             query = pyperclip.paste()
         else:
@@ -74,15 +73,13 @@ class website_control:
         speak(f"Going to {query}...")
         webbrowser.open('https://www.google.com/maps/place/' + query)
 
-    @staticmethod
-    def search_websites(query):
+    def search_websites(self, query):
         # search how to bake on google
         web_name = ''.join(query.split()[-1:])
         term = ' '.join(query.split()[1:-2])
         webbrowser.open("https://www." + web_name + ".com/search?q=" + term)
 
-    @staticmethod
-    def main(query):
+    def main(self, query):
         name = ' '.join(query.split()[1:])
         wbsite = ''.join(query.split()[1:])
         speak('opening ' + name + "dot com")
@@ -90,10 +87,9 @@ class website_control:
         if query == "google":
             speak("Do you want to search anything on google")
             query = take_command().lower()
-            google_search(query)
+            self.google_search(query)
 
-    @staticmethod
-    def wikipedia_search(query):
+    def wikipedia_search(self, query):
         speak("Searching Wikipedia...")
         if "wikipedia" in query:
             query = query.replace("wikipedia", "")
@@ -105,20 +101,26 @@ class website_control:
 
 
 class video_controls:
+    
+    @staticmethod
     def change_volume(query):
         sound_value = [int(s) for s in query.split() if s.isdigit()][0]
         sound.Sound.volume_set(int(sound_value))
         speak("Volume changed to " + str(sound_value) + "percent")
 
+    @staticmethod
     def mute(query):
         sound.Sound.volume_set(0)
 
+    @staticmethod
     def max_sound(query):
         sound.Sound.volume_set(100)
 
+    @staticmethod
     def increase_vol():
         sound.Sound.volume_up()
-
+    
+    @staticmethod
     def decrease_vol():
         sound.Sound.volume_down()
 
@@ -177,6 +179,8 @@ def weather_info(query):
 
 
 class basic_functions:
+    
+    @staticmethod
     def lovecal(query):
         # Calculate love percentage between Imran Akbar and Laiba Sadaf
         print("done")
@@ -190,6 +194,7 @@ class basic_functions:
             cat.get("fname") + " and " + cat.get("sname") + " is " +
             cat.get("percentage") + " percent")
 
+    @staticmethod
     def urlshorten(query):
         # Short the url from my clipboard
         url = clipboard.paste()  # Note: Url Must start from https://
@@ -200,10 +205,12 @@ class basic_functions:
             clipboard.copy(finale)
             speak(f"url successfully shorten, and copied to your clipboard")
 
+    @staticmethod
     def jokes(query):
         finale = locate_me.jokes_v()
         speak(finale)
 
+    @staticmethod
     def word_def(query):
         # What is meant by Cobra
         # meaning of Cobra
@@ -269,6 +276,8 @@ def play_rps():
 
 
 class f_keyboard:
+    
+    @staticmethod
     def sys_func(query):
         # Shortcut Keys
         if "lock" in query:
@@ -296,6 +305,7 @@ class f_keyboard:
         elif "file explorer" in query:
             keyboard.press_and_release("win + e")
 
+    @staticmethod
     def doc_func(query):
         if "undo" in query:
             keyboard.press_and_release('ctrl + z')
@@ -314,6 +324,7 @@ class f_keyboard:
         elif "go to end" in query:
             keyboard.press_and_release("ctrl + end")
 
+    @staticmethod
     def desk_func(query):
         if "application" in query:
             if "next" in query:
@@ -326,6 +337,7 @@ class f_keyboard:
             elif "previous" in query:
                 keyboard.press_and_release('win + ctrl + left')
 
+    @staticmethod
     def chrome_func(query):
         if "new tab" in query:
             keyboard.press_and_release('ctrl + t')
