@@ -1,6 +1,7 @@
 from datetime import datetime
 import random
 import webbrowser
+from work import locate_me
 
 time = datetime.now()
 # print(time) >  2020-08-09 21:19:07.071096 > %d/%m/%Y %H:%M:%S
@@ -17,7 +18,10 @@ def time_pace():
 
 def morning_commands():
     stat = ["increasing gradually", "decreasing"]
-    morning = f"Good Morning. It's {hour} A.M. The weather in {location_of_me()} is {weather_go.city_temp} with {weather_go.city_weather}. The wind speed is {weather_go.city_wind_speed} and {random.choice(stat)}, and your exercise time will be starting in 30 minutes "
+    data = locate_me.location_of_me()
+    query = 'q=' + str(data['city'])
+    weather = locate_me.weather_data(query)
+    morning = f"Good Morning. It's {hour} A.M. The weather in {data['city']} is {weather['weather']} with {weather.city_weather}. The wind speed is {weather.city_wind_speed} and {random.choice(stat)}, and your exercise time will be starting in 30 minutes "
 
     return morning
 

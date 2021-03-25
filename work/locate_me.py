@@ -40,8 +40,8 @@ def location_of_me():
     }
     """
     ip = get('https://api.ipify.org').text
-    # hostname = socket.gethostname()
-    # ipaddress = socket.gethostbyname(hostname)
+    hostname = socket.gethostname()
+    ipaddress = socket.gethostbyname(hostname)
     send_url = "http://api.ipstack.com/" + ip + "?access_key=7cd335b5d7a832f1c08b66e758797dc4"
     geo_req = requests.get(send_url)
     geo_json = json.loads(geo_req.text)
@@ -60,12 +60,12 @@ def weather_data(query):
     return res.json()
 
 
-# cat = location_of_me()
-# city = cat['city']
-# query = 'q=' + str(city)
-# w_data = weather_data(query)
+cat = location_of_me()
+city = cat['city']
+query = 'q=' + str(city)
+w_data = weather_data(query)
 
-# print(w_data)
+print(w_data['weather'])
 
 
 def love_calculator(f_name, s_name):

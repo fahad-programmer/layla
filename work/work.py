@@ -1,17 +1,55 @@
+"""
+This file consists all the functions which is to be performed by the System.
+Including games, services and answers
+We are using If/Else statement but soon will be minimized by ML and AI
+
+Classes:
+
+    website_control
+    video_controls
+    basic_functions
+    f_keyboard
+
+Functions:
+
+    kali()
+    wish_me()
+    country_info(query)
+    answer_engine(query)
+    unable_recognize() -> str
+    flip_coin()
+    roll_dice()
+    play_tactactoe()
+    play_rps()
+    song_lyrics_finder(query)
+    syst_info()
+    audio_recorder()
+
+Misc variables:
+
+    None
+    
+Last Updated: TU/23/3/2021
+By: imran-prog
+"""
+
+#Importing Builtin Modules
 import re
-from work import wishing, keyboard_controller, sound, locate_me, main_api, tictactoe, rps_game, sys_info
-from work.dice import dice_roller
 import pyperclip, webbrowser, wikipedia, keyboard
 import clipboard, urllib.request, json
-from layla.engine_components import speak, take_command
 from functools import lru_cache
-from work.background_changer import background_change
-from WebScraping.lyrics import LyricsFinder
 import random, datetime
 import pyaudio
 import wave
+# Importing user made Modules
+from work import wishing, keyboard_controller, sound, locate_me, main_api, tictactoe, rps_game, sys_info
+from work.dice import dice_roller
+from layla.engine_components import speak, take_command
+from work.background_changer import background_change
+from WebScraping.lyrics import LyricsFinder
+from work import search_web
 """
-What things i am working on:
+What things We am working on:
 1. Scraping websites data
 2. Training model to learn new commands as user speak
 3. Working with OpenCV to work on vidoes and photos
@@ -19,20 +57,40 @@ What things i am working on:
     1. Add all the data we scrap in database and delete that data after a week.
     2. Layla will take data from the database, and data will be updated everyweek.
     3. Working with Videos (play, sound, subtitles etc)
-5. Find APIs as many as i can and use them.
+5. Add many algorithms
+    
 
 Working with ❤/>
 """
 
-#App Id
+# App Id For Search API function answer_engine()
 app_id = 'A6JUQ4-JEAGJ3A583'
 
-
+# File Starts Here
 def kali():
+    '''
+    Returns the sum of two decimal numbers in binary digits.
+
+        Parameters:
+            a (int): A decimal integer
+            b (int): Another decimal integer
+
+        Returns:
+            binary_sum (str): Binary string of the sum of a and b
+    '''
     speak("Hello World")
 
 
 def wish_me():
+    '''
+    Speaks a statement when run for the first time. It checks the time of the day and make it's choice as per the time of the day.
+
+        Parameters:
+            None
+
+        Speak:
+            The statement as per the day time
+    '''
     if 4 <= wishing.hour < 10:
         speak(wishing.morning_commands())
     elif 10 <= wishing.hour < 13:
@@ -52,81 +110,260 @@ class website_control:
     For Example, Opening Websites, Search On Websites, Doing Some Stuff, Taking Data from the websites...
     
     This class also consist of all the data which is being scraped from the internet.
+    ...
+
+    Attributes
+    ----------
+    query : str
+        Command given by the user to open ors search on websites
+
+    Methods
+    -------
+    __init__(self):
+        Prints a joke
+
+    web_search(self, query):
+        Search Google for the query
+        
+    google_map_search(self, query):
+        opens google map and find the location which user has said to.
+        
+    main(self, query):
+        To Open any website in the browser with .com domain
+    
+    wikipedia_search(self, query):
+        Search wikipedia and display the best answer for the query
+        
     '''
     def __init__(self):
+        '''
+        This function is not used anywhere. 
+        It's just represents that this function is not being used anywhere.
+        '''
         self.message = "Fuck You, You have no value nerd..."
 
-    def google_search(self, query):
-        if "search" in query:
-            term = ' '.join(query.split()[1:])
-            speak('searching ' + term + "on google")
-            webbrowser.open("https://www.google.com/search?q=" + term)
-        elif "no" in query:
-            pass
+    def web_search(self, query):
+        '''
+        It's search the statement on the any website. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+                > search how to make spotify account on yahoo
+
+            Output:
+                Search query on the given website. and open the link in the browser.
+                
+        '''
+        search_content = search_web.search_internet(self.query)
+        search_content.web_search()
     
     def google_map_search(self, query):
-        if "search google map from clipboard" == query:
-            query = pyperclip.paste()
+        '''
+        Open's Google map in browser and take's the user to the given location
+
+            Parameters:
+                query (string): Statement given by the user to perform this function
+                
+            Conditions:
+                -> query (From clipboard): Get the location name from the clipboard of the user
+                -> query (From Input) : Get the location name from thespeak input
+
+            Output:
+                Browser with the Google map website and the location user searched for.
+                
+        '''
+        if "search google map from clipboard" == self.query:
+            self.query = pyperclip.paste()
         else:
             speak("which place do you want to see")
-            query = take_command().lower()
-        speak(f"Going to {query}...")
-        webbrowser.open('https://www.google.com/maps/place/' + query)
+            self.query = take_command().lower()
+        speak(f"Going to {self.query}...")
+        webbrowser.open('https://www.google.com/maps/place/' + self.query)
 
-    def search_websites(self, query):
-        # search how to bake on google
-        web_name = ''.join(query.split()[-1:])
-        term = ' '.join(query.split()[1:-2])
-        webbrowser.open("https://www." + web_name + ".com/search?q=" + term)
 
     def main(self, query):
-        name = ' '.join(query.split()[1:])
-        wbsite = ''.join(query.split()[1:])
-        speak('opening ' + name + "dot com")
-        webbrowser.open('https://www.' + wbsite + '.com')
-        if query == "google":
-            speak("Do you want to search anything on google")
-            query = take_command().lower()
-            self.google_search(query)
+        '''
+        This function will open any website which has .com domain. 
+        and if any of the website's from the list come's as a query
+        It will go to the web_serch() function to search for it.
+
+            Parameters:
+                query (string): Website name
+                
+            Input Form:
+                > open google
+                > open facebook
+
+            Output:
+                Open the browser with the website user asked to open.
+                otherwise if website name matched with the list item it will prompt to search too.
+                
+        '''
+        self.name = ' '.join(query.split()[1:])
+        self.website = ''.join(query.split()[1:])
+        self.website_names = ["google", "youtube", "pinterest", "linkedin", "tumblr", "imdb", "dailymotion", "yahoo", "duckduckgo", "twitter", "amazon", "alibaba"]
+        for self.item in self.website_names:
+            if self.name == self.website:
+                speak("Do you want to search anything on" + self.name)
+                self.query = take_command().lower()
+                self.web_search(query)
+                return
+        speak('opening ' + self.name + "dot com")
+        webbrowser.open('https://www.' + self.website + '.com')
 
     def wikipedia_search(self, query):
+        '''
+        This function is used to get the answer to the question or any kind of information from the wikipedia.
+
+            Parameters:
+                query (string): user given string to search on wiki
+                
+            Input Form:
+                > wikipedia imran khan
+                > tell me about indus valley
+
+            Return:
+                self.results (string): First few lines of wikipedia article
+                
+        '''
         speak("Searching Wikipedia...")
-        if "wikipedia" in query:
-            query = query.replace("wikipedia", "")
+        if "wikipedia" in self.query:
+            self.query = self.query.replace("wikipedia", "")
         elif "tell me about" in query:
-            query = query.replace("tell me about", "")
-        results = wikipedia.summary(query, sentences=2)
+            self.query = self.query.replace("tell me about", "")
+        self.results = wikipedia.summary(query, sentences=2)
         speak("According To wikipedia")
-        return results
+        return self.results
 
 
 class video_controls:
+    '''
+    Title = In this class all the system sound functions are going to perform.
     
+    For Example, Volume Up, Volume Down, Set Volume to, etc...
+    ...
+
+    Attributes
+    ----------
+    query : str
+        Command given by the user to change the sound
+
+    Methods
+    -------
+    change_volume(query): static method
+        It will change the system volume to the given integer 0-100
+
+    mute(query): static method
+        It will set the volume to zero
+        
+    max_sound(query): static method
+        It will set the volume to 100
+        
+    increase_vol(): static method
+        It will increase the volume of system by 5
+    
+    decrease_vol(): static method
+        It will decrease the volume by 5
+        
+    '''
     @staticmethod
     def change_volume(query):
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
         sound_value = [int(s) for s in query.split() if s.isdigit()][0]
         sound.Sound.volume_set(int(sound_value))
         speak("Volume changed to " + str(sound_value) + "percent")
 
     @staticmethod
     def mute(query):
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
         sound.Sound.volume_set(0)
 
     @staticmethod
     def max_sound(query):
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
         sound.Sound.volume_set(100)
 
     @staticmethod
     def increase_vol():
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
         sound.Sound.volume_up()
     
     @staticmethod
     def decrease_vol():
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
         sound.Sound.volume_down()
 
 
 @lru_cache()
 def country_info(query):
+    '''
+    Returns the sum of two decimal numbers in binary digits.
+
+        Parameters:
+            a (int): A decimal integer
+            b (int): Another decimal integer
+
+        Returns:
+            binary_sum (str): Binary string of the sum of a and b
+    '''
     loc = locate_me.location_of_me()
     if "ip" in query:
         speak(f"The ip of this PC is {loc['ip']}")
@@ -148,6 +385,16 @@ def country_info(query):
 
 @lru_cache()
 def weather_info(query):
+    '''
+    Returns the sum of two decimal numbers in binary digits.
+
+        Parameters:
+            a (int): A decimal integer
+            b (int): Another decimal integer
+
+        Returns:
+            binary_sum (str): Binary string of the sum of a and b
+    '''
     loc = locate_me.w_data
     if "temperature" in query:
         temp = ("{}°C".format(loc['main']['temp']))
@@ -179,10 +426,52 @@ def weather_info(query):
 
 
 class basic_functions:
+    '''
+    Title = In this class all the websites related functions are being held.
     
+    For Example, Opening Websites, Search On Websites, Doing Some Stuff, Taking Data from the websites...
+    
+    This class also consist of all the data which is being scraped from the internet.
+    ...
+
+    Attributes
+    ----------
+    query : str
+        Command given by the user to open ors search on websites
+
+    Methods
+    -------
+    __init__(self):
+        Prints a joke
+
+    google_search(self, query):
+        Search Google for the query
+        
+    google_map_search(self, query):
+        opens google map and find the location which user has said to.
+        
+    main(self, query):
+        To Open any website in the browser with .com domain
+    
+    wikipedia_search(self, query):
+        Search wikipedia and display the best answer for the query
+        
+    '''
     @staticmethod
     def lovecal(query):
-        # Calculate love percentage between Imran Akbar and Laiba Sadaf
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
+        # Calculate love percentage between # and #
         print("done")
         f_split = query.split(' between ')
         f_split.pop(0)
@@ -196,6 +485,18 @@ class basic_functions:
 
     @staticmethod
     def urlshorten(query):
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
         # Short the url from my clipboard
         url = clipboard.paste()  # Note: Url Must start from https://
         finale = locate_me.url_shortner(url)
@@ -207,11 +508,35 @@ class basic_functions:
 
     @staticmethod
     def jokes(query):
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
         finale = locate_me.jokes_v()
         speak(finale)
 
     @staticmethod
     def word_def(query):
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
         # What is meant by Cobra
         # meaning of Cobra
         # What is a radio
@@ -236,17 +561,47 @@ class basic_functions:
 
 
 def answer_engine(query):
+    '''
+    Returns the sum of two decimal numbers in binary digits.
+
+        Parameters:
+            a (int): A decimal integer
+            b (int): Another decimal integer
+
+        Returns:
+            binary_sum (str): Binary string of the sum of a and b
+    '''
     main_query = query.replace(" ", "+")
     api = main_api.waAPI(app_id)
     spoken = api.spoken_results(i=main_query)
     return spoken
 
 
-def unable_recognize():
+def unable_recognize() -> str:
+    '''
+    Returns the sum of two decimal numbers in binary digits.
+
+        Parameters:
+            a (int): A decimal integer
+            b (int): Another decimal integer
+
+        Returns:
+            binary_sum (str): Binary string of the sum of a and b
+    '''
     return "Sorry I Wasn't Able To Recoginze The Command"
 
 
 def flip_coin():
+    '''
+    Returns the sum of two decimal numbers in binary digits.
+
+        Parameters:
+            a (int): A decimal integer
+            b (int): Another decimal integer
+
+        Returns:
+            binary_sum (str): Binary string of the sum of a and b
+    '''
     while True:
         flip = random.randint(0, 1)
         if (flip == 0):
@@ -264,21 +619,93 @@ def flip_coin():
 
 
 def roll_dice():
+    '''
+    Returns the sum of two decimal numbers in binary digits.
+
+        Parameters:
+            a (int): A decimal integer
+            b (int): Another decimal integer
+
+        Returns:
+            binary_sum (str): Binary string of the sum of a and b
+    '''
     dice_roller.window()
 
 
 def play_tactactoe():
+    '''
+    Returns the sum of two decimal numbers in binary digits.
+
+        Parameters:
+            a (int): A decimal integer
+            b (int): Another decimal integer
+
+        Returns:
+            binary_sum (str): Binary string of the sum of a and b
+    '''
     tictactoe.start_game()
 
 
 def play_rps():
+    '''
+    Returns the sum of two decimal numbers in binary digits.
+
+        Parameters:
+            a (int): A decimal integer
+            b (int): Another decimal integer
+
+        Returns:
+            binary_sum (str): Binary string of the sum of a and b
+    '''
     rps_game.rps_window()
 
 
 class f_keyboard:
+    '''
+    Title = In this class all the websites related functions are being held.
     
+    For Example, Opening Websites, Search On Websites, Doing Some Stuff, Taking Data from the websites...
+    
+    This class also consist of all the data which is being scraped from the internet.
+    ...
+
+    Attributes
+    ----------
+    query : str
+        Command given by the user to open ors search on websites
+
+    Methods
+    -------
+    __init__(self):
+        Prints a joke
+
+    google_search(self, query):
+        Search Google for the query
+        
+    google_map_search(self, query):
+        opens google map and find the location which user has said to.
+        
+    main(self, query):
+        To Open any website in the browser with .com domain
+    
+    wikipedia_search(self, query):
+        Search wikipedia and display the best answer for the query
+        
+    '''
     @staticmethod
     def sys_func(query):
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
         # Shortcut Keys
         if "lock" in query:
             keyboard.press_and_release("win + l")
@@ -307,6 +734,18 @@ class f_keyboard:
 
     @staticmethod
     def doc_func(query):
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
         if "undo" in query:
             keyboard.press_and_release('ctrl + z')
         elif "redo" in query:
@@ -326,6 +765,18 @@ class f_keyboard:
 
     @staticmethod
     def desk_func(query):
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
         if "application" in query:
             if "next" in query:
                 keyboard.press_and_release('alt + tab')
@@ -339,6 +790,18 @@ class f_keyboard:
 
     @staticmethod
     def chrome_func(query):
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
         if "new tab" in query:
             keyboard.press_and_release('ctrl + t')
         elif "reopen tab" in query:
@@ -359,17 +822,47 @@ class f_keyboard:
 
 @lru_cache()
 def song_lyrics_finder(query):
+    '''
+    Returns the sum of two decimal numbers in binary digits.
+
+        Parameters:
+            a (int): A decimal integer
+            b (int): Another decimal integer
+
+        Returns:
+            binary_sum (str): Binary string of the sum of a and b
+    '''
     main_class = LyricsFinder(query)
     print(main_class.lyrics_finder())  #Solved
 
 
 @lru_cache()
 def syst_info():
+    '''
+    Returns the sum of two decimal numbers in binary digits.
+
+        Parameters:
+            a (int): A decimal integer
+            b (int): Another decimal integer
+
+        Returns:
+            binary_sum (str): Binary string of the sum of a and b
+    '''
     sys_info.syst()
 
 
 @lru_cache()
 def audio_recorder():
+    '''
+    Returns the sum of two decimal numbers in binary digits.
+
+        Parameters:
+            a (int): A decimal integer
+            b (int): Another decimal integer
+
+        Returns:
+            binary_sum (str): Binary string of the sum of a and b
+    '''
     current_date_and_time = datetime.datetime.now()
     current_date_and_time_string = str(current_date_and_time)
     extension = ".wav"
@@ -419,3 +912,10 @@ def audio_recorder():
     wf.writeframes(b"".join(frames))
     # close the file
     wf.close()
+
+
+if __name__ == '__main__':
+    """
+    To test the functions working.
+    """
+    website_control.web_search(0,"search pythonon google")

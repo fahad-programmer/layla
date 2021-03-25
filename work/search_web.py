@@ -1,7 +1,6 @@
 import webbrowser
 import sys
-sys.path.append('../layla')
-from engine_components import speak
+from layla.engine_components import speak
 
 
 # Search On Internet
@@ -36,5 +35,5 @@ class search_internet:
                         self.give_url() + self.term)
 
 
-goog = search_internet("search python on quora")
-goog.web_search()
+# goog = search_internet("search python on quora")
+# goog.web_search()
