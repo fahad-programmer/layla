@@ -3,6 +3,7 @@ from psycopg2 import Error
 
 try:
     # Connect to an existing database
+    # CREATE DATABASE layla; in pgadmin
     # Password = MIANchaNNu123 -> Imran
     connection = psycopg2.connect(user="postgres",
                                   password="MIANchaNNu123",
@@ -16,11 +17,12 @@ try:
     print("PostgreSQL server information")
     print(connection.get_dsn_parameters(), "\n")
     # Executing a SQL query
+    
     cursor.execute("SELECT version();")
     # Fetch result
     record = cursor.fetchone()
     print("You are connected to - ", record, "\n")
-
+    
 except (Exception, Error) as error:
     print("Error while connecting to PostgreSQL", error)
 finally:
@@ -28,9 +30,3 @@ finally:
         cursor.close()
         connection.close()
         print("PostgreSQL connection is closed")
-        
-"""
-Useful Websites,
-
-
-"""

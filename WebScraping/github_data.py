@@ -65,7 +65,7 @@ def github_contributions(username) -> str:
 		pass
 	return f"You Have {tag_find.get_text()}"
 
-def github_contributions(username) -> str:
+def github_bio(username) -> str:
 	url = f"https://github.com/{username}"
 	try:
 		req = requests.get(url, headers)
