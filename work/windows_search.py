@@ -1,13 +1,14 @@
 import keyboard
 import time
 import sys
-sys.path.append('../layla')
+sys.path.append('../layla/')
 from engine_components import take_command
+
 
 def search() -> None:
     query = input("Please Tell What You Want To Search")
-    keyboard.press_and_release('windows') 
-    time.sleep(3)
+    keyboard.press_and_release('windows')
+    time.sleep(2)
     keyboard.write(query)
     while True:
         query = take_command().lower()
@@ -21,5 +22,5 @@ def search() -> None:
         else:
             print("something Occured")
 
-search()
 
+search()
