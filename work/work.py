@@ -48,6 +48,7 @@ from layla.engine_components import speak, take_command
 from work.background_changer import background_change
 from WebScraping.lyrics import LyricsFinder
 from work import search_web
+import win32gui
 """
 What things We am working on:
 1. Scraping websites data
@@ -849,6 +850,40 @@ def syst_info():
             binary_sum (str): Binary string of the sum of a and b
     '''
     sys_info.syst()
+    
+class chrome_func:
+    
+    def __init__(self):
+        self.w=win32gui
+        self.window_name = self.w.GetWindowText (self.w.GetForegroundWindow())
+    
+    def bookmark(self):
+        if "chrome" in self.window_name:
+            keyboard.press_and_release('ctrl + d')
+            
+    def bookmark_manager(self):
+        if "chrome" in self.window_name:
+            keyboard.press_and_release('ctrl + shift + o')
+            
+    def history(self):
+        if "chrome" in self.window_name:
+            keyboard.press_and_release('ctrl + h')
+    
+    def new_window(self):
+        if "chrome" in self.window_name:
+            keyboard.press_and_release('ctrl + n')
+            
+    def incognito(self):
+        if "chrome" in self.window_name:
+            keyboard.press_and_release('ctrl + shift + n')
+            
+    def new_tab(self):
+        if "chrome" in self.window_name:
+            keyboard.press_and_release('ctrl + t')
+            
+    def page_source(self):
+        if "chrome" in self.window_name:
+            keyboard.press_and_release('ctrl + u')
 
 
 @lru_cache()
