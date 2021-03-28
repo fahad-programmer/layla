@@ -843,7 +843,7 @@ class f_keyboard:
                 keyboard.press_and_release('win + ctrl + left')
 
     @staticmethod
-    def chrome_func(query):
+    def key_func(query):
         '''
         It's search the statement on the google search engine. Statement is given by the user as a query.
 
@@ -856,15 +856,7 @@ class f_keyboard:
             Output:
                 Search query on the google search. and open the link in the browser.
         '''
-        if "new tab" in query:
-            keyboard.press_and_release('ctrl + t')
-        elif "reopen tab" in query:
-            keyboard.press_and_release('ctrl + shift + t')
-        elif "go back" in query:
-            keyboard.press_and_release('alt + left')
-        elif "go forward" in query:
-            keyboard.press_and_release('alt + right')
-        elif "take screenshot" in query:
+        if "take screenshot" in query:
             keyboard.press_and_release('win + shift + s')
         elif "show clipboard" in query:
             keyboard.press_and_release('win + v')
@@ -872,6 +864,14 @@ class f_keyboard:
             keyboard.press_and_release('win + .')
         elif "new folder" in query:
             keyboard.press_and_release('ctrl + shift + n')
+        elif "space" in query:
+            keyboard.press_and_release('space')
+        elif "capital" in query:
+            keyboard.press_and_release('caps lock')
+        elif "enter" in query:
+            keyboard.press_and_release('enter')
+        elif "tab" in query:
+            keyboard.press_and_release('tab')
 
 
 @lru_cache()
@@ -935,8 +935,7 @@ class chrome_func:
             Output:
                 Search query on the google search. and open the link in the browser.
         '''
-        if "chrome" in self.window_name:
-            keyboard.press_and_release('ctrl + d')
+        keyboard.press_and_release('ctrl + d')
             
     def bookmark_manager(self):
         '''
@@ -951,8 +950,7 @@ class chrome_func:
             Output:
                 Search query on the google search. and open the link in the browser.
         '''
-        if "chrome" in self.window_name:
-            keyboard.press_and_release('ctrl + shift + o')
+        keyboard.press_and_release('ctrl + shift + o')
             
     def history(self):
         '''
@@ -967,8 +965,7 @@ class chrome_func:
             Output:
                 Search query on the google search. and open the link in the browser.
         '''
-        if "chrome" in self.window_name:
-            keyboard.press_and_release('ctrl + h')
+        keyboard.press_and_release('ctrl + h')
     
     def search(self):
         '''
@@ -1051,8 +1048,7 @@ class chrome_func:
             Output:
                 Search query on the google search. and open the link in the browser.
         '''
-        if "chrome" in self.window_name:
-            keyboard.press_and_release('ctrl + n')
+        keyboard.press_and_release('ctrl + n')
             
     def incognito(self):
         '''
@@ -1067,8 +1063,7 @@ class chrome_func:
             Output:
                 Search query on the google search. and open the link in the browser.
         '''
-        if "chrome" in self.window_name:
-            keyboard.press_and_release('ctrl + shift + n')
+        keyboard.press_and_release('ctrl + shift + n')
             
     def new_tab(self):
         '''
@@ -1083,8 +1078,7 @@ class chrome_func:
             Output:
                 Search query on the google search. and open the link in the browser.
         '''
-        if "chrome" in self.window_name:
-            keyboard.press_and_release('ctrl + t')
+        keyboard.press_and_release('ctrl + t')
             
     def page_source(self):
         '''
@@ -1099,8 +1093,22 @@ class chrome_func:
             Output:
                 Search query on the google search. and open the link in the browser.
         '''
-        if "chrome" in self.window_name:
-            keyboard.press_and_release('ctrl + u')
+        keyboard.press_and_release('ctrl + u')
+    
+    def reopen_tab(self):
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
+        keyboard.press_and_release('ctrl + shift + t')
 
 
 @lru_cache()
