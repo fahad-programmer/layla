@@ -114,10 +114,13 @@ def explorer_fileselection():
             for file in range(selected_files.Count):
                 files.append(selected_files.Item(file).Path)
             print("Files --> "+str(files))
+            return files, window_dir
+    
+    
 
-while True:
-    try:
-        explorer_fileselection()
-    except Exception:
-        print("No Path Found!")
-    time.sleep(1)
+# while True:
+#     try:
+#         explorer_fileselection()
+#     except Exception:
+#         print("No Path Found!")
+#     time.sleep(1)

@@ -17,7 +17,7 @@ cloudpickle==1.6.0
 colorama==0.4.4
 comtypes==1.1.8
 constantly==15.1.0
-cryptography==3.3.2
+cryptography==3.3.1
 cssselect==1.1.0
 Cython==0.29.21
 dask==2020.12.0
@@ -65,7 +65,7 @@ opt-einsum==3.3.0
 packaging==20.8
 palettable==3.3.0
 parsel==1.6.0
-Pillow==8.1.1
+Pillow==8.1.0
 pipwin==0.5.0
 playsound==1.2.2
 Protego==0.1.16
@@ -90,6 +90,7 @@ pyperclip==1.8.1
 pypiwin32==223
 PyPrind==2.11.2
 pySmartDL==1.3.4
+python-vlc==3.0.11115
 pyttsx3==2.90
 pytz==2020.5
 PyWavelets==1.1.1
@@ -116,6 +117,7 @@ tensorflow==2.4.0
 tensorflow-estimator==2.4.0
 termcolor==1.1.0
 textblob==0.15.3
+texttable==1.6.3
 toml==0.10.2
 toolz==0.11.1
 tqdm==4.55.1
@@ -124,7 +126,7 @@ Twisted==20.3.0
 typed-ast==1.4.2
 typing-extensions==3.7.4.3
 tzlocal==2.1
-urllib3==1.26.3
+urllib3==1.26.2
 w3lib==1.22.0
 wallpaper==0.2.2
 Wave==0.0.2

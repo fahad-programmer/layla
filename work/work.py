@@ -41,6 +41,7 @@ from functools import lru_cache
 import random, datetime
 import pyaudio
 import wave
+import win32gui, win32api
 # Importing user made Modules
 from work import wishing, keyboard_controller, sound, locate_me, main_api, tictactoe, rps_game, sys_info
 from work.dice import dice_roller
@@ -48,7 +49,6 @@ from layla.engine_components import speak, take_command
 from work.background_changer import background_change
 from WebScraping.lyrics import LyricsFinder
 from work import search_web
-import win32gui
 """
 What things We am working on:
 1. Scraping websites data
@@ -351,7 +351,60 @@ class video_controls:
                 Search query on the google search. and open the link in the browser.
         '''
         sound.Sound.volume_down()
+    
+    @staticmethod
+    def pause_play():
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
 
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
+        VK_MEDIA_PLAY_PAUSE = 0xB3
+        hwcode = win32api.MapVirtualKey(VK_MEDIA_PLAY_PAUSE, 0)
+        win32api.keybd_event(VK_MEDIA_PLAY_PAUSE, hwcode)
+    
+    @staticmethod
+    def previous_track():
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
+        VK_MEDIA_PREVIOUS = 0xB1
+        hwcode = win32api.MapVirtualKey(VK_MEDIA_PREVIOUS, 0)
+        win32api.keybd_event(VK_MEDIA_PREVIOUS, hwcode)
+        
+    @staticmethod
+    def next_track():
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
+        VK_MEDIA_PLAY_NEXT = 0xB0
+        hwcode = win32api.MapVirtualKey(VK_MEDIA_PLAY_NEXT, 0)
+        win32api.keybd_event(VK_MEDIA_PLAY_NEXT, hwcode)
 
 @lru_cache()
 def country_info(query):
@@ -854,34 +907,198 @@ def syst_info():
 class chrome_func:
     
     def __init__(self):
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
         self.w=win32gui
         self.window_name = self.w.GetWindowText (self.w.GetForegroundWindow())
     
     def bookmark(self):
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
         if "chrome" in self.window_name:
             keyboard.press_and_release('ctrl + d')
             
     def bookmark_manager(self):
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
         if "chrome" in self.window_name:
             keyboard.press_and_release('ctrl + shift + o')
             
     def history(self):
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
         if "chrome" in self.window_name:
             keyboard.press_and_release('ctrl + h')
     
+    def search(self):
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
+        VK_MEDIA_PLAY_NEXT = 0xAA
+        hwcode = win32api.MapVirtualKey(VK_MEDIA_PLAY_NEXT, 0)
+        win32api.keybd_event(VK_MEDIA_PLAY_NEXT, hwcode)
+    
+    def home(self):
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
+        VK_MEDIA_PLAY_NEXT = 0xAC
+        hwcode = win32api.MapVirtualKey(VK_MEDIA_PLAY_NEXT, 0)
+        win32api.keybd_event(VK_MEDIA_PLAY_NEXT, hwcode)
+    
+    def back(self):
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
+        VK_MEDIA_PLAY_NEXT = 0xA6
+        hwcode = win32api.MapVirtualKey(VK_MEDIA_PLAY_NEXT, 0)
+        win32api.keybd_event(VK_MEDIA_PLAY_NEXT, hwcode)
+    
+    def forward(self):
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
+        VK_MEDIA_PLAY_NEXT = 0xA7
+        hwcode = win32api.MapVirtualKey(VK_MEDIA_PLAY_NEXT, 0)
+        win32api.keybd_event(VK_MEDIA_PLAY_NEXT, hwcode)
+    
     def new_window(self):
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
         if "chrome" in self.window_name:
             keyboard.press_and_release('ctrl + n')
             
     def incognito(self):
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
         if "chrome" in self.window_name:
             keyboard.press_and_release('ctrl + shift + n')
             
     def new_tab(self):
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
         if "chrome" in self.window_name:
             keyboard.press_and_release('ctrl + t')
             
     def page_source(self):
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
         if "chrome" in self.window_name:
             keyboard.press_and_release('ctrl + u')
 
