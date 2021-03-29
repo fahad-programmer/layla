@@ -43,5 +43,5 @@ while True:
             if alarm_min == current_min:
                 if alarm_sec == current_sec:
                     print("Wake Up!")
-                    playsound('D:/Library/Documents/Projects/Coding/Beginner Python Projects/Alarm Clock/alarm.wav')
+                    playsound('/work/alarm_clock/alarm.wav')
                     break

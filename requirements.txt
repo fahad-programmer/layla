@@ -89,6 +89,7 @@ pyparsing==2.4.7
 pyperclip==1.8.1
 pypiwin32==223
 PyPrind==2.11.2
+PyQRCode==1.2.1
 pySmartDL==1.3.4
 python-vlc==3.0.11115
 pyttsx3==2.90
@@ -133,6 +134,7 @@ Wave==0.0.2
 webbot==0.34
 Werkzeug==1.0.1
 wikipedia==1.4.0
+win10toast==0.9
 winshell==0.6
 wolframalpha==4.1.1
 wrapt==1.12.1
