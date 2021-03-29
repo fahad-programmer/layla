@@ -6,7 +6,7 @@ class VLC:
     def __init__(self):
         self.Player = Instance('--loop')
 
-    def addPlaylist(self):
+    def addPlaylist(self, dir):
         self.mediaList = self.Player.media_list_new()
         path = r"C:\Users\dell5567\Desktop\engsong"
         songs = os.listdir(path)

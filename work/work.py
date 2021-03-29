@@ -905,7 +905,37 @@ def syst_info():
     sys_info.syst()
     
 class chrome_func:
+    '''
+    Title = In this class all the websites related functions are being held.
     
+    For Example, Opening Websites, Search On Websites, Doing Some Stuff, Taking Data from the websites...
+    
+    This class also consist of all the data which is being scraped from the internet.
+    ...
+
+    Attributes
+    ----------
+    query : str
+        Command given by the user to open ors search on websites
+
+    Methods
+    -------
+    __init__(self):
+        Prints a joke
+
+    web_search(self, query):
+        Search Google for the query
+        
+    google_map_search(self, query):
+        opens google map and find the location which user has said to.
+        
+    main(self, query):
+        To Open any website in the browser with .com domain
+    
+    wikipedia_search(self, query):
+        Search wikipedia and display the best answer for the query
+        
+    '''
     def __init__(self):
         '''
         It's search the statement on the google search engine. Statement is given by the user as a query.
@@ -1110,6 +1140,234 @@ class chrome_func:
         '''
         keyboard.press_and_release('ctrl + shift + t')
 
+
+class youtube_func:
+    '''
+    Title = In this class all the websites related functions are being held.
+    
+    For Example, Opening Websites, Search On Websites, Doing Some Stuff, Taking Data from the websites...
+    
+    This class also consist of all the data which is being scraped from the internet.
+    ...
+
+    Attributes
+    ----------
+    query : str
+        Command given by the user to open ors search on websites
+
+    Methods
+    -------
+    __init__(self):
+        Prints a joke
+
+    web_search(self, query):
+        Search Google for the query
+        
+    google_map_search(self, query):
+        opens google map and find the location which user has said to.
+        
+    main(self, query):
+        To Open any website in the browser with .com domain
+    
+    wikipedia_search(self, query):
+        Search wikipedia and display the best answer for the query
+        
+    '''
+    def mute_video(self):
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
+        keyboard.press_and_release('m')
+        
+    def next_video(self):
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
+        keyboard.press_and_release('shift + n')
+        
+    def previous_video(self):
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
+        keyboard.press_and_release('shift + p')
+        
+    def skip_further(self):
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
+        keyboard.press_and_release('l')
+        
+    def skip_back(self):
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
+        keyboard.press_and_release('j')
+        
+    def speed_up(self):
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
+        keyboard.press_and_release('>')
+        
+    def speed_down(self):
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
+        keyboard.press_and_release('<')
+        
+    def end_video(self):
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
+        keyboard.press_and_release('end')
+        
+    def start_again(self):
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
+        keyboard.press_and_release('home')
+        
+    def search(self):
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
+        keyboard.press_and_release('/')
+        
+    def fullscreen(self):
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
+        keyboard.press_and_release('f')
+        
+    def subtitles(self):
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
+        keyboard.press_and_release('c')
+        
+    def miniplayler(self):
+        '''
+        It's search the statement on the google search engine. Statement is given by the user as a query.
+
+            Parameters:
+                query (string): User input statement to search
+                
+            Input Form:
+                > Search python on google
+
+            Output:
+                Search query on the google search. and open the link in the browser.
+        '''
+        keyboard.press_and_release('i')
+    
 
 @lru_cache()
 def audio_recorder():
