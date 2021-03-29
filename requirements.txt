@@ -40,6 +40,7 @@ hyperlink==21.0.0
 idna==2.10
 importlib-metadata==3.3.0
 incremental==17.5.0
+instaclient==2.9.18
 isort==5.7.0
 itemadapter==0.2.0
 itemloaders==1.0.4
