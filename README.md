@@ -2,7 +2,7 @@
 A Smart Friend With Some Good Deeds. This is an AI smart assistant which is being in development under anononymous group. Layla is named after it's meaning "Night" which shows that we are night owlers. We choose to make this a private project because it hasn't reached a level which can make us standout in this world of AI Systems.
 
 ## Phase Level: 1.0
-We achived this phase on 31 Marcch after implementing File Management system to control the process of creating directory and open any folder. To reach next level we will need to increase our modal accuracy near to 0.9 and by cleaning-up all the code from previous phase to make it much more efficient and interactive.
+We achived this phase on 31 March after implementing File Management system to control the process of creating directory and open any folder. To reach next level we will need to increase our modal accuracy near to 0.9 and by cleaning-up all the code from previous phase to make it much more efficient and interactive.
 
 ## Implemented Phases
 0.1 > Can talk and listen to user  
@@ -11,7 +11,7 @@ We achived this phase on 31 Marcch after implementing File Management system to 
 0.4 > Answer to any question  
 0.5 > Perform Actions over Internet  
 0.6 > Works with any File or Directory on system  
-0.7 > Controls the working of the system
+0.7 > Controls the working of the system  
 0.8 > Eliminate use of Keyboard and Mouse  
 0.9 > Wakeup Command  
 1.0 > Perform actions using If/Else Conditions  
