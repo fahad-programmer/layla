@@ -271,8 +271,8 @@ class file_management:
 #         print("No Path Found!")
 #     time.sleep(1)
 
-main = file_management()
-time.sleep(5)
+# main = file_management()
+# time.sleep(5)
 # main.create_new_file("create a new file of html name index")
-main.zip_files("extract")
+# main.zip_files("extract")
 
