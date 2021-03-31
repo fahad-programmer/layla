@@ -9,9 +9,14 @@ import selenium
 import io
 import requests
 from selenium.common.exceptions import ElementClickInterceptedException
+import sys
+# sys.path.append('../work')
+# from work import notifier
 
 class Instabot:
     def __init__(self, username, password):
+        opts = webdriver.ChromeOptions()
+        opts.headless =True
         self.driver = webdriver.Chrome("chromedriver.exe")
         self.driver.maximize_window()
         self.driver.get("https://www.instagram.com/")
@@ -31,7 +36,13 @@ class Instabot:
         sleep(5)
         self.title = self.driver.find_element_by_xpath("/html/body/div[1]/section/nav/div[2]/div/div/div[3]/div/div[4]/div/div[2]/div[2]/div/div/div/div[1]/div[2]/div[2]/span/a").text
         self.desc = self.driver.find_element_by_xpath("/html/body/div[1]/section/nav/div[2]/div/div/div[3]/div/div[4]/div/div[2]/div[2]/div/div/div/div[1]/div[2]/div[2]/span/span").text
-        print(self.title, self.desc)
+        # print(self.title, self.desc)
+        pre_title = ""
+        pre_desc = ""
+        if self.title != pre_title:
+            pass
+        pre_title = self.title
+        pre_desc = self.desc
         
         
     # def control_insta(self):
