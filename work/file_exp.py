@@ -12,6 +12,7 @@ import psutil
 import subprocess
 import time
 import urllib.parse
+from zipfile import ZipFile
 
 class file_management:
     
@@ -122,7 +123,7 @@ class file_management:
     
     def create_new_file(self, query):
         # create a new file of python name index
-        directory, files = self.explorer_fileselection()
+        directory, _ = self.explorer_fileselection()
         extension = ''.join(query.split()[5])
         file_name = ''.join(query.split()[7:])
         self.extension = extension
@@ -146,6 +147,41 @@ class file_management:
         with open(complete_name, "w"):
             pass
         
+    def direc_files_list(self):
+        directory, files = self.explorer_fileselection()
+        files = os.listdir(directory)
+        for file in files:
+            print(file.lower())
+    
+    def zip_files(self, query):        
+        # specifying the zip file name
+        directory, files = self.explorer_fileselection()
+        for file in files:
+            file_name = file
+        
+        if "extract" in query:
+            # opening the zip file in READ mode
+            with ZipFile(file_name, 'r') as zip:
+                # printing all the contents of the zip file
+                zip.printdir()
+            
+                # extracting all the files
+                print('Extracting all the files now...')
+                zip.extractall(directory)
+                print('Done!')
+        else:
+            print('Following files will be zipped:')
+            for file_name in files:
+                print(file_name)
+        
+            # writing files to a zipfile
+            with ZipFile('my_python_files.zip','w') as zip:
+                # writing each file one by one
+                for file in files:
+                    zip.write(file)
+  
+            print('All files zipped successfully!')  
+        
 # while True:
 #     try:
 #         main = file_management()
@@ -156,4 +192,6 @@ class file_management:
 
 main = file_management()
 time.sleep(5)
-main.create_new_file("create a new file of html name index")
+# main.create_new_file("create a new file of html name index")
+main.zip_files("extract")
+
