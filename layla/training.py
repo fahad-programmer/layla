@@ -3,8 +3,6 @@ import json
 import pickle
 import numpy as np
 
-
-
 import nltk
 from nltk.stem import WordNetLemmatizer
 import tensorflow as tf
@@ -97,7 +95,7 @@ def train_data():
         'layla_model.h5',
         model.fit(np.array(train_x),
                   np.array(train_y),
-                  epochs=10000,
+                  epochs=50000,
                   batch_size=5,
                   verbose=1))
 

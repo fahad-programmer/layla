@@ -68,7 +68,7 @@ we will just import work.py function in this while loop
 
 def layla_run():
     # os.system('cls')
-    WAKE = 'hey layla'
+    WAKE = 'layla'
     # This Function will clean any
     # command before execution of this python file
     wish_me()
