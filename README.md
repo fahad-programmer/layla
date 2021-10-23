@@ -49,4 +49,4 @@ This will install all the required modules in your PC. Note: It is better to ins
 ----------|-> Azure-pipelines.yml "Build Tester" 
 
 ## Copyrights 
-© 2021 - All Rights Reserved
+© 2021 - All Rights Reserved By Layla Technologies
