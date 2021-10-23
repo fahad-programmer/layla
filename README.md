@@ -25,8 +25,8 @@ Note: There are still alot of bugs in these previous implemented phase which wil
 
 ## How To Run
 1. Clone the repository from the github main branch...
-2. Open the terminal in the directory which you just have cloned in your System
-3. And write the following command in Terminal. Note: Python must be installed in your system and all the required modules must be installed
+2. Open the terminal in the directory which you have cloned in your System
+3. And write the following command in Terminal. Note: Python must be installed in your system and all the required modules must be installed, you can reffer to online documentations for the help.
 > python go_baby.py
 4. To install the all the modules at one, enter the following commands in the terminal. 
 This will install all the required modules in your PC. Note: It is better to install virtual environment before installing modules.
